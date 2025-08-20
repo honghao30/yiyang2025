@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<!-- 메인 플로팅 배너가 처음부터 열렸을때 modal-opan 클래스를 추가 -->
+<html lang="en"> 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지방이양자동화 시스템 구축 프로젝트</title>
+  <link rel="stylesheet" href="css/common.css">
+  <!-- mCustomScrollbar css -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+  <!-- REQUIRED SCRIPTS -->
+  <script src="js/jquery-3.2.1.js"></script>
+  <!-- mCustomScrollbar JS -->
+  <script src="js/jquery.mCustomScrollbar.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <!-- common.js -->
+  <script src="js/common.js"></script>
+  <script src="js/common_02.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <!-- searchlayer 모바일 상세검색 -->
+  <div class="searchlayer mo">
+    <div class="search_cont">
+      <span class="search_box">
+        <span class="input_cont">
+          <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+          <button class="btn_search"><span class="hidden">검색</span></button>
+        </span>
+        <button class="btn_layer_close" onclick="searchClose();"><span class="hidden">닫기</span></button>
+      </span>
+    </div>
+    <!-- 검색 결과 영역 content_wrap -->
+    <div class="content_wrap">
+      <div class="search_total">
+        <p class="txt">검색결과 <strong>99</strong>개</p>
+        <ul>
+          <li class="no_data">
+            <span class="txt">검색 결과가 없습니다.</span>
+          </li>
+          <li><a href="#none"><span class="point">농</span>업</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#none"><span class="point">농</span>업진흥특별법</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#none"><span class="point">농</span>촌일손</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#none"><span class="point">농</span>촌일손</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#none"><span class="point">농</span>업특별구역 지정에 관한 법</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#none"><span class="point">농</span>경지침수에 따른 배상에 관한 법</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#none"><span class="point">농</span>업구획 및 그 역할에 대한 법</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#none"><span class="point">농</span>업진흥지역 설치에 관한 법</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#none"><span class="point">농</span>림축산식품부</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#none"><span class="point">농</span>업진흥청</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+        </ul>
+      </div>
+    </div>
+    <!-- //검색 결과 영역 content_wrap -->
+
+    <!-- 상세 검색 영역 content_wrap -->
+    <div class="content_wrap">
+      <!-- select_box -->
+      <div class="select_box full">
+        <span class="select">기관별</span>
+        <div class="option">
+          <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <ul>
+              <li>선택함1</li>
+              <li>선택함2</li>
+              <li>선택함3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- select_box -->
+      <div class="select_box full">
+        <span class="select">분야별</span>
+        <div class="option">
+          <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <ul>
+              <li>선택함1</li>
+              <li>선택함2</li>
+              <li>선택함3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- select_box -->
+      <div class="select_box full">
+        <span class="select">사무구분</span>
+        <div class="option">
+          <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <ul>
+              <li>선택함1</li>
+              <li>선택함2</li>
+              <li>선택함3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- select_box -->
+      <div class="select_box full">
+        <span class="select">사무유형</span>
+        <div class="option">
+          <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <ul>
+              <li>선택함1</li>
+              <li>선택함2</li>
+              <li>선택함3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //상세 검색 영역 content_wrap -->
+  </div>
+  <!-- mypagelayer 모바일 마이페이지 -->
+  <div class="mypagelayer mo">
+    <div class="mypage_cont">
+      <span class="mypage_box">
+        <span class="tit">마이페이지</span>
+        <button class="btn_layer_close" onclick="mypageClose();"><span class="hidden">닫기</span></button>
+      </span>
+    </div>
+    <div class="content_wrap">
+      <div class="user_info">
+        <span class="rank"><strong>7</strong>등급</span>
+        <span class="user"><strong>김길동</strong>님 </span>
+      </div>
+      <div class="box">
+        <span class="tit"><span>나의 업무</span></span>
+        <ul>
+          <li><a href="#none">사무승인요청<span class="num">(24)</span></a></li>
+          <li><a href="#none">이양관리<span class="num">(24)</span></a></li>
+          <li><a href="#none">이행상황관리<span class="num">(24)</span></a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <span class="tit"><span>나의 업무</span></span>
+        <ul>
+          <li><a href="#none">이양문의</a></li>
+          <li><a href="#none">진행 상황문의</a></li>
+          <li><a href="#none">이양진행 내역 관련 문의</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <span class="tit"><span>나의 업무</span></span>
+        <ul>
+          <li><a href="#none">이양문의</a></li>
+          <li><a href="#none">진행 상황문의</a></li>
+          <li><a href="#none">이양진행 내역 관련 문의</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <span class="tit"><span>나의 업무</span></span>
+        <ul>
+          <li><a href="#none">최근 다운 게시물 제목1</a></li>
+          <li><a href="#none">최근 다운 게시물 제목2</a></li>
+          <li><a href="#none">최근 다운 게시물 제목3</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- header_wrap -->
+  <div class="header_wrap">
+    <div class="header">
+      <div class="inner">
+        <div class="header_cont">
+          <div class="header_top_cont">
+            <h1 class="logo"><a href="#none">지방이양사무관리시스템</a></h1>
+            <div class="right_cont mo">
+              <button class="btn_search" onclick="searchLayer(this);"><span class="hidden">검색</span></button>
+              <button class="btn_login"><span class="hidden">로그인</span></button>
+              <button class="btn_menu" onclick="mypagelayer(this);"><span class="hidden">메뉴</span></button>
+            </div>
+          </div>
+          <div class="top_menu_cont">
+            <ul class="menu">
+              <li><a href="#none" class="on">법령</a></li>
+              <li><a href="#none">조사</a></li>
+              <li><a href="#none">사무</a></li>
+              <li><a href="#none">이양사무</a></li>
+              <li><a href="#none">통계</a></li>
+              <li><a href="#none">대국민 포털관리</a></li>
+              <li><a href="#none">시스템 관리</a></li>
+            </ul>
+          </div>
+          <!-- 로그인/회원가입 버튼 -->
+          <div class="info_cont" style="display: none;">
+            <span class="bar"><a href="#none" class="ico_login"><span>로그인</span></a></span>
+            <span><a href="#none" class="ico_join"><span>회원가입</span></a></span>
+          </div>
+
+          <!-- 마이페이지/사용자/로그아웃 -->
+          <div class="info_cont pc">
+            <ul class="info_menu">
+              <li class="bar"><a href="#none">마이페이지</a></li>
+            </ul>
+            <span class="user"><strong>홍길동</strong>님 <span class="rank"><strong>7</strong>등급</span></span>
+            <button class="btn_log">
+              <span class="txt">로그아웃</span>
+              <span class="time">09:55</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <!-- container -->
+  <div class="container">
+    <!-- 검색영역 -->
+    <div class="content_wrap">
+      <div class="inner">
+        <h3 class="document-title">레이어 버튼들 (onclick 안에 아이디값을 넣어서 연결 ex : #layer_pop_01)</h3>
+        <div class="mt20"></div>
+        <button type="button" class="btn-gra-sm" onclick="modalControl('o','#layer_pop_00');return false">의결서일괄등록(파일첨부)</button>
+        <button type="button" class="btn-gra-sm" onclick="modalControl('o','#layer_pop_01');return false">의결서일괄등록</button>
+        <button type="button" class="btn-gra-sm" onclick="modalControl('o','#layer_pop_02');return false">알림</button>        
+        <button type="button" class="btn-gra-sm" onclick="modalControl('o','#layer_pop_03');return false">기작성기록알림</button>  
+        <button type="button" class="btn-gra-sm" onclick="modalControl('o','#layer_pop_04');return false">이력작성</button>  
+        <button type="button" class="btn-gra-sm" onclick="modalControl('o','#layer_pop_05');return false">근거법령검색</button>  
+        <button type="button" class="btn-gra-sm" onclick="modalControl('o','#layer_pop_06');return false">단위사무 등록 요청</button>  
+        <button type="button" class="btn-gra-sm" onclick="modalControl('o','#layer_pop_07');return false">프로그래스바</button>  
+        <button type="button" class="btn-gra-sm" onclick="modalControl('o','#layer_pop_08');return false">의견등록 시작</button>  
+        <button type="button" class="btn-gra-sm" onclick="modalControl('o','#layer_pop_09');return false">확정연도 등록</button>  
+        <button type="button" class="btn-gra-sm" onclick="modalControl('o','#layer_pop_10');return false">의결서 등록 알림</button>  
+        <button type="button" class="btn-gra-sm" onclick="modalControl('o','#layer_pop_main');return false">메인팝업</button>  
+        <button type="button" class="btn-gra-sm" onclick="modalControl('o','#layer_pop_guide');return false">작성예시보기 팝업</button>  
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 모달 -->
+  <!-- 이양사무_의견수렴_Popup_의견수렴시작 -->
+  <section class="modal_new modal_overlay roll-type" id="layer_pop_00"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal wd1280">
+        <div class="modal-header">
+            <div class="tit">의결서 등록</div>        
+        </div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+            <div class="modal-msg">                
+                <div class="font-type16-400 flex-row justify-center text-center">
+                    본회의 의결서는 회의에서 논의된 내용과 결정된 사항을 공식 기록으로 남길 수 있습니다.<br>
+                    이를 통해 의사결정 과정의 투명성을 확보하고, 필요한 경우 후에 참고할 수 있도록 기록을 유지합니다.
+                </div>
+                <div class="table_cont mt-32">
+                    <table class="table-body-only">
+                        <colgroup>                    
+                            <col width="">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    의결서 등록
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>                        
+                                <td>
+                                    <div class="info-text">의결서 파일을 첨부하여 주세요.</div>
+                                    <div class="info-text color-important">
+                                        ※파일 용량 제한 : 100MB<br>
+                                        ※업로드 가능한 파일 : xls, xlsx, hwp, hwpx, pdf, jpeg, jpg, png
+                                    </div>
+                                    <!-- 파일첨부 -->
+                                    <div class="file-add-wrap">
+                                        <div class="drop-area file-drop" data-list="file-list2">
+                                            <div class="file-tit-cont">
+                                                <span class="tit">파일명</span>
+                                                <span class="size">
+                                                  <span>크기</span>
+                                                  <span>삭제</span>
+                                                </span>
+                                            </div>
+                                            <ul class="file-list"></ul>
+                                            <p class="drag-cont"><span class="icon-btn drag">이곳에 파일을 드래그 하세요.</span></p>
+                                            <div class="file-btn-cont">
+                                              <label>
+                                                <input type="file" class="file-input" multiple="">
+                                                <span class="btn btn-file"><span>파일추가</span></span>
+                                                <!-- <span class="file-size"> 총 2.6MB (1개)</span> -->
+                                              </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- //파일첨부 -->                 
+                                </td>                        
+                            </tr>                                                                                                                                                                                
+                        </tbody>
+                    </table>
+                </div>                
+            </div>
+            <div class="button__wrap flex-end mt-32">
+                <button type="button" class="btn-gray-default"  onclick="modalControl('c')" >
+                    <i class="ico-remove"></i> 취소
+                </button>               
+                <button type="button" class="btn-primary-default">
+                    <i></i> 등록
+                </button>  
+            </div>
+        </div>    
+        <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>   
+      </div>
+    </div>
+  </section>
+  <!-- //모달 -->
+
+  <!-- 모달 -->
+  <!-- 이양사무_의견수렴_Popup_의견수렴시작 -->
+  <section class="modal_new modal_overlay roll-type" id="layer_pop_01"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal wd1280">
+        <div class="modal-header">
+            <div class="tit">의결서 등록</div>        
+        </div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+            <div class="modal-msg">                
+                <div class="font-type16-400 flex-row justify-center text-center">
+                    본회의 의결서는 회의에서 논의된 내용과 결정된 사항을 공식 기록으로 남길 수 있습니다.<br>
+                    이를 통해 의사결정 과정의 투명성을 확보하고, 필요한 경우 후에 참고할 수 있도록 기록을 유지합니다.
+                </div>
+                <div class="table_cont mt-32">
+                    <table class="table-body-only">
+                        <colgroup>                    
+                            <col width="">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    의결서 등록
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>                        
+                                <td>
+                                    <div class="info-text">의결서 파일을 첨부하여 주세요.</div>
+                                    <div class="info-text color-important">
+                                        ※파일 용량 제한 : 100MB<br>
+                                        ※업로드 가능한 파일 : xls, xlsx, hwp, hwpx, pdf, jpeg, jpg, png
+                                    </div>
+                                    <ul class="file-list yiyang-file" style="max-width: 532px;">                                      
+                                        <li>
+                                                <div class="input-wrap">
+                                                    <input type="file" name="" class="file" style="width: 363px;">
+                                                    <div class="form-element__wrap">
+                                                        <div class="input-multi file-up">
+                                                            <span class="form-element__inner input-type" style="width: 252px; flex: none;">
+                                                                <input type="text" placeholder="파일을 선택해 주세요." title="파일첨부">
+                                                            </span>
+                                                            <button type="button" class="btn-border-gray">
+                                                                <i class="icon-file"></i>
+                                                                파일선택
+                                                            </button>
+                                                            <button type="button" class="btn-dark-light btn-delete">
+                                                                <i class="ico-minus"></i>
+                                                                삭제
+                                                            </button>
+                                                            <button type="button" class="btn-dark-light btn-add">
+                                                                <i class="ico-plus"></i>
+                                                                추가
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>                                
+                                        </li>
+                                    </ul>                  
+                                </td>                        
+                            </tr>                                                                                                                                                                                
+                        </tbody>
+                    </table>
+                </div>            
+                <div class="table_cont tb_cursor mt-64">
+                    <table class="table-list iyangsamu-table">
+                        <colgroup>
+                                <col style="width:3%;">
+                                <col style="width:5%;">                        
+                                <col style="width:7%;">
+                                <col>    
+                                <col style="width:10%;">
+                                <col style="width:10%;">      
+                                <col style="width:10%;">
+                                <col style="width:10%;">
+                                <col style="width:10%;">                                                
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label class="input_type check all-check">
+                                        <input type="checkbox" name="">
+                                        <span class="txt"></span>
+                                    </label>                     
+                                </th>
+                                <th>번호</th>
+                                <th>과제 ID</th>
+                                <th>과제명</th>
+                                <th>단위사무명</th>
+                                <th>소관부처명</th>                    
+                                <th>근거 법령</th>
+                                <th>이양방향</th>
+                                <th>이양현황</th>                                          
+                            </tr>
+                        </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="input_type check check-item">
+                                            <input type="checkbox" name="">
+                                            <span class="txt"></span>
+                                        </label>                                  
+                                    </td>
+                                    <td>1</td>
+                                    <td>LY2024099</td>
+                                    <td>
+                                        <a href="#">
+                                            농업진흥지역 해제 권한 
+                                        </a>
+                                    </td>                            
+                                    <td>농림축산부</td>
+                                    <td>농어촌정비법</td>
+                                    <td>-</td>
+                                    <td>국가→시도</td>
+                                    <td>본회의 의결</td>                                                                
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>                       
+            </div>
+            <div class="button__wrap flex-end mt-32">
+                <button type="button" class="btn-gray-default"  onclick="modalControl('c')" >
+                    <i class="ico-remove"></i> 취소
+                </button>               
+                <button type="button" class="btn-primary-default">
+                    <i></i> 등록
+                </button>  
+            </div>
+        </div>    
+        <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>   
+      </div>
+    </div>
+  </section>
+  <!-- //모달 -->
+
+  <!-- 모달 -->
+  <!-- 이양사무_의견수렴_Popup_의견수정 -->
+  <section class="modal_new modal_overlay roll-type" id="layer_pop_02"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal layer_login">
+      <div class="modal-header mini-size"></div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+            <div class="modal-msg">
+                <div class="font-type20-400">알림</div>
+                <div class="font-type16-400 mt-16">
+                    과제등록은 이양건의 과제만 가능합니다.<br>
+                    이양건의 과제만 선택하여 주세요.
+                </div>
+            </div>
+            <div class="button__wrap flex-end mt-32">
+                <!-- <button type="button" class="btn-gray-default"  onclick="modalControl('c')" >
+                    <i class="ico-remove"></i> 취소
+                </button>                -->
+                <button type="button" class="btn-primary-default"   onclick="modalControl('c')">
+                    <i></i> 확인
+                </button>  
+            </div>
+        </div>       
+      </div>
+    </div>
+  </section>
+  <!-- //모달 -->
+  
+  <!-- 모달 -->
+  <!-- 기작성기록알림 -->
+  <section class="modal_new modal_overlay roll-type" id="layer_pop_03"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal layer_login">
+      <div class="modal-header mini-size"></div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+            <div class="modal-msg">
+                <div class="font-type20-400">기 작성 기록 알림</div>
+                <div class="font-type16-400 mt-16">
+                    기존에 작성된 기록이 있습니다.<br>
+                    기존 작성 기록을 불러오시겠습니까?<br>
+                    새로 작성하실 경우, 이전 기록은 삭제됩니다.
+                </div>
+            </div>
+            <div class="button__wrap flex-end mt-32">
+                <button type="button" class="btn-gray-default"  onclick="modalControl('c')" >
+                    새로작성
+                </button>               
+                <button type="button" class="btn-primary-default">
+                    <i></i> 불러오기
+                </button>  
+            </div>
+        </div>       
+      </div>
+    </div>
+  </section>
+  <!-- //모달 -->
+
+  <!-- 모달 -->
+  <!-- 이력작성 -->
+  <section class="modal_new modal_overlay roll-type" id="layer_pop_04"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal ">
+        <div class="modal-header">
+            <div class="tit">이력작성</div>        
+        </div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+            <div class="modal-msg">  
+                <div class="table_cont tb_cursor">
+                    <table class="table-list iyangsamu-table">
+                        <colgroup>
+                                <col style="width:10%;">
+                                <col style="width:5%;">                                                        
+                                <col>    
+                                <col style="width:15%;">
+                                <col style="width:15%;">                                                                                  
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>날짜</th>
+                                <th>구분</th>
+                                <th>이력 내용</th>
+                                <th>소속</th>
+                                <th>이름</th>                                                              
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024.07.11</td>
+                                <td>수정</td>
+                                <td>
+                                    세부사무유형 국가직접사무로 변경
+                                </td>                            
+                                <td>행정안전부 / 지원과</td>
+                                <td>김길동</td>                                                                                         
+                            </tr>
+                            <tr>
+                                <td>2024.07.11</td>
+                                <td>수정</td>
+                                <td>
+                                    세부사무유형 국가직접사무로 변경
+                                </td>                            
+                                <td>행정안전부 / 지원과</td>
+                                <td>김길동</td>                                                                                         
+                            </tr>     
+                            <tr>
+                                <td>2024.07.11</td>
+                                <td>수정</td>
+                                <td>
+                                    세부사무유형 국가직접사무로 변경
+                                </td>                            
+                                <td>행정안전부 / 지원과</td>
+                                <td>김길동</td>                                                                                         
+                            </tr>
+                            <tr>
+                                <td>2024.07.11</td>
+                                <td>수정</td>
+                                <td>
+                                    세부사무유형 국가직접사무로 변경
+                                </td>                            
+                                <td>행정안전부 / 지원과</td>
+                                <td>김길동</td>                                                                                         
+                            </tr> 
+                            <tr>
+                                <td>2024.07.11</td>
+                                <td>수정</td>
+                                <td>
+                                    세부사무유형 국가직접사무로 변경
+                                </td>                            
+                                <td>행정안전부 / 지원과</td>
+                                <td>김길동</td>                                                                                         
+                            </tr>                                                                               
+                        </tbody>
+                    </table>
+                </div>     
+                <div class="flex-row justify-end mt-16">
+                  <a href="#none" class="btn ico_download"><span>엑셀 다운로드</span></a>
+                </div>                
+                <div class="font-type018-700 mt-32">
+                    내용 작성
+                </div>
+                <div class="form-element__wrap mt-16">                                  
+                    <textarea name="" id="" value="" placeholder="" style="width: 100%;height: 176px;">
+변경하실 내용을 입력하여 주세요.
+※ 내용입력 예시
+1)오타수정
+2)정보 수정 (수정 내용 기입해 주세요.)
+3)개인정보 열람 (열람 사유 기입해 주세요.)
+4)첨부파일 변경
+                    </textarea>
+                </div>                  
+            </div>
+            <div class="button__wrap flex-end mt-32">
+                <button type="button" class="btn-gray-default"  onclick="modalControl('c')" >
+                    <i class="ico-remove"></i> 취소
+                </button>               
+                <button type="button" class="btn-primary-default">
+                    <i></i> 등록
+                </button>  
+            </div>
+        </div>    
+        <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>   
+      </div>
+    </div>
+  </section>
+  <!-- //모달 -->
+
+  <!-- 모달 -->
+  <!-- 근거법령검색 -->
+  <section class="modal_new modal_overlay roll-type" id="layer_pop_05"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal wd1280 mt-24">
+        <div class="modal-header">
+            <div class="tit">근거법령 검색</div>        
+        </div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+            <div class="modal-msg">  
+                <div class="search_cont no-bg-type">
+                    <span class="search_box">
+                        <!-- 콤보박스 -->
+                        <div class="select_box"  style="width: 200px">
+                            <span class="select">선택</span>
+                            <div class="option">
+                                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                                <ul>
+                                    <li>선택함1</li>
+                                    <li>선택함2</li>
+                                    <li>선택함3</li>
+                                </ul>
+                                </div>
+                            </div>
+                        </div>                    
+                        <!-- 콤보박스 -->
+                        <span class="input_cont">
+                            <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+                            <button class="btn_search"><span class="hidden">검색</span></button>
+                        </span>
+                        <button class="btn btn_size_s btn_search_detail bg-purple"><span>상세검색</span></button>
+                    </span>
+                </div>
+                <!-- 검색 -->
+        <!-- class on 이 붙으면 열림 -->
+        <div class="search_cont_detail iyangsamu-search type02 mt-24">
+            <div class="search-table">
+                <table class="table-body-only">
+                    <colgroup>
+                        <col style="width:102px" />
+                        <col/>
+                        <col style="width:102px" />
+                        <col/>                      
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">소관부처</th>
+                            <td class="text-l">                            
+                                <!-- select_box -->
+                                <select name="" id="" class="selectbox" title="소관부처 선택">
+                                  <option value="선택함1">전체</option>
+                                  <option value="선택함2">선택함2</option>
+                                  <option value="선택함3">선택함3</option>
+                                </select>
+                                <!-- select_box -->  
+                            </td>
+                            <th scope="row">법령구분 </th>
+                            <td class="text-l">                            
+                                <!-- select_box -->
+                                <select name="" id="" class="selectbox" title="법령구분 선택">
+                                  <option value="선택함1">전체</option>
+                                  <option value="선택함2">선택함2</option>
+                                  <option value="선택함3">선택함3</option>
+                                </select>
+                                <!-- select_box -->                            
+                            </td>                        
+                        </tr>
+                        <tr>
+                          <th scope="row">법령명 <span class="red-color">*</span></th>
+                          <td colspan="3">
+                            <div class="flex-box">
+                              <div class="form-element__wrap">                                
+                                  <span class="form-element__inner input-type input_del">
+                                      <input type="text" class="input-type1-font14" value="도시재생 활성화 및 지원에 관한 법률" placeholder="법령명을 입력해 주세요." title="법령명을 입력해 주세요">
+                                      <button class="del"></button>
+                                  </span>
+                              </div>
+                              <button class="btn_reset_only-icon"></button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">법령명<br>선택</th>
+                          <td colspan="3">
+                            <!-- select_box -->
+                            <select name="" id="" class="selectbox" title="\법령명 선택" style="width: 100%;">
+                              <option value="선택함1">전체</option>
+                              <option value="선택함2">선택함2</option>
+                              <option value="선택함3">선택함3</option>
+                            </select>
+                            <!-- select_box -->
+                          </td>          
+                        </tr>                        
+                        <tr>
+                            <th scope="row">조문</th>
+                            <td>
+                              <div class="form-element__wrap">                                  
+                                <div class="input-multi">
+                                  <span class="form-element__inner input-type">
+                                      <input type="text" value="" class="input-type1-font14" maxlength="10" placeholder="조문" title="조문 입력하세요">
+                                  </span>
+                                  <span>조</span>              
+                                </div>
+                              </div>
+                            </td>
+                            <th scope="row">조문상세</th>
+                            <td class="text-l flex-box">
+                              <span class="form-element__inner input-type">
+                                <input type="text" value="" class="input-type1-font14" maxlength="10" placeholder="조문을 입력해 주세요." title="조문을 입력해 주세요.">
+                              </span>
+                              <button class="btn_reset_only-icon"></button>
+                            </td>                       
+                        </tr>     
+                    </tbody>
+                </table>
+            </div>          
+              <button class="btn_close x-icon-purple"></button>
+              <button class="btn_search_only-icon"></button>
+          </div>
+        <!-- //상세검색 -->
+                <div class="top_info_box pc-flex mt-64">
+                    <div class="left_cont">
+                        <span class="total">총 <strong>11,994</strong>건 중 <strong>201-220</strong> </span>
+                    </div>
+                    <div class="right_cont">
+                        <button type="button" class="btn-purple-add" disabled>
+                            + 선택 추가
+                        </button>
+                    </div>
+                </div>
+                <div class="table_cont scroll-type tb_cursor">
+                    <table class="table-body-only">
+                        <colgroup>              
+                            <col>                                
+                        </colgroup>
+                        <tbody>        
+                            <!-- 검색 결과 없을때 -->
+                            <tr>
+                                <td class="inner-table">
+                                    <div class="no-content-results">
+                                        <i></i>
+                                        <div class="msg">
+                                            검색 항목이 없습니다.
+                                        </div>
+                                    </div>
+                                </td>                                    
+                            </tr>
+                            <!-- //검색 결과 없을때 -->
+                            <tr>
+                                <td class="inner-table">
+                                    <div class="scrolling-content">
+                                        <div class="inner-table-cont law-list">
+                                            <table>
+                                                <colgroup>                                      
+                                                    <col width="5%">
+                                                    <col>
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="input_type check check-item">
+                                                                <input type="checkbox" name="">
+                                                                <span class="txt"></span>
+                                                            </label>                                          
+                                                        </td>                                            
+                                                        <td class="text-l"><strong>제1조(목적)</strong> 이 법은 도시의 경제적ㆍ사회적ㆍ문화적 활력 회복을 위하여 공공의 역할과 지원을 강화함으로써 도시의 자생적 성장기반을 확충하고 도시의 경쟁력을 제고하며 지역 공동체를 회복하는 등 국민의 삶의 질 향상에 이바지함을 목적으로 한다.</td>                                                        
+                                                    </tr>   
+                                                    <tr>
+                                                        <td>
+                                                            <label class="input_type check check-item">
+                                                                <input type="checkbox" name="">
+                                                                <span class="txt"></span>
+                                                            </label>                                          
+                                                        </td>                                            
+                                                        <td class="text-l">해양수산부장관은 안전관리규정에 따라 수중레저사업장 내 수중레저기구, 수중레저장비 및 수중레저시설물 등(이하 “수중레저기구등”이라 한다)에 대한 안전점검을 실시하여야 한다.</td>                                                        
+                                                    </tr>   
+                                                    <tr>
+                                                        <td>
+                                                            <label class="input_type check check-item">
+                                                                <input type="checkbox" name="">
+                                                                <span class="txt"></span>
+                                                            </label>                                          
+                                                        </td>                                            
+                                                        <td class="text-l">해양수산부장관은 안전관리규정에 따라 수중레저사업장 내 수중레저기구, 수중레저장비 및 수중레저시설물 등(이하 “수중레저기구등”이라 한다)에 대한 안전점검을 실시하여야 한다.</td>                                                        
+                                                    </tr>
+                                                    <tr>
+                                                      <td>
+                                                          <label class="input_type check check-item">
+                                                              <input type="checkbox" name="">
+                                                              <span class="txt"></span>
+                                                          </label>                                          
+                                                      </td>                                            
+                                                      <td class="text-l">해양수산부장관은 안전관리규정에 따라 수중레저사업장 내 수중레저기구, 수중레저장비 및 수중레저시설물 등(이하 “수중레저기구등”이라 한다)에 대한 안전점검을 실시하여야 한다.</td>                                                        
+                                                  </tr>   
+                                                  <tr>
+                                                      <td>
+                                                          <label class="input_type check check-item">
+                                                              <input type="checkbox" name="">
+                                                              <span class="txt"></span>
+                                                          </label>                                          
+                                                      </td>                                            
+                                                      <td class="text-l">해양수산부장관은 안전관리규정에 따라 수중레저사업장 내 수중레저기구, 수중레저장비 및 수중레저시설물 등(이하 “수중레저기구등”이라 한다)에 대한 안전점검을 실시하여야 한다.</td>                                                        
+                                                  </tr>   
+                                                  <tr>
+                                                      <td>
+                                                          <label class="input_type check check-item">
+                                                              <input type="checkbox" name="">
+                                                              <span class="txt"></span>
+                                                          </label>                                          
+                                                      </td>                                            
+                                                      <td class="text-l">해양수산부장관은 안전관리규정에 따라 수중레저사업장 내 수중레저기구, 수중레저장비 및 수중레저시설물 등(이하 “수중레저기구등”이라 한다)에 대한 안전점검을 실시하여야 한다.</td>                                                        
+                                                  </tr>                                                     
+                                                </tbody>
+                                            </table>
+                                            <script>
+                                                  const laoLists = document.querySelectorAll('.law-list .check-item input[type=checkbox]');
+                                                  laoLists.forEach((item) => {
+                                                    item.addEventListener('change', () => {
+                                                      const checkItems = document.querySelectorAll('.law-list .check-item input[type=checkbox]:checked');
+                                                      if (checkItems.length > 0) {  // Check if there is at least one checked item
+                                                        document.querySelector('.btn-purple-add').removeAttribute('disabled');
+                                                      } else {
+                                                        document.querySelector('.btn-purple-add').setAttribute('disabled', true);
+                                                      }
+                                                    });
+                                                  });
+                                            </script>
+                                        </div>                                        
+                                    </div>
+                                </td>                                    
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="button__wrap flex-end mt-32">
+                <button type="button" class="btn-gray-default"  onclick="modalControl('c')" >
+                    <i class="ico-remove"></i> 닫기
+                </button>               
+            </div>
+        </div>    
+        <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>   
+      </div>
+    </div>
+  </section>
+  <!-- //모달 -->
+  
+  <!-- 모달 -->
+  <!-- 단위사무 등록 요청 -->
+  <section class="modal_new modal_overlay roll-type" id="layer_pop_06"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal layer_login">
+      <div class="modal-header mini-size"></div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+            <div class="modal-msg">
+                <div class="font-type20-400">단위사무 등록 요청</div>
+                <div class="font-type16-400 mt-16">
+                  단위사무가 등록되지 않았습니다.<br>
+                  단위사무를 등록하시겠습니까?
+                </div>
+            </div>
+            <div class="button__wrap flex-end mt-32">
+                <button type="button" class="btn-gray-default"  onclick="modalControl('c')" >
+                  나중에 하기
+                </button>               
+                <button type="button" class="btn-primary-default">
+                    <i></i> 단위사무 등록
+                </button>  
+            </div>
+        </div>       
+      </div>
+    </div>
+  </section>
+  <!-- //모달 -->
+
+  <!-- 모달 -->
+  <!-- 프로그래스바 -->
+  <section class="modal_new modal_overlay roll-type" id="layer_pop_07"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal layer_login">
+      <div class="modal-header mini-size"></div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+          <!-- 안씀 -->
+          <!-- <div class="progress_wrap">
+            <span class="txt">다운로드 중입니다</span>
+            <div class="progress"><span style="width:50%"></span></div>
+            <span class="ing">50%</span>
+          </div> -->
+
+          <div class="progress_wrap">
+            <span class="txt g88">다운로드 중입니다...</span>
+            <div class="loading-spinner"></div>
+            <span class="txt ">48%</span>
+          </div>
+        </div>       
+      </div>
+    </div>
+  </section>
+  <!-- //모달 -->
+
+  <!-- 모달 -->
+  <!-- 단위사무 등록 요청 -->
+  <section class="modal_new modal_overlay roll-type" id="layer_pop_08"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal layer_login">
+      <div class="modal-header mini-size"></div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+            <div class="modal-msg">
+                <div class="font-type20-400">의견등록 시작</div>
+                <div class="font-type16-400 mt-16">
+                  의견등록을 시작하시면, 이양사무 건의 내용으로<br>
+                  중앙부처/광역자치단체/기초자치단체/지방시대위원회/시도지사협의회/시군구청장협의회에서 의견 등록이 가능합니다.<br>
+                  의견등록을 시작하시겠습니까?
+                </div>
+            </div>
+            <div class="button__wrap flex-end mt-32">
+                <button type="button" class="btn-gray-default" onclick="modalControl('c')">
+                  <i class="ico-remove"></i> 취소
+                </button>           
+                <button type="button" class="btn-primary-default">
+                    <i></i> 확인
+                </button>  
+            </div>
+        </div>       
+      </div>
+    </div>
+  </section>
+  <!-- //모달 -->
+
+  <!-- 모달 -->
+  <!-- 단위사무 등록 요청 -->
+  <section class="modal_new modal_overlay roll-type" id="layer_pop_09"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal layer_login">
+      <div class="modal-header mini-size"></div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+            <div class="modal-msg">
+                <div class="font-type20-400">확정연도 등록</div>
+                <div class="font-type16-400 mt-16">
+                  확정연도 등록 후 수정이 불가능하니,<br>
+                  정확한 확정연도를 확인하시고 등록하시기 바랍니다.<br>
+                  확정연도를 등록 하시겠습니까?
+                </div>
+            </div>
+            <div class="button__wrap flex-end mt-32">
+                <button type="button" class="btn-gray-default" onclick="modalControl('c')">
+                  <i class="ico-remove"></i> 취소
+                </button>           
+                <button type="button" class="btn-primary-default">
+                    <i></i> 확인
+                </button>  
+            </div>
+        </div>       
+      </div>
+    </div>
+  </section>
+  <!-- //모달 -->
+
+  <!-- 모달 -->
+  <!-- 의결서 등록 알림 -->
+  <section class="modal_new modal_overlay roll-type" id="layer_pop_10"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal layer_login">
+      <div class="modal-header mini-size"></div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+            <div class="modal-msg">
+                <div class="font-type20-400">의결서 등록 알림</div>
+                <div class="font-type16-400 mt-16">
+                  의결서 등록과 동시에 이양 확정 단계로 전환되며 이행상황관리에서 관리됩니다.
+                </div>
+            </div>
+            <div class="button__wrap flex-end mt-32">
+                <button type="button" class="btn-gray-default" onclick="modalControl('c')">
+                  <i class="ico-remove"></i> 취소
+                </button>           
+                <button type="button" class="btn-primary-default">
+                    <i></i> 확인
+                </button>  
+            </div>
+        </div>       
+      </div>
+    </div>
+  </section>
+  <!-- //모달 -->
+
+  <!-- 모달 -->
+  <!-- 메인팝업 -->
+  <section class="modal_new roll-type type02" id="layer_pop_main"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal pop_main">
+      <!-- <div class="modal-header">
+          <div class="tit">이력작성</div>        
+      </div> -->
+      <div class="modal_n_body">
+        <div class="pop_cont">
+            <!-- Swiper -->
+            <div class="swiper_wrap">
+              <div class="swiper mySwiper type01" id="swiper1">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <!-- 메인팝업샘플 -->
+                      <div style="background:#F4F7FB;height:300px;width:560px;"></div>
+                      <!-- //메인팝업샘플 -->
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <!-- 메인팝업샘플 -->
+                      <div style="background:#F4F7FB;height:300px;width:560px;"></div>
+                      <!-- //메인팝업샘플 -->
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <!-- 메인팝업샘플 -->
+                      <div style="background:#caddf7;height:300px;width:560px;"></div>
+                      <!-- //메인팝업샘플 -->
+                    </a>
+                  </div>
+                </div>
+                <div class="sw_bts">
+                  <div class="pc">
+                    <div class="swiper-button-next"><img src="img/pc/swiper/btn_sw_right.png" alt=""></div>
+                    <div class="swiper-button-prev"><img src="img/pc/swiper/btn_sw_left.png" alt=""></div>
+                  </div>
+                  <div class="mo">
+                    <div class="swiper-button-next"><img src="img/mo/swiper/btn_sw_right.png" alt=""></div>
+                    <div class="swiper-button-prev"><img src="img/mo/swiper/btn_sw_left.png" alt=""></div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+              <script>
+                var swiper1 = new Swiper("#swiper1", {
+                  slidesPerView: 1, // 한번에 보여지는 슬라이드 숫자
+                  slidesPerGroup: 1, // 한번에 이동되는 슬라이드 숫자
+                  loop: true,
+                  // autoplay: {
+                  //   delay: 3000,
+                  //   disableOnInteraction: false,
+                  // },
+                  navigation: {
+                    nextEl: "#swiper1 .swiper-button-next",
+                    prevEl: "#swiper1 .swiper-button-prev",
+                  },
+                  pagination: {
+                    el: "#swiper1 .swiper-pagination",
+                    type: "fraction",
+                    clickable: true,
+                  }
+                });
+                // swiper1의 일시정지 및 재생 제어
+                $("#swiper1 .swiper-autoplay-button .pause").on("click", function() {
+                  swiper1.autoplay.stop();
+                  $(this).hide();
+                  $("#swiper1 .swiper-autoplay-button .play").show();
+                });
+                $("#swiper1 .swiper-autoplay-button .play").on("click", function() {
+                  swiper1.autoplay.start();
+                  $(this).hide();
+                  $("#swiper1 .swiper-autoplay-button .pause").show();
+                });
+              </script>
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="button__wrap flex-end">
+            <label class="input_type check">
+              <input type="checkbox" name="q01">
+              <span class="txt">오늘 그만보기</span>
+            </label>
+              <button type="button" class="btn-gray-default"  onclick="modalControl('c')" >
+                  <i class="ico-remove"></i> 닫기
+              </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- //모달 -->
+
+  <!-- 모달 -->
+  <!-- 작성예시보기 팝업 -->
+  <section class="modal_new modal_overlay roll-type pop_guide" id="layer_pop_guide"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal ">
+        <div class="modal-header">
+            <div class="tit">작성 예시</div>        
+        </div>
+        <div class="modal_n_body">
+          <div class="pop_cont">
+            <!-- Swiper -->
+            <div class="swiper_wrap">
+              <div class="swiper mySwiper type01" id="swiper2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <!-- 작성예시보기 이미지 -->
+                      <img src="img/pc/content/img_guide_content_01.png" alt="">
+                      <!-- //작성예시보기 이미지 -->
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <!-- 작성예시보기 이미지 -->
+                      <img src="img/pc/content/img_guide_content_02.png" alt="">
+                      <!-- //작성예시보기 이미지 -->
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <!-- 작성예시보기 이미지 -->
+                      <img src="img/pc/content/img_guide_content_03.png" alt="">
+                      <!-- //작성예시보기 이미지 -->
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <!-- 작성예시보기 이미지 -->
+                      <img src="img/pc/content/img_guide_content_04.png" alt="">
+                      <!-- //작성예시보기 이미지 -->
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#">
+                      <!-- 작성예시보기 이미지 -->
+                      <img src="img/pc/content/img_guide_content_05.png" alt="">
+                      <!-- //작성예시보기 이미지 -->
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="sw_bts">
+                <div class="swiper-button-next"><img src="img/pc/swiper/btn_sw_right.png" alt=""></div>
+                <div class="swiper-button-prev"><img src="img/pc/swiper/btn_sw_left.png" alt=""></div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <script>
+                var swiper1 = new Swiper("#swiper2", {
+                  slidesPerView: 1, // 한번에 보여지는 슬라이드 숫자
+                  slidesPerGroup: 1, // 한번에 이동되는 슬라이드 숫자
+                  loop: true,
+                  // autoplay: {
+                  //   delay: 3000,
+                  //   disableOnInteraction: false,
+                  // },
+                  navigation: {
+                    nextEl: "#swiper2+.sw_bts .swiper-button-next",
+                    prevEl: "#swiper2+.sw_bts .swiper-button-prev",
+                  },
+                  pagination: {
+                    el: "#swiper2+.sw_bts .swiper-pagination",
+                    type: "fraction",
+                    clickable: true,
+                  }
+                });                
+              </script>
+            </div>
+          </div>
+        </div>
+        <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>   
+      </div>
+    </div>
+  </section>
+
+
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+
+
+  <!-- footer -->
+  <div class="footer">
+    <div class="inner">
+      <div class="top_info float_box">
+        <div class="left_cont">
+          <a href="#none" class="bar">이용약관</a>
+          <a href="#none" class="point">개인정보처리방침</a>
+        </div>
+        <div class="right_cont pc">
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">소속기관 누리집 바로가기</span>
+            <div class="option">
+
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>지방자치인재개발원</li>
+                  <li>국가기록원</li>
+                  <li>정부청사관리본부</li>
+                  <li>이북5도</li>
+                  <li>주민등록번호변경위원회</li>
+                  <li>국가민방위재난안전교육원</li>
+                  <li>대통령기록관</li>
+                  <li>국립과학수사연구원</li>
+                  <li>국가정보자원관리원</li>
+                  <li>국립재난안전연구원</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">신하기관 누리집 바로가기</span>
+            <div class="option">
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>한국지능정보사회진흥원</li>
+                  <li>민주화운동기념사업회</li>
+                  <li>일제강제동원피해자지원재단</li>
+                  <li>한국지방행정연구원</li>
+                  <li>대한지방행정공제회</li>
+                  <li>한국지방재정공제회</li>
+                  <li>한국지역정보개발원</li>
+                  <li>지방공기업평가원</li>
+                  <li>한국승강기안전공단</li>
+                  <li>한국섬진흥원</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info_box">
+        <address>
+          <span class="bar">본관 : (30112) 세종특별자치시 도움6로 42(어진동)</span>
+          <span>별관 : (30116) 세존특별자치시 가름로 143(어진동)</span>
+        </address>
+        <div class="info_num_box pc">
+          <p>
+            <span class="tit bar">정부민원안내콜센터</span>
+            <strong class="txt">국번없이 110</strong>
+            <span class="s_txt">(무료)</span>
+          </p>
+          <p>
+            <span class="tit bar">행정안전부 콜센터</span>
+            <strong class="txt">02-2100-3399</strong>
+            <span class="s_txt bar">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+            <span class="tit">팩스</span>
+            <strong class="txt">044-204-8911</strong>
+          </p>
+          <p>
+          </p>
+          <p>
+            <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+          </p>
+        </div>
+        <div class="info_num_box mo">
+          <p>
+            <span class="tit bar">정부민원안내콜센터</span>
+            <strong class="txt">국번없이 110</strong>
+            <span class="s_txt">(무료)</span>
+          </p>
+          <p>
+            <span class="tit bar">행정안전부 콜센터</span>
+            <strong class="txt">02-2100-3399</strong>
+          </p>
+          <p style="margin-top:8px;">
+            <span class="s_txt">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+          </p>
+          <p>
+            <span class="tit">팩스</span>
+            <strong class="txt">044-204-8911</strong>
+          </p>
+          <p>
+            <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+          </p>
+        </div>
+        <div class="select_cont mo">
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">소속기관 누리집 바로가기</span>
+            <div class="option">
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>지방자치인재개발원</li>
+                  <li>국가기록원</li>
+                  <li>정부청사관리본부</li>
+                  <li>이북5도</li>
+                  <li>주민등록번호변경위원회</li>
+                  <li>국가민방위재난안전교육원</li>
+                  <li>대통령기록관</li>
+                  <li>국립과학수사연구원</li>
+                  <li>국가정보자원관리원</li>
+                  <li>국립재난안전연구원</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">신하기관 누리집 바로가기</span>
+            <div class="option">
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>한국지능정보사회진흥원</li>
+                  <li>민주화운동기념사업회</li>
+                  <li>일제강제동원피해자지원재단</li>
+                  <li>한국지방행정연구원</li>
+                  <li>대한지방행정공제회</li>
+                  <li>한국지방재정공제회</li>
+                  <li>한국지역정보개발원</li>
+                  <li>지방공기업평가원</li>
+                  <li>한국승강기안전공단</li>
+                  <li>한국섬진흥원</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="copy">ⓒ Ministry of the Interior and Safety. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="footer mo foot_btn_wrap">
+    <div class="foot_btn_area">
+      <a href="#none" class="btn ico_check_01"><span>변경된<br>사무 확인</span></a>
+      <a href="#none" class="btn ico_check_04"><span>선택<br>승인요청</span></a>
+      <a href="#none" class="btn ico_check_05"><span>선택승인</span></a>
+    </div>
+  </div> -->
+
+  <!-- btn_top -->
+  <button id="top" class="mo"><span class="hidden">위로 이동</span></button>
+
+  <!-- layerPopup -->
+  <!-- 하단 메인 팝업 영역 -->
+  <section class="modal_new modal_overlay mo" id="main_banner_pop"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    
+    <div class="modal_n_wrap">
+      <div class="modal-header">
+        <div class="tit">
+          <label class="input_type check check-item">
+            <input type="checkbox" name="q01">
+            <span class="txt">오늘은 그만 보기</span>
+          </label>
+        </div>
+      </div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+          <div class="swiper_wrap mo">
+            <div class="swiper mySwiper type03" id="mo_banner_swiper1">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="swiper_wrap">
+                    <div class="swiper mySwiper type01" id="mo_banner_swiper_cont1">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href="#"><img src="img/mo/banner/banner_01.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="img/mo/banner/banner_01.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="img/mo/banner/banner_01.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="img/mo/banner/banner_01.png" alt=""></a></div>
+                      </div>
+                      <div class="sw_bts">
+                        <div class="swiper-button-next"><img src="img/mo/swiper/btn_sw_right.png" alt=""></div>
+                        <div class="swiper-button-prev"><img src="img/mo/swiper/btn_sw_left.png" alt=""></div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-autoplay-button">
+                          <img src="img/mo/swiper/btn_sw_pause.png" alt="" class="pause">
+                          <img src="img/mo/swiper/btn_sw_play.png" alt="" class="play">
+                        </div>
+                      </div>
+                    </div>
+                    <script>
+                      var mo_banner_swiper_cont1 = new Swiper("#mo_banner_swiper_cont1", {
+                        slidesPerView: 1, // 한번에 보여지는 슬라이드 숫자
+                        slidesPerGroup: 1, // 한번에 이동되는 슬라이드 숫자
+                        loop: true,
+                        autoplay: {
+                          delay: 3000,
+                          disableOnInteraction: false,
+                        },
+                        navigation: {
+                          nextEl: "#mo_banner_swiper_cont1 .swiper-button-next",
+                          prevEl: "#mo_banner_swiper_cont1 .swiper-button-prev",
+                        },
+                        pagination: {
+                          el: "#mo_banner_swiper_cont1 .swiper-pagination",
+                          type: "fraction",
+                          clickable: true,
+                        }
+                      });
+                      // mo_banner_swiper_cont1의 일시정지 및 재생 제어
+                      $("#mo_banner_swiper_cont1 .swiper-autoplay-button .pause").on("click", function() {
+                        mo_banner_swiper_cont1.autoplay.stop();
+                        $(this).hide();
+                        $("#mo_banner_swiper_cont1 .swiper-autoplay-button .play").show();
+                      });
+                      $("#mo_banner_swiper_cont1 .swiper-autoplay-button .play").on("click", function() {
+                        mo_banner_swiper_cont1.autoplay.start();
+                        $(this).hide();
+                        $("#mo_banner_swiper_cont1 .swiper-autoplay-button .pause").show();
+                      });
+                    </script>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper_wrap">
+                    <div class="swiper mySwiper type01" id="mo_banner_swiper_cont2">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href="#"><img src="img/mo/banner/banner_01.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="img/mo/banner/banner_01.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="img/mo/banner/banner_01.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="img/mo/banner/banner_01.png" alt=""></a></div>
+                      </div>
+                      <div class="sw_bts">
+                        <div class="swiper-button-next"><img src="img/mo/swiper/btn_sw_right.png" alt=""></div>
+                        <div class="swiper-button-prev"><img src="img/mo/swiper/btn_sw_left.png" alt=""></div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-autoplay-button">
+                          <img src="img/mo/swiper/btn_sw_pause.png" alt="" class="pause">
+                          <img src="img/mo/swiper/btn_sw_play.png" alt="" class="play">
+                        </div>
+                      </div>
+                    </div>
+                    <script>
+                      var mo_banner_swiper_cont2 = new Swiper("#mo_banner_swiper_cont2", {
+                        slidesPerView: 1, // 한번에 보여지는 슬라이드 숫자
+                        slidesPerGroup: 1, // 한번에 이동되는 슬라이드 숫자
+                        loop: true,
+                        autoplay: {
+                          delay: 3000,
+                          disableOnInteraction: false,
+                        },
+                        navigation: {
+                          nextEl: "#mo_banner_swiper_cont2 .swiper-button-next",
+                          prevEl: "#mo_banner_swiper_cont2 .swiper-button-prev",
+                        },
+                        pagination: {
+                          el: "#mo_banner_swiper_cont2 .swiper-pagination",
+                          type: "fraction",
+                          clickable: true,
+                        }
+                      });
+                      // mo_banner_swiper_cont2의 일시정지 및 재생 제어
+                      $("#mo_banner_swiper_cont2 .swiper-autoplay-button .pause").on("click", function() {
+                        mo_banner_swiper_cont2.autoplay.stop();
+                        $(this).hide();
+                        $("#mo_banner_swiper_cont2 .swiper-autoplay-button .play").show();
+                      });
+                      $("#mo_banner_swiper_cont2 .swiper-autoplay-button .play").on("click", function() {
+                        mo_banner_swiper_cont2.autoplay.start();
+                        $(this).hide();
+                        $("#mo_banner_swiper_cont2 .swiper-autoplay-button .pause").show();
+                      });
+                    </script>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper_wrap">
+                    <div class="swiper mySwiper type01" id="mo_banner_swiper_cont3">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href="#"><img src="img/mo/banner/banner_01.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="img/mo/banner/banner_01.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="img/mo/banner/banner_01.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="img/mo/banner/banner_01.png" alt=""></a></div>
+                      </div>
+                      <div class="sw_bts">
+                        <div class="swiper-button-next"><img src="img/mo/swiper/btn_sw_right.png" alt=""></div>
+                        <div class="swiper-button-prev"><img src="img/mo/swiper/btn_sw_left.png" alt=""></div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-autoplay-button">
+                          <img src="img/mo/swiper/btn_sw_pause.png" alt="" class="pause">
+                          <img src="img/mo/swiper/btn_sw_play.png" alt="" class="play">
+                        </div>
+                      </div>
+                    </div>
+                    <script>
+                      var mo_banner_swiper_cont3 = new Swiper("#mo_banner_swiper_cont3", {
+                        slidesPerView: 1, // 한번에 보여지는 슬라이드 숫자
+                        slidesPerGroup: 1, // 한번에 이동되는 슬라이드 숫자
+                        loop: true,
+                        autoplay: {
+                          delay: 3000,
+                          disableOnInteraction: false,
+                        },
+                        navigation: {
+                          nextEl: "#mo_banner_swiper_cont3 .swiper-button-next",
+                          prevEl: "#mo_banner_swiper_cont3 .swiper-button-prev",
+                        },
+                        pagination: {
+                          el: "#mo_banner_swiper_cont3 .swiper-pagination",
+                          type: "fraction",
+                          clickable: true,
+                        }
+                      });
+                      // mo_banner_swiper_cont3의 일시정지 및 재생 제어
+                      $("#mo_banner_swiper_cont3 .swiper-autoplay-button .pause").on("click", function() {
+                        mo_banner_swiper_cont3.autoplay.stop();
+                        $(this).hide();
+                        $("#mo_banner_swiper_cont3 .swiper-autoplay-button .play").show();
+                      });
+                      $("#mo_banner_swiper_cont3 .swiper-autoplay-button .play").on("click", function() {
+                        mo_banner_swiper_cont3.autoplay.start();
+                        $(this).hide();
+                        $("#mo_banner_swiper_cont3 .swiper-autoplay-button .pause").show();
+                      });
+                    </script>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <script>
+              var mo_banner_swiper1 = new Swiper("#mo_banner_swiper1", {
+                slidesPerView: 1, // 한번에 보여지는 슬라이드 숫자
+                slidesPerGroup: 1, // 한번에 이동되는 슬라이드 숫자
+                loop: true,
+                pagination: {
+                  el: ".swiper-pagination",
+                  clickable: true,
+                },
+                // navigation: {
+                //   nextEl: ".swiper-button-next",
+                //   prevEl: ".swiper-button-prev",
+                // }
+              });
+            </script>
+          </div>
+          <!--  -->
+        </div>
+      </div>
+      <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>
+    </div>
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- <div class="modal_n_wrap">
+      <div class="modal_n_body">
+        <div class="pop_cont">
+          테스트
+        </div>
+        <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>
+      </div>
+    </div> -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+  </section>
+  <!-- //하단 메인 팝업 영역 -->
+</div>
+</body>
+</html>
+
+
+
+
+

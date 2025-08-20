@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지방이양자동화 시스템 구축 프로젝트</title>
+  <link rel="stylesheet" href="css/common.css">
+  <!-- mCustomScrollbar css -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+  <!-- REQUIRED SCRIPTS -->
+  <script src="js/jquery-3.2.1.js"></script>
+  <!-- mCustomScrollbar JS -->
+  <script src="js/jquery.mCustomScrollbar.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <!-- common.js -->
+  <script src="js/common.js"></script>
+  <script src="js/common_02.js"></script>
+</head>
+<body>
+<div class="wrap sample">
+  <!-- searchlayer 모바일 상세검색 -->
+  <div class="searchlayer mo">
+    <div class="search_cont">
+      <span class="search_box">
+        <span class="input_cont">
+          <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+          <button class="btn_search"><span class="hidden">검색</span></button>
+        </span>
+        <button class="btn_layer_close" onclick="searchClose();"><span class="hidden">닫기</span></button>
+      </span>
+    </div>
+    <div class="content_wrap">
+      <!-- select_box -->
+      <div class="select_box full">
+        <span class="select">기관별</span>
+        <div class="option">
+          <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <ul>
+              <li>선택함1</li>
+              <li>선택함2</li>
+              <li>선택함3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- select_box -->
+      <div class="select_box full">
+        <span class="select">분야별</span>
+        <div class="option">
+          <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <ul>
+              <li>선택함1</li>
+              <li>선택함2</li>
+              <li>선택함3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- select_box -->
+      <div class="select_box full">
+        <span class="select">사무구분</span>
+        <div class="option">
+          <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <ul>
+              <li>선택함1</li>
+              <li>선택함2</li>
+              <li>선택함3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- select_box -->
+      <div class="select_box full">
+        <span class="select">사무유형</span>
+        <div class="option">
+          <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <ul>
+              <li>선택함1</li>
+              <li>선택함2</li>
+              <li>선택함3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- header -->
+  <div class="header">
+    <div class="inner">
+      <div class="header_cont">
+        <div class="header_top_cont">
+          <h1 class="logo"><a href="#none">지방이양사무관리시스템</a></h1>
+          <div class="right_cont mo">
+            <button class="btn_search" onclick="searchLayer(this);"><span class="hidden">검색</span></button>
+            <button class="btn_login"><span class="hidden">로그인</span></button>
+            <button class="btn_menu"><span class="hidden">메뉴</span></button>
+          </div>
+        </div>
+        <div class="top_menu_cont">
+          <ul class="menu">
+            <li><a href="#none" class="on">법령</a></li>
+            <li><a href="#none">조사</a></li>
+            <li><a href="#none">사무</a></li>
+            <li><a href="#none">이양사무</a></li>
+            <li><a href="#none">통계</a></li>
+            <li><a href="#none">대국민 포털관리</a></li>
+            <li><a href="#none">시스템 관리</a></li>
+          </ul>
+        </div>
+        <!-- 로그인/회원가입 버튼 -->
+        <div class="info_cont" style="display: none;">
+          <span class="bar"><a href="#none" class="ico_login"><span>로그인</span></a></span>
+          <span><a href="#none" class="ico_join"><span>회원가입</span></a></span>
+        </div>
+
+        <!-- 마이페이지/사용자/로그아웃 -->
+        <div class="info_cont pc">
+          <ul class="info_menu">
+            <li class="bar"><a href="#none">마이페이지</a></li>
+          </ul>
+          <span class="user"><strong>홍길동</strong>님 <span class="rank"><strong>7</strong>등급</span></span>
+          <button class="btn_log">
+            <span class="txt">로그아웃</span>
+            <span class="time">09:55</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <!-- container -->
+  <div class="container" id="content">
+    <!-- 검색영역 -->
+    <div class="sc bg_top">
+      <div class="inner">
+        <div class="location">
+          <ul>
+            <li><a href="#none">홈</a></li>
+            <li><a href="#none">시스템문의</a></li>
+          </ul>
+        </div>
+        <h2 class="title">시스템문의</h2>
+        <div class="search_cont">
+          <span class="search_box">
+            <span class="input_cont">
+              <input type="text" class="ico_search" placeholder="궁금하신 사항은 먼저 검색해 보세요 !">
+              <button class="btn_search"><span class="hidden">검색</span></button>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="content_wrap">
+        <div class="inner">
+          <div class="qna_wrap">
+            <ul class="list">
+              <li>
+                <div class="accordion">
+                  <button class="question">
+                    <strong>Q.</strong> 회원정보수정은 어떻게 하나요?
+                    <span class="ico"></span>
+                  </button>
+                  <div class="accordion-detail">
+                    <div class="txt">
+                      <span>A.</span>
+                      아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                      마이페이지 > 나의 정보 > 회원정보 수정
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="accordion">
+                  <button class="question">
+                    <strong>Q.</strong> 회원정보수정은 어떻게 하나요? 22222
+                    <span class="ico"></span>
+                  </button>
+                  <div class="accordion-detail">
+                    <div class="txt">
+                      <span>A.</span>
+                      아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                      마이페이지 > 나의 정보 > 회원정보 수정 22222
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="accordion">
+                  <button class="question">
+                    <strong>Q.</strong> 회원정보수정은 어떻게 하나요? 22222
+                    <span class="ico"></span>
+                  </button>
+                  <div class="accordion-detail">
+                    <div class="txt">
+                      <span>A.</span>
+                      아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                      마이페이지 > 나의 정보 > 회원정보 수정 22222
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="accordion">
+                  <button class="question">
+                    <strong>Q.</strong> 회원정보수정은 어떻게 하나요? 22222
+                    <span class="ico"></span>
+                  </button>
+                  <div class="accordion-detail">
+                    <div class="txt">
+                      <span>A.</span>
+                      아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                      마이페이지 > 나의 정보 > 회원정보 수정 22222
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="accordion">
+                  <button class="question">
+                    <strong>Q.</strong> 회원정보수정은 어떻게 하나요? 22222
+                    <span class="ico"></span>
+                  </button>
+                  <div class="accordion-detail">
+                    <div class="txt">
+                      <span>A.</span>
+                      아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                      마이페이지 > 나의 정보 > 회원정보 수정 22222
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="accordion">
+                  <button class="question">
+                    <strong>Q.</strong> 회원정보수정은 어떻게 하나요? 22222
+                    <span class="ico"></span>
+                  </button>
+                  <div class="accordion-detail">
+                    <div class="txt">
+                      <span>A.</span>
+                      아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                      마이페이지 > 나의 정보 > 회원정보 수정 22222
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="accordion">
+                  <button class="question">
+                    <strong>Q.</strong> 회원정보수정은 어떻게 하나요? 22222
+                    <span class="ico"></span>
+                  </button>
+                  <div class="accordion-detail">
+                    <div class="txt">
+                      <span>A.</span>
+                      아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                      마이페이지 > 나의 정보 > 회원정보 수정 22222
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="accordion">
+                  <button class="question">
+                    <strong>Q.</strong> 회원정보수정은 어떻게 하나요? 22222
+                    <span class="ico"></span>
+                  </button>
+                  <div class="accordion-detail">
+                    <div class="txt">
+                      <span>A.</span>
+                      아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                      마이페이지 > 나의 정보 > 회원정보 수정 22222
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="accordion">
+                  <button class="question">
+                    <strong>Q.</strong> 회원정보수정은 어떻게 하나요? 22222
+                    <span class="ico"></span>
+                  </button>
+                  <div class="accordion-detail">
+                    <div class="txt">
+                      <span>A.</span>
+                      아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                      마이페이지 > 나의 정보 > 회원정보 수정 22222
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="accordion">
+                  <button class="question">
+                    <strong>Q.</strong> 회원정보수정은 어떻게 하나요? 22222
+                    <span class="ico"></span>
+                  </button>
+                  <div class="accordion-detail">
+                    <div class="txt">
+                      <span>A.</span>
+                      아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                      마이페이지 > 나의 정보 > 회원정보 수정 22222
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- paging -->
+          <div class="paging">
+            <a href="#none" class="first"></a>
+            <a href="#none" class="prev"></a>
+            <ol>
+              <li><a href="#none" class="on">1</a></li>
+              <li><a href="#none">2</a></li>
+              <li><a href="#none">3</a></li>
+              <li><a href="#none">4</a></li>
+              <li><a href="#none">5</a></li>
+            </ol>
+            <a href="#none" class="next"></a>
+            <a href="#none" class="last"></a>
+          </div>
+          <div class="pc">
+            <div class="btn_area qna_type">
+              <span class="txt">답변에 만족하셨나요? 원하시는 해답을 얻지 못하셨다면 관리자에게 문의하세요 !</span>
+              <button class="btn btn_inquiry"><span>문의하기</span></button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <div class="inner">
+      <div class="top_info float_box">
+        <div class="left_cont">
+          <a href="#none" class="bar">이용약관</a>
+          <a href="#none" class="point">개인정보처리방침</a>
+        </div>
+        <div class="right_cont pc">
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">소속기관 누리집 바로가기</span>
+            <div class="option">
+
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>선택함1</li>
+                  <li>선택함2</li>
+                  <li>선택함3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">신하기관 누리집 바로가기</span>
+            <div class="option">
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>선택함1</li>
+                  <li>선택함2</li>
+                  <li>선택함3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info_box">
+        <address>
+          <span class="bar">본관 : (30112) 세종특별자치시 도움6로 42(어진동)</span>
+          <span>별관 : (30116) 세존특별자치시 가름로 143(어진동)</span>
+        </address>
+        <div class="info_num_box pc">
+          <p>
+            <span class="tit bar">정부민원안내콜센터</span>
+            <strong class="txt">국번없이 110</strong>
+            <span class="s_txt">(무료)</span>
+          </p>
+          <p>
+            <span class="tit bar">행정안전부 콜센터</span>
+            <strong class="txt">02-2100-3399</strong>
+            <span class="s_txt bar">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+            <span class="tit">팩스</span>
+            <strong class="txt">044-204-8911</strong>
+          </p>
+          <p>
+          </p>
+          <p>
+            <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+          </p>
+        </div>
+        <div class="info_num_box mo">
+          <p>
+            <span class="tit bar">정부민원안내콜센터</span>
+            <strong class="txt">국번없이 110</strong>
+            <span class="s_txt">(무료)</span>
+          </p>
+          <p>
+            <span class="tit bar">행정안전부 콜센터</span>
+            <strong class="txt">02-2100-3399</strong>
+          </p>
+          <p style="margin-top:8px;">
+            <span class="s_txt">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+          </p>
+          <p>
+            <span class="tit">팩스</span>
+            <strong class="txt">044-204-8911</strong>
+          </p>
+          <p>
+            <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+          </p>
+        </div>
+        <div class="select_cont mo">
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">소속기관 누리집 바로가기</span>
+            <div class="option_wrap">
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                    <li>선택함3</li>
+                    <li>선택함3</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">신하기관 누리집 바로가기</span>
+            <div class="option">
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>선택함1</li>
+                  <li>선택함2</li>
+                  <li>선택함3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="copy">ⓒ Ministry of the Interior and Safety. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer mo foot_btn_wrap">
+    <div class="foot_btn_area">
+      <a href="#none" class="btn btn_inquiry"><span>문의하기</span></a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

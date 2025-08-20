@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지방이양자동화 시스템 구축 프로젝트</title>
+  <link rel="stylesheet" href="css/common.css">
+  <!-- mCustomScrollbar css -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+  <!-- REQUIRED SCRIPTS -->
+  <script src="js/jquery-3.2.1.js"></script>
+  <!-- mCustomScrollbar JS -->
+  <script src="js/jquery.mCustomScrollbar.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <!-- common.js -->
+  <script src="js/common.js"></script>
+  <script src="js/common_02.js"></script>
+</head>
+<body>
+<div class="wrap sample">
+  <!-- searchlayer 모바일 상세검색 -->
+  <div class="searchlayer mo">
+    <div class="search_cont">
+      <span class="search_box">
+        <span class="input_cont">
+          <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+          <button class="btn_search"><span class="hidden">검색</span></button>
+        </span>
+        <button class="btn_layer_close" onclick="searchClose();"><span class="hidden">닫기</span></button>
+      </span>
+    </div>
+    <div class="content_wrap">
+      <!-- select_box -->
+      <div class="select_box full">
+        <span class="select">기관별</span>
+        <div class="option">
+          <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <ul>
+              <li>선택함1</li>
+              <li>선택함2</li>
+              <li>선택함3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- select_box -->
+      <div class="select_box full">
+        <span class="select">분야별</span>
+        <div class="option">
+          <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <ul>
+              <li>선택함1</li>
+              <li>선택함2</li>
+              <li>선택함3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- select_box -->
+      <div class="select_box full">
+        <span class="select">사무구분</span>
+        <div class="option">
+          <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <ul>
+              <li>선택함1</li>
+              <li>선택함2</li>
+              <li>선택함3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- select_box -->
+      <div class="select_box full">
+        <span class="select">사무유형</span>
+        <div class="option">
+          <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+            <ul>
+              <li>선택함1</li>
+              <li>선택함2</li>
+              <li>선택함3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- header -->
+  <div class="header">
+    <div class="inner">
+      <div class="header_cont">
+        <div class="header_top_cont">
+          <h1 class="logo"><a href="#none">지방이양사무관리시스템</a></h1>
+          <div class="right_cont mo">
+            <button class="btn_search" onclick="searchLayer(this);"><span class="hidden">검색</span></button>
+            <button class="btn_login"><span class="hidden">로그인</span></button>
+            <button class="btn_menu"><span class="hidden">메뉴</span></button>
+          </div>
+        </div>
+        <div class="top_menu_cont">
+          <ul class="menu">
+            <li><a href="#none" class="on">법령</a></li>
+            <li><a href="#none">조사</a></li>
+            <li><a href="#none">사무</a></li>
+            <li><a href="#none">이양사무</a></li>
+            <li><a href="#none">통계</a></li>
+            <li><a href="#none">대국민 포털관리</a></li>
+            <li><a href="#none">시스템 관리</a></li>
+          </ul>
+        </div>
+        <!-- 로그인/회원가입 버튼 -->
+        <div class="info_cont" style="display: none;">
+          <span class="bar"><a href="#none" class="ico_login"><span>로그인</span></a></span>
+          <span><a href="#none" class="ico_join"><span>회원가입</span></a></span>
+        </div>
+
+        <!-- 마이페이지/사용자/로그아웃 -->
+        <div class="info_cont pc">
+          <ul class="info_menu">
+            <li class="bar"><a href="#none">마이페이지</a></li>
+          </ul>
+          <span class="user"><strong>홍길동</strong>님 <span class="rank"><strong>7</strong>등급</span></span>
+          <button class="btn_log">
+            <span class="txt">로그아웃</span>
+            <span class="time">09:55</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <!-- container -->
+  <div class="container" id="content">
+    <!-- 검색영역 -->
+    <div class="sc bg_top">
+      <div class="inner">
+        <div class="location">
+          <ul>
+            <li><a href="#none">홈</a></li>
+            <li><a href="#none">조사</a></li>
+          </ul>
+        </div>
+        <div class="pc">
+          <a href="#none" class="btn ico_print"><span>프린트</span></a>
+        </div>
+        <h2 class="title">자동생성 사무정보</h2>
+      </div>
+    </div>
+
+    <div class="content_wrap">
+      <div class="inner">
+        <div class="top_info_box pc">
+          <div class="left_cont">
+            <h3 class="document-title">사무정보</h3>
+          </div>
+          <div class="right_cont">            
+            <a href="#none" class="btn ico_pencil"  onclick="modalControl('o','#main_layer_pop2');return false"><span>이력확인</span></a>  
+          </div>
+        </div>
+        <div class="top_info_box mo">
+          <div class="btn_cont">            
+            <span class="float-r"><a href="#none" class="btn type03 ico_penci-bl"   onclick="modalControl('o','#main_layer_pop2');return false"><span>이력확인</span></a></span>
+          </div>
+          <div class="left_cont mt-32">
+            <h3 class="document-title">사무정보</h3>
+          </div>
+        </div>
+        <!-- pc -->
+        <div class="table_cont pc">
+          <table class="table-body-only">
+            <colgroup>
+              <col width="160" />
+              <col width="" />
+              <col width="160" />
+              <col width="" />
+            </colgroup>
+            <tbody>
+              <tr>
+                  <th scope="row">사무번호</th>
+                  <td colspan="3">
+                    <!-- 콤보박스 -->
+                    <div class="select_box" style="min-width:410px">
+                        <span class="select">1번 사무</span>
+                        <div class="option">
+                            <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
+                                <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                                <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                    <ul>
+                                        <li>사무</li>
+                                        <li>선택함2</li>
+                                        <li>선택함3</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <!-- //콤보박스 -->  
+                     <p class="notice-text">법령이 변경되어 사무가 늘어났습니다. 사무 번호를 선택해 주세요.</p>                        
+                  </td>                   
+              </tr>
+              <tr>
+                <th scope="row">사무 ID</th>
+                <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="" class="input-type1-font14" placeholder="사무 ID" disabled title="사무 ID">
+                        </span>
+                    </div>                            
+                </td>
+                <th scope="row">사무 검토 상태</th>
+                <td>
+                    <div class="form-element__wrap">                                
+                    <span class="form-element__inner input-type">
+                        <input type="text" value="승인완료" class="input-type1-font14" placeholder="사무 검토 상태" title="사무 검토 상태">
+                    </span>
+                </div>                          
+                </td>                    
+              </tr>              
+              <tr>
+                  <th scope="row">사무구분</th>
+                  <td>
+                    <!-- 콤보박스 -->
+                    <div class="select_box full" style="min-width:100%;">
+                        <span class="select">사무</span>
+                        <div class="option">
+                          <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
+                            <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                              <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                  <ul>
+                                      <li>사무</li>
+                                      <li>선택함2</li>
+                                      <li>선택함3</li>
+                                  </ul>
+                              </div>
+                          </div>
+                        </div>
+                      </div>  
+                    </div>
+                    <!-- //콤보박스 -->
+                  </td>
+                  <th scope="row">사무주체</th>
+                  <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="농림축산식품부" class="input-type1-font14" placeholder="사무주체 " title="사무주체">
+                        </span>
+                    </div> 
+                  </td>                    
+              </tr>
+              <tr>
+                  <th scope="row">사무명</th>
+                  <td colspan="3">
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="농업진흥지역 해제" class="input-type1-font14" placeholder="농업진흥지역 해제" title="농업진흥지역 해제">
+                        </span>
+                    </div>                          
+                  </td>                 
+              </tr>
+              <tr>
+                  <th scope="row">사무유형</th>
+                  <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="국가" class="input-type1-font14" placeholder="국가" title="사무유형">
+                        </span>
+                    </div>                             
+                  </td>
+                  <th scope="row">세부사무유형</th>
+                  <td>
+                    <!-- 콤보박스 -->
+                    <div class="select_box full">
+                        <span class="select">국가작업사무</span>
+                        <div class="option">
+                          <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
+                            <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                              <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                  <ul>
+                                      <li>국가작업사무</li>
+                                      <li>선택함2</li>
+                                      <li>선택함3</li>
+                                  </ul>
+                              </div>
+                          </div>
+                        </div>
+                      </div>  
+                    </div>
+                    <!-- //콤보박스 -->                         
+                  </td>                    
+              </tr>
+              <tr>
+                  <th scope="row">위임사무 여부</th>
+                  <td>
+                      <div class="radio-box">
+                          <label id="r01">
+                              <input type="radio" name="type1" value="type010" id="r01">
+                              <span>O</span>
+                          </label>
+                          <label id="r02">
+                              <input type="radio" name="type1" value="type011" id="r02" checked="">
+                              <span>x</span>
+                          </label>
+                      </div>                            
+                  </td>
+                  <th scope="row">위임 근거규정</th>
+                  <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="-" class="input-type1-font14" placeholder="위임 근거규정" title="위임 근거규정">
+                        </span>
+                    </div>                           
+                  </td>                    
+              </tr>
+              <tr>
+                  <th scope="row">재위임사무 여부</th>
+                  <td>
+                      <div class="radio-box">
+                          <label id="r03">
+                              <input type="radio" name="type2" value="type020" id="r03">
+                              <span>O</span>
+                          </label>
+                          <label id="r04">
+                              <input type="radio" name="type2" value="type021" id="r04">
+                              <span>x</span>
+                          </label>
+                      </div>                               
+                  </td>
+                  <th scope="row">재위임 근거규정</th>
+                  <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="-" class="input-type1-font14" placeholder="재위임 근거규정" title="재위임 근거규정">
+                        </span>
+                    </div>                                    
+                  </td>                    
+              </tr>
+              <tr>
+                  <th scope="row">위탁사무 여부</th>
+                  <td>
+                    <div class="radio-box">
+                      <label id="r05">
+                          <input type="radio" name="type3" value="type030" id="r05">
+                          <span>O</span>
+                      </label>
+                      <label id="r06">
+                          <input type="radio" name="type3" value="type031" id="r06">
+                          <span>x</span>
+                      </label>
+                  </div>                          
+                  </td>
+                  <th scope="row">위탁 근거규정</th>
+                  <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="-" class="input-type1-font14" placeholder="위탁 근거규정" title="위탁 근거규정">
+                        </span>
+                    </div>                            
+                  </td>                    
+              </tr>
+              <tr>
+                  <th scope="row">수행기관</th>
+                  <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="-" class="input-type1-font14" placeholder="수행기관" title="수행기관">
+                        </span>
+                    </div>                              
+                  </td>
+                  <th scope="row">특행기관</th>
+                  <td>
+                    <!-- 콤보박스 -->
+                    <div class="select_box full">
+                        <span class="select">특행</span>
+                        <div class="option">
+                          <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
+                            <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                              <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                  <ul>
+                                      <li>특행</li>
+                                      <li>선택함2</li>
+                                      <li>선택함3</li>
+                                  </ul>
+                              </div>
+                          </div>
+                        </div>
+                      </div>  
+                    </div>
+                    <!-- //콤보박스 -->                         
+                  </td>                    
+              </tr>
+              <tr>
+                  <th scope="row">재수임기관</th>
+                  <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="-" class="input-type1-font14" placeholder="재수임기관" title="재수임기관 ">
+                        </span>
+                        <span class="error-msg">
+                          이전값 ‘전주시’
+                        </span>
+                    </div>                            
+                  </td>
+                  <th scope="row">수탁기관</th>
+                  <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="-" class="input-type1-font14" placeholder="수탁기관" title="수탁기관 ">
+                        </span>
+                    </div>                            
+                  </td>                    
+              </tr>
+              <tr>
+                  <th scope="row">비고</th>
+                  <td colspan="3">
+                    <textarea name="" id="" value="근거규정 참조하여 작성함"></textarea>
+                  </td>               
+              </tr>                                                                                                                                                               
+            </tbody>
+          </table>
+        </div>
+        <div class="table_cont pc">
+            <table class="table-body-only confirm-table">
+                <colgroup>
+                  <col width="160" />
+                  <col width="90" />
+                  <col width="" />
+                  <col width="90" />
+                  <col width="" />
+                  <col width="90" />
+                  <col width="" />
+                  <col width="100" />
+                </colgroup>
+                <tbody>             
+                    <tr>
+                        <th class="title-cell">승인요청자</th>
+                        <th>소속</th>
+                        <td>
+                          <div class="form-element__wrap">                                
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="소속" class="input-type1-font14" placeholder="소속" title="소속 ">
+                              </span>
+                          </div>                             
+                        </td>
+                        <th>이름</th>
+                        <td>
+                          <div class="form-element__wrap">                                
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="이름" class="input-type1-font14" placeholder="이름" title="이름 ">
+                              </span>
+                          </div>                            
+                        </td>
+                        <th>요청날짜</th>
+                        <td>
+                          <div class="form-element__wrap">                                
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="2024.07.15" class="input-type1-font14" placeholder="요청날짜" title="요청날짜 ">
+                              </span>
+                          </div>                           
+                        </td>
+                        <td>
+                          <button type="button" class="btn-gra-sm">정보 보기</button>
+                        </td>
+                    </tr>      
+                    <tr>
+                        <th class="title-cell">승인자</th>
+                        <th>소속</th>
+                        <td>
+                          <div class="form-element__wrap">                                
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="소속" class="input-type1-font14" placeholder="소속" title="소속 ">
+                              </span>
+                          </div>                             
+                        </td>
+                        <th>이름</th>
+                        <td>
+                          <div class="form-element__wrap">                                
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="이름" class="input-type1-font14" placeholder="이름"  title="이름 ">
+                              </span>
+                          </div>                            
+                        </td>
+                        <th>승인날짜</th>
+                        <td>
+                          <div class="form-element__wrap">                                
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="2024.07.15" class="input-type1-font14" placeholder="승인날짜"  title="승인날짜 ">
+                              </span>
+                          </div>                           
+                        </td>
+                        <td>
+                          <button type="button" class="btn-gra-sm">정보 보기</button>
+                        </td>
+                    </tr>                    
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="top_info_box pc mt-64">
+          <div class="left_cont">
+            <h3 class="document-title">근거법령 정보</h3>
+          </div>
+        </div>
+        <div class="table_cont pc">
+          <table class="table-body-only">
+            <colgroup>
+              <col width="160" />
+              <col width="350" />
+              <col width="160" />
+              <col width="" />
+            </colgroup>
+            <tbody>
+                <tr>
+                  <th scope="row">법령명</th>
+                  <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="농지법" class="input-type1-font14" placeholder="법령명" disabled title="법령명">
+                        </span>
+                    </div>                            
+                  </td>
+                  <th scope="row">법 분야</th>
+                  <td>
+                    <div class="form-element__wrap multiline">                                
+                      <span class="form-element__inner input-type">
+                        <input type="text" value="" class="input-type1-font14" placeholder="편 - 장 - 절 - 편" title="법 분야1">
+                      </span>
+                    </div>                          
+                  </td>                    
+                </tr>
+                <tr>
+                  <th scope="row">소관부처</th>
+                  <td colspan="3">
+                    <!-- 콤보박스 -->
+                    <div class="select_box" style="min-width:320px;">
+                      <span class="select">소관부처</span>
+                      <div class="option">
+                        <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
+                          <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                            <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                <ul>
+                                    <li>사무</li>
+                                    <li>선택함2</li>
+                                    <li>선택함3</li>
+                                </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>  
+                    </div>
+                    <!-- //콤보박스 -->
+                  </td>
+                </tr>
+                <tr>
+                    <th scope="row" colspan="4">법령분류</th>              
+                </tr>
+                <tr>
+                  <td colspan="4" class="inner-table">
+                    <div class="inner-table-cont">
+                      <table>
+                          <colgroup>
+                              <col width="20%" />
+                              <col width="20%" />
+                              <col width="20%" />
+                              <col width="20%" />                               
+                              <col width="20%" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                                <td class="tit">대분류</td>
+                                <td class="tit">중분류</td>
+                                <td class="tit">소분류</td>
+                                <td class="tit">세분류</td>
+                                <td rowspan="2" class="no-line">호</td>
+                            </tr>
+                              <tr>
+                                  <td>4장 농지의보존등</td>
+                                  <td>1절 농업진흥지역의 지정</td>
+                                  <td>31조 농업진흥지역변경</td>
+                                  <td>행</td>                                      
+                              </tr>
+                          </tbody>
+                      </table>
+                    </div>
+                    <div class="button__wrap flex-end mt-16">
+                      <button type="button" class="btn-gra-sm" onclick="modalControl('o','#main_layer_pop');return false">개정이력보기</button>
+                    </div>
+                    <div class="inner-table-cont mt-16">
+                      <table>
+                          <colgroup>
+                              <col width="20%" />
+                              <col width="" />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                                <td class="tit">조문제목</td>
+                                <td class="tit text-l" colspan="2">농업진흥지역등의 변경 및 해제</td>
+                            </tr>
+                              <tr>
+                                  <td>조문내용</td>
+                                  <td class="text-l">
+                                    ① 시ㆍ도지사는 대통령령으로 정하는 사유가 있으면 농업진흥지역 또는 용도구역을 변경하거나 해제할 수 있다. 다만, 그 사유가 없어진 경우에는 원래의 농업진흥지역 또는 용도구역으로 환원하여야 한다.<개정 2018. 12. 24.>
+                                  </td>                                 
+                              </tr>
+                          </tbody>
+                      </table>
+                    </div>                        
+
+                  </td>              
+              </tr>                    
+            </tbody>
+          </table>
+        </div>
+
+        <!-- mo -->
+        <div class="table_cont mo">
+          <table class="table-body-only no-line-type">
+            <colgroup>
+              <col width="30%" />
+              <col width="" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">사무번호</th>
+                <td colspan="3">
+                    <!-- 콤보박스 -->
+                    <div class="select_box" style="min-width:100%">
+                        <span class="select">1번 사무</span>
+                        <div class="option">
+                            <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
+                                <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                                <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                    <ul>
+                                        <li>사무</li>
+                                        <li>선택함2</li>
+                                        <li>선택함3</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            </div>
+                        </div>  
+                    </div>
+                    <!-- //콤보박스 -->  
+                    <p class="notice-text">법령이 변경되어 사무가 늘어났습니다. 사무 번호를 선택해 주세요.</p>                        
+                  </td>                   
+              </tr>              
+              <tr>
+                  <th scope="row">사무 ID</th>
+                  <td>
+                      <div class="form-element__wrap">                                
+                          <span class="form-element__inner input-type">
+                              <input type="text" value="" class="input-type1-font14" placeholder="사무 ID" disabled title="사무 ID">
+                          </span>
+                      </div>                            
+                  </td>                
+              </tr>
+              <tr>
+                  <th scope="row">사무구분</th>
+                  <td>
+                    <!-- 콤보박스 -->
+                    <div class="select_box full">
+                        <span class="select">사무</span>
+                        <div class="option">
+                          <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
+                            <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                              <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                  <ul>
+                                      <li>사무</li>
+                                      <li>선택함2</li>
+                                      <li>선택함3</li>
+                                      <li>선택함3</li>
+                                      <li>선택함3</li>
+                                      <li>선택함3</li>
+                                      <li>선택함3</li>
+                                      <li>선택함3</li>
+                                      <li>선택함3</li>
+                                  </ul>
+                              </div>
+                          </div>
+                        </div>
+                      </div>  
+                    </div>
+                    <!-- //콤보박스 -->
+                  </td>                 
+              </tr>
+              <tr>
+                <th scope="row">사무 검토 상태</th>
+                <td>
+                    <div class="form-element__wrap">                                
+                      <span class="form-element__inner input-type">
+                          <input type="text" value="승인완료" class="input-type1-font14" placeholder="사무 검토 상태" title="사무 검토 상태">
+                      </span>
+                  </div>                          
+                </td>    
+              </tr>
+              <tr> 
+                <th scope="row">사무주체</th>
+                <td>
+                  <div class="form-element__wrap">                                
+                      <span class="form-element__inner input-type">
+                          <input type="text" value="농림축산식품부" class="input-type1-font14" placeholder="사무주체 " title="사무주체">
+                      </span>
+                  </div> 
+                </td>   
+              </tr>
+              <tr>
+                  <th scope="row">사무명</th>
+                  <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="농업진흥지역 해제" class="input-type1-font14" placeholder="농업진흥지역 해제" title="농업진흥지역 해제">
+                        </span>
+                    </div>                          
+                  </td>                 
+              </tr>
+              <tr>
+                  <th scope="row">사무유형</th>
+                  <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="국가" class="input-type1-font14" placeholder="국가" title="사무유형">
+                        </span>
+                    </div>                             
+                  </td>                  
+              </tr>
+              <tr>
+                <th scope="row">세부<br>사무유형</th>
+                <td>
+                  <!-- 콤보박스 -->
+                  <div class="select_box full">
+                      <span class="select">국가작업사무</span>
+                      <div class="option">
+                        <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
+                          <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                            <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                <ul>
+                                    <li>국가작업사무</li>
+                                    <li>선택함2</li>
+                                    <li>선택함3</li>
+                                </ul>
+                            </div>
+                        </div>
+                      </div>
+                    </div>  
+                  </div>
+                  <!-- //콤보박스 -->                         
+                </td>  
+              </tr>
+              <tr>
+                  <th scope="row">위임사무 여부</th>
+                  <td>
+                      <div class="radio-box">
+                          <label id="r01">
+                              <input type="radio" name="type1" value="type010" id="r01">
+                              <span>O</span>
+                          </label>
+                          <label id="r02">
+                              <input type="radio" name="type1" value="type011" id="r02" checked="">
+                              <span>x</span>
+                          </label>
+                      </div>                            
+                  </td>                 
+              </tr>
+              <tr>
+                  <th scope="row">위탁사무 여부</th>
+                  <td>
+                    <div class="radio-box">
+                      <label id="r05">
+                          <input type="radio" name="type3" value="type030" id="r05">
+                          <span>O</span>
+                      </label>
+                      <label id="r06">
+                          <input type="radio" name="type3" value="type031" id="r06">
+                          <span>x</span>
+                      </label>
+                  </div>                          
+                  </td>                 
+              </tr>              
+              <tr>
+                  <th scope="row">재위임 사무 여부</th>
+                  <td>
+                      <div class="radio-box">
+                          <label id="r03">
+                              <input type="radio" name="type2" value="type020" id="r03">
+                              <span>O</span>
+                          </label>
+                          <label id="r04">
+                              <input type="radio" name="type2" value="type021" id="r04">
+                              <span>x</span>
+                          </label>
+                      </div>                               
+                  </td>                 
+              </tr>
+              <tr>
+                <th scope="row">위임 근거규정</th>
+                <td>
+                  <div class="form-element__wrap">                                
+                      <span class="form-element__inner input-type">
+                          <input type="text" value="-" class="input-type1-font14" placeholder="위임 근거규정" title="위임 근거규정">
+                      </span>
+                  </div>                           
+                </td>   
+              </tr>
+              <tr>
+                <th scope="row">재위임 근거규정</th>
+                <td>
+                  <div class="form-element__wrap">                                
+                      <span class="form-element__inner input-type">
+                          <input type="text" value="-" class="input-type1-font14" placeholder="재위임 근거규정" title="재위임 근거규정">
+                      </span>
+                  </div>                                    
+                </td>   
+              </tr>
+              <tr>                
+                <th scope="row">위탁 근거규정</th>
+                <td>
+                  <div class="form-element__wrap">                                
+                      <span class="form-element__inner input-type">
+                          <input type="text" value="-" class="input-type1-font14" placeholder="위탁 근거규정" title="위탁 근거규정">
+                      </span>
+                  </div>                            
+                </td>   
+              </tr>
+              <tr>
+                  <th scope="row">수행기관</th>
+                  <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="-" class="input-type1-font14" placeholder="수행기관" title="수행기관">
+                        </span>
+                    </div>                              
+                  </td>                 
+              </tr>
+              <tr>
+                <th scope="row">특행기관</th>
+                <td>
+                  <!-- 콤보박스 -->
+                  <div class="select_box full">
+                      <span class="select">특행</span>
+                      <div class="option">
+                        <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
+                          <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                            <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                <ul>
+                                    <li>특행</li>
+                                    <li>선택함2</li>
+                                    <li>선택함3</li>
+                                </ul>
+                            </div>
+                        </div>
+                      </div>
+                    </div>  
+                  </div>
+                  <!-- //콤보박스 -->                         
+                </td>   
+              </tr>
+              <tr>
+                  <th scope="row">재수임기관</th>
+                  <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="-" class="input-type1-font14" placeholder="재수임기관" title="재수임기관 ">
+                        </span>
+                    </div>                            
+                  </td>                 
+              </tr>
+              <tr>
+                <th scope="row">수탁기관</th>
+                <td>
+                  <div class="form-element__wrap">                                
+                      <span class="form-element__inner input-type">
+                          <input type="text" value="-" class="input-type1-font14" placeholder="수탁기관" title="수탁기관 ">
+                      </span>
+                  </div>                            
+                </td>
+              </tr>
+              <tr>
+                  <th scope="row">비고</th>
+                  <td>
+                    <textarea name="" id="" value="근거규정 참조하여 작성함"></textarea>
+                  </td>               
+              </tr>                                                                                                                                                               
+            </tbody>
+          </table>
+        </div>
+        <div class="table_cont mo">
+            <table class="table-body-only confirm-table">
+                <colgroup>                  
+                    <col width="110" />
+                    <col width="" />
+                </colgroup>
+                <tbody>             
+                    <tr>
+                        <th class="title-cell" colspan="2">승인요청자</th>
+                    </tr>
+                    <tr>
+                        <th>소속</th>
+                        <td>
+                          <div class="form-element__wrap">                                
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="소속" class="input-type1-font14" placeholder="소속" title="소속 ">
+                              </span>
+                          </div>                             
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>이름</th>
+                        <td>
+                          <div class="form-element__wrap">                                
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="이름" class="input-type1-font14" placeholder="이름" title="이름 ">
+                              </span>
+                          </div>                            
+                        </td>
+                      </tr>  
+                      <tr>
+                        <th class="last">요청날짜</th>
+                        <td class="last">
+                          <div class="form-element__wrap">                                
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="2024.07.15" class="input-type1-font14" placeholder="요청날짜" title="요청날짜 ">
+                              </span>
+                          </div>                           
+                        </td>                                                
+                    </tr>      
+                    <tr>
+                        <th class="title-cell" colspan="2">승인자</th>
+                    </tr>   
+                    <tr>
+                        <th>소속</th>
+                        <td>
+                          <div class="form-element__wrap">                                
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="소속" class="input-type1-font14" placeholder="소속" title="소속 ">
+                              </span>
+                          </div>                             
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>이름</th>
+                        <td>
+                          <div class="form-element__wrap">                                
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="이름" class="input-type1-font14" placeholder="이름"  title="이름 ">
+                              </span>
+                          </div>                            
+                        </td>
+                      </tr>
+                      <tr>  
+                        <th class="last">승인날짜</th>
+                        <td class="last">
+                          <div class="form-element__wrap">                                
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="2024.07.15" class="input-type1-font14" placeholder="승인날짜"  title="승인날짜 ">
+                              </span>
+                          </div>                           
+                        </td>                                                
+                    </tr>                    
+                </tbody>
+            </table>
+        </div>
+
+        <div class="top_info_box mo mt-64">
+          <div class="left_cont">
+            <h3 class="document-title">근거법령 정보</h3>
+          </div>
+        </div>
+        <div class="table_cont mo">
+          <table class="table-body-only  no-line-type">
+            <colgroup>
+              <col width="30%" />
+              <col width="" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">법령명</th>
+                <td>
+                    <div class="form-element__wrap">                                
+                        <span class="form-element__inner input-type">
+                            <input type="text" value="농지법" class="input-type1-font14" placeholder="법령명" disabled title="법령명">
+                        </span>
+                    </div>                            
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">법 분야</th>
+                <td>
+                    <div class="form-element__wrap multiline">                                
+                      <span class="form-element__inner input-type">
+                        <input type="text" value="" class="input-type1-font14" placeholder="편 - 장 - 절 - 편" title="법 분야1">
+                      </span>
+                    </div>                          
+                </td> 
+              </tr>
+              <tr>
+                <th scope="row">소관부처</th>
+                <td>
+                  <!-- 콤보박스 -->
+                  <div class="select_box full">
+                      <span class="select">소관부처</span>
+                      <div class="option">
+                        <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
+                          <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                            <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                <ul>
+                                    <li>사무</li>
+                                    <li>선택함2</li>
+                                    <li>선택함3</li>
+                                </ul>
+                            </div>
+                        </div>
+                      </div>
+                    </div>  
+                  </div>
+                  <!-- //콤보박스 -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="document-title-area mt-16">
+            <div class="document-title-h16">
+                법령분류
+            </div>
+            <button type="button" class="btn-gra-sm" onclick="modalControl('o','#main_layer_pop');return false">개정이력보기</button>
+        </div>
+        <div class="table_cont rount-type-sm mo mt-8">
+          <table class="table-body-only">
+            <colgroup>
+              <col width="30%" />
+              <col width="" />
+            </colgroup>
+            <tbody>
+              <tr>            
+                  <th scope="row">구분</th>
+                  <td class="notice-text">개정 2024.01.08</td>
+              </tr>       
+              <tr>            
+                  <th scope="row">법령명</th>
+                  <td>농지법</td>
+              </tr>                      
+              <tr>            
+                  <th scope="row">대분류/장</th>
+                  <td>4장 농지의보존등</td>
+              </tr>
+              <tr>
+                  <th scope="row">중분류/조</th>
+                  <td>1절 농업진흥지역의 지정</td>
+              </tr>
+              <tr>
+                  <th scope="row">소분류/항</th>
+                  <td>31조 농업진흥지역변경</td>
+              </tr>
+              <tr>
+                  <th scope="row">조문제목</th>
+                  <td>31조 농업진흥지역변경</td>
+              </tr>       
+              <tr>
+                  <th scope="row" class="color-light">조문내용</th>
+                  <td class="color-light">① 시ㆍ도지사는 대통령령으로 정하는 사유가 있으면 농업진흥지역 또는 용도구역을 변경하거나 해제할 수 있다.  다만, 그 사유가 없어진 경우에는 원래의 농업진흥지역 또는 용도구역으로 환원하여야 한다.<개정 2018. 12. 24.></td>
+              </tr>                  
+            </tbody>
+          </table>  
+        </div>
+
+
+        <div class="button__wrap justify-between pc-flex mt-64">
+            <div class="left-button">
+                <button type="button" class="btn-gray-default">
+                    <i></i> 승인취소
+                </button>
+            </div>
+            <div  class="right-button">
+                <button type="button" class="btn-gray-default">
+                    <i class="ico-remove"></i> 취소
+                </button>                  
+                <button type="button" class="btn-gray-default">
+                    <i class="ico-save"></i> 저장
+                </button>  
+                <button type="button" class="btn-primary-default">
+                    <i></i> 승인
+                </button>                                
+            </div>
+        </div>
+
+        <!-- 모달 -->
+        <section class="modal_new modal_overlay roll-type" id="main_layer_pop"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+          <div class="modal_n_wrap roll-modal">
+            <div class="modal-header">
+                <div class="tit">법령개정정보</div>
+            </div>
+            <div class="modal_n_body">
+              <div class="pop_cont">
+                  <div class="document-title-ft18">
+                      개정된 법령
+                  </div>
+                  <div class="table_cont mt-16">
+                      <table>
+                          <colgroup>
+                            <col width="40" />
+                            <col width="40" />
+                            <col width="40" />
+                            <col width="240" />
+                            <col width="80" />
+                            <col width="" />                                                        
+                          </colgroup>
+                          <thead>
+                              <tr>
+                                  <th scope="col" colspan="3">장번호</th>
+                                  <th scope="col">장제목</th>
+                                  <th scope="col">절번호</th>
+                                  <th scope="col">절제목</th>
+                              </tr>
+                              <tr>
+                                <th scope="col">조</th>
+                                <th scope="col">항</th>
+                                <th scope="col">호</th>
+                                <th scope="col">조문제목</th>                                
+                                <th scope="col" colspan="2">조문</th>                              
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td colspan="3">7</td>
+                                  <td class="text-l">개인정보 분쟁조정위원회</td>
+                                  <td></td>
+                                  <td></td>
+                              </tr>
+                              <tr>
+                                  <td>6</td>
+                                  <td>1</td>
+                                  <td>0</td>
+                                  <td>집단분쟁조정</td>
+                                  <td colspan="2">제1조(목적) 이 법은 10ㆍ27법난과 관련하여 피해를 입은 사람과 불교계의 명예를 회복시켜줌으로써 인권신장과 국민화합에 이바지함을 목적으로 한다. <개정 2022. 8. 8.></td>
+                              </tr>
+                              <tr>
+                                  <td colspan="3">재개정 구분</td>
+                                  <td colspan="3" class="text-l">일부개정</td>
+                              </tr>
+                              <tr>
+                                <td colspan="3">시행일</td>
+                                <td colspan="3" class="text-l">2023.11.12</td>
+                              </tr>                                                                                    
+                          </tbody>
+                      </table>
+                  </div>
+                  <div class="document-title-ft18 mt-32">
+                    개정이전 법령
+                  </div>   
+                  <div class="table-cont mt-16">
+                      <table>
+                          <colgroup>
+                            <col width="40" />
+                            <col width="40" />
+                            <col width="40" />
+                            <col width="240" />
+                            <col width="80" />
+                            <col width="" />                                                        
+                          </colgroup>
+                          <thead>
+                              <tr>
+                                  <th scope="col" colspan="3">장번호</th>
+                                  <th scope="col">장제목</th>
+                                  <th scope="col">절번호</th>
+                                  <th scope="col">절제목</th>
+                              </tr>
+                              <tr>
+                                <th scope="col">조</th>
+                                <th scope="col">항</th>
+                                <th scope="col">호</th>
+                                <th scope="col">조문제목</th>                                
+                                <th scope="col" colspan="2">조문</th>                              
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td colspan="3">7</td>
+                                  <td class="text-l">개인정보 분쟁조정위원회</td>
+                                  <td></td>
+                                  <td></td>
+                              </tr>
+                              <tr>
+                                  <td>6</td>
+                                  <td>1</td>
+                                  <td>0</td>
+                                  <td>집단분쟁조정</td>
+                                  <td colspan="2">제1조(목적) 이 법은 10ㆍ27법난과 관련하여 피해를 입은 사람과 불교계의 명예를 회복시켜줌으로써 인권신장과 국민화합에 이바지함을 목적으로 한다. <개정 2022. 8. 8.></td>
+                              </tr>
+                              <tr>
+                                  <td colspan="3">재개정 구분</td>
+                                  <td colspan="3" class="text-l">일부개정</td>
+                              </tr>
+                              <tr>
+                                <td colspan="3">시행일</td>
+                                <td colspan="3" class="text-l">2023.11.12</td>
+                              </tr>                                                                                    
+                          </tbody>
+                      </table>
+                  </div>  
+                  <div class="button__wrap flex-end mt-32">
+                      <button type="button" class="btn-primary-default wd-108">
+                        <i></i> 확인
+                      </button>  
+                  </div>  
+              </div>
+              
+              <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 이력보기 -->
+        <section class="modal_new modal_overlay roll-type" id="main_layer_pop1"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+          <div class="modal_n_wrap roll-modal">
+            <div class="modal-header">
+                <div class="tit">이력확인</div>
+            </div>
+            <div class="modal_n_body">
+              <div class="pop_cont">
+                  <div class="table-cont  mt-16">
+                      <table class="table-list">
+                          <colgroup>
+                            <col width="25%" />
+                            <col width="25%" />
+                            <col width="25%" />
+                            <col width="25%" />                                                     
+                          </colgroup>
+                          <thead>
+                              <tr>
+                                <th scope="col">날짜</th>
+                                <th scope="col">이력 내용</th>
+                                <th scope="col">소속</th>
+                                <th scope="col">이름</th>                                                           
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>2024.07.11</td>
+                                  <td>세부사무유형 국가직접사무로 변경</td>
+                                  <td>행정안전부 / 지원과</td>
+                                  <td>김길동</td>
+                              </tr>
+                              <tr>
+                                  <td>2024.07.11</td>
+                                  <td>세부사무유형 국가직접사무로 변경</td>
+                                  <td>행정안전부 / 지원과</td>
+                                  <td>김길동</td>
+                              </tr>   
+                              <tr>
+                                  <td>2024.07.11</td>
+                                  <td>세부사무유형 국가직접사무로 변경</td>
+                                  <td>행정안전부 / 지원과</td>
+                                  <td>김길동</td>
+                              </tr>   
+                              <tr>
+                                  <td>2024.07.11</td>
+                                  <td>세부사무유형 국가직접사무로 변경</td>
+                                  <td>행정안전부 / 지원과</td>
+                                  <td>김길동</td>
+                              </tr>                                                                                                                                                                     
+                          </tbody>
+                      </table>
+                  </div>
+                  <div class="button__wrap flex-end mt-32">
+                    <button type="button" class="btn-primary-default wd-108">
+                      <i></i> 확인
+                    </button>  
+                </div> 
+              </div>
+              
+              <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 이력작성 -->
+        <section class="modal_new modal_overlay roll-type" id="main_layer_pop2"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+          <div class="modal_n_wrap roll-modal">
+            <div class="modal-header">
+                <div class="tit">이력확인</div>
+            </div>
+            <div class="modal_n_body">
+              <div class="pop_cont">
+                  <div class="table-cont  mt-16">
+                      <table class="table-list">
+                          <colgroup>
+                            <col width="25%" />
+                            <col width="25%" />
+                            <col width="25%" />
+                            <col width="25%" />                                                     
+                          </colgroup>
+                          <thead>
+                              <tr>
+                                <th scope="col">날짜</th>
+                                <th scope="col">이력 내용</th>
+                                <th scope="col">소속</th>
+                                <th scope="col">이름</th>                                                           
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>2024.07.11</td>
+                                  <td>세부사무유형 국가직접사무로 변경</td>
+                                  <td>행정안전부 / 지원과</td>
+                                  <td>김길동</td>
+                              </tr>
+                              <tr>
+                                  <td>2024.07.11</td>
+                                  <td>세부사무유형 국가직접사무로 변경</td>
+                                  <td>행정안전부 / 지원과</td>
+                                  <td>김길동</td>
+                              </tr>   
+                              <tr>
+                                  <td>2024.07.11</td>
+                                  <td>세부사무유형 국가직접사무로 변경</td>
+                                  <td>행정안전부 / 지원과</td>
+                                  <td>김길동</td>
+                              </tr>   
+                              <tr>
+                                  <td>2024.07.11</td>
+                                  <td>세부사무유형 국가직접사무로 변경</td>
+                                  <td>행정안전부 / 지원과</td>
+                                  <td>김길동</td>
+                              </tr>                                                                                                                                                                     
+                          </tbody>
+                      </table>
+                  </div>
+                  <div class="flex-row justify-end mt-16">
+                    <a href="#none" class="btn ico_download"><span>엑셀 다운로드</span></a>
+                  </div>
+                  <div class="form-element__wrap txtarea_wrap mt-32">
+                    <div class="document-title-ft18">변경 내용</div>
+                    <span class="form-element__inner text-area mt-16">
+                        <textarea  style="height: 100%;" placeholder="입력하세요."></textarea>
+                    </span>
+                  </div>
+                  <div class="button__wrap flex-end mt-32">
+                    <button type="button" class="btn-gray-default wd-108">
+                      <i class="ico-remove"></i> 취소
+                  </button>  
+                    <button type="button" class="btn-primary-default wd-108">
+                      <i></i> 저장
+                    </button>  
+                </div> 
+              </div>
+              
+              <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <div class="inner">
+      <div class="top_info float_box">
+        <div class="left_cont">
+          <a href="#none" class="bar">이용약관</a>
+          <a href="#none" class="point">개인정보처리방침</a>
+        </div>
+        <div class="right_cont pc">
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">소속기관 누리집 바로가기</span>
+            <div class="option">
+
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>선택함1</li>
+                  <li>선택함2</li>
+                  <li>선택함3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">신하기관 누리집 바로가기</span>
+            <div class="option">
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>선택함1</li>
+                  <li>선택함2</li>
+                  <li>선택함3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info_box">
+        <address>
+          <span class="bar">본관 : (30112) 세종특별자치시 도움6로 42(어진동)</span>
+          <span>별관 : (30116) 세존특별자치시 가름로 143(어진동)</span>
+        </address>
+        <div class="info_num_box pc">
+          <p>
+            <span class="tit bar">정부민원안내콜센터</span>
+            <strong class="txt">국번없이 110</strong>
+            <span class="s_txt">(무료)</span>
+          </p>
+          <p>
+            <span class="tit bar">행정안전부 콜센터</span>
+            <strong class="txt">02-2100-3399</strong>
+            <span class="s_txt bar">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+            <span class="tit">팩스</span>
+            <strong class="txt">044-204-8911</strong>
+          </p>
+          <p>
+          </p>
+          <p>
+            <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+          </p>
+        </div>
+        <div class="info_num_box mo">
+          <p>
+            <span class="tit bar">정부민원안내콜센터</span>
+            <strong class="txt">국번없이 110</strong>
+            <span class="s_txt">(무료)</span>
+          </p>
+          <p>
+            <span class="tit bar">행정안전부 콜센터</span>
+            <strong class="txt">02-2100-3399</strong>
+          </p>
+          <p style="margin-top:8px;">
+            <span class="s_txt">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+          </p>
+          <p>
+            <span class="tit">팩스</span>
+            <strong class="txt">044-204-8911</strong>
+          </p>
+          <p>
+            <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+          </p>
+        </div>
+        <div class="select_cont mo">
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">소속기관 누리집 바로가기</span>
+            <div class="option_wrap">
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                    <li>선택함3</li>
+                    <li>선택함3</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">신하기관 누리집 바로가기</span>
+            <div class="option">
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>선택함1</li>
+                  <li>선택함2</li>
+                  <li>선택함3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="copy">ⓒ Ministry of the Interior and Safety. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer mo foot_btn_wrap">
+    <div class="foot_btn_area">
+      <!-- <a href="#none" class="btn ico_check_01"><span>변경된<br>사무 확인</span></a> -->
+      <a href="#none" class="btn btn_cancel"><span>취소</span></a>
+      <a href="#none" class="btn btn btn_save"><span>저장</span></a>
+      <a href="#none" class="btn btn_approval"><span>승인요청</span></a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+
+
+
+

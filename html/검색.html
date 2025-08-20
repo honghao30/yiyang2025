@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지방이양자동화 시스템 구축 프로젝트</title>
+  <link rel="stylesheet" href="css/common.css">
+  <!-- mCustomScrollbar css -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <!-- REQUIRED SCRIPTS -->
+  <script src="js/jquery-3.2.1.js"></script>
+  <!-- mCustomScrollbar JS -->
+  <script src="js/jquery.mCustomScrollbar.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <!-- common.js -->
+  <script src="js/common.js"></script>
+  <script src="js/common_02.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+    $(function() {
+            fn_default_datepicker();
+    });
+            
+    function fn_default_datepicker()
+    {
+        var start = $( "#datepicker_start" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+            
+        var end = $( "#datepicker_end" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+            ,defaultDate: "+1w"
+        });
+        var start = $( "#datepicker_start2" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+        var end = $( "#datepicker_end2" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+               ,defaultDate: "+1w"
+        });        
+        //초기값을 오늘 날짜로 설정
+        $('#datepicker_start').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_start2').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end2').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+    }
+     
+    function getDate( element ) {
+        var date;
+        var dateFormat = "yy-mm-dd";
+        try {
+          date = $.datepicker.parseDate( dateFormat, element.value );
+        } catch( error ) {
+          date = null;
+        }
+        return date;
+     }
+     
+</script> 
+</head>
+
+<body>
+  <div class="wrap sample">
+    <!-- searchlayer 모바일 상세검색 -->
+    <div class="searchlayer mo">
+      <div class="search_cont">
+        <span class="search_box more">
+          <span class="input_cont">
+            <input type="text" class="ico_search" placeholder="검색어 입력">
+            <button class="btn_search"><span class="hidden">검색</span></button>
+          </span>
+          <button type="button" class="btn-primary-default btn-detail" style="width:100px">상세검색</button>
+          <button class="btn_layer_close" onclick="searchClose();"><span class="hidden">닫기</span></button>
+        </span>
+      </div>
+      <!-- 상세 검색 영역 -->
+      <div class="search_cont_detail type02">
+        <div class="search-table">
+          <table class="table-body-only">
+            <colgroup>
+                <col style="width:30%">
+                <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">결과내 재검색</th>
+                <td class="text-l">                            
+                  <label class="input_type check check-item">
+                    <input type="checkbox" >
+                    <span class="txt">선택</span>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">검색 영역</th>
+                <td class="text-l">
+                  <div class="flex-row">
+                    <div class="radio-box">
+                      <label for="sc_box_input_01_01">
+                        <input type="radio" name="sc_box_01" value="sc_box_input_01_01" id="sc_box_input_01_01" checked>
+                        <span>전체</span>
+                      </label>
+                      <label for="sc_box_input_01_02">
+                        <input type="radio" name="sc_box_01" value="sc_box_input_01_02" id="sc_box_input_01_02">
+                        <span>제목</span>
+                      </label>
+                      <label for="sc_box_input_01_03">
+                        <input type="radio" name="sc_box_01" value="sc_box_input_01_03" id="sc_box_input_01_03">
+                        <span>내용</span>
+                      </label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">등록일자<br>(변경일자)</th>
+                <td class="text-l">
+                  <div class="flex-row">
+                    <div class="radio-box">
+                        <label for="sc_box_input_02_01">
+                          <input type="radio" name="sc_box_02" value="sc_box_input_02_01" id="sc_box_input_02_01" checked>
+                          <span>전체</span>
+                        </label>
+                        <label for="sc_box_input_02_02">
+                          <input type="radio" name="sc_box_02" value="sc_box_input_02_02" id="sc_box_input_02_02">
+                          <span>1주일</span>
+                        </label>
+                        <label for="sc_box_input_02_03">
+                          <input type="radio" name="sc_box_02" value="sc_box_input_02_03" id="sc_box_input_02_03">
+                          <span>1개월</span>
+                        </label>
+                    </div>
+                  </div>
+                  <div class="view_line"></div>
+                  <div class="form-element-rows">
+                    <div class="form-element__wrap">
+                      <div class="input-multi">
+                        <span class="form-element__inner input-type picker-input">
+                          <input type="text" value="" class="input-type1-font14" placeholder="" id="datepicker_start2" title="">
+                        </span>
+                      </div>
+                    </div>           
+                    <div class="dash">~</div>
+                  </div>
+                  <div class="form-element__wrap" style="width:calc(100% - 20px)">
+                    <div class="input-multi">
+                      <span class="form-element__inner input-type picker-input">
+                        <input type="text" value="" class="input-type1-font14"  placeholder=""  id="datepicker_end2"  title="">
+                      </span>
+                    </div>
+                  </div>
+                  <p class="s_txt mt10">※ 법령은 시행일 기준으로 검색됩니다.</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="btn_area">
+          <button class="btn_reset_icon"><span>초기화</span></button>
+          <button class="btn_search_icon"><span>검색</span></button>
+        </div>
+      </div>
+      <!-- //상세 검색 영역 -->
+      
+      <!-- 검색 결과 영역 content_wrap -->
+      <div class="content_wrap">
+        <div class="search_total">
+          <p class="txt">검색결과 <strong>99</strong>개</p>
+          <ul>
+            <li class="no_data">
+              <span class="txt">검색 결과가 없습니다.</span>
+            </li>
+            <li><a href="#none"><span class="point">농</span>업</a></li>
+            <li><a href="#none"><span class="point">농</span>업진흥특별법</a></li>
+            <li><a href="#none"><span class="point">농</span>촌일손</a></li>
+            <li><a href="#none"><span class="point">농</span>촌일손</a></li>
+            <li><a href="#none"><span class="point">농</span>업특별구역 지정에 관한 법</a></li>
+            <li><a href="#none"><span class="point">농</span>경지침수에 따른 배상에 관한 법</a></li>
+            <li><a href="#none"><span class="point">농</span>업구획 및 그 역할에 대한 법</a></li>
+            <li><a href="#none"><span class="point">농</span>업진흥지역 설치에 관한 법</a></li>
+            <li><a href="#none"><span class="point">농</span>림축산식품부</a></li>
+            <li><a href="#none"><span class="point">농</span>업진흥청</a></li>
+          </ul>
+          <div class="line"></div>
+          <ul>
+            <!-- <li class="no_data">
+              <span class="txt">검색 결과가 없습니다.</span>
+            </li> -->
+            <li><a href="#none">지역<span class="point">농업</span></a></li>
+            <li><a href="#none">고용<span class="point">농업</span></a></li>
+            <li><a href="#none">감자<span class="point">농업</span></a></li>
+            <li><a href="#none">지역지원 <span class="point">농업</span></a></li>
+            <li><a href="#none">해외거주민<span class="point">농업</span></a></li>
+          </ul>
+          <button class="btn mt-16">끝단어 검색 더보기</button>
+          <button class="btn mt-16">앞단어 검색 더보기</button>
+        </div>
+      </div>
+      <!-- //검색 결과 영역 content_wrap -->
+
+      <!-- 상세 검색 영역 content_wrap -->
+      <div class="content_wrap">
+        <!-- select_box -->
+        <div class="select_box full">
+          <span class="select">기관별</span>
+          <div class="option">
+            <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+              <ul>
+                <li>선택함1</li>
+                <li>선택함2</li>
+                <li>선택함3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- select_box -->
+        <div class="select_box full">
+          <span class="select">분야별</span>
+          <div class="option">
+            <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+              <ul>
+                <li>선택함1</li>
+                <li>선택함2</li>
+                <li>선택함3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- select_box -->
+        <div class="select_box full">
+          <span class="select">사무구분</span>
+          <div class="option">
+            <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+              <ul>
+                <li>선택함1</li>
+                <li>선택함2</li>
+                <li>선택함3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- select_box -->
+        <div class="select_box full">
+          <span class="select">사무유형</span>
+          <div class="option">
+            <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+              <ul>
+                <li>선택함1</li>
+                <li>선택함2</li>
+                <li>선택함3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //상세 검색 영역 content_wrap -->
+    </div>
+    <!-- mypagelayer 모바일 마이페이지 -->
+    <div class="mypagelayer mo">
+      <div class="mypage_cont">
+        <span class="mypage_box">
+          <span class="tit">마이페이지</span>
+          <button class="btn_layer_close" onclick="mypageClose();"><span class="hidden">닫기</span></button>
+        </span>
+      </div>
+      <div class="content_wrap">
+        <div class="user_info">
+          <span class="rank"><strong>7</strong>등급</span>
+          <span class="user"><strong>김길동</strong>님 </span>
+        </div>
+        <div class="box">
+          <span class="tit"><span>나의 업무</span></span>
+          <ul>
+            <li><a href="#none">사무승인요청<span class="num">(24)</span></a></li>
+            <li><a href="#none">이양관리<span class="num">(24)</span></a></li>
+            <li><a href="#none">이행상황관리<span class="num">(24)</span></a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <span class="tit"><span>나의 업무</span></span>
+          <ul>
+            <li><a href="#none">이양문의</a></li>
+            <li><a href="#none">진행 상황문의</a></li>
+            <li><a href="#none">이양진행 내역 관련 문의</a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <span class="tit"><span>나의 업무</span></span>
+          <ul>
+            <li><a href="#none">이양문의</a></li>
+            <li><a href="#none">진행 상황문의</a></li>
+            <li><a href="#none">이양진행 내역 관련 문의</a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <span class="tit"><span>나의 업무</span></span>
+          <ul>
+            <li><a href="#none">최근 다운 게시물 제목1</a></li>
+            <li><a href="#none">최근 다운 게시물 제목2</a></li>
+            <li><a href="#none">최근 다운 게시물 제목3</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- header_wrap -->
+    <div class="header_wrap">
+      <div class="header">
+        <div class="inner">
+          <div class="header_cont">
+            <div class="header_top_cont">
+              <h1 class="logo">
+                <span class="pc"><a href="#none"><img src="img/pc/logo.png" alt="로고">지방이양사무관리시스템</a></span>
+                <span class="mo"><a href="#none"><img src="img/mo/logo.png" alt="로고">지방이양사무관리시스템</a></span>
+              </h1>
+              <div class="right_cont mo">
+                <button class="btn_search" onclick="searchLayer(this);"><span class="hidden">검색</span></button>
+                <button class="btn_login"><span class="hidden">로그인</span></button>
+                <!-- <button class="btn_logout"><span class="hidden">로그아웃</span></button> -->
+                <button class="btn_menu" onclick="mypagelayer(this);"><span class="hidden">메뉴</span></button>
+              </div>
+            </div>
+            <!-- 로그인/회원가입 버튼 -->
+            <div class="info_cont" style="display: none;">
+              <span class="bar"><a href="#none" class="ico_login"><span>로그인</span></a></span>
+              <span><a href="#none" class="ico_join"><span>회원가입</span></a></span>
+            </div>
+
+            <!-- 마이페이지/사용자/로그아웃 -->
+            <div class="info_cont pc">
+              <!-- 로그인 전 -->
+              <!-- <ul class="info_menu default">
+                <li><a href="#" class="ico_login"><span>로그인</span></a></li>
+                <li><a href="#none" class="ico_join"><span>회원가입</span></a></li>
+              </ul>  -->
+              <!-- 로그인 후 -->
+              <ul class="info_menu">
+                <li class="bar"><a href="#none" onclick="modalControl('o','#layer_pop_01');return false">마이페이지</a></li>
+              </ul>
+              <span class="user"><strong>홍길동</strong>님 <span class="rank"><strong>7</strong>등급</span></span>
+              <button class="btn_log">
+                <span class="txt">로그아웃</span>
+                <span class="time">09:55</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- gnb -->
+    <div class="global-navy_wrap">
+      <div class="top_menu_cont">
+        <div class="pc">
+          <ul class="menu">
+            <li><a href="#none" class="menu_layer on">법령</a></li>
+            <li><a href="#none" class="menu_layer">사무</a></li>
+            <li><a href="#none" class="menu_layer">사무이양관리</a></li>
+            <li><a href="#none" class="menu_layer">통계</a></li>
+            <li><a href="#none" class="menu_layer">정보자료</a></li>
+            <li><a href="#none" class="menu_layer">사무총조사</a></li>
+            <li><a href="#none" class="menu_layer">시스템 관리</a>
+              <div class="layer_gnb">
+                <div class="location">
+                  <ul>
+                    <li><a href="#none">시스템관리77</a></li>
+                    <li><a href="#none">내부시스템관리77</a></li>
+                    <li><a href="#none">코드관리77</a></li>
+                  </ul>
+                </div>
+                <div class="list_box">
+                  <ul class="on_depth01">
+                    <li class="depth01"><a href="#none">공지관리</a>
+                      <!-- depth02 -->
+                      <ul>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a>
+                          <!-- depth03 -->
+                          <ul>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                          </ul>
+                        </li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                      </ul>
+                    </li>
+                    <li class="depth01"><a href="#none">회원관리</a>
+                      <!-- depth02 -->
+                      <ul>
+                        <li class="depth02"><a href="#none">회원관리 2뎁스</a>
+                          <!-- depth03 -->
+                          <ul>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                          </ul>
+                        </li>
+                        <li class="depth02"><a href="#none">2뎁스</a></li>
+                        <li class="depth02"><a href="#none">2뎁스</a></li>
+                      </ul>
+                    </li>
+                    <li class="depth01"><a href="#none">문의/건의관리</a></li>
+                    <li class="depth01"><a href="#none">자주하는질문관리</a></li>
+                    <li class="depth01"><a href="#none">자료실관리</a></li>
+                    <li class="depth01"><a href="#none">권한관리</a></li>
+                    <li class="depth01"><a href="#none">배너/팝업관리</a></li>
+                    <li class="depth01"><a href="#none">내부시스템관리</a></li>
+                    <li class="depth01"><a href="#none">조직관리</a></li>
+                  </ul>
+                </div>
+                <div class="link_cont">
+                  <a href="#none" class="btn ico_propose"><span>이양 건의 바로가기</span></a>
+                </div>
+                <a href="#none" class="btn_layer_close"><strong>닫기</strong></a>
+              </div>
+            </li>          
+            <li><a href="#none" class="menu_layer">대국민 관리</a>
+              <div class="layer_gnb">
+                <div class="location">
+                  <ul>
+                    <li><a href="#none">대국민 포털관리</a></li>
+                    <li><a href="#none">공지관리</a></li>
+                    <li><a href="#none">공지관리 2뎁스</a></li>
+                    <li><a href="#none">공지관리 3뎁스</a></li>
+                  </ul>
+                </div>
+                <div class="list_box">
+                  <ul class="on_depth01">
+                    <li class="depth01"><a href="#none">공지관리</a>
+                      <!-- depth02 -->
+                      <ul>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a>
+                          <!-- depth03 -->
+                          <ul>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                          </ul>
+                        </li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                      </ul>
+                    </li>
+                    <li class="depth01"><a href="#none">회원관리</a>
+                      <!-- depth02 -->
+                      <ul>
+                        <li class="depth02"><a href="#none">회원관리 2뎁스</a>
+                          <!-- depth03 -->
+                          <ul>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                          </ul>
+                        </li>
+                        <li class="depth02"><a href="#none">2뎁스</a></li>
+                        <li class="depth02"><a href="#none">2뎁스</a></li>
+                      </ul>
+                    </li>
+                    <li class="depth01"><a href="#none">문의/건의관리</a></li>
+                    <li class="depth01"><a href="#none">자주하는질문관리</a></li>
+                    <li class="depth01"><a href="#none">자료실관리</a></li>
+                    <li class="depth01"><a href="#none">권한관리</a></li>
+                    <li class="depth01"><a href="#none">배너/팝업관리</a></li>
+                    <li class="depth01"><a href="#none">내부시스템관리</a></li>
+                    <li class="depth01"><a href="#none">조직관리</a></li>
+                  </ul>
+                </div>
+                <div class="link_cont">
+                  <a href="#none" class="btn ico_propose"><span>이양 건의 바로가기</span></a>
+                </div>
+                <a href="#none" class="btn_layer_close"><strong>닫기</strong></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="mo">
+          <ul class="menu">
+            <li><a href="#none"  onclick="gnbLayer01(this);" class="on">법령</a></li>
+            <li><a href="#none">사무</a></li>
+            <li><a href="#none">사무이양관리</a></li>
+            <li><a href="#none">통계</a></li>
+            <li><a href="#none">정보자료</a></li>
+            <li><a href="#none"  onclick="gnbLayer02(this);">사무총조사</a></li>          
+            <li><a href="#none">시스템 관리</a></li>
+            <li><a href="#none">대국민 관리</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- //gnb -->   
+
+    <!-- container -->
+    <div class="container" id="content">
+      
+      <div class="keyword-box mo">
+        <div class="tit">인기 검색어</div>
+        <ol class="keyword-list">
+          <li><a href="#">1.중소기업</a></li>
+          <li><a href="#">2.중소기업</a></li>
+          <li><a href="#">3.중소기업</a></li>
+          <li><a href="#">4.중소기업</a></li>
+          <li><a href="#">5.중소기업</a></li>
+          <li><a href="#">6.중소기업</a></li>
+          <li><a href="#">7.중소기업</a></li>
+          <li><a href="#">8.중소기업</a></li>
+          <li><a href="#">9.중소기업</a></li>
+          <li><a href="#">10.중소기업</a></li>
+        </ol>
+        <div class="line"></div>
+        <div class="tit">나의 검색어</div>
+        <ol class="keyword-list">
+          <li><a href="#">1.중소기업</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#">2.중소기업</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#">3.중소기업</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#">4.중소기업</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#">5.중소기업</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#">6.중소기업</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#">7.중소기업</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#">8.중소기업</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#">9.중소기업</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+          <li><a href="#">10.중소기업</a><span class="btn_del"><span class="hidden">삭제</span></span></li>
+        </ol>
+      </div>
+      
+      <!-- 검색영역 -->
+      <div class="sc search_wrap bg_top">
+        <div class="inner">
+          <div class="search_area pc">
+            <div class="search_box">
+              <span class="input_cont">
+                <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+                <button class="btn_search"><span class="hidden">검색</span></button>
+              </span>
+              <button class="btn btn_size_s btn_search_detail"><span>상세검색</span></button>
+              <div class="search_cont_detail iyangsamu-search search_detail_area">
+                <div class="search-table">
+                  <table class="table-body-only">
+                    <colgroup>
+                        <col style="width:160px"/>
+                        <col>
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">결과내 재검색</th>
+                        <td class="text-l">                            
+                          <label class="input_type check check-item">
+                            <input type="checkbox" >
+                            <span class="txt">선택</span>
+                          </label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">검색 영역</th>
+                        <td class="text-l">
+                          <div class="flex-row">
+                            <div class="radio-box">
+                              <label for="sc_box_input_01_01">
+                                <input type="radio" name="sc_box_01" value="sc_box_input_01_01" id="sc_box_input_01_01" checked>
+                                <span>전체</span>
+                              </label>
+                              <label for="sc_box_input_01_02">
+                                <input type="radio" name="sc_box_01" value="sc_box_input_01_02" id="sc_box_input_01_02">
+                                <span>제목</span>
+                              </label>
+                              <label for="sc_box_input_01_03">
+                                <input type="radio" name="sc_box_01" value="sc_box_input_01_03" id="sc_box_input_01_03">
+                                <span>내용</span>
+                              </label>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">등록일자<br>(변경일자)</th>
+                        <td class="text-l">
+                          <div class="flex-row">
+                            <div class="radio-box">
+                                <label for="sc_box_input_02_01">
+                                  <input type="radio" name="sc_box_02" value="sc_box_input_02_01" id="sc_box_input_02_01" checked>
+                                  <span>전체</span>
+                                </label>
+                                <label for="sc_box_input_02_02">
+                                  <input type="radio" name="sc_box_02" value="sc_box_input_02_02" id="sc_box_input_02_02">
+                                  <span>1주일</span>
+                                </label>
+                                <label for="sc_box_input_02_03">
+                                  <input type="radio" name="sc_box_02" value="sc_box_input_02_03" id="sc_box_input_02_03">
+                                  <span>1개월</span>
+                                </label>
+                            </div>
+                          </div>
+                          <div class="view_line"></div>
+                          <div class="form-element-rows">
+                            <div class="form-element__wrap" style="width: 168px;">                                  
+                              <div class="input-multi">
+                                <span class="form-element__inner input-type picker-input">
+                                  <input type="text" value="" class="input-type1-font14" placeholder="" id="datepicker_start" title="">
+                                </span>
+                              </div>
+                            </div>           
+                            <div class="dash">~</div>                                       
+                            <div class="form-element__wrap"  style="width: 168px;">                                  
+                              <div class="input-multi">
+                                <span class="form-element__inner input-type picker-input">
+                                  <input type="text" value="" class="input-type1-font14"  placeholder=""  id="datepicker_end"  title="">
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <p class="s_txt mt10">※ 법령은 시행일 기준으로 검색됩니다.</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <button class="btn_close"></button>
+                <button class="btn_search_only-icon"></button>
+                <button class="btn_reset_only-icon"></button>
+              </div>
+            </div>
+            <div class="search_txt">
+              <strong>‘보호법’,‘법률’</strong>(으)로<br class="mo"> <strong>2,827</strong>개 내용이 검색되었습니다.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 인기검색어 -->
+      <div class="keyword-wrap-side">
+        <div class="keyword-box">
+            <div class="tit">인기 검색어</div>
+            <ol class="keyword-list">
+              <li><a href="#">1.중소기업</a></li>
+              <li><a href="#">2.중소기업</a></li>
+              <li><a href="#">3.중소기업</a></li>
+              <li><a href="#">4.중소기업</a></li>
+              <li><a href="#">5.중소기업</a></li>
+              <li><a href="#">6.중소기업</a></li>
+              <li><a href="#">7.중소기업</a></li>
+              <li><a href="#">8.중소기업</a></li>
+              <li><a href="#">9.중소기업</a></li>
+              <li><a href="#">10.중소기업</a></li>
+            </ol>
+        </div>
+        <div class="keyword-box">
+          <div class="tit">나의 검색어</div>
+          <ol class="keyword-list">
+            <li>
+                <a href="#">중소기업</a>
+                <button type="button" class="btn-remove-x">
+                  <img src="img/pc/btn/btn_del.png" alt="삭제" />
+                </button>
+            </li>
+            <li><a href="#">중소기업</a>
+              <button type="button" class="btn-remove-x">
+                <img src="img/pc/btn/btn_del.png" alt="삭제" />
+              </button>
+            </li>
+            <li><a href="#">중소기업</a>
+              <button type="button" class="btn-remove-x">
+                <img src="img/pc/btn/btn_del.png" alt="삭제" />
+              </button>
+            </li>
+            <li><a href="#">중소기업</a>
+              <button type="button" class="btn-remove-x">
+                <img src="img/pc/btn/btn_del.png" alt="삭제" />
+              </button>
+            </li>
+            <li><a href="#">중소기업</a>
+              <button type="button" class="btn-remove-x">
+                <img src="img/pc/btn/btn_del.png" alt="삭제" />
+              </button>
+            </li>
+          </ol>
+      </div>            
+      </div>
+      <div class="content_wrap">
+        <div class="inner">
+          <div class="tabs yiyang-tabs mt-32">
+            <ul class="tab-menu">
+              <li class="active"><a href="#">전체(2,337)</a></li>
+              <li><a href="#">법령(37)</a></li>
+              <li><a href="#">사무(37)</a></li>                
+              <li><a href="#">사무이양관리(337)</a></li>                
+              <li><a href="#">공지사항(337)</a></li>         
+              <li><a href="#">정책자료(337)</a></li>         
+              <li><a href="#">시스템문의(337)</a></li>     
+            </ul>
+            
+            <div class="tab-content">
+              <div class="tab active">
+                <!-- tab1 -->
+                <div class="flex-row justify-between mt-80">
+                  <div class="font-type24-700">법령</div>
+                </div>
+                <!-- table -->
+                <div class="table_cont mt-16">
+                  <table>
+                    <colgroup>              
+                      <col style="width:7%;">
+                      <col>
+                      <col style="width:10%;">
+                      <col style="width:10%;">
+                      <col style="width:10%;">
+                      <col style="width:10%;">
+                      <col style="width:10%;">
+                      <col style="width:10%;">
+                      <col>
+                    </colgroup>
+                    <thead>
+                      <tr>                
+                        <th>번호</th>
+                        <th>법령명</th>
+                        <th>소관부처</th>
+                        <th>재개정구분</th>
+                        <th>법령종류</th>
+                        <th>공포번호</th>
+                        <th>공포일자</th>
+                        <th>시행일</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>5</td>
+                        <td>농지<span class="puple">보호법</span></td>
+                        <td>문화체육관광부</td>
+                        <td>타법개정</td>
+                        <td><span class="puple">법률</span></td>
+                        <td>제 19623호</td>
+                        <td>2024.08.14</td>
+                        <td>2024.08.14</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>농지<span class="puple">보호법</span></td>
+                        <td>문화체육관광부</td>
+                        <td>타법개정</td>
+                        <td><span class="puple">법률</span></td>
+                        <td>제 19623호</td>
+                        <td>2024.08.14</td>
+                        <td>2024.08.14</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>농지<span class="puple">보호법</span></td>
+                        <td>문화체육관광부</td>
+                        <td>타법개정</td>
+                        <td><span class="puple">법률</span></td>
+                        <td>제 19623호</td>
+                        <td>2024.08.14</td>
+                        <td>2024.08.14</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>농지<span class="puple">보호법</span></td>
+                        <td>문화체육관광부</td>
+                        <td>타법개정</td>
+                        <td><span class="puple">법률</span></td>
+                        <td>제 19623호</td>
+                        <td>2024.08.14</td>
+                        <td>2024.08.14</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>농지<span class="puple">보호법</span></td>
+                        <td>문화체육관광부</td>
+                        <td>타법개정</td>
+                        <td><span class="puple">법률</span></td>
+                        <td>제 19623호</td>
+                        <td>2024.08.14</td>
+                        <td>2024.08.14</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="txt_right mt20"><a href="#none" class="btn ico_gray_arrow"><span>법령 검색결과 더보기</span></a></div>
+
+                <div class="flex-row justify-between mt-80">
+                  <div class="font-type24-700">사무</div>
+                </div>
+                <!-- table -->
+                <div class="table_cont mt-16">
+                  <table>
+                    <colgroup>              
+                      <col style="width:4%;">
+                      <col style="width:6%;">
+                      <col style="width:6%;">
+                      <col style="width:6%;">
+                      <col style="width:1%;">
+                      <col style="width:6%;">
+                      <col style="width:1%;">
+                      <col style="width:6%;">
+                      <col style="width:1%;">
+                      <col style="width:6%;">
+                      <col style="width:5%;">
+                      <col style="width:6%;">
+                      <col style="width:6%;">
+                      <col>
+                      <col style="width:4%;">
+                      <col style="width:6%;">
+                      <col style="width:6%;">
+                      <col style="width:6%;">
+                      <col style="width:6%;">
+                    </colgroup>
+                    <thead>
+                      <tr>                
+                        <th rowspan="3">번호</th>
+                        <th rowspan="3">소관부처</th>
+                        <th rowspan="3">법 분야</th>
+                        <th rowspan="3">법령명</th>
+                        <th colspan="8">법령분류</th>
+                        <th rowspan="3">사무명</th>                
+                        <th rowspan="3">사무주체</th>
+                        <th rowspan="3">사무유형</th>
+                        <th rowspan="3">세부사무<br>유형</th>
+                        <th rowspan="3">위임사무<br>여부</th>
+                        <th rowspan="3">재위임<br>사무여부</th>
+                        <th rowspan="3">위임사무<br>여부</th>                
+                      </tr>
+                      <tr class="color_gray">
+                        <th colspan="2">대분류</th>
+                        <th colspan="2">중분류</th>
+                        <th colspan="2">소분류</th>
+                        <th>세분류</th>
+                        <th rowspan="2">호</th>
+                      </tr>
+                      <tr class="color_gray">
+                        <th colspan="2">장</th>
+                        <th colspan="2">절</th>
+                        <th colspan="2">조</th>
+                        <th>행</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>5</td>
+                        <td>농림축산부</td>
+                        <td>24농업 농지</td>
+                        <td>농지<span class="puple">보호법</span></td>
+                        <td>4</td>
+                        <td>국가 지정 농지보호</td>
+                        <td>2</td>
+                        <td>보존관리</td>
+                        <td>1</td>
+                        <td>허가사항</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>농업진흥 지역 해제</td>
+                        <td>농림축산 식품부</td>
+                        <td>국가</td>
+                        <td>국가 직접사무</td>
+                        <td>X</td>
+                        <td>X</td>
+                        <td>X</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>농림축산부</td>
+                        <td>24농업 농지</td>
+                        <td>농지<span class="puple">보호법</span></td>
+                        <td>4</td>
+                        <td>국가 지정 농지보호</td>
+                        <td>2</td>
+                        <td>보존관리</td>
+                        <td>1</td>
+                        <td>허가사항</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>농업진흥 지역 해제</td>
+                        <td>농림축산 식품부</td>
+                        <td>국가</td>
+                        <td>국가 직접사무</td>
+                        <td>X</td>
+                        <td>X</td>
+                        <td>X</td>
+                      </tr>              
+                    </tbody>
+                  </table>
+                </div>
+                <div class="txt_right mt20"><a href="#none" class="btn ico_gray_arrow"><span>사무 검색결과 더보기</span></a></div>
+
+                <!-- tab1 -->
+                <div class="flex-row justify-between mt-80">
+                  <div class="font-type24-700">사무이양관리</div>
+                </div>
+                <!-- table -->
+                <div class="table_cont mt-16">
+                  <table class="table-list iyangsamu-table">
+                    <colgroup>
+                      <col style="width:7%;">
+                      <col style="width:10%;">
+                      <col style="width:25%;">
+                      <col>
+                      <col style="width:15%;">
+                      <col style="width:15%;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>번호</th>
+                        <th>과제 ID</th>
+                        <th>과제명</th>
+                        <th>단위사무명</th>
+                        <th>소관부처명</th>
+                        <th>근거 법령
+                          <button type="button" class="btn-refresh-16">
+                            <i></i> :변경</button>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td>LY2024099</td>
+                            <td>일정 규모 미만의 농업 생산 기반 정비사업의 기본계획 수립 / 시행 및 관리 기능</td>
+                            <td>-</td>
+                            <td>농림축산부</td>
+                            <td>이러닝(전자학습) 산업 발전 및 이러닝 활용 촉진에 관한 <span class="puple">법률</span></td>
+                        </tr>
+                        <tr>
+                          <td>9</td>
+                          <td>LY2024099</td>
+                          <td>일정 규모 미만의 농업 생산 기반 정비사업의 기본계획 수립 / 시행 및 관리 기능</td>
+                          <td>-</td>
+                          <td>농림축산부</td>
+                          <td>이러닝(전자학습) 산업 발전 및 이러닝 활용 촉진에 관한 <span class="puple">법률</span><button type="button" class="btn-refresh-16"><i></i></button></td>
+                      </tr>
+                      <tr>
+                          <td>8</td>
+                          <td>LY2024099</td>
+                          <td>일정 규모 미만의 농업 생산 기반 정비사업의 기본계획 수립 / 시행 및 관리 기능</td>
+                          <td>-</td>
+                          <td>농림축산부</td>
+                          <td>이러닝(전자학습) 산업 발전 및 이러닝 활용 촉진에 관한 <span class="puple">법률</span></td>
+                      </tr>
+                      <tr>
+                          <td>7</td>
+                          <td>LY2024099</td>
+                          <td>일정 규모 미만의 농업 생산 기반 정비사업의 기본계획 수립 / 시행 및 관리 기능</td>
+                          <td>-</td>
+                          <td>농림축산부</td>
+                          <td>이러닝(전자학습) 산업 발전 및 이러닝 활용 촉진에 관한 <span class="puple">법률</span><button type="button" class="btn-refresh-16"><i></i></button></td>
+                      </tr>
+                      <tr>
+                          <td>6</td>
+                          <td>LY2024099</td>
+                          <td>일정 규모 미만의 농업 생산 기반 정비사업의 기본계획 수립 / 시행 및 관리 기능</td>
+                          <td>-</td>
+                          <td>농림축산부</td>
+                          <td>이러닝(전자학습) 산업 발전 및 이러닝 활용 촉진에 관한 <span class="puple">법률</span><button type="button" class="btn-refresh-16"><i></i></button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="txt_right mt20"><a href="#none" class="btn ico_gray_arrow"><span>이양사무 검색결과 더보기</span></a></div>
+                <!-- //tab1 -->
+                <div class="flex-row justify-between mt-80">
+                  <div class="font-type24-700">공지사항</div>
+                </div>
+                <!-- table -->
+                <div class="table_cont scroll-type tb_cursor mt-16">
+                  <table class="table-list">
+                    <colgroup>
+                      <col style="width:20px;">                      
+                      <col style="width:300px;">
+                      <col style="width:100px;">
+                      <col style="width:50px;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                          <th>번호</th>                          
+                          <th>제목</th>
+                          <th>등록일</th>
+                          <th>조회수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>5</td>                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="txt_right mt20"><a href="#none" class="btn ico_gray_arrow"><span>공지사항 검색결과 더보기</span></a></div>
+                <!-- //tab1 -->        
+                <!-- tab1 -->
+                <div class="flex-row justify-between mt-80">
+                  <div class="font-type24-700">정책자료</div>
+                </div>
+                <!-- table -->
+                <div class="table_cont scroll-type tb_cursor mt-16">
+                  <table class="table-list">
+                    <colgroup>
+                      <col style="width:20px;">                      
+                      <col style="width:300px;">
+                      <col style="width:100px;">
+                      <col style="width:50px;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                          <th>번호</th>                          
+                          <th>제목</th>
+                          <th>등록일</th>
+                          <th>조회수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>5</td>                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="txt_right mt20"><a href="#none" class="btn ico_gray_arrow"><span>정책자료 검색결과 더보기</span></a></div>
+                <!-- //tab1 -->            
+                <!-- tab1 -->
+                <div class="flex-row justify-between mt-80">
+                  <div class="font-type24-700">시스템문의</div>
+                </div>
+                <!-- table -->
+                <div class="qna_wrap mt-16">
+                  <div class="qna_table_type type06">
+                    <div class="title">
+                      <span class="tit">제목</span>                  
+                      <span class="tit">대상</span>
+                      <span class="tit"></span>
+                    </div>
+                    <ul class="list">
+                      <li>
+                        <div class="accordion">
+                          <button class="question">
+                            <span class="txt">이양건의 문의드립니다.</span>
+                            <span class="txt">이양사무</span>
+                            <span class="ico"></span>
+                          </button>
+                          <div class="accordion-detail">
+                            <div class="txt">
+                              <span>Q.</span>
+                              아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                              마이페이지 > 나의 정보 > 회원정보 수정
+                            </div>
+                            <div class="txt">
+                              <span>A.</span>
+                              아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                              마이페이지 > 나의 정보 > 회원정보 수정
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="accordion">
+                          <button class="question">
+                            <span class="txt">1:1 문의 제목 텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트</span>
+                            <span class="txt">이양사무</span>
+                            <span class="ico"></span>
+                          </button>
+                          <div class="accordion-detail">
+                            <div class="txt">
+                              <span>Q.</span>
+                              아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                              마이페이지 > 나의 정보 > 회원정보 수정
+                            </div>
+                            <div class="txt">
+                              <span>A.</span>
+                              아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                              마이페이지 > 나의 정보 > 회원정보 수정
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="accordion">
+                          <button class="question">
+                            <span class="txt">1:1 문의 제목</span>
+                            <span class="txt">이양사무</span>
+                            <span class="ico"></span>
+                          </button>
+                          <div class="accordion-detail">
+                            <div class="txt">
+                              <span>Q.</span>
+                              아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                              마이페이지 > 나의 정보 > 회원정보 수정
+                            </div>
+                            <div class="txt">
+                              <span>A.</span>
+                              아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                              마이페이지 > 나의 정보 > 회원정보 수정
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="txt_right mt20"><a href="#none" class="btn ico_gray_arrow"><span>시스템문의 검색결과 더보기</span></a></div>                                    
+              </div>
+              <div class="tab">
+                <div class="flex-row justify-between mt-80">
+                  <div class="font-type24-700">법령</div>
+                </div>
+                <!-- table -->
+                <div class="table_cont mt-16">
+                  <table>
+                    <colgroup>              
+                      <col style="width:7%;">
+                      <col>
+                      <col style="width:10%;">
+                      <col style="width:10%;">
+                      <col style="width:10%;">
+                      <col style="width:10%;">
+                      <col style="width:10%;">
+                      <col style="width:10%;">
+                      <col>
+                    </colgroup>
+                    <thead>
+                      <tr>                
+                        <th>번호</th>
+                        <th>법령명</th>
+                        <th>소관부처</th>
+                        <th>재개정구분</th>
+                        <th>법령종류</th>
+                        <th>공포번호</th>
+                        <th>공포일자</th>
+                        <th>시행일</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>5</td>
+                        <td>농지<span class="puple">보호법</span></td>
+                        <td>문화체육관광부</td>
+                        <td>타법개정</td>
+                        <td><span class="puple">법률</span></td>
+                        <td>제 19623호</td>
+                        <td>2024.08.14</td>
+                        <td>2024.08.14</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>농지<span class="puple">보호법</span></td>
+                        <td>문화체육관광부</td>
+                        <td>타법개정</td>
+                        <td><span class="puple">법률</span></td>
+                        <td>제 19623호</td>
+                        <td>2024.08.14</td>
+                        <td>2024.08.14</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>농지<span class="puple">보호법</span></td>
+                        <td>문화체육관광부</td>
+                        <td>타법개정</td>
+                        <td><span class="puple">법률</span></td>
+                        <td>제 19623호</td>
+                        <td>2024.08.14</td>
+                        <td>2024.08.14</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>농지<span class="puple">보호법</span></td>
+                        <td>문화체육관광부</td>
+                        <td>타법개정</td>
+                        <td><span class="puple">법률</span></td>
+                        <td>제 19623호</td>
+                        <td>2024.08.14</td>
+                        <td>2024.08.14</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>농지<span class="puple">보호법</span></td>
+                        <td>문화체육관광부</td>
+                        <td>타법개정</td>
+                        <td><span class="puple">법률</span></td>
+                        <td>제 19623호</td>
+                        <td>2024.08.14</td>
+                        <td>2024.08.14</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- paging -->
+                <div class="paging">
+                  <a href="#none" class="first"></a>
+                  <a href="#none" class="prev"></a>
+                  <ol>
+                    <li><a href="#none" class="on">1</a></li>
+                    <li><a href="#none">2</a></li>
+                    <li><a href="#none">3</a></li>
+                    <li><a href="#none">4</a></li>
+                    <li><a href="#none">5</a></li>
+                  </ol>
+                  <a href="#none" class="next"></a>
+                  <a href="#none" class="last"></a>
+                </div>
+              </div>
+              <div class="tab">
+                <div class="flex-row justify-between mt-80">
+                  <div class="font-type24-700">사무</div>
+                </div>
+                <!-- table -->
+                <div class="table_cont mt-16">
+                  <table>
+                    <colgroup>              
+                      <col style="width:4%;">
+                      <col style="width:6%;">
+                      <col style="width:6%;">
+                      <col style="width:6%;">
+                      <col style="width:1%;">
+                      <col style="width:6%;">
+                      <col style="width:1%;">
+                      <col style="width:6%;">
+                      <col style="width:1%;">
+                      <col style="width:6%;">
+                      <col style="width:5%;">
+                      <col style="width:6%;">
+                      <col style="width:6%;">
+                      <col>
+                      <col style="width:4%;">
+                      <col style="width:6%;">
+                      <col style="width:6%;">
+                      <col style="width:6%;">
+                      <col style="width:6%;">
+                    </colgroup>
+                    <thead>
+                      <tr>                
+                        <th rowspan="3">번호</th>
+                        <th rowspan="3">소관부처</th>
+                        <th rowspan="3">법 분야</th>
+                        <th rowspan="3">법령명</th>
+                        <th colspan="8">법령분류</th>
+                        <th rowspan="3">사무명</th>                
+                        <th rowspan="3">사무주체</th>
+                        <th rowspan="3">사무유형</th>
+                        <th rowspan="3">세부사무<br>유형</th>
+                        <th rowspan="3">위임사무<br>여부</th>
+                        <th rowspan="3">재위임<br>사무여부</th>
+                        <th rowspan="3">위임사무<br>여부</th>                
+                      </tr>
+                      <tr class="color_gray">
+                        <th colspan="2">대분류</th>
+                        <th colspan="2">중분류</th>
+                        <th colspan="2">소분류</th>
+                        <th>세분류</th>
+                        <th rowspan="2">호</th>
+                      </tr>
+                      <tr class="color_gray">
+                        <th colspan="2">장</th>
+                        <th colspan="2">절</th>
+                        <th colspan="2">조</th>
+                        <th>행</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>5</td>
+                        <td>농림축산부</td>
+                        <td>24농업 농지</td>
+                        <td>농지<span class="puple">보호법</span></td>
+                        <td>4</td>
+                        <td>국가 지정 농지보호</td>
+                        <td>2</td>
+                        <td>보존관리</td>
+                        <td>1</td>
+                        <td>허가사항</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>농업진흥 지역 해제</td>
+                        <td>농림축산 식품부</td>
+                        <td>국가</td>
+                        <td>국가 직접사무</td>
+                        <td>X</td>
+                        <td>X</td>
+                        <td>X</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>농림축산부</td>
+                        <td>24농업 농지</td>
+                        <td>농지<span class="puple">보호법</span></td>
+                        <td>4</td>
+                        <td>국가 지정 농지보호</td>
+                        <td>2</td>
+                        <td>보존관리</td>
+                        <td>1</td>
+                        <td>허가사항</td>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>농업진흥 지역 해제</td>
+                        <td>농림축산 식품부</td>
+                        <td>국가</td>
+                        <td>국가 직접사무</td>
+                        <td>X</td>
+                        <td>X</td>
+                        <td>X</td>
+                      </tr>              
+                    </tbody>
+                  </table>
+                </div>
+                <!-- paging -->
+                <div class="paging">
+                  <a href="#none" class="first"></a>
+                  <a href="#none" class="prev"></a>
+                  <ol>
+                    <li><a href="#none" class="on">1</a></li>
+                    <li><a href="#none">2</a></li>
+                    <li><a href="#none">3</a></li>
+                    <li><a href="#none">4</a></li>
+                    <li><a href="#none">5</a></li>
+                  </ol>
+                  <a href="#none" class="next"></a>
+                  <a href="#none" class="last"></a>
+                </div>
+              </div>
+              <div class="tab">
+                <!-- tab1 -->
+                <div class="flex-row justify-between mt-80">
+                  <div class="font-type24-700">사무이양관리</div>
+                </div>
+                <!-- table -->
+                <div class="table_cont mt-16">
+                  <table class="table-list iyangsamu-table">
+                    <colgroup>
+                      <col style="width:7%;">
+                      <col style="width:10%;">
+                      <col style="width:25%;">
+                      <col>
+                      <col style="width:15%;">
+                      <col style="width:15%;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>번호</th>
+                        <th>과제 ID</th>
+                        <th>과제명</th>
+                        <th>단위사무명</th>
+                        <th>소관부처명</th>
+                        <th>근거 법령
+                          <button type="button" class="btn-refresh-16">
+                            <i></i> :변경</button>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td>LY2024099</td>
+                            <td>일정 규모 미만의 농업 생산 기반 정비사업의 기본계획 수립 / 시행 및 관리 기능</td>
+                            <td>-</td>
+                            <td>농림축산부</td>
+                            <td>이러닝(전자학습) 산업 발전 및 이러닝 활용 촉진에 관한 <span class="puple">법률</span></td>
+                        </tr>
+                        <tr>
+                          <td>9</td>
+                          <td>LY2024099</td>
+                          <td>일정 규모 미만의 농업 생산 기반 정비사업의 기본계획 수립 / 시행 및 관리 기능</td>
+                          <td>-</td>
+                          <td>농림축산부</td>
+                          <td>이러닝(전자학습) 산업 발전 및 이러닝 활용 촉진에 관한 <span class="puple">법률</span><button type="button" class="btn-refresh-16"><i></i></button></td>
+                      </tr>
+                      <tr>
+                          <td>8</td>
+                          <td>LY2024099</td>
+                          <td>일정 규모 미만의 농업 생산 기반 정비사업의 기본계획 수립 / 시행 및 관리 기능</td>
+                          <td>-</td>
+                          <td>농림축산부</td>
+                          <td>이러닝(전자학습) 산업 발전 및 이러닝 활용 촉진에 관한 <span class="puple">법률</span></td>
+                      </tr>
+                      <tr>
+                          <td>7</td>
+                          <td>LY2024099</td>
+                          <td>일정 규모 미만의 농업 생산 기반 정비사업의 기본계획 수립 / 시행 및 관리 기능</td>
+                          <td>-</td>
+                          <td>농림축산부</td>
+                          <td>이러닝(전자학습) 산업 발전 및 이러닝 활용 촉진에 관한 <span class="puple">법률</span><button type="button" class="btn-refresh-16"><i></i></button></td>
+                      </tr>
+                      <tr>
+                          <td>6</td>
+                          <td>LY2024099</td>
+                          <td>일정 규모 미만의 농업 생산 기반 정비사업의 기본계획 수립 / 시행 및 관리 기능</td>
+                          <td>-</td>
+                          <td>농림축산부</td>
+                          <td>이러닝(전자학습) 산업 발전 및 이러닝 활용 촉진에 관한 <span class="puple">법률</span><button type="button" class="btn-refresh-16"><i></i></button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- paging -->
+                <div class="paging">
+                  <a href="#none" class="first"></a>
+                  <a href="#none" class="prev"></a>
+                  <ol>
+                    <li><a href="#none" class="on">1</a></li>
+                    <li><a href="#none">2</a></li>
+                    <li><a href="#none">3</a></li>
+                    <li><a href="#none">4</a></li>
+                    <li><a href="#none">5</a></li>
+                  </ol>
+                  <a href="#none" class="next"></a>
+                  <a href="#none" class="last"></a>
+                </div>
+              </div>
+              <div class="tab">
+                <!-- tab1 -->
+                <div class="flex-row justify-between mt-80">
+                  <div class="font-type24-700">공지사항</div>
+                </div>
+                <!-- table -->
+                <div class="table_cont scroll-type tb_cursor mt-16">
+                  <table class="table-list">
+                    <colgroup>
+                      <col style="width:20px;">                      
+                      <col style="width:300px;">
+                      <col style="width:100px;">
+                      <col style="width:50px;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                          <th>번호</th>                          
+                          <th>제목</th>
+                          <th>등록일</th>
+                          <th>조회수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>5</td>                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>    
+                <!-- paging -->
+                <div class="paging">
+                  <a href="#none" class="first"></a>
+                  <a href="#none" class="prev"></a>
+                  <ol>
+                    <li><a href="#none" class="on">1</a></li>
+                    <li><a href="#none">2</a></li>
+                    <li><a href="#none">3</a></li>
+                    <li><a href="#none">4</a></li>
+                    <li><a href="#none">5</a></li>
+                  </ol>
+                  <a href="#none" class="next"></a>
+                  <a href="#none" class="last"></a>
+                </div>
+              </div>   
+              <div class="tab">
+                <!-- tab1 -->
+                <div class="flex-row justify-between mt-80">
+                  <div class="font-type24-700">정책자료</div>
+                </div>
+                <!-- table -->
+                <div class="table_cont scroll-type tb_cursor mt-16">
+                  <table class="table-list">
+                    <colgroup>
+                      <col style="width:20px;">                      
+                      <col style="width:300px;">
+                      <col style="width:100px;">
+                      <col style="width:50px;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                          <th>번호</th>                          
+                          <th>제목</th>
+                          <th>등록일</th>
+                          <th>조회수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>5</td>                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          
+                          <td class="txt_left">24년 심의원 개최 관련 안내</td>
+                          <td>2024.08.11</td>
+                          <td>99</td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- paging -->
+                <div class="paging">
+                  <a href="#none" class="first"></a>
+                  <a href="#none" class="prev"></a>
+                  <ol>
+                    <li><a href="#none" class="on">1</a></li>
+                    <li><a href="#none">2</a></li>
+                    <li><a href="#none">3</a></li>
+                    <li><a href="#none">4</a></li>
+                    <li><a href="#none">5</a></li>
+                  </ol>
+                  <a href="#none" class="next"></a>
+                  <a href="#none" class="last"></a>
+                </div>
+              </div>     
+              <div class="tab">
+                <!-- tab1 -->
+                <div class="flex-row justify-between mt-80">
+                  <div class="font-type24-700">시스템문의</div>
+                </div>
+                <!-- table -->
+                <div class="qna_wrap mt-16">
+                  <div class="qna_table_type type06">
+                    <div class="title">
+                      <span class="tit">제목</span>                  
+                      <span class="tit">대상</span>
+                      <span class="tit"></span>
+                    </div>
+                    <ul class="list">
+                      <li>
+                        <div class="accordion">
+                          <button class="question">
+                            <span class="txt">이양건의 문의드립니다.</span>
+                            <span class="txt">이양사무</span>
+                            <span class="ico"></span>
+                          </button>
+                          <div class="accordion-detail">
+                            <div class="txt">
+                              <span>Q.</span>
+                              아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                              마이페이지 > 나의 정보 > 회원정보 수정
+                            </div>
+                            <div class="txt">
+                              <span>A.</span>
+                              아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                              마이페이지 > 나의 정보 > 회원정보 수정
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="accordion">
+                          <button class="question">
+                            <span class="txt">1:1 문의 제목 텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트</span>
+                            <span class="txt">이양사무</span>
+                            <span class="ico"></span>
+                          </button>
+                          <div class="accordion-detail">
+                            <div class="txt">
+                              <span>Q.</span>
+                              아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                              마이페이지 > 나의 정보 > 회원정보 수정
+                            </div>
+                            <div class="txt">
+                              <span>A.</span>
+                              아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                              마이페이지 > 나의 정보 > 회원정보 수정
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="accordion">
+                          <button class="question">
+                            <span class="txt">1:1 문의 제목</span>
+                            <span class="txt">이양사무</span>
+                            <span class="ico"></span>
+                          </button>
+                          <div class="accordion-detail">
+                            <div class="txt">
+                              <span>Q.</span>
+                              아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                              마이페이지 > 나의 정보 > 회원정보 수정
+                            </div>
+                            <div class="txt">
+                              <span>A.</span>
+                              아래의 화면 경로를 통해서 회원님의 정보를 수정하실 수 있습니다.<br>
+                              마이페이지 > 나의 정보 > 회원정보 수정
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- paging -->
+                <div class="paging">
+                  <a href="#none" class="first"></a>
+                  <a href="#none" class="prev"></a>
+                  <ol>
+                    <li><a href="#none" class="on">1</a></li>
+                    <li><a href="#none">2</a></li>
+                    <li><a href="#none">3</a></li>
+                    <li><a href="#none">4</a></li>
+                    <li><a href="#none">5</a></li>
+                  </ol>
+                  <a href="#none" class="next"></a>
+                  <a href="#none" class="last"></a>
+                </div>
+              </div>                                      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="inner">
+        <div class="top_info float_box">
+          <div class="left_cont">
+            <a href="#none" class="bar">이용약관</a>
+            <a href="#none" class="point">개인정보처리방침</a>
+          </div>
+          <div class="right_cont pc">
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">소속기관 누리집 바로가기</span>
+              <div class="option">
+
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">신하기관 누리집 바로가기</span>
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info_box">
+          <address>
+            <span class="bar">본관 : (30112) 세종특별자치시 도움6로 42(어진동)</span>
+            <span>별관 : (30116) 세존특별자치시 가름로 143(어진동)</span>
+          </address>
+          <div class="info_num_box pc">
+            <p>
+              <span class="tit bar">정부민원안내콜센터</span>
+              <strong class="txt">국번없이 110</strong>
+              <span class="s_txt">(무료)</span>
+            </p>
+            <p>
+              <span class="tit bar">행정안전부 콜센터</span>
+              <strong class="txt">02-2100-3399</strong>
+              <span class="s_txt bar">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+              <span class="tit">팩스</span>
+              <strong class="txt">044-204-8911</strong>
+            </p>
+            <p>
+            </p>
+            <p>
+              <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+            </p>
+          </div>
+          <div class="info_num_box mo">
+            <p>
+              <span class="tit bar">정부민원안내콜센터</span>
+              <strong class="txt">국번없이 110</strong>
+              <span class="s_txt">(무료)</span>
+            </p>
+            <p>
+              <span class="tit bar">행정안전부 콜센터</span>
+              <strong class="txt">02-2100-3399</strong>
+            </p>
+            <p style="margin-top:8px;">
+              <span class="s_txt">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+            </p>
+            <p>
+              <span class="tit">팩스</span>
+              <strong class="txt">044-204-8911</strong>
+            </p>
+            <p>
+              <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+            </p>
+          </div>
+          <div class="select_cont mo">
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">소속기관 누리집 바로가기</span>
+              <div class="option_wrap">
+                <div class="option">
+                  <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                    <ul>
+                      <li>선택함1</li>
+                      <li>선택함2</li>
+                      <li>선택함3</li>
+                      <li>선택함3</li>
+                      <li>선택함3</li>
+                      <li>선택함3</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">신하기관 누리집 바로가기</span>
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="copy">ⓒ Ministry of the Interior and Safety. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="footer mo foot_btn_wrap">
+      <div class="foot_btn_area">        
+        <a href="#none" class="btn btn_approval"><span>등록</span></a>
+        <a href="#none" class="btn btn_list"><span>목록</span></a>
+      </div>
+    </div> -->
+  </div>
+</body>
+
+</html>

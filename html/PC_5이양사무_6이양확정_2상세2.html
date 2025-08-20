@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지방이양자동화 시스템 구축 프로젝트</title>
+  <link rel="stylesheet" href="css/common.css">
+  <!-- mCustomScrollbar css -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <!-- REQUIRED SCRIPTS -->
+  <script src="js/jquery-3.2.1.js"></script>
+  <!-- mCustomScrollbar JS -->
+  <script src="js/jquery.mCustomScrollbar.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <!-- common.js -->
+  <script src="js/common.js"></script>
+  <script src="js/common_02.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+    $(function() {
+            fn_default_datepicker();
+    });
+            
+    function fn_default_datepicker()
+    {
+        var start = $( "#datepicker_start" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+            
+        var end = $( "#datepicker_end" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+               ,defaultDate: "+1w"
+          });
+          var start = $( "#datepicker_start2" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+            
+        var end = $( "#datepicker_end2" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+               ,defaultDate: "+1w"
+          });        
+        //초기값을 오늘 날짜로 설정
+        $('#datepicker_start').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_start2').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end2').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+    }
+     
+    function getDate( element ) {
+        var date;
+        var dateFormat = "yy-mm-dd";
+        try {
+          date = $.datepicker.parseDate( dateFormat, element.value );
+        } catch( error ) {
+          date = null;
+        }
+        return date;
+     }
+     
+</script> 
+</head>
+
+<body>
+  <div class="wrap sample">
+    <!-- searchlayer 모바일 상세검색 -->
+    <div class="searchlayer mo">
+      <div class="search_cont">
+        <span class="search_box">
+          <span class="input_cont">
+            <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+            <button class="btn_search"><span class="hidden">검색</span></button>
+          </span>
+          <button class="btn_layer_close" onclick="searchClose();"><span class="hidden">닫기</span></button>
+        </span>
+      </div>
+      <div class="content_wrap">
+        <!-- select_box -->
+        <div class="select_box full">
+          <span class="select">설정</span>
+          <div class="option">
+            <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+              <ul>
+                <li>선택함1</li>
+                <li>선택함2</li>
+                <li>선택함3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- select_box -->
+        <div class="select_box full">
+          <span class="select">대상</span>
+          <div class="option">
+            <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+              <ul>
+                <li>선택함1</li>
+                <li>선택함2</li>
+                <li>선택함3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- select_box -->
+        <div class="select_box full">
+          <span class="select">노출</span>
+          <div class="option">
+            <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+              <ul>
+                <li>선택함1</li>
+                <li>선택함2</li>
+                <li>선택함3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- header_wrap -->
+    <div class="header_wrap">
+      <div class="header">
+      <div class="inner">
+          <div class="header_cont">
+          <div class="header_top_cont">
+              <h1 class="logo">
+              <div class="pc"><a href="#none"><img src="img/pc/logo.png" alt="로고">지방이양사무관리시스템</a></div>
+              <div class="mo"><a href="#none"><img src="img/mo/logo.png" alt="로고">지방이양사무관리시스템</a></div>
+              </h1>
+              <div class="right_cont mo">
+              <button class="btn_search" onclick="searchLayer(this);"><span class="hidden">검색</span></button>
+              <button class="btn_login"><span class="hidden">로그인</span></button>
+              <!-- <button class="btn_logout"><span class="hidden">로그아웃</span></button> -->
+              <button class="btn_menu" onclick="mypagelayer(this);"><span class="hidden">메뉴</span></button>
+              </div>
+          </div>
+          <!-- 로그인/회원가입 버튼 -->
+          <div class="info_cont" style="display: none;">
+              <span class="bar"><a href="#none" class="ico_login"><span>로그인</span></a></span>
+              <span><a href="#none" class="ico_join"><span>회원가입</span></a></span>
+          </div>
+
+          <!-- 마이페이지/사용자/로그아웃 -->
+          <div class="info_cont pc">
+              <!-- 로그인 전 -->
+              <!-- <ul class="info_menu default">
+              <li><a href="#" class="ico_login"><span>로그인</span></a></li>
+              <li><a href="#none" class="ico_join"><span>회원가입</span></a></li>
+              </ul>  -->
+              <!-- 로그인 후 -->
+              <ul class="info_menu">
+              <li class="bar"><a href="#none">마이페이지</a></li>
+              </ul>
+              <span class="user"><strong>홍길동</strong>님 <span class="rank"><strong>7</strong>등급</span></span>
+              <button class="btn_log">
+              <span class="txt">로그아웃</span>
+              <span class="time">09:55</span>
+              </button>
+          </div>
+          </div>
+      </div>
+      </div>
+    </div>
+    <!-- gnb -->
+    <div class="global-navy_wrap">
+        <div class="top_menu_cont">
+        <div class="pc">
+            <ul class="menu">
+            <li><a href="#none" class="menu_layer">법령</a></li>
+            <li><a href="#none" class="menu_layer">사무</a></li>
+            <li><a href="#none" class="menu_layer on">사무이양관리</a></li>
+            <li><a href="#none" class="menu_layer">통계</a></li>
+            <li><a href="#none" class="menu_layer">정보자료</a></li>
+            <li><a href="#none" class="menu_layer">사무총조사</a></li>
+            <li><a href="#none" class="menu_layer">시스템 관리</a>
+                <div class="layer_gnb">
+                <div class="location">
+                    <ul>
+                    <li><a href="#none">시스템관리77</a></li>
+                    <li><a href="#none">내부시스템관리77</a></li>
+                    <li><a href="#none">코드관리77</a></li>
+                    </ul>
+                </div>
+                <div class="list_box">
+                    <ul class="on_depth01">
+                    <li class="depth01"><a href="#none">공지관리</a>
+                        <!-- depth02 -->
+                        <ul>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a>
+                            <!-- depth03 -->
+                            <ul>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth01"><a href="#none">회원관리</a>
+                        <!-- depth02 -->
+                        <ul>
+                        <li class="depth02"><a href="#none">회원관리 2뎁스</a>
+                            <!-- depth03 -->
+                            <ul>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth02"><a href="#none">2뎁스</a></li>
+                        <li class="depth02"><a href="#none">2뎁스</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth01"><a href="#none">문의/건의관리</a></li>
+                    <li class="depth01"><a href="#none">자주하는질문관리</a></li>
+                    <li class="depth01"><a href="#none">자료실관리</a></li>
+                    <li class="depth01"><a href="#none">권한관리</a></li>
+                    <li class="depth01"><a href="#none">배너/팝업관리</a></li>
+                    <li class="depth01"><a href="#none">내부시스템관리</a></li>
+                    <li class="depth01"><a href="#none">조직관리</a></li>
+                    </ul>
+                </div>
+                <div class="link_cont">
+                    <a href="#none" class="btn ico_propose"><span>이양 건의 바로가기</span></a>
+                </div>
+                <a href="#none" class="btn_layer_close"><strong>닫기</strong></a>
+                </div>
+            </li>          
+            <li><a href="#none" class="menu_layer">대국민 관리</a>
+                <div class="layer_gnb">
+                <div class="location">
+                    <ul>
+                    <li><a href="#none">대국민 포털관리</a></li>
+                    <li><a href="#none">공지관리</a></li>
+                    <li><a href="#none">공지관리 2뎁스</a></li>
+                    <li><a href="#none">공지관리 3뎁스</a></li>
+                    </ul>
+                </div>
+                <div class="list_box">
+                    <ul class="on_depth01">
+                    <li class="depth01"><a href="#none">공지관리</a>
+                        <!-- depth02 -->
+                        <ul>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a>
+                            <!-- depth03 -->
+                            <ul>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth01"><a href="#none">회원관리</a>
+                        <!-- depth02 -->
+                        <ul>
+                        <li class="depth02"><a href="#none">회원관리 2뎁스</a>
+                            <!-- depth03 -->
+                            <ul>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth02"><a href="#none">2뎁스</a></li>
+                        <li class="depth02"><a href="#none">2뎁스</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth01"><a href="#none">문의/건의관리</a></li>
+                    <li class="depth01"><a href="#none">자주하는질문관리</a></li>
+                    <li class="depth01"><a href="#none">자료실관리</a></li>
+                    <li class="depth01"><a href="#none">권한관리</a></li>
+                    <li class="depth01"><a href="#none">배너/팝업관리</a></li>
+                    <li class="depth01"><a href="#none">내부시스템관리</a></li>
+                    <li class="depth01"><a href="#none">조직관리</a></li>
+                    </ul>
+                </div>
+                <div class="link_cont">
+                    <a href="#none" class="btn ico_propose"><span>이양 건의 바로가기</span></a>
+                </div>
+                <a href="#none" class="btn_layer_close"><strong>닫기</strong></a>
+                </div>
+            </li>
+            </ul>
+        </div>
+        <div class="mo-flex">
+            <ul class="menu">
+            <li><a href="#none"  onclick="gnbLayer01(this);" class="on">법령</a></li>
+            <li><a href="#none">사무</a></li>
+            <li><a href="#none">사무이양관리</a></li>
+            <li><a href="#none">통계</a></li>
+            <li><a href="#none">정보자료</a></li>
+            <li><a href="#none"  onclick="gnbLayer02(this);">사무총조사</a></li>          
+            <li><a href="#none">시스템 관리</a></li>
+            <li><a href="#none">대국민 관리</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <!-- //gnb -->
+
+    <!-- container -->
+    <div class="container">
+      <!-- 검색영역 -->
+      <div class="sc bg_top">
+        <div class="inner">
+          <div class="location">
+            <ul>
+              <li><a href="#none">홈</a></li>
+              <li><a href="#none">이양사무</a></li>
+            </ul>
+          </div>
+          <div class="pc">
+            <a href="#none" class="btn ico_file_download"><span>파일 다운로드</span></a>
+            <a href="#none" class="btn ico_print"><span>프린트</span></a>
+          </div>
+
+          <div class="box-tab__wrap">
+            <a href="#">이양사무 건의</a>
+            <a href="#">의견 수렴</a>
+            <a href="#" class="">단위사무 등록</a>
+            <a href="#">전문위 심의</a>
+            <a href="#">분과위 심의</a>
+            <a href="#">본회의 의결</a>
+            <a href="#" class="is-active">이양 확정</a>
+          </div>
+          <!-- //이양사무 탭 -->
+           <div class="flex-row justify-between">                
+                <h2 class="title">이양 확정</h2>                                        
+           </div>
+          
+        </div>
+      </div>
+
+      <div class="content_wrap">
+        <div class="inner">
+          <div class="button__wrap justify-between">
+            <div class="year-select-box">
+              <div class="gray-box">
+                확정연도 설정
+                <div class="form-element__wrap">                                
+                  <span class="form-element__inner input-type" style="width: 110px;">
+                      <input type="text" value="2024" class="input-type1-font14" placeholder="확정연도 설정" title="확정연도 설정" disabled>
+                  </span>
+                </div>
+              </div>
+              
+              <!-- <div class="gray-box">
+                확정연도 설정
+                <select name="year" class="selectbox">
+                  <option selected>확정연도 설정</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                </select>
+              </div>
+              <button type="button" class="btn-primary-default wd-108 h48" onclick="modalControl('o','#layer_pop_09');return false">
+                <i></i> 등록
+              </button> -->
+              
+            </div>
+            <button type="button" class="btn-dark-light">                                        
+                정보보기
+            </button>
+          </div>  
+
+          <div class="table_cont mt-16">
+            <table class="table-body-only">
+              <colgroup>
+                  <col width="" />
+              </colgroup>
+              <thead>
+                  <tr>
+                      <th>
+                          승인자 정보
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>
+                      <div class="td-inner-wrap">
+                          <div class="cate-tit">승인구분</div>
+                          <div class="form-element__wrap">
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="이양확정" class="input-type1-font14" placeholder="기관명을 입력하세요" title="기관명을 입력하세요" disabled>
+                              </span>
+                          </div>
+                          <div class="cate-tit ml-10">기관/부서명</div>
+                          <div class="form-element__wrap">
+                              <span class="form-element__inner input-type disabled">
+                                  행정안전부/<br>자체분권지원과
+                              </span>
+                          </div>       
+                          <div class="cate-tit ml-10">이름</div>
+                          <div class="form-element__wrap">
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="홍**" class="input-type1-font14" placeholder="이름을 입력하세요" title="이름을 입력하세요" disabled>
+                              </span>
+                          </div>          
+                          <div class="cate-tit ml-10">부서번호</div>
+                          <div class="form-element__wrap">
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="044-205-0000" class="input-type1-font14" placeholder="부서번호을 입력하세요" title="부서번호을 입력하세요"  disabled>
+                              </span>
+                          </div> 
+                          <div class="cate-tit ml-10">승인일</div>
+                          <div class="form-element__wrap">
+                              <span class="form-element__inner input-type">
+                                  <input type="text" value="2024.12.19" class="input-type1-font14" placeholder="부서번호을 입력하세요" title="부서번호을 입력하세요"  disabled>
+                              </span>
+                          </div>
+                      </div>                          
+                    </td>                        
+                </tr>
+              </tbody>
+            </table>
+          </div> 
+
+          <div class="table_cont mt-16">
+            <table class="table-body-only">
+                <colgroup>                    
+                    <col width="160" />
+                    <col />
+                    <col width="160" />
+                    <col />                 
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th colspan="6">
+                            이양사무 정보
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>    
+                      <th scope="row">
+                          과제 ID
+                      </th>                    
+                      <td>
+                          <div class="form-element__wrap">                                  
+                              <div class="input-multi">
+                                  <span class="form-element__inner input-type">
+                                      <input type="text" value="IY2024001" class="input-type1-font14" maxlength="50" placeholder="내용을 입력하세요." title="내용을 입력하세요." disabled="">
+                                  </span>
+                              </div>
+                          </div>   
+                      </td>    
+                      <th scope="row">
+                          등록일
+                      </th>                    
+                      <td>
+                          <div class="form-element__wrap">                                  
+                              <div class="input-multi">
+                                  <span class="form-element__inner input-type">
+                                      <input type="text" value="2024.12.19" class="input-type1-font14" maxlength="50" placeholder="내용을 입력하세요." title="내용을 입력하세요." disabled="">
+                                  </span>
+                              </div>
+                          </div>   
+                      </td>  
+                      <th scope="row">
+                          최종 수정일
+                      </th>                    
+                      <td>
+                          <div class="form-element__wrap">                                  
+                              <div class="input-multi">
+                                  <span class="form-element__inner input-type">
+                                      <input type="text" value="2024.12.19" class="input-type1-font14" maxlength="50" placeholder="내용을 입력하세요." title="내용을 입력하세요." disabled="">
+                                  </span>
+                              </div>
+                          </div>   
+                      </td>                                                  
+                  </tr> 
+                  <tr>
+                      <th scope="row">
+                          과제명
+                      </th>     
+                      <td colspan="2">
+                          <div class="form-element__wrap">                                  
+                              <div class="input-multi">
+                                  <span class="form-element__inner input-type">
+                                      <input type="text" value="도시재생사업 경미한 사항 변경 권한" class="input-type1-font14" maxlength="50" placeholder="내용을 입력하세요." title="내용을 입력하세요." disabled="">
+                                  </span>
+                              </div>
+                          </div>                               
+                      </td>
+                      <th scope="row">
+                      분야
+                      </th>     
+                      <td colspan="2">
+                          <div class="form-element__wrap">                                  
+                              <div class="input-multi">
+                                  <span class="form-element__inner input-type">
+                                      <input type="text" value="도시재생" class="input-type1-font14" maxlength="50" placeholder="내용을 입력하세요." title="내용을 입력하세요." disabled="">
+                                  </span>
+                              </div>
+                          </div>                               
+                      </td>                        
+                  </tr>        
+                  <tr>    
+                      <th scope="row">
+                          소관부처
+                      </th>                    
+                      <td colspan="5">
+                          <div class="form-element__wrap">                                  
+                              <div class="input-multi">
+                                  <span class="form-element__inner input-type" style=" width: 408px;flex: initial;">
+                                      <input type="text" value="국토교통부" class="input-type1-font14" maxlength="50" placeholder="내용을 입력하세요." title="내용을 입력하세요." disabled="">
+                                  </span>
+                                  <div class="yiyang-info">
+                                      <span class="total">사무</span>
+                                      <span class="dv-bar ml-5"></span>  
+                                      <span class="total ml-5">1</span>                                             
+                                  </div>                                    
+                              </div>                                   
+                          </div>  
+
+                      </td>                                                 
+                  </tr>       
+                  <tr>    
+                      <th scope="row">
+                          이양방향
+                      </th>                    
+                      <td colspan="5">
+                          <ul class="form-el-list-wrap dynamic_add-list2">
+                              <!-- <li class="input-wrap flex-row">
+                                  <div class="form-element__wrap">
+                                      <div class="input-multi">
+                                          <span class="form-element__inner input-type" style="width:160px;flex:initial;">
+                                              <input type="text" value="국가" class="input-type1-font14" maxlength="50" placeholder="내용을 입력하세요." title="내용을 입력하세요." disabled="">
+                                          </span>
+                                          →
+                                          <span class="form-element__inner input-type" style="width:160px;flex:initial;">
+                                              <input type="text" value="시군구" class="input-type1-font14" maxlength="50" placeholder="내용을 입력하세요." title="내용을 입력하세요." disabled="">
+                                          </span>               
+                                          <div class="bar">&nbsp;</div>   
+                                          <div class="view on" style="width:220px;flex:initial;">
+                                              <span class="input_cont">
+                                              <input type="text" style="padding-left: 10px;" value="인구 50만 미만" dis="" placeholder="내용 추가 (30자 이내)" disabled>
+                                              </span>
+                                          </div>
+                                          <div class="yiyang-info">
+                                              <span class="total">사무</span>
+                                              <span class="dv-bar ml-5"></span>
+                                              <span class="total ml-5">1</span>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li> -->
+                              <li class="input-wrap flex-row">
+                                  <div class="form-element__wrap">
+                                      <div class="input-multi">
+                                          <span class="form-element__inner input-type" style="width:160px;flex:initial;">
+                                              <input type="text" value="국가" class="input-type1-font14" maxlength="50" placeholder="내용을 입력하세요." title="내용을 입력하세요." disabled="">
+                                          </span>
+                                          →
+                                          <span class="form-element__inner input-type" style="width:160px;flex:initial;">
+                                              <input type="text" value="시군구" class="input-type1-font14" maxlength="50" placeholder="내용을 입력하세요." title="내용을 입력하세요." disabled="">
+                                          </span>               
+                                          <div class="bar">&nbsp;</div>
+                                          <div class="yiyang-info">
+                                              <span class="total">사무</span>
+                                              <span class="dv-bar ml-5"></span>  
+                                              <span class="total ml-5">1</span>
+                                          </div>
+                                      </div>
+                                  </div> 
+                              </li>
+                          </ul> 
+                      </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 근거법령 -->
+          <div class="table_cont mt-32">
+            <table class="table-body-only">
+                <colgroup>                    
+                    <col width="" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>
+                        근거법령 <span class="dv-bar"></span>
+                        <span class="total">총 <strong>1</strong>건</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>                        
+                        <td class="inner-table">
+                            <div class="inner-table-cont mt-16">
+                            <table>
+                                <colgroup> 
+                                    <col>
+                                    <col width="15%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td class="tit">법령</td>
+                                        <td>소관부처</td>
+                                    </tr>
+                                    <tr>       
+                                        <td class="text-l">
+                                          <strong>도시재생 활성화 및 지원에 관한 특별법</strong>
+                                          <p class="mt-16">
+                                          제3장 도시재생전략계획 등 제20조 (도시재생활성화계획의 확정 및 승인 등)<br>
+                                          ⑤ 제1항부터 제4항까지의 규정에도 불구하고<br>대통령령으로 정하는 경미한 사항을 변경하는 경우에는 관계 행정기관 장과의 협의, 지방위원회 심의, 공청회, 지방의회의 의견청취 절차 및 특별위원회의 심의를 거치지 아니할 수 있다.
+                                          </p>
+                                        </td>                                                                                                                                                    
+                                        <td>국토교통부</td>
+                                    </tr>   
+                                </tbody>
+                            </table>
+                            </div>                            
+                        </td>                        
+                    </tr>                                                                                                                                                                                
+                </tbody>
+            </table>
+          </div>
+          <!-- //근거법령 -->
+          <!-- 사무 -->
+          <div class="table_cont mt-32">
+            <table class="table-body-only">
+              <colgroup>                    
+                  <col width="" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    <div class="flex-row justify-between">
+                      <div>
+                        사무 <span class="dv-bar"></span>
+                        <span class="font-type16-500">
+                            총 <span class="total"><strong>1</strong>건</span>
+                            <span class="dv-bar"></span>
+                            단위사무(<strong>1</strong>) 건
+                            <span class="dv-bar"></span>
+                            부수사무 (<strong>0</strong>) 건   
+                        </span>
+                      </div>
+                    </div>  
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="inner-table">
+                      <div class="font-type16-400 flex-row justify-end">
+                        ※목록에 있는 단위사무를 삭제하시면, 근거법령도 같이 삭제됩니다.
+                      </div>                
+                      <div class="inner-table-cont mt-16">
+                          <table>
+                              <colgroup>
+                                  <col width="4%">
+                                  <col width="7%">
+                                  <col>
+                                  <col width="7%">
+                                  <col width="7%">
+                                  <col width="7%">
+                                  <col width="5%">
+                                  <col width="5%">
+                                  <col width="5%">
+                                  <col width="7%">
+                                  <col width="5%">                                                                                                                                                                                                                           
+                                  <col width="5%">
+                                  <col width="5%">
+                                  <col width="7%">
+                                  <col width="9%">
+                              </colgroup>
+                              <tbody>
+                                  <tr>                                           
+                                      <td class="tit">번호</td>
+                                      <td class="tit">사무구분</td>
+                                      <td class="tit">사무명</td>
+                                      <td class="tit">사무주체</td>
+                                      <td class="tit">사무유형</td>
+                                      <td class="tit">세부<br>사무유형</td>
+                                      <td class="tit">위임사무<br>여부</td>
+                                      <td class="tit">수임기관</td>
+                                      <td class="tit">특행기관</td>
+                                      <td class="tit">재위임<br>사무여부</td>
+                                      <td class="tit">재위임<br>기관</td>
+                                      <td class="tit">위탁사무<br>여부</td>
+                                      <td class="tit">수탁기관</td>
+                                      <td class="tit">법조항</td>
+                                      <td class="tit">소관부처/<br>이양방향</td>                                          
+                                  </tr>
+                                  <tr>
+                                      <td>1</td>
+                                      <td>단위사무</td>
+                                      <td>
+                                          <a href="#">도시재생활성화계획 수립·심의 확정</a>
+                                      </td>         
+                                      <td>국토교통부    </td>
+
+                                      <td>국가</td>
+                                      <td>국가직접처리사무</td>
+                                      <td>O</td>  
+                                      <td>-</td> 
+                                      <td>-</td>
+                                      <td>O</td>
+                                      <td>-</td>
+                                      <td>O</td>
+                                      <td>-</td>
+                                      <td>제20조<br>
+                                          제5항</td>
+                                      <td>
+                                         국토교통부 / <br>시·구
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>                            
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- //사무 -->   
+          <!-- 근거 법령 개정안 -->
+          <div class="table_cont mt-32">
+            <table class="table-body-only">
+                <colgroup>                    
+                    <col width="" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>
+                            근거 법령 개정안 
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>                        
+                        <td class="inner-table"> 
+                            <div class="inner-table-cont mt-16">
+                                <table>
+                                        <colgroup>
+                                            <col width="50%">
+                                            <col width="50%">
+                                        </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tit">현행</td>
+                                            <td class="tit">개정안</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">도시재생 활성화 및 지원에 관한 특별법 제 3장 도시재생전략계획 등 제20조 도시재생활성화계획의 확정 및 승인 등 5항</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-l">
+                                              ⑤ 제1항부터 제4항까지의 규정에도 불구하고<br>대통령령으로 정하는 경미한 사항을 변경하는 경우에는 관계 행정기관 장과의 협의, 지방위원회 심의, 공청회, 지방의회의 의견청취 절차 및 특별위원회의 심의를 거치지 아니할 수 있다.
+                                          </td>
+                                            <td class="text-l">
+                                              ⑤ 제1항부터 제4항까지의 규정에도 불구하고<br>대통령령으로 정하는 경미한 사항을 변경하는 경우에는 관계 행정기관 장과의 협의, 지방위원회 심의, 공청회, 지방의회의 의견청취 절차, 국토교통부장관의 결정 및 특별위원회의 심의를 거치지 아니할 수 있다. 
+                                          </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>                        
+                    </tr>                                                                                                                                                                                
+                </tbody>
+            </table>
+          </div>
+          <!-- //근거 법령 개정안 -->       
+          <div class="table_cont  mt-32">
+              <table class="table-body-only">
+                  <colgroup>                    
+                      <col width="160" />
+                      <col width="" />
+                  </colgroup>
+                  <tbody>
+                      <tr>      
+                          <th scope="row">
+                              의결서
+                          </th>                  
+                          <td>                                                     
+                              <a href="#"><span class="org-color">의결서_수중레저활동의 안전 및 활성화 기능.hwpx</span></a>
+                          </td>                        
+                      </tr>                                                                                                                                                                                
+                  </tbody>
+              </table>
+          </div>    
+
+          <div class="button__wrap flex-end mt-64">        
+            <a href="PC_5이양사무_6이양확정_1목록.html" class="btn-gray-default">
+              <i class="ico-list"></i> 목록
+            </a>
+          </div>                              
+
+          <script>
+              const toggleLawButtons = document.querySelectorAll('.btn-text-only-toggle');
+              toggleLawButtons.forEach(button => {
+                  button.addEventListener('click', (event) => {
+                      event.preventDefault();
+                      button.classList.toggle('is-active');
+                      let target = button.getAttribute('href').replace('#', '');  // # 제거
+                      document.querySelector(`#${target}`).classList.toggle('is-active'); // target 요소 선택 후 is-active 토글
+                  });   
+              });        
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+    <!-- 모달 -->
+    <!-- 단위사무 등록 요청 -->
+    <section class="modal_new modal_overlay roll-type" id="layer_pop_09"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+      <div class="modal_n_wrap roll-modal layer_login">
+        <div class="modal-header mini-size"></div>
+        <div class="modal_n_body">
+          <div class="pop_cont">
+              <div class="modal-msg">
+                  <div class="font-type20-400">확정연도 등록</div>
+                  <div class="font-type16-400 mt-16">
+                    확정연도 등록 후 수정이 불가능하니,<br>
+                    정확한 확정연도를 확인하시고 등록하시기 바랍니다.<br>
+                    확정연도를 등록 하시겠습니까?
+                  </div>
+              </div>
+              <div class="button__wrap flex-end mt-32">
+                <button type="button" class="btn-gray-default" onclick="modalControl('c')">
+                  <i class="ico-remove"></i> 취소
+                </button>           
+                <button type="button" class="btn-primary-default" onclick="location.href='PC_5이양사무_6이양확정_2상세2.html'">
+                  <i></i> 확인
+                </button>
+              </div>
+          </div>       
+        </div>
+      </div>
+    </section>
+    <!-- //모달 -->
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="inner">
+        <div class="top_info float_box">
+          <div class="left_cont">
+            <a href="#none" class="bar">이용약관</a>
+            <a href="#none" class="point">개인정보처리방침</a>
+          </div>
+          <div class="right_cont pc">
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">소속기관 누리집 바로가기</span>
+              <div class="option">
+
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">신하기관 누리집 바로가기</span>
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info_box">
+          <address>
+            <span class="bar">본관 : (30112) 세종특별자치시 도움6로 42(어진동)</span>
+            <span>별관 : (30116) 세존특별자치시 가름로 143(어진동)</span>
+          </address>
+          <div class="info_num_box pc">
+            <p>
+              <span class="tit bar">정부민원안내콜센터</span>
+              <strong class="txt">국번없이 110</strong>
+              <span class="s_txt">(무료)</span>
+            </p>
+            <p>
+              <span class="tit bar">행정안전부 콜센터</span>
+              <strong class="txt">02-2100-3399</strong>
+              <span class="s_txt bar">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+              <span class="tit">팩스</span>
+              <strong class="txt">044-204-8911</strong>
+            </p>
+            <p>
+            </p>
+            <p>
+              <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+            </p>
+          </div>
+          <div class="info_num_box mo">
+            <p>
+              <span class="tit bar">정부민원안내콜센터</span>
+              <strong class="txt">국번없이 110</strong>
+              <span class="s_txt">(무료)</span>
+            </p>
+            <p>
+              <span class="tit bar">행정안전부 콜센터</span>
+              <strong class="txt">02-2100-3399</strong>
+            </p>
+            <p style="margin-top:8px;">
+              <span class="s_txt">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+            </p>
+            <p>
+              <span class="tit">팩스</span>
+              <strong class="txt">044-204-8911</strong>
+            </p>
+            <p>
+              <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+            </p>
+          </div>
+          <div class="select_cont mo">
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">소속기관 누리집 바로가기</span>
+              <div class="option_wrap">
+                <div class="option">
+                  <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                    <ul>
+                      <li>선택함1</li>
+                      <li>선택함2</li>
+                      <li>선택함3</li>
+                      <li>선택함3</li>
+                      <li>선택함3</li>
+                      <li>선택함3</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">신하기관 누리집 바로가기</span>
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="copy">ⓒ Ministry of the Interior and Safety. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer mo foot_btn_wrap">
+      <div class="foot_btn_area">        
+        <a href="#none" class="btn btn_approval"><span>등록</span></a>
+        <a href="#none" class="btn btn_list"><span>목록</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

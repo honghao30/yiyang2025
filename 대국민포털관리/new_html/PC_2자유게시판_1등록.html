@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!-- 메인 플로팅 배너가 처음부터 열렸을때 modal-opan 클래스를 추가 -->
+<html lang="ko"> 
+<head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">  
+    <title>지방이양자동화 시스템 구축 프로젝트</title>
+    <link rel="stylesheet" href="css/common.css">
+    <!-- mCustomScrollbar css -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+    <!-- REQUIRED SCRIPTS -->
+    <script src="js/jquery-3.2.1.js"></script>
+    <!-- mCustomScrollbar JS -->
+    <script src="js/jquery.mCustomScrollbar.js"></script>
+    <!-- Swiper JS -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- common.js -->
+    <script src="js/common.js"></script>
+    <script src="js/common_02.js"></script>
+    <!-- 파비콘 -->
+    <link rel="icon" href="img/pc/favicon.png" type="image/x-icon">
+</head>
+<body>
+<div class="wrap">
+    <!-- 접근성 필수 -->
+    <ul class="skip">
+    <li><a href="#content">본문내용 바로가기</a></li>
+    <li><a href="#gnb">주메뉴 바로가기</a></li>
+    </ul>
+    <!-- header_wrap -->
+    <div class="header_wrap">
+        <div class="header">
+            <div class="inner">
+            <div class="header_cont">
+                <div class="header_top_cont">
+                <h1 class="logo">
+                    <a href="/" title="메인으로 이동">
+                    <img src="img/pc/logo_new.png" alt="지방이양사무관리시스템 대국민서비스">              
+                    </a>
+                </h1>
+                <div class="info_cont">
+                    <!-- 로그인 전 -->
+                    <ul class="info_menu default">
+                    <li><a href="#" class="ico_login"><span>로그인</span></a></li>
+                    <li><a href="#none" class="ico_join"><span>회원가입</span></a></li>
+                    </ul> 
+                    <!-- 로그인 후 -->
+                    <!-- <ul class="info_menu">
+                    <li class="bar"><a href="#none">마이페이지</a></li>
+                    </ul>
+                    <span class="user"><strong>홍길동</strong>님 <span class="rank"><strong>7</strong>등급</span></span>
+                    <button class="btn_log">
+                    <span class="txt">로그아웃</span>
+                    <span class="time">09:55</span>
+                    </button> -->
+                </div>              
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- gnb -->
+    <div class="global-navy_wrap">
+        <div class="top_menu_cont">
+            <ul class="menu portal-web" id="gnb">
+            <li><a href="#none">법령</a></li>
+            <li><a href="#none">사무</a></li>
+            <li><a href="#none">통계</a></li>
+            <li><a href="#none" class="on">정보자료</a></li>                
+            </ul>
+        </div>
+    </div>
+<!-- container -->
+
+    <!-- container -->
+    <div class="container" id="content">
+        <!-- 검색영역 -->
+        <div class="sc bg_top">
+            <div class="inner">
+                <div class="location">
+                    <ul>
+                    <li><a href="#none">홈</a></li>
+                    <li><a href="#none">자유게시판</a></li>              
+                    </ul>
+                </div>
+                <h2 class="title">자유게시판</h2>
+            </div>
+        </div>
+
+        <div class="content_wrap">
+            <div class="inner">
+
+            <div class="gray-box">
+                정부의 업무가 더 효율적으로 이뤄질 수 있도록 국민의 의견을 듣고 반영하고 있습니다.<br>
+자유롭게 아이디어나 개선점을 올려 주시면, 각 담당자들이 이를 검토하고 좋은 의견을 실제로 반영할 수 있습니다.
+            </div>
+            <div class="top-title-box mt-64">
+                <h3 class="document-title">등록자 정보</h3>              
+            </div>
+
+            <div class="table_cont mt-16">
+                <table class="table-body-only">
+                    <caption>
+                        <span class="ir-text">이름, 모바일, E-mail로 구성된 등록자 정보 입력 표</span>
+                    </caption>
+                    <colgroup>                    
+                        <col class="col-wid170">
+                        <col>              
+                    </colgroup>
+                    <tbody>
+                        <tr>    
+                            <th scope="row">
+                                이름
+                            </th>                    
+                            <td >
+                                <div class="form-element__wrap">                                  
+                                    <div class="input-multi" style="max-width: 408px;">
+                                        <span class="form-element__inner input-type">
+                                            <input type="text" value="홍길동" class="input-type1-font14" maxlength="50" placeholder="이름을 입력 하세요." title="이름을 입력 하세요." disabled>
+                                        </span>
+                                    </div>
+                                </div> 
+                            </td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>            
+
+            <div class="top-title-box mt-64">
+                <h3 class="document-title">내용 등록 <span class="red-color">*</span></h3>              
+            </div>
+            <div class="table_cont mt-16">
+                <table class="table-body-only">
+                    <caption>
+                        <span class="ir-text">제목, 상세내용으로 구성된 내용등록 표</span>
+                    </caption>
+                    <colgroup>                    
+                        <col class="col-wid170">
+                        <col>          
+                    </colgroup>
+                    <tbody>
+                        <tr>    
+                            <th scope="row">
+                                제목
+                            </th>                    
+                            <td >
+                                <div class="form-element__wrap">                                  
+                                    <div class="input-multi" >
+                                        <span class="form-element__inner input-type">
+                                            <input type="text" value="" class="input-type1-font14" maxlength="50" placeholder="제목을 입력 하세요." title="제목을 입력 하세요.">
+                                        </span>
+                                        <span class="input-text-count">
+                                            <strong class="current">0</strong> / <strong>50자</strong>
+                                        </span>    
+                                    </div>
+                                
+                                </div> 
+                            </td> 
+                        </tr> 
+                        <tr>    
+                            <th scope="row">
+                                상세내용
+                            </th>                    
+                            <td >
+                                <div class="form-element__wrap">                                  
+                                    <span class="form-element__inner text-area" style="height: 150px;">
+                                        <textarea style="height: 100%;" placeholder="상세내용을 입력하세요."></textarea>                          
+                                    </span>
+                                    <div class="input-text-count text-area">
+                                        <strong class="current">0</strong> / <strong>100,000자</strong>
+                                    </div>
+                                </div>
+                                
+                            </td> 
+                        </tr>                                                
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 추후 사용 일단 주석처리 -->
+            <!-- <div class="agree-box-wrap mt-64">
+                <div class="title">개인정보 수집·이용 동의 (필수)</div>
+                <div class="description">자유게시판의 의견을 정확히 검토하고, 필요 시 추가인 소통을 위해서 개인 정보를 수집합니다.</div>
+                <table class="table-mini-list">
+                    <caption>
+                        <span class="ir-text">항목, 수집 및 이용 목적, 보유 및 이용기간으로 구성된 개인정보 개인정보 수집·이용 동의 내역 표</span>
+                    </caption>
+                    <colgroup>
+                        <col style="width: 33.3%;">
+                        <col style="">
+                        <col style="width: 33.3%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">항목</th>
+                            <th scope="col">수집 및 이용 목적</th>
+                            <th scope="col">보유 및 이용기간</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>이름, 연락처, 이메일</td>
+                            <td>회원 식별 및 서비스 제공</td>
+                            <td>서비스 탈퇴 시</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <dl>
+                    <dt>
+                        <div class="tit">개인정보 수집·이용 동의</div>
+                        <div class="button">
+                            <a href="#" class="btn-white-box-line"  onclick="modalControl('o','#main_layer_pop');return false">상세보기</a>
+                        </div>
+                    </dt>
+                    <dd>
+                        <div class="radio-box">
+                            <label id="r001">
+                                <input type="radio" name="type6" value="" id="">
+                                <span>동의함</span>
+                            </label>
+                            <label id="r002">
+                                <input type="radio" name="type6" value="" id="">
+                                <span>동의하지 않음</span>
+                            </label>                    
+                        </div>                          
+                    </dd>
+                    <dt>
+                        <div class="tit">제3자 정보 제공 동의</div>
+                        <div class="button">
+                            <a href="#" class="btn-white-box-line"   onclick="modalControl('o','#main_layer_pop2');return false">상세보기</a>
+                        </div>
+                    </dt>
+                    <dd>
+                        <div class="radio-box">
+                            <label id="r001">
+                                <input type="radio" name="type6" value="" id="">
+                                <span>동의함</span>
+                            </label>
+                            <label id="r002">
+                                <input type="radio" name="type6" value="" id="">
+                                <span>동의하지 않음</span>
+                            </label>                    
+                        </div>
+                    </dd>                    
+                </dl>
+            </div> -->
+
+            <div class="button__wrap flex-end mt-64">
+                <button type="button" class="btn-gray-default">
+                    <i class="ico-remove"></i> 취소
+                </button>
+                <button type="button" class="btn-gray-default">
+                    수정
+                </button>
+                <button type="button" class="btn-primary-default">
+                    <i></i> 등록
+                </button>                          
+            </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="inner">
+        <div class="top_info float_box">
+            <div class="left_cont">
+            <a href="#none" class="bar">이용약관</a>
+            <a href="#none" class="point">개인정보처리방침</a>
+            </div>
+        </div>
+        <div class="info_box">
+            <address>
+            <span class="bar">본관 : (30112) 세종특별자치시 도움6로 42(어진동)</span>
+            <span>별관 : (30116) 세존특별자치시 가름로 143(어진동)</span>
+            </address>
+            <div class="info_num_box">
+            <p>
+                <span class="tit bar">정부민원안내콜센터</span>
+                <strong class="txt">국번없이 110</strong>
+                <span class="s_txt">(무료)</span>
+            </p>
+            <p>
+                <span class="tit bar">행정안전부 콜센터</span>
+                <strong class="txt">02-2100-3399</strong>
+                <span class="s_txt bar">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+                <span class="tit">팩스</span>
+                <strong class="txt">044-204-8911</strong>
+            </p>
+            <p>
+            </p>
+            <p>
+                <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+            </p>
+            </div>
+            <p class="copy">ⓒ Ministry of the Interior and Safety. All rights reserved.</p>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- 모달 -->
+<section class="modal_new modal_overlay roll-type" id="main_layer_pop"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal">
+        <div class="modal-header">
+            <div class="tit">개인정보 수집·이용 동의</div>
+        </div>
+        <div class="modal_n_body">
+            <div class="pop_cont">
+                <div class="agree-yakguan-graybox">
+                    저작[공공기관의 개인정보보호에 관한 법률]<br>
+                    지방이양사무관리시스템이 취급하는 모든 개인정보는 관련법령에 근거하거나 정보주체의 동의에 의하여 수집·보유 및 처리되고 있습니다. [공공기관의 개인정보보호에 관한 법률]은 이러한 개인정보의 취급에 대한 일반적 규범을 제시하고 있으며, 지방이양사무관리시스템은 동 법령의 규정에 따라 수집·보유 및 처리하는 개인정보를 공공업무의 적 절한 수행과 국민의 권익을 보호하기 위해 적법하고 적정하게 취급할 것입니다.
+                    또한, 지방이양사무관리시스템은 관련 법령에서 규정한 바에 따라 지방이양사무관리시스템에서 보유하고 있는 개인정보에 대 열람청구권 및 정정청구권 등 여러분의 권익을 존중하며, 여러분은 이러한 법령상 권익의 침해 등에 대하여 행정심판법에서 정하는 바에 따라 행정심판을 청구할 수 있습니다.<br>
+                    지방이양사무관리시스템 홈페이지에서의 개인정보보호<br>
+                    지방이양사무관리시스템 홈페이지에서의 개인정보보호방침은 현행 [공공기관의 개인정보보호에 관한 법률] 및 [공공기관의 개인정보보호를 위한 기본지침]에 근거를 두고 있습니다. 지방이양사무관리시스템에서 운영하고 있는 웹사이트는 다음과 같으며, 이 방침은 별도의 설명이 없는 한 지방이양사무관리시스템이 운용하는 모든 웹사이트에 적용됨을 알려드립니다. - www.balance.go.kr 등
+                    자동으로 수집·저장되는 개인정보<br>
+                    지방이양사무관리시스템 홈페이지를 이용할 경우 다음의 정보는 자동적으로 수집·저장됩니다.<br>
+                    이용자 여러분의 인터넷서버 도메인과 우리 홈페이지를 방문할 때 거친 웹사이트의 주소<br>
+                    이용자의 브라우져 종류 및 OS<br>
+                    방문일시 등<br>
+                    위 와 같이 자동 수집·저장되는 정보는 이용자 여러분에게 보다 나은 서비스를 제공하기 위해 홈페이지의 개선 과 보완을 위한 통계분석, 이용자와 웹사이트간의 원활한 의사소통 등을 위해 이용되어질 것입니다. 다만, 법령의 규정에 따라 이러한 정보를 제출하게 되어 있을 경우도 있다는 것을 유념하시기 바랍니다.
+                    이메일 및 웹 서식 등을 통한 수집정보<br>
+                    이용자 여러분은 우편, 전화 또는 온라인 전자서식 등을 통한 전자적 방법을 통해 의사를 표시할 수 있습니다. 이러한 방법의 선택에 있어 몇 가지 유의사항을 알려드립니다.<br>
+                    여러분이 홈페이지에 기재한 사항은 다른 사람들이 조회 또는 열람할 수도 있습니다.<br>
+                    여러분이 기재한 사항은 관련 법규에 근거하여 필요한 다른 사람과 공유될 수 있으며, 관련법령의 시행과 정책개발의 자료로도 사용될 수 있습니다.<br>
+                    또한, 이러한 정보는 타 부처와 공유되거나, 필요에 의하여 제공될 수도 있습니다.<br>
+                    홈페이지 보안을 위해 관리적·기술적 노력을 하고 있으나, 만약의 침해사고시 문제가 될 수 있는 민감한 정보의 기재는 피하여 주시기 바랍니다.<br>
+                    웹사이트 이용 중 다른 사람의 개인정보 취득<br>
+                    지방이양사무관리시스템이 운영하는 웹사이트에서 이메일 주소 등 식별할 수 있는 개인정보를 취득하여서는 아니됩니다. 허위 기타 부정한 방법으로 이러한 개인정보를 열람 또는 제공받은 자는 [공공기관의 개인정보보호에 관한 법률] 제23조의 규정에 의하여 처벌을 받을 수 있습니다.<br>
+                    링크 사이트·웹 페이지<br>
+                    지방이양사무관리시스템이 운영하는 여러 웹페이지에 포함된 링크 또는 배너를 클릭하여 다른 사이트 또는 웹페이지로 옮겨갈 경우 개인정보보호방침은 그 사이트 운영기관이 게시한 방침이 적용되므로 새로 방문한 사이트의 방침을 확인하시기 바랍니다.<br>
+                    권익침해 구제방법<br>
+                    [공공기관의 개인정보보호에 관한 법률] 제12조(처리정보의 열람) 제1항 및 제14조(처리정보의 정정)제1항의 규정에 의한 청구에 대하여 공공기관의 장이 행한 처분 또는 부작위로 인하여 권리 또는 이익이 침해를 받은 자는 행정심판법이 정하는 바에 따라 행정심판을 청구할 수 있습니다.<br>
+                    ※ 행정심판에 대한 자세한 사항은 http://www.moleg.go.kr 를 참고하시기 바랍니다.<br>
+                    개인정보 침해사항의 신고<br>
+                    지방이양사무관리시스템의 웹사이트 이용 중 개인정보의 유출 가능성 등 정보주체의 권익이 침해될 우려가 있는 사실을 발견하였을 경우는 다음의 연락처로 알려주시기 바랍니다.<br><br>
+                    
+                    지방이양사무관리시스템<br>
+                    담당자 :<br>
+                    이메일 :<br>
+                    전 화 :                    
+                </div>
+                <div class="button__wrap flex-end mt-32">
+                <button type="button" class="btn-primary-default wd-108">
+                    <i></i> 확인
+                </button>  
+                </div> 
+            </div>
+            
+            <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>
+        </div>
+    </div>
+</section>     
+<!-- 모달 -->
+<section class="modal_new modal_overlay roll-type" id="main_layer_pop2"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal">
+        <div class="modal-header">
+            <div class="tit">제 3자 정보 제공 동의</div>
+        </div>
+        <div class="modal_n_body">
+            <div class="pop_cont">
+                <div class="agree-yakguan-graybox">
+                    저작[공공기관의 개인정보보호에 관한 법률]<br>
+                    지방이양사무관리시스템이 취급하는 모든 개인정보는 관련법령에 근거하거나 정보주체의 동의에 의하여 수집·보유 및 처리되고 있습니다. [공공기관의 개인정보보호에 관한 법률]은 이러한 개인정보의 취급에 대한 일반적 규범을 제시하고 있으며, 지방이양사무관리시스템은 동 법령의 규정에 따라 수집·보유 및 처리하는 개인정보를 공공업무의 적 절한 수행과 국민의 권익을 보호하기 위해 적법하고 적정하게 취급할 것입니다.
+                    또한, 지방이양사무관리시스템은 관련 법령에서 규정한 바에 따라 지방이양사무관리시스템에서 보유하고 있는 개인정보에 대 열람청구권 및 정정청구권 등 여러분의 권익을 존중하며, 여러분은 이러한 법령상 권익의 침해 등에 대하여 행정심판법에서 정하는 바에 따라 행정심판을 청구할 수 있습니다.<br>
+                    지방이양사무관리시스템 홈페이지에서의 개인정보보호<br>
+                    지방이양사무관리시스템 홈페이지에서의 개인정보보호방침은 현행 [공공기관의 개인정보보호에 관한 법률] 및 [공공기관의 개인정보보호를 위한 기본지침]에 근거를 두고 있습니다. 지방이양사무관리시스템에서 운영하고 있는 웹사이트는 다음과 같으며, 이 방침은 별도의 설명이 없는 한 지방이양사무관리시스템이 운용하는 모든 웹사이트에 적용됨을 알려드립니다. - www.balance.go.kr 등
+                    자동으로 수집·저장되는 개인정보<br>
+                    지방이양사무관리시스템 홈페이지를 이용할 경우 다음의 정보는 자동적으로 수집·저장됩니다.<br>
+                    이용자 여러분의 인터넷서버 도메인과 우리 홈페이지를 방문할 때 거친 웹사이트의 주소<br>
+                    이용자의 브라우져 종류 및 OS<br>
+                    방문일시 등<br>
+                    위 와 같이 자동 수집·저장되는 정보는 이용자 여러분에게 보다 나은 서비스를 제공하기 위해 홈페이지의 개선 과 보완을 위한 통계분석, 이용자와 웹사이트간의 원활한 의사소통 등을 위해 이용되어질 것입니다. 다만, 법령의 규정에 따라 이러한 정보를 제출하게 되어 있을 경우도 있다는 것을 유념하시기 바랍니다.
+                    이메일 및 웹 서식 등을 통한 수집정보<br>
+                    이용자 여러분은 우편, 전화 또는 온라인 전자서식 등을 통한 전자적 방법을 통해 의사를 표시할 수 있습니다. 이러한 방법의 선택에 있어 몇 가지 유의사항을 알려드립니다.<br>
+                    여러분이 홈페이지에 기재한 사항은 다른 사람들이 조회 또는 열람할 수도 있습니다.<br>
+                    여러분이 기재한 사항은 관련 법규에 근거하여 필요한 다른 사람과 공유될 수 있으며, 관련법령의 시행과 정책개발의 자료로도 사용될 수 있습니다.<br>
+                    또한, 이러한 정보는 타 부처와 공유되거나, 필요에 의하여 제공될 수도 있습니다.<br>
+                    홈페이지 보안을 위해 관리적·기술적 노력을 하고 있으나, 만약의 침해사고시 문제가 될 수 있는 민감한 정보의 기재는 피하여 주시기 바랍니다.<br>
+                    웹사이트 이용 중 다른 사람의 개인정보 취득<br>
+                    지방이양사무관리시스템이 운영하는 웹사이트에서 이메일 주소 등 식별할 수 있는 개인정보를 취득하여서는 아니됩니다. 허위 기타 부정한 방법으로 이러한 개인정보를 열람 또는 제공받은 자는 [공공기관의 개인정보보호에 관한 법률] 제23조의 규정에 의하여 처벌을 받을 수 있습니다.<br>
+                    링크 사이트·웹 페이지<br>
+                    지방이양사무관리시스템이 운영하는 여러 웹페이지에 포함된 링크 또는 배너를 클릭하여 다른 사이트 또는 웹페이지로 옮겨갈 경우 개인정보보호방침은 그 사이트 운영기관이 게시한 방침이 적용되므로 새로 방문한 사이트의 방침을 확인하시기 바랍니다.<br>
+                    권익침해 구제방법<br>
+                    [공공기관의 개인정보보호에 관한 법률] 제12조(처리정보의 열람) 제1항 및 제14조(처리정보의 정정)제1항의 규정에 의한 청구에 대하여 공공기관의 장이 행한 처분 또는 부작위로 인하여 권리 또는 이익이 침해를 받은 자는 행정심판법이 정하는 바에 따라 행정심판을 청구할 수 있습니다.<br>
+                    ※ 행정심판에 대한 자세한 사항은 http://www.moleg.go.kr 를 참고하시기 바랍니다.<br>
+                    개인정보 침해사항의 신고<br>
+                    지방이양사무관리시스템의 웹사이트 이용 중 개인정보의 유출 가능성 등 정보주체의 권익이 침해될 우려가 있는 사실을 발견하였을 경우는 다음의 연락처로 알려주시기 바랍니다.<br><br>
+                    
+                    지방이양사무관리시스템<br>
+                    담당자 :<br>
+                    이메일 :<br>
+                    전 화 :                    
+                </div>
+                <div class="button__wrap flex-end mt-32">
+                <button type="button" class="btn-primary-default wd-108">
+                    <i></i> 확인
+                </button>  
+                </div> 
+            </div>
+            
+            <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>
+        </div>
+    </div>
+</section>   
+</body>
+
+</html>

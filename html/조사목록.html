@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지방이양자동화 시스템 구축 프로젝트</title>
+  <link rel="stylesheet" href="css/common.css">
+  <!-- mCustomScrollbar css -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <!-- REQUIRED SCRIPTS -->
+  <script src="js/jquery-3.2.1.js"></script>
+  <!-- mCustomScrollbar JS -->
+  <script src="js/jquery.mCustomScrollbar.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <!-- common.js -->
+  <script src="js/common.js"></script>
+  <script src="js/common_02.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+    $(function() {
+            fn_default_datepicker();
+    });
+            
+    function fn_default_datepicker()
+    {
+        var start = $( "#datepicker_start" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+            
+        var end = $( "#datepicker_end" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+               ,defaultDate: "+1w"
+          });      
+        //초기값을 오늘 날짜로 설정
+        $('#datepicker_start').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+    }
+     
+    function getDate( element ) {
+        var date;
+        var dateFormat = "yy-mm-dd";
+        try {
+          date = $.datepicker.parseDate( dateFormat, element.value );
+        } catch( error ) {
+          date = null;
+        }
+        return date;
+     }
+     
+</script> 
+</head>
+<body>
+<div class="wrap sample">
+  <!-- searchlayer 모바일 상세검색 -->
+  <div class="searchlayer mo">
+    <div class="search_cont">
+      <span class="search_box">
+        <span class="input_cont">
+          <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+          <button class="btn_search"><span class="hidden">검색</span></button>
+        </span>
+        <button class="btn_layer_close" onclick="searchClose();"><span class="hidden">닫기</span></button>
+      </span>
+    </div>
+    <div class="content_wrap">
+      <!-- select_box -->
+      <select class="selectbox">
+        <option value="선택함1">전체</option>
+        <option value="선택함2">선택함2</option>
+        <option value="선택함3">선택함3</option>
+      </select>
+      <!-- select_box -->
+      <select class="selectbox">
+        <option value="선택함1">전체</option>
+        <option value="선택함2">선택함2</option>
+        <option value="선택함3">선택함3</option>
+      </select>
+      <!-- select_box -->
+      <select class="selectbox">
+        <option value="선택함1">전체</option>
+        <option value="선택함2">선택함2</option>
+        <option value="선택함3">선택함3</option>
+      </select>
+      <!-- select_box -->
+      <select class="selectbox">
+        <option value="선택함1">전체</option>
+        <option value="선택함2">선택함2</option>
+        <option value="선택함3">선택함3</option>
+      </select>
+      <!-- 초기화 버튼 -->
+      <div class="btn_reset_area">
+        <button class="btn btn_reset"><span>초기화</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- header -->
+  <div class="header">
+    <div class="inner">
+      <div class="header_cont">
+        <div class="header_top_cont">
+          <h1 class="logo"><a href="#none">지방이양사무관리시스템</a></h1>
+          <div class="right_cont mo">
+            <button class="btn_search" onclick="searchLayer(this);"><span class="hidden">검색</span></button>
+            <button class="btn_login"><span class="hidden">로그인</span></button>
+            <button class="btn_menu"><span class="hidden">메뉴</span></button>
+          </div>
+        </div>
+        <div class="top_menu_cont">
+          <ul class="menu">
+            <li><a href="#none" class="on">법령</a></li>
+            <li><a href="#none">조사</a></li>
+            <li><a href="#none">사무</a></li>
+            <li><a href="#none">이양사무</a></li>
+            <li><a href="#none">통계</a></li>
+            <li><a href="#none">대국민 포털관리</a></li>
+            <li><a href="#none">시스템 관리</a></li>
+          </ul>
+        </div>
+        <!-- 로그인/회원가입 버튼 -->
+        <div class="info_cont" style="display: none;">
+          <span class="bar"><a href="#none" class="ico_login"><span>로그인</span></a></span>
+          <span><a href="#none" class="ico_join"><span>회원가입</span></a></span>
+        </div>
+
+        <!-- 마이페이지/사용자/로그아웃 -->
+        <div class="info_cont pc">
+          <ul class="info_menu">
+            <li class="bar"><a href="#none">마이페이지</a></li>
+          </ul>
+          <span class="user"><strong>홍길동</strong>님 <span class="rank"><strong>7</strong>등급</span></span>
+          <button class="btn_log">
+            <span class="txt">로그아웃</span>
+            <span class="time">09:55</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <!-- container -->
+  <div class="container" id="content">
+    <!-- 검색영역 -->
+    <div class="sc bg_top">
+      <div class="inner">
+        <div class="location">
+          <ul>
+            <li><a href="#none">홈</a></li>
+            <li><a href="#none">사무총조사</a></li>
+          </ul>
+        </div>
+        <h2 class="title">사무총 조사</h2>
+        <div class="search_cont pc">
+          <span class="search_box">
+            <span class="input_cont">
+              <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+              <button class="btn_search"><span class="hidden">검색</span></button>
+            </span>
+            <button class="btn btn_size_s btn_search_detail"><span>상세검색</span></button>
+          </span>
+        </div>
+
+        <div class="search_cont mo">
+          <div class="search_box">
+            <div class="input_cont">
+              <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+              <button class="btn_search"><span class="hidden">검색</span></button>
+              <div class="search-detail-button">
+                <button type="button" class="btn-detail-mo" onclick="searchLayer(this)">
+                    상세검색
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 상세검색 화면 -->
+        <!-- class on 이 붙으면 열림 -->
+        <div class="search_cont_detail pc">
+          <div class="cont search-list-items">
+            <div class="form-element-rows">
+            <!-- select_box -->
+            <!-- <div class="select_box">
+              <span class="select">선택함</span>
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div> -->
+              <select class="selectbox">
+                <option value="선택함1">전체</option>
+                <option value="선택함2">선택함2</option>
+                <option value="선택함3">선택함3</option>
+              </select>
+              <!-- select_box -->
+              <select class="selectbox">
+                <option value="선택함1">전체</option>
+                <option value="선택함2">선택함2</option>
+                <option value="선택함3">선택함3</option>
+              </select>
+              <!-- select_box -->
+              <select class="selectbox">
+                <option value="선택함1">전체</option>
+                <option value="선택함2">선택함2</option>
+                <option value="선택함3">선택함3</option>
+              </select>
+              <!-- select_box -->
+              <select class="selectbox">
+                <option value="선택함1">전체</option>
+                <option value="선택함2">선택함2</option>
+                <option value="선택함3">선택함3</option>
+              </select>
+            </div>
+            <div class="form-element-rows">
+                <label class="input_type check">
+                  <input type="checkbox">
+                  <span class="txt">법령명</span>
+                </label>    
+                <label class="input_type check">
+                  <input type="checkbox">
+                  <span class="txt">조문</span>
+                </label>   
+                <label class="input_type check">
+                  <input type="checkbox">
+                  <span class="txt">사무명</span>
+                </label> 
+                <span class="bar">|</span>
+                <div class="tit">조사일자</div>
+                <div class="form-element__wrap" style="width: 168px;">                                  
+                    <div class="input-multi">
+                      <span class="form-element__inner input-type picker-input">
+                          <input type="text" value="" class="input-type1-font14" placeholder="" id="datepicker_start" title="">
+                      </span>
+                    </div>
+                </div>           
+                <div class="dash">~</div>                                       
+                <div class="form-element__wrap"  style="width: 168px;">                                  
+                  <div class="input-multi">
+                    <span class="form-element__inner input-type picker-input">
+                        <input type="text" value="" class="input-type1-font14"  placeholder=""  id="datepicker_end"  title="">
+                    </span>
+                  </div>
+                </div>                                 
+            </div>
+            <!-- <button class="btn_search_only-icon btn-law-reset"></button> -->
+          </div>
+            <button class="btn_close"></button>
+            <button class="btn_search_only-icon"></button>
+            <button class="btn_reset_only-icon"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="content_wrap">
+      <div class="inner">
+        <div class="top_info_box pc">
+          <div class="top_select_box">
+            <!-- 콤보박스 -->
+            <div class="select_box view-option">
+              <span class="select">100</span>
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                      <li>100</li>
+                      <li>선택함2</li>
+                      <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- //콤보박스 -->
+          </div>
+          <div class="left_cont">
+            <span class="total">총 <strong>999,999,994</strong>건</span>
+            <a href="#none" class="btn ico_check_02"><span>사무로 재요청</span></a>
+            <a href="#none" class="btn ico_check_04"><span>일괄승인</span></a>
+            <a href="#none" class="btn ico_check_03"><span>비사무로 재요청</span></a>
+            <a href="#none" class="btn ico_check_05"><span>선택승인요청</span></a>
+          </div>
+          <div class="right_cont">
+            <a href="#none" class="btn ico_check_01"><span>변경사무확인</span></a>
+            <a href="#none" class="btn ico_upload"><span>엑셀 업로드</span></a>
+            <a href="#none" class="btn ico_download"><span>엑셀 다운로드</span></a>
+            <!-- 콤보박스 -->
+            <div class="select_box view-option">
+              <span class="select">100</span>
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                      <li>100</li>
+                      <li>선택함2</li>
+                      <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- //콤보박스 -->
+            / 1페이지
+          </div>
+        </div>
+
+        <div class="top_info_box mo">
+          <div class="top_select_box">
+            <!-- 콤보박스 -->
+            <div class="select_box view-option">
+              <span class="select">100</span>
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                      <li>100</li>
+                      <li>선택함2</li>
+                      <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- //콤보박스 -->
+          </div>
+          <div class="btn_cont">
+            <span><a href="#none" class="btn type02 ico_check_02"><span>사무로 재요청</span></a></span>
+            <span><a href="#none" class="btn type02 ico_check_03"><span>비사무로 재요청</span></a></span>
+            <span><a href="#none" class="btn type02 ico_upload"><span>엑셀 업로드</span></a></span>
+            <span><a href="#none" class="btn type02 ico_download"><span>엑셀 다운로드</span></a></span>
+          </div>
+          <span class="total">총 <strong>11,994</strong>건</span>
+        </div>
+        <!-- table -->
+        <div class="table_cont tb_cursor law-list">
+          <table>
+            <colgroup>
+              <col style="width:3%;">
+              <col style="width:4%;">
+              <col style="width:6%;">
+              <col style="width:5%;">
+              <col style="width:5%;">
+              <col style="width:3%;">
+              <col style="width:6%;">
+              <col style="width:3%;">
+              <col style="width:5%;">
+              <col style="width:5%;">
+              <col style="width:5%;">
+              <col style="width:5%;">
+              <col style="width:3%;">
+              <col>
+              <col style="width:4%;">
+              <col style="width:4%;">
+              <col style="width:4%;">
+              <col style="width:5%;">
+              <col style="width:5%;">
+              <col style="width:5%;">
+              <col style="width:5%;">
+              <col style="width:4%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th rowspan="3">
+                  <label class="input_type  check all-check only no-click">
+                    <input type="checkbox" name="q01">
+                    <span class="txt"></span>
+                  </label>                  
+                </th>
+                <th rowspan="3">번호</th>
+                <th rowspan="3">소관부처</th>
+                <th rowspan="3">법 분야</th>
+                <th rowspan="3">법령명</th>
+                <th colspan="8">법령분류</th>
+                <th rowspan="3">사무명</th>
+                <th rowspan="3">사무<br>구분</th>
+                <th rowspan="3">사무주체</th>
+                <th rowspan="3">사무유형</th>
+                <th rowspan="3">세부<br>사무<br>유형</th>
+                <th rowspan="3">위임<br>사무<br>여부</th>
+                <th rowspan="3">재위임<br>사무<br>유형</th>
+                <th rowspan="3">위탁<br>사무<br>여부</th>
+                <th rowspan="3">검토</th>
+              </tr>
+              <tr class="color_gray">
+                <th colspan="2">대분류</th>
+                <th colspan="2">중분류</th>
+                <th colspan="2">소분류</th>
+                <th>세분류</th>
+                <th rowspan="2">호</th>
+              </tr>
+              <tr class="color_gray">
+                <th colspan="2">장</th>
+                <th colspan="2">절</th>
+                <th colspan="2">조</th>
+                <th>행</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="stage2" onclick="window.location.href='조사상세_시연용.html'">
+                <td>
+                  <label class="input_type  check check-item only no-click">
+                    <input type="checkbox" name="q01">
+                    <span class="txt"></span>
+                  </label>
+                </td>
+                <td><span class="line">29</span></td>
+                <td>국토교통부</td>
+                <td>법률</td>
+                <td>건설산업기본법  </td>
+                <td>2</td>
+                <td>건설업 등록</td>
+                <td>-</td>
+                <td>-</td>
+                <td>12345</td>
+                <td>건설업 등록 등</td>
+                <td>1</td>
+                <td>-</td>
+                <td>일반건설업등록 </td>
+                <td>사무</td>
+                <td>국토교통부 </td>
+                <td>국가</td>
+                <td>국가 직접사무</td>
+                <td>○</td>
+                <td>X</td>
+                <td>X</td>
+                <td>대기중</td>
+              </tr>
+              <tr class="stage3">
+                <td>
+                  <label class="input_type  check check-item only">
+                    <input type="checkbox" name="q01">
+                    <span class="txt"></span>
+                  </label>
+                </td>
+                <td>28</td>
+                <td>국토교통부</td>
+                <td>법률</td>
+                <td>건설산업기본법  </td>
+                <td>2</td>
+                <td>건설업 등록</td>
+                <td>-</td>
+                <td>-</td>
+                <td>9</td>
+                <td>건설업 등록 등</td>
+                <td>2</td>
+                <td>-</td>
+                <td>일반건설업 등록증의 발급 </td>
+                <td>사무</td>
+                <td>국토교통부 </td>
+                <td>국가</td>
+                <td>국가 직접사무</td>
+                <td>○</td>
+                <td>X</td>
+                <td>X</td>
+                <td>대기중</td>
+              </tr>
+              <tr class="stage4">
+                <td>
+                  <label class="input_type  check check-item only">
+                    <input type="checkbox" name="q01">
+                    <span class="txt"></span>
+                  </label>
+                </td>
+                <td>27</td>
+                <td>국토교통부</td>
+                <td>법률</td>
+                <td>건설산업기본법  </td>
+                <td>2</td>
+                <td>건설업 등록</td>
+                <td>-</td>
+                <td>-</td>
+                <td>9</td>
+                <td>건설업 등록 등</td>
+                <td>3</td>
+                <td>-</td>
+                <td>일반건설업 변경신고</td>
+                <td>사무</td>
+                <td>국토교통부 </td>
+                <td>국가</td>
+                <td>국가 직접사무</td>
+                <td>○</td>
+                <td>X</td>
+                <td>X</td>
+                <td>대기중</td>
+              </tr><tr>
+                <td>
+                  <label class="input_type  check check-item only">
+                    <input type="checkbox" name="q01">
+                    <span class="txt"></span>
+                  </label>
+                </td>
+                <td>26</td>
+                <td>국토교통부</td>
+                <td>법률</td>
+                <td>건설산업기본법  </td>
+                <td>2</td>
+                <td>건설업 등록</td>
+                <td>-</td>
+                <td>-</td>
+                <td>17</td>
+                <td>건설업 등록 등</td>
+                <td>-</td>
+                <td>-</td>
+                <td>일반건설업 양도 </td>
+                <td>사무</td>
+                <td>국토교통부 </td>
+                <td>국가</td>
+                <td>국가 직접사무</td>
+                <td>○</td>
+                <td>X</td>
+                <td>X</td>
+                <td>대기중</td>
+              </tr><tr class="stage2">
+                <td>
+                  <label class="input_type  check check-item only">
+                    <input type="checkbox" name="q01">
+                    <span class="txt"></span>
+                  </label>
+                </td>
+                <td>25</td>
+                <td>국토교통부</td>
+                <td>법률</td>
+                <td>건설산업기본법  </td>
+                <td>5</td>
+                <td>경영합리화와 중소건설사업자 지원</td>
+                <td>-</td>
+                <td>-</td>
+                <td>49</td>
+                <td>건설사업자의 실태조사 등</td>
+                <td>-</td>
+                <td>-</td>
+                <td>일반건설업 시정명령</td>
+                <td>사무</td>
+                <td>국토교통부 </td>
+                <td>국가</td>
+                <td>국가 직접사무</td>
+                <td>○</td>
+                <td>X</td>
+                <td>X</td>
+                <td>대기중</td>
+              </tr>
+              <tr class="change">
+                <td>
+                  <label class="input_type  check check-item only">
+                    <input type="checkbox" name="q01">
+                    <span class="txt"></span>
+                  </label>
+                </td>
+                <td>24</td>
+                <td>국토교통부</td>
+                  <td>법률</td>
+                  <td>건설산업기본법  </td>
+                  <td>9</td>
+                  <td>시정명령 등</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>81</td>
+                  <td>시정명령 등</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>일반건설업 영업정지 및 과징금처분 </td>
+                  <td>사무</td>
+                  <td>국토교통부 </td>
+                  <td>국가</td>
+                  <td>국가 직접사무</td>
+                  <td>○</td>
+                <td>X</td>
+                <td>X</td>
+                <td>대기중</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="input_type  check check-item only">
+                    <input type="checkbox" name="q01">
+                    <span class="txt"></span>
+                  </label>
+                </td>
+                <td>23</td>
+                <td>국토교통부</td>
+                  <td>법률</td>
+                  <td>건설산업기본법  </td>
+                  <td>9</td>
+                  <td>시정명령 등</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>82</td>
+                  <td>영업정지 등</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>일반건설업 등록말소 </td>
+                  <td>사무</td>
+                  <td>국토교통부 </td>
+                  <td>국가</td>
+                  <td>국가 직접사무</td>
+                  <td>○</td>
+                <td>X</td>
+                <td>X</td>
+                <td>대기중</td>
+              </tr>  <tr>
+                <td>
+                  <label class="input_type  check check-item only">
+                    <input type="checkbox" name="q01">
+                    <span class="txt"></span>
+                  </label>
+                </td>
+                <td>22</td>
+                <td>국토교통부</td>
+                  <td>법률</td>
+                  <td>건설산업기본법  </td>
+                  <td>9</td>
+                  <td>시정명령 등</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>83</td>
+                  <td>건설업의 등록말소 등</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>건설업의 등록말소 </td>
+                  <td>사무</td>
+                  <td>국토교통부 </td>
+                  <td>국가</td>
+                  <td>국가 직접사무</td>
+                  <td>○</td>
+                <td>X</td>
+                <td>X</td>
+                <td>대기중</td>
+              </tr>  
+              <tr>
+                <td>
+                  <label class="input_type  check check-item only">
+                    <input type="checkbox" name="q01">
+                    <span class="txt"></span>
+                  </label>
+                </td>
+                <td>21</td>
+                <td>국토교통부</td>
+                  <td>법률</td>
+                  <td>건설산업기본법  </td>
+                  <td>9</td>
+                  <td>시정명령 등</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>86</td>
+                  <td>청문</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>영업정지, 과장금 </td>
+                  <td>사무</td>
+                  <td>국토교통부 </td>      
+                  <td>국가</td>
+                  <td>국가 직접사무</td>
+                  <td>○</td>
+                <td>X</td>
+                <td>X</td>
+                <td>대기중</td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="input_type  check check-item only">
+                    <input type="checkbox" name="q01">
+                    <span class="txt"></span>
+                  </label>
+                </td>
+                <td>20</td>
+                <td>국토교통부</td>
+                  <td>법률</td>
+                  <td>화물자동차 운수사업법</td>
+                  <td>2</td>
+                  <td>화물자동차 운송사업</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>3</td>
+                  <td>화물자동차운송사업 등록 등 </td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>화물자동차운송사업의 등록 </td>
+                  <td>사무</td>
+                  <td>국토교통부 </td>
+                  <td>국가</td>
+                  <td>국가 직접사무</td>
+                  <td>○</td>
+                <td>X</td>
+                <td>X</td>
+                <td>대기중</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- paging -->
+        <div class="paging">
+          <a href="#none" class="first"></a>
+          <a href="#none" class="prev"></a>
+          <ol>
+            <li><a href="#none" class="on">1</a></li>
+            <li><a href="#none">2</a></li>
+            <li><a href="#none">3</a></li>
+            <li><a href="#none">4</a></li>
+            <li><a href="#none">5</a></li>
+          </ol>
+          <a href="#none" class="next"></a>
+          <a href="#none" class="last"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <div class="inner">
+      <div class="top_info float_box">
+        <div class="left_cont">
+          <a href="#none" class="bar">이용약관</a>
+          <a href="#none" class="point">개인정보처리방침</a>
+        </div>
+        <div class="right_cont pc">
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">소속기관 누리집 바로가기</span>
+            <div class="option">
+
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>선택함1</li>
+                  <li>선택함2</li>
+                  <li>선택함3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">신하기관 누리집 바로가기</span>
+            <div class="option">
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>선택함1</li>
+                  <li>선택함2</li>
+                  <li>선택함3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info_box">
+        <address>
+          <span class="bar">본관 : (30112) 세종특별자치시 도움6로 42(어진동)</span>
+          <span>별관 : (30116) 세존특별자치시 가름로 143(어진동)</span>
+        </address>
+        <div class="info_num_box pc">
+          <p>
+            <span class="tit bar">정부민원안내콜센터</span>
+            <strong class="txt">국번없이 110</strong>
+            <span class="s_txt">(무료)</span>
+          </p>
+          <p>
+            <span class="tit bar">행정안전부 콜센터</span>
+            <strong class="txt">02-2100-3399</strong>
+            <span class="s_txt bar">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+            <span class="tit">팩스</span>
+            <strong class="txt">044-204-8911</strong>
+          </p>
+          <p>
+          </p>
+          <p>
+            <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+          </p>
+        </div>
+        <div class="info_num_box mo">
+          <p>
+            <span class="tit bar">정부민원안내콜센터</span>
+            <strong class="txt">국번없이 110</strong>
+            <span class="s_txt">(무료)</span>
+          </p>
+          <p>
+            <span class="tit bar">행정안전부 콜센터</span>
+            <strong class="txt">02-2100-3399</strong>
+          </p>
+          <p style="margin-top:8px;">
+            <span class="s_txt">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+          </p>
+          <p>
+            <span class="tit">팩스</span>
+            <strong class="txt">044-204-8911</strong>
+          </p>
+          <p>
+            <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+          </p>
+        </div>
+        <div class="select_cont mo">
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">소속기관 누리집 바로가기</span>
+            <div class="option_wrap">
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                    <li>선택함3</li>
+                    <li>선택함3</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">신하기관 누리집 바로가기</span>
+            <div class="option">
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>선택함1</li>
+                  <li>선택함2</li>
+                  <li>선택함3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="copy">ⓒ Ministry of the Interior and Safety. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+
+
+
+

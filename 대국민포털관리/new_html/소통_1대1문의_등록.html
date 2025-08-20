@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!-- 메인 플로팅 배너가 처음부터 열렸을때 modal-opan 클래스를 추가 -->
+<html lang="en"> 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>지방이양자동화 시스템 구축 프로젝트</title>
+    <link rel="stylesheet" href="css/common.css">
+    <!-- mCustomScrollbar css -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+    <!-- REQUIRED SCRIPTS -->
+    <script src="js/jquery-3.2.1.js"></script>
+    <!-- mCustomScrollbar JS -->
+    <script src="js/jquery.mCustomScrollbar.js"></script>
+    <!-- Swiper JS -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- common.js -->
+    <script src="js/common.js"></script>
+    <script src="js/common_02.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <!-- 접근성 필수 -->
+    <ul class="skip">
+      <li><a href="#content">본문내용 바로가기</a></li>
+      <li><a href="#gnb">주메뉴 바로가기</a></li>
+    </ul>
+
+  <!-- header_wrap -->
+  <div class="header_wrap">
+    <div class="header">
+      <div class="inner">
+        <div class="header_cont">
+          <div class="header_top_cont">
+            <h1 class="logo">
+              <a href="/" title="메인으로 이동">
+                <img src="img/pc/logo_new.png" alt="지방이양사무관리시스템 대국민서비스">              
+              </a>
+            </h1>
+          </div>
+          <div class="top_menu_cont">
+            <ul class="menu" id="gnb">
+              <li><a href="#none" class="on">서비스 소개</a></li>
+              <li><a href="#none">지방이양사무</a></li>
+              <li><a href="#none">국민참여</a></li>
+              <li><a href="#none">자료실</a></li>
+              <li><a href="#none">소통</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- container -->
+    <div class="container" id="content">
+      <!-- 검색영역 -->
+      <div class="sc bg_top">
+        <div class="inner">
+          <div class="location">
+            <ul>
+              <li><a href="#none">홈</a></li>
+              <li><a href="#none">소통</a></li>
+              <li><a href="#none">1:1 문의</a></li>
+            </ul>
+          </div>
+          <div class="pc">
+            <a href="#none" class="btn ico_print"><span>프린트</span></a>
+          </div>
+           <div class="flex-row justify-between">                
+                <h2 class="title">1:1 문의</h2>                                        
+           </div>
+          
+        </div>
+      </div>
+
+      <div class="content_wrap">
+        <div class="inner">
+          <!-- pc -->
+          <div class="table_cont">
+            <table class="table-body-only">
+              <caption><span class="ir-text">문의 유형 선택, 제목, 문의 내용으로 구성된 1:1 문의 등록 화면</span></caption>
+              <colgroup>                    
+                <col class="col-wid160">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>    
+                  <th scope="row">문의 유형 선택</th>
+                  <td>
+                      <!-- 콤보박스 -->
+                      <select name="" id="" class="selectbox" title="문의 유형 선택">
+                        <option value="선택함1">전체</option>
+                        <option value="선택함2">선택함2</option>
+                        <option value="선택함3">선택함3</option>
+                      </select>
+                      <!-- //콤보박스 -->    
+                  </td>
+                </tr>                  
+                <tr>    
+                  <th scope="row">제목 <span class="red-color">*</span></th>
+                  <td>
+                      <div class="form-element__wrap">                                  
+                        <div class="input-multi has-text-count mo-flex-col">
+                          <span class="form-element__inner input-type">
+                              <input type="text" value="" class="input-type1-font14" maxlength="50" placeholder="제목을 입력하세요" title="제목을 입력하세요">
+                          </span>
+                          <span class="input-text-count">
+                              <strong class="current">0</strong> / <strong>50자</strong>
+                          </span>
+                        </div>
+                      </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">문의 내용</th>
+                  <td>
+                    <div class="form-element__wrap  mo-flex-col">                                  
+                      <span class="form-element__inner text-area" style="height: 150px;">
+                        <textarea  style="height: 100%;" title="문의 내용을 입력하세요" placeholder="입력하세요."></textarea>                          
+                       </span>
+                      <div class="input-text-count wd-100p">
+                          <strong class="current">0</strong> / <strong>5,000자</strong>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="button__wrap flex-end pc-flex mt-32">
+              <button type="button" class="btn-gray-default">
+                  <i class="ico-remove"></i> 취소
+              </button>
+              <button type="button" class="btn-primary-default">
+                  <i></i> 등록
+              </button>                              
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="inner">
+        <div class="top_info float_box">
+          <div class="left_cont">
+            <a href="#none" class="bar">이용약관</a>
+            <a href="#none" class="point">개인정보처리방침</a>
+          </div>
+          <div class="right_cont pc">
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">소속기관 누리집 바로가기</span>
+              <div class="option">
+
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">신하기관 누리집 바로가기</span>
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info_box">
+          <address>
+            <span class="bar">본관 : (30112) 세종특별자치시 도움6로 42(어진동)</span>
+            <span>별관 : (30116) 세존특별자치시 가름로 143(어진동)</span>
+          </address>
+          <div class="info_num_box pc">
+            <p>
+              <span class="tit bar">정부민원안내콜센터</span>
+              <strong class="txt">국번없이 110</strong>
+              <span class="s_txt">(무료)</span>
+            </p>
+            <p>
+              <span class="tit bar">행정안전부 콜센터</span>
+              <strong class="txt">02-2100-3399</strong>
+              <span class="s_txt bar">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+              <span class="tit">팩스</span>
+              <strong class="txt">044-204-8911</strong>
+            </p>
+            <p>
+            </p>
+            <p>
+              <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+            </p>
+          </div>
+          <div class="info_num_box mo">
+            <p>
+              <span class="tit bar">정부민원안내콜센터</span>
+              <strong class="txt">국번없이 110</strong>
+              <span class="s_txt">(무료)</span>
+            </p>
+            <p>
+              <span class="tit bar">행정안전부 콜센터</span>
+              <strong class="txt">02-2100-3399</strong>
+            </p>
+            <p style="margin-top:8px;">
+              <span class="s_txt">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+            </p>
+            <p>
+              <span class="tit">팩스</span>
+              <strong class="txt">044-204-8911</strong>
+            </p>
+            <p>
+              <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+            </p>
+          </div>
+          <div class="select_cont mo">
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">소속기관 누리집 바로가기</span>
+              <div class="option_wrap">
+                <div class="option">
+                  <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                    <ul>
+                      <li>선택함1</li>
+                      <li>선택함2</li>
+                      <li>선택함3</li>
+                      <li>선택함3</li>
+                      <li>선택함3</li>
+                      <li>선택함3</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">신하기관 누리집 바로가기</span>
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="copy">ⓒ Ministry of the Interior and Safety. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer mo foot_btn_wrap">
+      <div class="foot_btn_area">        
+        <a href="#none" class="btn btn_cancel"><span>취소</span></a>
+        <a href="#none" class="btn btn_approval "><span>등록</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

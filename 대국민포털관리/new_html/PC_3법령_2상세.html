@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<!-- 메인 플로팅 배너가 처음부터 열렸을때 modal-opan 클래스를 추가 -->
+<html lang="ko"> 
+<head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">  
+    <title>지방이양자동화 시스템 구축 프로젝트</title>
+    <link rel="stylesheet" href="css/common.css">
+    <!-- mCustomScrollbar css -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+    <!-- REQUIRED SCRIPTS -->
+    <script src="js/jquery-3.2.1.js"></script>
+    <!-- mCustomScrollbar JS -->
+    <script src="js/jquery.mCustomScrollbar.js"></script>
+    <!-- Swiper JS -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- common.js -->
+    <script src="js/common.js"></script>
+    <script src="js/common_02.js"></script>
+    <!-- 파비콘 -->
+    <link rel="icon" href="img/pc/favicon.png" type="image/x-icon">
+</head>
+<body>
+<div class="wrap">
+    <!-- 접근성 필수 -->
+    <ul class="skip">
+    <li><a href="#content">본문내용 바로가기</a></li>
+    <li><a href="#gnb">주메뉴 바로가기</a></li>
+    </ul>
+    <!-- header_wrap -->
+    <div class="header_wrap">
+        <div class="header">
+            <div class="inner">
+            <div class="header_cont">
+                <div class="header_top_cont">
+                <h1 class="logo">
+                    <a href="메인.html" title="메인으로 이동">
+                    <img src="img/pc/logo_new.png" alt="지방이양사무관리시스템 대국민서비스">              
+                    </a>
+                </h1>
+                <div class="info_cont">
+                    <!-- 로그인 전 -->
+                    <!-- <ul class="info_menu default">
+                    <li><a href="#" class="ico_login"><span>로그인</span></a></li>
+                    <li><a href="#none" class="ico_join"><span>회원가입</span></a></li>
+                    </ul>  -->
+                    <!-- 로그인 후 -->
+                    <!-- <ul class="info_menu">
+                    <li class="bar"><a href="#none">마이페이지</a></li>
+                    </ul>
+                    <span class="user"><strong>홍길동</strong>님 <span class="rank"><strong>7</strong>등급</span></span>
+                    <button class="btn_log">
+                    <span class="txt">로그아웃</span>
+                    <span class="time">09:55</span>
+                    </button> -->
+                </div>              
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- gnb -->
+    <div class="global-navy_wrap">
+        <div class="top_menu_cont">
+            <ul class="menu portal-web" id="gnb">
+                <li><a href="PC_3법령_1리스트.html" class="on">법령</a></li>
+                <li><a href="PC_4사무_1사무_1목록.html">사무</a></li>
+                <li><a href="#none">통계</a></li>
+                <li><a href="PC_8정보자료_1공지사항_1목록.html">정보자료</a></li>               
+            </ul>
+        </div>
+    </div>
+<!-- container -->
+
+    <!-- container -->
+    <div class="container" id="content">
+        <!-- 검색영역 -->
+        <div class="sc bg_top">
+            <div class="inner">
+                <div class="location">
+                    <ul>
+                    <li><a href="#none">홈</a></li>
+                    <li><a href="#none">법령</a></li>              
+                    <li><a href="#none">상세</a></li>   
+                    </ul>
+                </div>
+                <h2 class="title">법령정보</h2>
+                <div class="pc">
+                    <a href="#none" class="btn ico_print"><span>프린트</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content_wrap">
+            <div class="inner">
+            <!-- pc -->
+            <div class="table_cont">
+                <table class="table-body-only">
+                <colgroup>
+                    <col width="160" />
+                    <col width="" />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row">소관부처</th>
+                        <td>
+                        문화체육관광부                           
+                        </td>                                      
+                    </tr>
+                    <tr>
+                        <th scope="row">재개정구분</th>
+                        <td>
+                        타법개정
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">법령종류</th>
+                        <td>
+                        법률                      
+                        </td>                 
+                    </tr>
+                    <tr>
+                        <th scope="row">공포번호</th>
+                        <td>
+                        제 19592호                            
+                        </td>                  
+                    </tr>
+                    <tr>
+                        <th scope="row">공포일자</th>
+                        <td>
+                        2023.8.8                       
+                        </td>                     
+                    </tr>
+                    <tr>
+                        <th scope="row">시행일자</th>
+                        <td>
+                        2023.8.8                             
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">법령명</th>
+                        <td>
+                        10·27법난 피해자의 명예회복 등에 관한 법률                        
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+    
+            <div class="table_cont scroll-type  mt-64">
+                <table>
+                    <colgroup>
+                        <col width="40">
+                        <col width="40">
+                        <col width="40">
+                        <col width="240">
+                        <col width="80">
+                        <col width="400">                                                        
+                        <col width="120">  
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="3">장번호</th>
+                            <th scope="col">장제목</th>
+                            <th scope="col">절번호</th>
+                            <th scope="col">절제목</th>
+                            <th scope="col" rowspan="2">법률 개정</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">조</th>
+                            <th scope="col">항</th>
+                            <th scope="col">호</th>
+                            <th scope="col">조문제목</th>                                
+                            <th scope="col" colspan="2">조문</th>                              
+                    </tr></thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="3">7</td>
+                            <td>개인정보 분쟁조정위원회</td>
+                            <td></td>
+                            <td></td>
+                            <td rowspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>집단분쟁조정</td>
+                            <td colspan="2" class="text-l">제1조(목적) 이 법은 10ㆍ27법난과 관련하여 피해를 입은 사람과 불교계의 명예를 회복시켜줌으로써 인권신장과 국민화합에 이바지함을 목적으로 한다. &lt;개정 2022. 8. 8.&gt;</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td colspan="3">7</td>
+                            <td>개인정보 분쟁조정위원회</td>
+                            <td></td>
+                            <td></td>
+                            <td rowspan="2">
+                                <a href="#none"  onclick="modalControl('o','#main_layer_pop');return false">[확인]</a>
+                            </td>
+                        </tr>
+                        <tr class="highlight">
+                            <td>6</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td><a href="#none"  onclick="modalControl('o','#main_layer_pop_01');return false">집단분쟁조정</a></td>
+                            <td colspan="2" class="text-l">제1조(목적) 이 법은 10ㆍ27법난과 관련하여 피해를 입은 사람과 불교계의 명예를 회복시켜줌으로써 인권신장과 국민화합에 이바지함을 목적으로 한다. &lt;개정 2022. 8. 8.&gt;</td>
+                        </tr>  
+                        <tr>
+                            <td colspan="3">7</td>
+                            <td>개인정보 분쟁조정위원회</td>
+                            <td></td>
+                            <td></td>
+                            <td rowspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>집단분쟁조정</td>
+                            <td colspan="2" class="text-l">제1조(목적) 이 법은 10ㆍ27법난과 관련하여 피해를 입은 사람과 불교계의 명예를 회복시켜줌으로써 인권신장과 국민화합에 이바지함을 목적으로 한다. &lt;개정 2022. 8. 8.&gt;</td>
+                        </tr> 
+                        <tr>
+                            <td colspan="3">7</td>
+                            <td>개인정보 분쟁조정위원회</td>
+                            <td></td>
+                            <td></td>
+                            <td rowspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>집단분쟁조정</td>
+                            <td colspan="2" class="text-l">제1조(목적) 이 법은 10ㆍ27법난과 관련하여 피해를 입은 사람과 불교계의 명예를 회복시켜줌으로써 인권신장과 국민화합에 이바지함을 목적으로 한다. &lt;개정 2022. 8. 8.&gt;</td>
+                        </tr>                                                                                                                     
+                    </tbody>
+                </table>
+            </div>
+            <!-- paging -->
+            <div class="paging">
+                <a href="#none" class="prev"></a>
+                <ol>
+                <li><a href="#none" class="on">1</a></li>
+                <li><a href="#none">2</a></li>
+                <li><a href="#none">3</a></li>
+                <li><a href="#none">4</a></li>
+                <li><a href="#none">5</a></li>
+                <li><a href="#none">6</a></li>
+                </ol>
+                <a href="#none" class="next"></a>
+            </div>
+            <div class="button__wrap flex-end mt-64 ">
+                <button type="button" class="btn-gray-default">
+                    <i class="ico-list"></i> 목록
+                </button>                    
+            </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 -->
+    <section class="modal_new modal_overlay roll-type" id="main_layer_pop_01"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+        <div class="modal_n_wrap roll-modal">
+            <div class="modal-header">
+                <div class="tit">사무정보</div>
+            </div>
+            <div class="modal_n_body">
+            <div class="pop_cont">
+                <div class="table-cont">
+                    <table>
+                        <colgroup>
+                            <col>
+                            <col style="width:12%">
+                            <col style="width:10%">
+                            <col style="width:13%">
+                            <col style="width:8%">
+                            <col style="width:8%">
+                            <col style="width:8%">
+                            <col style="width:8%">
+                            <col style="width:8%">
+                            <col style="width:8%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>사무명</th>
+                                <th>사무주체</th>
+                                <th>사무유형</th>
+                                <th>세부사무유형</th>
+                                <th>위임사무<br>여부</th>
+                                <th>수임기관</th>
+                                <th>특행기관</th>
+                                <th>재위임<br>사무여부</th>
+                                <th>위탁사무<br>여부</th>
+                                <th>수탁기관</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>수중레저기구 등에 대한 안전점검</td>
+                                <td>해양수산부장관</td>
+                                <td>국가</td>
+                                <td>국가직접사무</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>X</td>
+                                <td>-</td>
+                                <td>X</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>수중레저기구 등에 대한 안전점검</td>
+                                <td>해양수산부장관</td>
+                                <td>국가</td>
+                                <td>국가직접사무</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>X</td>
+                                <td>-</td>
+                                <td>X</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>수중레저기구 등에 대한 안전점검</td>
+                                <td>해양수산부장관</td>
+                                <td>국가</td>
+                                <td>국가직접사무</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>X</td>
+                                <td>-</td>
+                                <td>X</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>수중레저기구 등에 대한 안전점검</td>
+                                <td>해양수산부장관</td>
+                                <td>국가</td>
+                                <td>국가직접사무</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>X</td>
+                                <td>-</td>
+                                <td>X</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>수중레저기구 등에 대한 안전점검</td>
+                                <td>해양수산부장관</td>
+                                <td>국가</td>
+                                <td>국가직접사무</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>X</td>
+                                <td>-</td>
+                                <td>X</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>수중레저기구 등에 대한 안전점검</td>
+                                <td>해양수산부장관</td>
+                                <td>국가</td>
+                                <td>국가직접사무</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>X</td>
+                                <td>-</td>
+                                <td>X</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>수중레저기구 등에 대한 안전점검</td>
+                                <td>해양수산부장관</td>
+                                <td>국가</td>
+                                <td>국가직접사무</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>X</td>
+                                <td>-</td>
+                                <td>X</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="button__wrap flex-end mt-32">
+                    <button type="button" class="btn-primary-default wd-108 "  onclick="modalControl('c')" >
+                        <i></i> 확인
+                    </button>  
+                </div>  
+            </div>
+            
+            <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 모달 -->
+    <section class="modal_new modal_overlay roll-type" id="main_layer_pop"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+        <div class="modal_n_wrap roll-modal">
+            <div class="modal-header">
+                <div class="tit">법령개정정보</div>
+            </div>
+            <div class="modal_n_body">
+            <div class="pop_cont">
+                <div class="document-title-ft18">
+                    개정된 법령
+                </div>
+                <div class="table-cont  mt-16">
+                    <table>
+                        <colgroup>
+                            <col width="40" />
+                            <col width="40" />
+                            <col width="40" />
+                            <col width="240" />
+                            <col width="80" />
+                            <col width="" />                                                        
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" colspan="3">장번호</th>
+                                <th scope="col">장제목</th>
+                                <th scope="col">절번호</th>
+                                <th scope="col">절제목</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">조</th>
+                                <th scope="col">항</th>
+                                <th scope="col">호</th>
+                                <th scope="col">조문제목</th>                                
+                                <th scope="col" colspan="2">조문</th>                              
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3">7</td>
+                                <td class="text-l">개인정보 분쟁조정위원회</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>집단분쟁조정</td>
+                                <td colspan="2">제1조(목적) 이 법은 10ㆍ27법난과 관련하여 피해를 입은 사람과 불교계의 명예를 회복시켜줌으로써 인권신장과 국민화합에 이바지함을 목적으로 한다. <개정 2022. 8. 8.></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">재개정 구분</td>
+                                <td colspan="3" class="text-l">일부개정</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">시행일</td>
+                                <td colspan="3" class="text-l">2023.11.12</td>
+                            </tr>                                                                                    
+                        </tbody>
+                    </table>
+                </div>
+                <div class="document-title-ft18 mt-32">
+                    개정이전 법령
+                </div>   
+                <div class="table-cont mt-16">
+                    <table>
+                        <colgroup>
+                            <col width="40" />
+                            <col width="40" />
+                            <col width="40" />
+                            <col width="240" />
+                            <col width="80" />
+                            <col width="" />                                                        
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" colspan="3">장번호</th>
+                                <th scope="col">장제목</th>
+                                <th scope="col">절번호</th>
+                                <th scope="col">절제목</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">조</th>
+                                <th scope="col">항</th>
+                                <th scope="col">호</th>
+                                <th scope="col">조문제목</th>                                
+                                <th scope="col" colspan="2">조문</th>                              
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3">7</td>
+                                <td class="text-l">개인정보 분쟁조정위원회</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>집단분쟁조정</td>
+                                <td colspan="2">제1조(목적) 이 법은 10ㆍ27법난과 관련하여 피해를 입은 사람과 불교계의 명예를 회복시켜줌으로써 인권신장과 국민화합에 이바지함을 목적으로 한다. <개정 2022. 8. 8.></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">재개정 구분</td>
+                                <td colspan="3" class="text-l">일부개정</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">시행일</td>
+                                <td colspan="3" class="text-l">2023.11.12</td>
+                            </tr>                                                                                    
+                        </tbody>
+                    </table>
+                </div>  
+                <div class="button__wrap flex-end mt-32">
+                    <button type="button" class="btn-primary-default wd-108 "  onclick="modalControl('c')" >
+                        <i></i> 확인
+                    </button>  
+                </div>  
+            </div>
+            
+            <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="inner">
+        <div class="top_info float_box">
+            <div class="left_cont">
+            <a href="#none" class="bar">이용약관</a>
+            <a href="#none" class="point">개인정보처리방침</a>
+            </div>
+        </div>
+        <div class="info_box">
+            <address>
+            <span class="bar">본관 : (30112) 세종특별자치시 도움6로 42(어진동)</span>
+            <span>별관 : (30116) 세존특별자치시 가름로 143(어진동)</span>
+            </address>
+            <div class="info_num_box">
+            <p>
+                <span class="tit bar">정부민원안내콜센터</span>
+                <strong class="txt">국번없이 110</strong>
+                <span class="s_txt">(무료)</span>
+            </p>
+            <p>
+                <span class="tit bar">행정안전부 콜센터</span>
+                <strong class="txt">02-2100-3399</strong>
+                <span class="s_txt bar">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+                <span class="tit">팩스</span>
+                <strong class="txt">044-204-8911</strong>
+            </p>
+            <p>
+            </p>
+            <p>
+                <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+            </p>
+            </div>
+            <p class="copy">ⓒ Ministry of the Interior and Safety. All rights reserved.</p>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

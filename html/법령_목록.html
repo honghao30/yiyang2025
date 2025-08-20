@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지방이양자동화 시스템 구축 프로젝트</title>
+  <link rel="stylesheet" href="css/common.css">
+  <!-- mCustomScrollbar css -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+  <!-- REQUIRED SCRIPTS -->
+  <script src="js/jquery-3.2.1.js"></script>
+  <!-- mCustomScrollbar JS -->
+  <script src="js/jquery.mCustomScrollbar.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <!-- common.js -->
+  <script src="js/common.js"></script>
+  <script src="js/common_02.js"></script>
+</head>
+<body>
+<div class="wrap sample">
+  <!-- searchlayer 모바일 상세검색 -->
+  <div class="searchlayer mo">
+    <div class="search_cont">
+      <span class="search_box">
+        <span class="input_cont">
+          <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+          <button class="btn_search"><span class="hidden">검색</span></button>
+        </span>
+        <button class="btn_layer_close" onclick="searchClose();"><span class="hidden">닫기</span></button>
+      </span>
+    </div>
+    <div class="content_wrap">
+      <!-- select_box -->
+      <select class="selectbox">
+        <option value="선택함1">전체</option>
+        <option value="선택함2">선택함2</option>
+        <option value="선택함3">선택함3</option>
+      </select>
+      <!-- select_box -->
+      <select class="selectbox">
+        <option value="선택함1">전체</option>
+        <option value="선택함2">선택함2</option>
+        <option value="선택함3">선택함3</option>
+      </select>
+      <!-- select_box -->
+      <select class="selectbox">
+        <option value="선택함1">전체</option>
+        <option value="선택함2">선택함2</option>
+        <option value="선택함3">선택함3</option>
+      </select>
+      <!-- 초기화 버튼 -->
+      <div class="btn_reset_area">
+        <button class="btn btn_reset"><span>초기화</span></button>
+        <button class="btn">검색</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- header -->
+  <div class="header">
+    <div class="inner">
+      <div class="header_cont">
+        <div class="header_top_cont">
+          <h1 class="logo"><a href="#none">지방이양사무관리시스템</a></h1>
+          <div class="right_cont mo">
+            <button class="btn_search" onclick="searchLayer(this);"><span class="hidden">검색</span></button>
+            <button class="btn_login"><span class="hidden">로그인</span></button>
+            <button class="btn_menu"><span class="hidden">메뉴</span></button>
+          </div>
+        </div>
+        <div class="top_menu_cont">
+          <ul class="menu">
+            <li><a href="#none" class="on">법령</a></li>
+            <li><a href="#none">조사</a></li>
+            <li><a href="#none">사무</a></li>
+            <li><a href="#none">이양사무</a></li>
+            <li><a href="#none">통계</a></li>
+            <li><a href="#none">대국민 포털관리</a></li>
+            <li><a href="#none">시스템 관리</a></li>
+          </ul>
+        </div>
+        <!-- 로그인/회원가입 버튼 -->
+        <div class="info_cont" style="display: none;">
+          <span class="bar"><a href="#none" class="ico_login"><span>로그인</span></a></span>
+          <span><a href="#none" class="ico_join"><span>회원가입</span></a></span>
+        </div>
+
+        <!-- 마이페이지/사용자/로그아웃 -->
+        <div class="info_cont pc">
+          <ul class="info_menu">
+            <li class="bar"><a href="#none">마이페이지</a></li>
+          </ul>
+          <span class="user"><strong>홍길동</strong>님 <span class="rank"><strong>7</strong>등급</span></span>
+          <button class="btn_log">
+            <span class="txt">로그아웃</span>
+            <span class="time">09:55</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <!-- container -->
+  <div class="container" id="content">
+    <!-- 검색영역 -->
+    <div class="sc bg_top">
+      <div class="inner">
+        <div class="location">
+          <ul>
+            <li><a href="#none">홈</a></li>
+            <li><a href="#none">법령</a></li>
+          </ul>
+        </div>
+        <div class="pc">
+          <a href="#none" class="btn ico_print"><span>프린트</span></a>
+        </div>
+        <h2 class="title">법령</h2>
+        <div class="search_cont pc">
+          <span class="search_box">
+            <span class="input_cont">
+              <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+              <button class="btn_search"><span class="hidden">검색</span></button>
+            </span>
+            <button class="btn btn_size_s btn_search_detail"><span>상세검색</span></button>
+          </span>
+        </div>
+
+        <div class="search_cont mo">
+          <span class="search_box">
+            <span class="input_cont">
+              <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+              <button class="btn_search"><span class="hidden">검색</span></button>
+              <span class="search-detail-button">
+                <button type="button" class="btn-detail-mo" onclick="searchLayer(this)">
+                    상세검색
+                </button>
+              </span>
+            </span>
+          </span>
+        </div>
+        <!-- 상세검색 화면 -->
+        <!-- class on 이 붙으면 열림 -->
+        <div class="search_cont_detail pc">
+          <div class="cont">
+            <!-- select_box -->
+            <select class="selectbox">
+              <option value="선택함1">전체</option>
+              <option value="선택함2">선택함2</option>
+              <option value="선택함3">선택함3</option>
+            </select>
+            <!-- select_box -->
+            <select class="selectbox">
+              <option value="선택함1">전체</option>
+              <option value="선택함2">선택함2</option>
+              <option value="선택함3">선택함3</option>
+            </select>
+            <!-- select_box -->
+            <select class="selectbox">
+              <option value="선택함1">전체</option>
+              <option value="선택함2">선택함2</option>
+              <option value="선택함3">선택함3</option>
+            </select>
+            <button class="btn_reset_only-icon btn-law-search"></button>
+            <button class="btn_search_only-icon btn-law-reset"></button>
+          </div>
+          <button class="btn_close"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="content_wrap">
+        <div class="inner">
+            <div class="law-wrap">
+                <div class="law-tree-menu">
+                    <div class="tree-tab-head">
+                        <button type="button" class="tab-menu is-active">소관부처별</button>
+                        <button type="button" class="tab-menu">법분야별</button>
+                    </div>
+                    <div class="tree-menu-wrap">
+                        <div class="tree-menu is-active">
+                            <ul class="tree-list" id="coverment">
+                                <li>
+                                    <div class="haschildren one-depth all">
+                                        <button type="button" class="all-tree is-active"><span class="ir-text">전체메뉴</span></button> <a href="#">전체</a>
+                                    </div>
+                                    <ul class="two-depth-list is-active">
+                                        <li>
+                                            <div class="haschildren"> <a href="#none" class="two-depth-button"><i ></i>부처</a></div>
+                                            <ul class="tree-depth-list">
+                                                <li class="is-active"><a href="#">고용노동부</a></li>
+                                                <li><a href="#">과학기술정보통신부</a></li>
+                                                <li><a href="#">교육부</a></li>
+                                                <li><a href="#">국가보훈부</a></li>
+                                                <li><a href="#">국방부</a></li>
+                                                <li><a href="#">기획재정부</a></li>
+                                                <li><a href="#">농림축산식품부</a></li>
+                                                <li><a href="#">문화체육관광부</a></li>
+                                                <li><a href="#">법무부</a></li>
+                                                <li><a href="#">보건복지부</a></li>
+                                                <li><a href="#">산업통상자원부</a></li>
+                                                <li><a href="#">여성가족부</a></li>
+                                                <li><a href="#">외교부</a></li>
+                                                <li><a href="#">인사혁신처</a></li>
+                                                <li><a href="#">중소기업벤처부</a></li>
+                                                <li><a href="#">통일부</a></li>
+                                                <li><a href="#">해양수산부</a></li>
+                                                <li><a href="#">행정안전부</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div  class="haschildren"><a href="#none" class="two-depth-button"><i ></i>청</a></div>
+                                            <ul class="tree-depth-list">
+                                                <li><a href="#">검찰청</a></li>
+                                                <li><a href="#">경찰청</a></li>
+                                                <li><a href="#">관세청</a></li>
+                                                <li><a href="#">국가유산청</a></li>
+                                                <li><a href="#">국세청</a></li>
+                                                <li><a href="#">기상청</a></li>
+                                                <li><a href="#">농촌진흥청</a></li>
+                                                <li><a href="#">병무청</a></li>
+                                                <li><a href="#">방위사업청</a></li>
+                                                <li><a href="#">산림청</a></li>
+                                                <li><a href="#">새만금개발청</a></li>
+                                                <li><a href="#">소방청</a></li>
+                                                <li><a href="#">우주항공청</a></li>
+                                                <li><a href="#">재외동포청</a></li>
+                                                <li><a href="#">조달청</a></li>
+                                                <li><a href="#">질병관리청</a></li>
+                                                <li><a href="#">통계청</a></li>
+                                            </ul>
+                                        </li>    
+                                        <li>
+                                            <div  class="haschildren"><a href="#none" class="two-depth-button"><i ></i>부처</a></div>
+                                            <ul class="tree-depth-list">
+                                                <li><a href="#">고용노동부</a></li>
+                                                <li><a href="#">과학기술정보통신부</a></li>
+                                                <li><a href="#">교육부</a></li>
+                                                <li><a href="#">국가보훈부</a></li>
+                                                <li><a href="#">국방부</a></li>
+                                                <li><a href="#">기획재정부</a></li>
+                                                <li><a href="#">농림축산식품부</a></li>
+                                                <li><a href="#">문화체육관광부</a></li>
+                                                <li><a href="#">법무부</a></li>
+                                                <li><a href="#">보건복지부</a></li>
+                                                <li><a href="#">산업통상자원부</a></li>
+                                                <li><a href="#">여성가족부</a></li>
+                                                <li><a href="#">외교부</a></li>
+                                                <li><a href="#">인사혁신처</a></li>
+                                                <li><a href="#">중소기업벤처부</a></li>
+                                                <li><a href="#">통일부</a></li>
+                                                <li><a href="#">해양수산부</a></li>
+                                                <li><a href="#">행정안전부</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div  class="haschildren"><a href="#none" class="two-depth-button"><i ></i> 청</a></div>
+                                            <ul class="tree-depth-list">
+                                                <li><a href="#">검찰청</a></li>
+                                                <li><a href="#">경찰청</a></li>
+                                                <li><a href="#">관세청</a></li>
+                                                <li><a href="#">국가유산청</a></li>
+                                                <li><a href="#">국세청</a></li>
+                                                <li><a href="#">기상청</a></li>
+                                                <li><a href="#">농촌진흥청</a></li>
+                                                <li><a href="#">병무청</a></li>
+                                                <li><a href="#">방위사업청</a></li>
+                                                <li><a href="#">산림청</a></li>
+                                                <li><a href="#">새만금개발청</a></li>
+                                                <li><a href="#">소방청</a></li>
+                                                <li><a href="#">우주항공청</a></li>
+                                                <li><a href="#">재외동포청</a></li>
+                                                <li><a href="#">조달청</a></li>
+                                                <li><a href="#">질병관리청</a></li>
+                                                <li><a href="#">통계청</a></li>
+                                            </ul>
+                                        </li>                                                                             
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tree-menu">
+                            <ul class="tree-list" id="law-list">                              
+                                <li>
+                                    <div class="haschildren one-depth all">
+                                      <button type="button" class="all-tree is-active"><span class="ir-text">전체메뉴</span></button> <a href="#">전체</a>
+                                    </div>
+                                    <ul class="two-depth-list  is-active">
+                                        <li>
+                                            <div  class="haschildren"><a href="#none" class="two-depth-button"><i ></i>헌법</a></div>
+                                            <ul class="tree-depth-list">
+                                                <li class="is-active"><a href="#">제1장 헌법전</a></li>
+                                                <li>
+                                                    <div  class="haschildren"><a href="#none" class="two-depth-button"><i ></i>제2장 국가·국민</a></div>
+                                                    <ul class="depthmenu03">
+                                                        <li><a href="#">제1절 국토·통일</a></li>
+                                                        <li><a href="#">제2절 국호·국기·연호등</a></li>
+                                                        <li><a href="#">제3절 국 민</a></li>
+                                                        <li><a href="#">제4절 상훈·전례·국경</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                  <div  class="haschildren"><a href="#none" class="two-depth-button"><i ></i>제2장 국가·국민</a></div>
+                                                  <ul class="depthmenu03">
+                                                      <li><a href="#">제1절 국토·통일</a></li>
+                                                      <li><a href="#">제2절 국호·국기·연호등</a></li>
+                                                      <li><a href="#">제3절 국 민</a></li>
+                                                      <li><a href="#">제4절 상훈·전례·국경</a></li>
+                                                  </ul>
+                                              </li>    
+                                              <li>
+                                                <div  class="haschildren"><a href="#none" class="two-depth-button"><i ></i>제2장 국가·국민</a></div>
+                                                <ul class="depthmenu03">
+                                                    <li><a href="#">제1절 국토·통일</a></li>
+                                                    <li><a href="#">제2절 국호·국기·연호등</a></li>
+                                                    <li><a href="#">제3절 국 민</a></li>
+                                                    <li><a href="#">제4절 상훈·전례·국경</a></li>
+                                                </ul>
+                                              </li>                                                                                                                               
+                                            </ul>
+                                        </li>
+                                        <li>
+                                          <div  class="haschildren"><a href="#none" class="two-depth-button"><i ></i>민법</a></div>
+                                          <ul class="tree-depth-list">
+                                              <li class="is-active"><a href="#">제1장 헌법전</a></li>
+                                              <li>
+                                                  <div  class="haschildren"><a href="#none" class="two-depth-button"><i ></i>제2장 국가·국민</a></div>
+                                                  <ul class="depthmenu03">
+                                                      <li><a href="#">제1절 국토·통일</a></li>
+                                                      <li><a href="#">제2절 국호·국기·연호등</a></li>
+                                                      <li><a href="#">제3절 국 민</a></li>
+                                                      <li><a href="#">제4절 상훈·전례·국경</a></li>
+                                                  </ul>
+                                              </li>
+                                              <li>
+                                                <div  class="haschildren"><a href="#none" class="two-depth-button"><i ></i>제2장 국가·국민</a></div>
+                                                <ul class="depthmenu03">
+                                                    <li><a href="#">제1절 국토·통일</a></li>
+                                                    <li><a href="#">제2절 국호·국기·연호등</a></li>
+                                                    <li><a href="#">제3절 국 민</a></li>
+                                                    <li><a href="#">제4절 상훈·전례·국경</a></li>
+                                                </ul>
+                                            </li>    
+                                            <li>
+                                              <div  class="haschildren"><a href="#none" class="two-depth-button"><i ></i>제2장 국가·국민</a></div>
+                                              <ul class="depthmenu03">
+                                                  <li><a href="#">제1절 국토·통일</a></li>
+                                                  <li><a href="#">제2절 국호·국기·연호등</a></li>
+                                                  <li><a href="#">제3절 국 민</a></li>
+                                                  <li><a href="#">제4절 상훈·전례·국경</a></li>
+                                              </ul>
+                                            </li>                                                                                                                               
+                                          </ul>
+                                      </li>                                        
+                                    </ul>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- //트리메뉴 -->
+                <div class="law-content">
+                    <div class="top_info_box pc-flex">
+                        <div class="left_cont">
+                        <span class="total">총 <strong>11,994</strong>건</span>
+                        </div>
+                        <div class="right_cont">            
+                          <a href="#none" class="btn ico_upload"><span>엑셀 업로드</span></a>
+                          <a href="#none" class="btn ico_download"><span>엑셀 다운로드</span></a>
+                          <!-- 콤보박스 -->
+                          <div class="select_box view-option">
+                            <span class="select">100</span>
+                            <div class="option">
+                              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                                <ul>
+                                    <li>100</li>
+                                    <li>선택함2</li>
+                                    <li>선택함3</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- //콤보박스 -->
+                          / 1페이지
+                        </div>
+                    </div>
+
+                    <div class="top_info_box mo">
+                      <!-- <div class="btn_cont">
+                          <span><a href="#none" class="btn type02 ico_upload"><span>엑셀 업로드</span></a></span>
+                          <span><a href="#none" class="btn type02 ico_download"><span>엑셀 다운로드</span></a></span>
+                      </div> -->
+                      <span class="total">총 <strong>11,994</strong>건</span>
+                    </div>
+                    <!-- table -->
+                    <div class="table_cont scroll-type" data-name="고용노동부">
+                        <table class="table-list no-line">
+                            <colgroup>  
+                                <col style="width: 64px;">
+                                <col style="width:290px;"> 
+                                <col style="width:120px;"> 
+                                <col style="width:120px;"> 
+                                <col style="width:80px;"> 
+                                <col style="width:80px;"> 
+                                <col style="width:80px;"> 
+                                <col style="width:80px;">                           
+                            </colgroup>
+                            <thead>
+                                <tr>                              
+                                    <th>번호</th>                                    
+                                    <th>법령명</th>
+                                    <th>소관부처</th>
+                                    <th>재개정 구분</th>
+                                    <th>법령종류</th>
+                                    <th>공포번호</th>
+                                    <th>공포일자</th>
+                                    <th>시행일</th>                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>20</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>
+                                <tr>
+                                    <td>19</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>
+                                <tr>
+                                    <td>18</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr> 
+                                <tr>
+                                    <td>17</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>    
+                                <tr>
+                                    <td>16</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>    
+                                <tr>
+                                    <td>15</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr> 
+                                <tr>
+                                    <td>14</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>  
+                                <tr>
+                                    <td>13</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>       
+                                <tr>
+                                    <td>12</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>  
+                                <tr>
+                                    <td>11</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>  
+                                <tr>
+                                    <td>10</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr> 
+                                <tr>
+                                    <td>7</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>    
+                                <tr>
+                                    <td>6</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>    
+                                <tr>
+                                    <td>5</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr> 
+                                <tr>
+                                    <td>4</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>  
+                                <tr>
+                                    <td>3</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>       
+                                <tr>
+                                    <td>2</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>  
+                                <tr>
+                                    <td>1</td>
+                                    <td class="text-l"><a href="#" class="ellipsis02">10·27법난 피해자의 명예회복 등에 관한 법률</a></td>
+                                    <td>문화체육관광부</td>
+                                    <td>농림축산식품부</td>
+                                    <td>국가</td>
+                                    <td>19623호</td>
+                                    <td>2024.6.24</td>
+                                    <td>2024.6.24</td>
+                                </tr>                                                                                                                                                                                                                                                                                                                     
+                            </tbody>
+                        </table>
+                    </div>
+              
+                      <!-- paging -->
+                      <div class="paging pc">
+                        <a href="#none" class="prev"></a>
+                        <ol>
+                          <li><a href="#none" class="on">1</a></li>
+                          <li><a href="#none">2</a></li>
+                          <li><a href="#none">3</a></li>
+                          <li><a href="#none">4</a></li>
+                          <li><a href="#none">5</a></li>
+                          <li><a href="#none">6</a></li>
+                          <li><a href="#none">7</a></li>
+                          <li><a href="#none">8</a></li>
+                          <li><a href="#none">9</a></li>
+                          <li><a href="#none">10</a></li>
+                        </ol>
+                        <a href="#none" class="next"></a>
+                      </div>
+              
+                      <!-- paging -->
+                      <div class="paging mo">
+                        <a href="#none" class="prev"></a>
+                        <ol>
+                          <li><a href="#none" class="on">1</a></li>
+                          <li><a href="#none">2</a></li>
+                          <li><a href="#none">3</a></li>
+                          <li><a href="#none">4</a></li>
+                          <li><a href="#none">5</a></li>
+                          <li><a href="#none">6</a></li>
+                        </ol>
+                        <a href="#none" class="next"></a>
+                      </div>
+                 </div>
+                 <!-- 상세 목록 -->
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <div class="inner">
+      <div class="top_info float_box">
+        <div class="left_cont">
+          <a href="#none" class="bar">이용약관</a>
+          <a href="#none" class="point">개인정보처리방침</a>
+        </div>
+        <div class="right_cont pc">
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">소속기관 누리집 바로가기</span>
+            <div class="option">
+
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>선택함1</li>
+                  <li>선택함2</li>
+                  <li>선택함3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">신하기관 누리집 바로가기</span>
+            <div class="option">
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>선택함1</li>
+                  <li>선택함2</li>
+                  <li>선택함3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info_box">
+        <address>
+          <span class="bar">본관 : (30112) 세종특별자치시 도움6로 42(어진동)</span>
+          <span>별관 : (30116) 세존특별자치시 가름로 143(어진동)</span>
+        </address>
+        <div class="info_num_box pc">
+          <p>
+            <span class="tit bar">정부민원안내콜센터</span>
+            <strong class="txt">국번없이 110</strong>
+            <span class="s_txt">(무료)</span>
+          </p>
+          <p>
+            <span class="tit bar">행정안전부 콜센터</span>
+            <strong class="txt">02-2100-3399</strong>
+            <span class="s_txt bar">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+            <span class="tit">팩스</span>
+            <strong class="txt">044-204-8911</strong>
+          </p>
+          <p>
+          </p>
+          <p>
+            <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+          </p>
+        </div>
+        <div class="info_num_box mo">
+          <p>
+            <span class="tit bar">정부민원안내콜센터</span>
+            <strong class="txt">국번없이 110</strong>
+            <span class="s_txt">(무료)</span>
+          </p>
+          <p>
+            <span class="tit bar">행정안전부 콜센터</span>
+            <strong class="txt">02-2100-3399</strong>
+          </p>
+          <p style="margin-top:8px;">
+            <span class="s_txt">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+          </p>
+          <p>
+            <span class="tit">팩스</span>
+            <strong class="txt">044-204-8911</strong>
+          </p>
+          <p>
+            <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+          </p>
+        </div>
+        <div class="select_cont mo">
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">소속기관 누리집 바로가기</span>
+            <div class="option_wrap">
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                    <li>선택함3</li>
+                    <li>선택함3</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- select_box -->
+          <div class="select_box type02" style="min-width:240px;">
+            <span class="select">신하기관 누리집 바로가기</span>
+            <div class="option">
+              <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                  <li>선택함1</li>
+                  <li>선택함2</li>
+                  <li>선택함3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="copy">ⓒ Ministry of the Interior and Safety. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

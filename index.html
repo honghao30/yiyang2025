@@ -1,0 +1,4409 @@
+<!doctype html>
+<html lang="ko">
+ <head>  
+  <title>지방이양자동화 시스템 구축 프로젝트</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <link href="guide.css" rel="stylesheet" type="text/css">
+
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var length = $('.sqnc').length;
+			var i;
+			for (i = 0; i < length; i++){
+				var num = i;
+				$('.sqnc').eq(i).find('.num').html(num + 1);
+			}
+		});
+	</script>
+ </head>
+ <body>
+	<div class="guideHeader">
+		<h1>행안부 지방이양사무관리시스템 (IA 기준으로 file list 작성)</h1>
+		<div class="g_gnb">
+			<ul class="gnbList">
+				<!-- <li><a href="html/guide.html">PC Guide</a></li> -->
+				<li class="on"><a href="filelist.html">PC list</a></li>
+                <!-- <li><a href="filelist_mo.html">MO List</a></li> -->
+			</ul>
+		</div>
+	</div>
+
+	<div class="guideContainer list">
+		<h2 class="hidden">PC list</h2>
+		
+		<!-- JWP Mall FO -->
+		<h3 class="guideTit3">리스트</h3>
+		<table class="htmlList">
+			<colgroup>
+				<col style="width:3%">
+				<col style="width:16%">
+				<col style="width:15%">
+				<col style="width:15%">
+				<col style="width:10%">
+				<col style="width:10%">
+				<col style="width:11%">
+				<col style="width:2%">
+				<col style="width:5%">
+				<col style="width:1%">
+				<col >
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col" width="">NO</th>
+					<th scope="col" width="">1depth</th>
+					<th scope="col" width="">2depth</th>
+					<th scope="col" width="">3depth</th>
+					<th scope="col" width="">4depth</th>
+					<th scope="col" width="">5depth</th>
+					<th scope="col" width="">파일/링크</th>
+					<th scope="col" width="">작업자</th>
+					<th scope="col" width="">작업일</th>
+					<th scope="col" width="">작업일정</th>
+					<th scope="col" width="20%">비고</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr style="background:hsl(300, 53%, 49%);">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft" style="color:#fff;">공통 html</td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft" style="color:#fff;"><a href="html/가이드.html" target="_blank">가이드.html</a></td><!-- 파일링크 -->
+					<td style="color:#fff;">박성광</td>
+					<td></td>
+					<td></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr style="background:hsl(300, 53%, 49%);">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft" style="color:#fff;">레이아웃 html</td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft" style="color:#fff;"><a href="html/레이아웃.html" target="_blank">레이아웃.html</a></td><!-- 파일링크 -->
+					<td style="color:#fff;">박성광</td>
+					<td>
+						<span class="finish">완료</span>
+						<span class="ing">진행</span>
+						<span class="includ">포함</span>
+						<span class="wait">대기</span>
+					</td>
+					<td></td>
+					<td class="tleft">
+						<span style="color:#fff">[공통] 접근성 필수 class="skip" 부분 추가</span>
+					</td>
+				</tr>
+
+				<!-- 메인 -->
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft">메인</td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/메인.html" target="_blank">메인.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td>
+						<span class="finish">완료</span>
+						<span class="finish">GNB완료</span>
+					</td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">홍성호//2024-11-09 gnb수정</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">검색</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/검색.html" target="_blank">검색.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-16수정</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">검색결과 없음</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/검색결과없음.html" target="_blank">검색결과없음.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">회원가입</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">약관동의</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/약관동의.html" target="_blank">약관동의.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">회원정보입력및인증</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/회원정보입력및인증.html" target="_blank">회원정보입력및인증.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">가입완료</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/가입완료.html" target="_blank">가입완료.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">이용제한</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">회원정책</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/회원정책.html" target="_blank">회원정책.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">비밀번호5회오류</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/비밀번호5회오류.html" target="_blank">비밀번호5회오류.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">이용불가안내</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/홈_회원_이용제한_이용불가안내.html" target="_blank">홈_회원_이용제한_이용불가안내.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 추가</td>
+				</tr>		
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">404페이지</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/404페이지.html" target="_blank">404페이지.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>				
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">로그인<strong class="point">(L)</strong></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/로그인레이어팝업.html" target="_blank">로그인레이어팝업.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="wait">팝업 > 페이지로</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">로그인</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/로그인.html" target="_blank">로그인.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">비밀번호/아이디찾기</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/비밀번호아이디찾기.html" target="_blank">비밀번호아이디찾기.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">비밀번호재설정</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/비밀번호재설정.html" target="_blank">비밀번호재설정.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">마이페이지/정보수정<strong class="color01">(P)</strong></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/마이페이지.html" target="_blank">마이페이지.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">마이페이지목록<strong class="color01">(P)</strong></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="includ">포함</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">정보수정<strong class="color01">(P)</strong></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="includ">포함</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">회원탈퇴<strong class="point">(L)</strong></strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="includ">포함</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">서비스소개</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">서비스소개_전체</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/서비스소개_전체.html" target="_blank">서비스소개_전체.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+
+				<!-- 법령 -->
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft">법령</td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">법령목록</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/법령_목록.html" target="_blank">법령_목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						241021 : 초기화 버튼 추가<br>
+						241021 : 법령명 2줄 점 처리<br>
+						<span class="point">기본 select 적용</span>
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">법령 상세(법령개정이력팝업포)</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/법령상세.html" target="_blank">법령상세.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">법령개정이력<strong class="point">(L)</strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="includ">포함</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+
+				<!-- 조사 -->
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft">조사</td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">조사목록</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/조사목록.html" target="_blank">조사목록.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""><span class="finish">완료</span></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						테이블 tr 전체영역 클릭 가능<br>
+						<span class="point">기본 select 적용</span><br>
+						<span class="point">테이블 단계별 bg 적용</span>
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">조사상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/조사상세.html" target="_blank">조사상세.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class=""><span class="finish">완료</span></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">조사상세 승인요청관리자</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/조사상세_승인요청관리자.html" target="_blank">조사상세_승인요청관리자.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class=""><span class="finish">완료</span></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>		
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">조사상세 반려작성자</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/조사상세_반려작성자.html" target="_blank">조사상세_반려작성자.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class=""><span class="finish">완료</span></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">조사상세 법령변경관리자</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/조사_상세_조사법령변경관리자.html" target="_blank">조사_상세_조사법령변경관리자.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class=""><span class="finish">완료</span></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">조사상세 법령변경사용자</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/조사_상세_조사법령변경사용자.html" target="_blank">조사_상세_조사법령변경사용자.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class=""><span class="finish">완료</span></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>				
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">조사상세 법령여러개일경우</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/조사_상세_법령여러개일경우.html" target="_blank">조사_상세_법령여러개일경우.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class=""><span class="finish">완료</span></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">법령개정이력<strong class="point">(L)</strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="includ">포함</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">변경이력<strong class="point">(L)</strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="includ">포함</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">반려이력<strong class="point">(L)</strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="includ">포함</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">조사 레이어 팝업<strong class="point">(L)</strong></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/조사레이어팝업.html" target="_blank">조사레이어팝업.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""><span class="finish">완료</span></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						[이력작성] 팝업<br>
+						[이력확인] 팝업<br>
+						[개인정보열람 이력작성] 팝업<br>
+						[엑셀로 다운로드 이력작성] 팝업<br>
+						241021 : 항목 "분류" 추가<br>
+						250114 : 이력작성(제목/요약),(차수) 추가
+					</td>
+				</tr>
+
+				<!-- 사무 -->
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft">사무</td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">사무 전체 목록</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/사무_전체_목록.html" target="_blank">사무_전체_목록.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato">0513 완료</span></td>
+					<td class="tleft">
+						
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">사무 전체 상세</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/사무_전체_상세.html" target="_blank">사무_전체_상세.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato">0513 완료</span></td>
+					<td class="tleft">
+						
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">사무목록</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/사무1_리스트.html" target="_blank">사무1_리스트.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato">0513 완료</span></td>
+					<td class="tleft">
+						241021 : table 가로 길어지면 scroll 생기게 처리<br>
+						<span class="point">기본 select 적용</span>
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">사무 상세(관리자)</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/사무1_상세_관리자.html" target="_blank">사무1_상세_관리자.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">법령개정이력 모달 포함</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">사무 상세(사용자)</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/사무1_상세_사용자.html" target="_blank">사무1_상세_사용자.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">법령개정이력 모달 포함</td>
+				</tr>				
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">법령개정이력<strong class="point">(L)</strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="includ">포함</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">변경이력<strong class="point">(L)</strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="includ">포함</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">반려이력<strong class="point">(L)</strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="includ">포함</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+
+				<!-- 이양사무 -->
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft">이양사무</td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">이양사무통합 목록</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이양사무통합_과제이력관리목록.html" target="_blank">이양사무_이양사무통합_과제이력관리목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이양사무통합_과제이력관리목록_팝업.html" target="_blank">이양사무_이양사무통합_과제이력관리목록_팝업.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">이양건의 목록</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이양건의_목록.html" target="_blank">이양사무_이양건의_목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">페이지별도보기<strong class="color01">(P)</strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">수정</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">이양건의 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이양건의_상세.html" target="_blank">이양사무_이양건의_상세.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 수정</td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">이양사무_이양건의_법령추가</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이양건의_법령추가.html" target="_blank">이양사무_이양건의_법령추가.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 수정 및 추가</td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">이양건의 등록 완료</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이양건의_등록완료.html" target="_blank">이양사무_이양건의_등록완료.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 수정</td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">이양건의 등록 완료(제안자공무원)</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이양건의_등록완료_제안자공무원.html" target="_blank">이양사무_이양건의_등록완료_제안자공무원.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>			
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">이양건의 등록 완료(제안자대국민)</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이양건의_등록완료_제안자대국민.html" target="_blank">이양사무_이양건의_등록완료_제안자대국민.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">수정</td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이양건의_수정.html" target="_blank">이양사무_이양건의_수정.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						<span class="point">기본 select 적용</span>
+					</td>
+				</tr>	
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">의견수렴시작</td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이양건의_의견수렴시작.html" target="_blank">이양사무_이양건의_의견수렴시작.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>													
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">근거법령 검색<strong class="point">(L)</strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무레이어팝업.html" target="_blank">이양사무레이어팝업.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="includ">포함</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						2024-12-02 프로그래스바 추가
+					</td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">의견수렴목록</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_의견수렴_목록.html" target="_blank">이양사무_의견수렴_목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 수정완료</td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">의견등록</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_의견수렴_의견등록.html" target="_blank">이양사무_의견수렴_의견등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>				
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">의견 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">의견 목록(_GF-S-003,_GF-S-005)</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_의견수렴_의견등록목록_GF-S-003.html" target="_blank">이양사무_의견수렴_의견등록목록_GF-S-003.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 수정완료</td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">의견 목록(_GF-S-003,_GF-S-005)</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_의견수렴_의견등록목록_GF-S-005.html" target="_blank">이양사무_의견수렴_의견등록목록_GF-S-005.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 수정완료</td>
+				</tr>				
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">의견수렵레이어팝업</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/의견수렵레이어팝업.html" target="_blank">의견수렵레이어팝업.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						이양사무_의견수렴_Popup_의견수렴시작(P)<br>
+						이양사무_의견수렴_Popup_의견수정(P)
+					</td>
+				</tr>					
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">의견수렴수정</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_의견수렴_의견수렴수정.html" target="_blank">이양사무_의견수렴_의견수렴수정.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">단위사무등록</td><!-- 3depth -->
+					<td class="tleft">목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_단위사무등록_목록.html" target="_blank">이양사무_단위사무등록_목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 수정완료</td>
+				</tr>	
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">단위사무등록</td><!-- 3depth -->
+					<td class="tleft">등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_단위사무등록_등록.html" target="_blank">이양사무_단위사무등록_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 수정완료</td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">단위사무상세</td><!-- 3depth -->
+					<td class="tleft">상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_단위사무등록_상세.html" target="_blank">이양사무_단위사무등록_상세.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 수정완료</td>
+				</tr>		
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">단위사무상세</td><!-- 3depth -->
+					<td class="tleft">수정</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_단위사무등록_수정.html" target="_blank">이양사무_단위사무등록_수정.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 수정완료</td>
+				</tr>	
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">법령삭제변경</td><!-- 3depth -->
+					<td class="tleft">목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_법령삭제변경_목록.html" target="_blank">이양사무_법령삭제변경_목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>						
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">페이지별도보기<strong class="color01">(P)</strong></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">변경이력<strong class="color01">(P)</strong></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">의견목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">페이지별도보기<strong class="color01">(P)</strong></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">변경이력<strong class="color01">(P)</strong></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">수정</td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">심의/의결 목록</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">전문위 심의 완료 보고서 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">심의 목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">페이지별도보기<strong class="color01">(P)</strong></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">변경이력<strong class="color01">(P)</strong></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">전문위 심의 요약 및 차기 심의 요청서 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">심의 목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">페이지별도보기<strong class="color01">(P)</strong></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">변경이력<strong class="color01">(P)</strong></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">분과위 심의 완료 보고서 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">심의 목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">변경이력<strong class="color01">(P)</strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">분과위 심의 요약 및 차기 심의 요청서 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">심의 목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">페이지별도보기<strong class="color01">(P)</strong></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">변경이력<strong class="color01">(P)</strong></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">본회의 의결 완료 보고서 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">변경이력<strong class="color01">(P)</strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">본회의 의결 요약 보고서 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">심의 목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">이양확정</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">이양확정 목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이양확정_목록.html" target="_blank">이양사무_이양확정_목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이양확정_상세.html" target="_blank">이양사무_이양확정_상세.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">이행상황관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이행상황관리_목록.html" target="_blank">이양사무_이행상황관리_목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">파일없음</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이행상황관리_상세_이행계획서_파일없음.html" target="_blank">이양사무_이행상황관리_상세_이행계획서_파일없음.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<tr class="sqnc">					
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">파일등록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_이행상황관리_상세_이행계획서_파일등록.html" target="_blank">이양사무_이행상황관리_상세_이행계획서_파일등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 토글기능 수정완료</td>
+				</tr>	
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">			
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">심의의결</td><!-- 2depth -->
+					<td class="tleft">목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_심의의결_목록.html" target="_blank">이양사무_심의의결_목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-10 수정완료</td>
+				</tr>		
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">				
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">전문위심의결과등록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_심의의결_전문위심의결과등록.html" target="_blank">이양사무_심의의결_전문위심의결과등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-10 수정완료</td>
+				</tr>	
+				<tr class="sqnc">			
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">전문위심의결과수정</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_심의의결_전문위심의결과수정.html" target="_blank">이양사무_심의의결_전문위심의결과수정.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">			
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">전문위심의보고서</td><!-- 3depth -->
+					<td class="tleft">목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_심의의결_전문위심의보고서목록.html" target="_blank">이양사무_심의의결_전문위심의보고서목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<tr class="sqnc">			
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">심의의결_심의완료</td><!-- 3depth -->
+					<td class="tleft">승인자정보</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_심의의결_심의완료_승인자정보.html" target="_blank">이양사무_심의의결_심의완료_승인자정보.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>		
+				<tr class="sqnc">		
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">심의의결_심의종료</td><!-- 3depth -->
+					<td class="tleft">승인자정보</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_심의의결_심의종료_승인자정보.html" target="_blank">이양사무_심의의결_심의종료_승인자정보.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>		
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">			
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">분과위심의</td><!-- 3depth -->
+					<td class="tleft">등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_심의의결_분과위심의등록.html" target="_blank">이양사무_심의의결_분과위심의등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>		
+				<tr class="sqnc">					
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">분과위심의</td><!-- 3depth -->
+					<td class="tleft">수정</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_심의의결_분과위심의수정.html" target="_blank">이양사무_심의의결_분과위심의수정.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">				
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">분과위심의</td><!-- 3depth -->
+					<td class="tleft">상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_심의의결_분과위심의상세.html" target="_blank">이양사무_심의의결_분과위심의상세.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+<tr class="sqnc" style="display:none;">		
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">본회의의결</td><!-- 3depth -->
+					<td class="tleft">목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_심의의결_본회의의결.html" target="_blank">이양사무_심의의결_본회의의결.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr> 
+				<tr class="sqnc">					
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">본회의의결</td><!-- 3depth -->
+					<td class="tleft">수정</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_심의의결_본회의의결_수정.html" target="_blank">이양사무_심의의결_본회의의결_수정.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr> 		
+				<tr class="sqnc">					
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">본회의의결</td><!-- 3depth -->
+					<td class="tleft">상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무_심의의결_본회의의결_상세.html" target="_blank">이양사무_심의의결_본회의의결_상세.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr> 	
+				<tr class="sqnc">					
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">이양사무 레이어팝업 모음</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무레이어팝업.html" target="_blank">이양사무레이어팝업.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						의결서일괄등록(P)<br>
+						알림(P)<br>
+						기작성기록알림(P)<br>
+						이력작성(P)<br>
+						근거법령검색(P)
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">이양사무이양건의레이어팝업</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무이양건의레이어팝업.html" target="_blank">이양사무이양건의레이어팝업.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr> 																																
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">이양계획서 등록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">비용평가조사서 등록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">법령개정현황 관리</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">과제이력관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">심의요청서 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">법령 추가<strong class="point">(L)</strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">사무정보 상세<strong class="point">(L)</strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">전문위 심의 완료 보고서 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">전문위 심의 요약 및 차기 심의 요청서 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">분과위 심의 완료 보고서 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">분과위 심의 요약 및 차기 심의 요청서 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">본회의 의결 완료 보고서 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">본회의 의결 요약 보고서 등록 상세</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">출력하기</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">보고서 출력 설정</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">미리보기<strong class="point">(L)</strong></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+
+				<!-- 공지사항 -->
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft">정보자료</td><!-- 1depth -->
+					<td class="tleft">공지사항</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">공지사항 목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/공지사항목록.html" target="_blank">공지사항목록.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">공지사항 상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/공지사항상세.html" target="_blank">공지사항상세.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 자료실 -->
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">자료실</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">자료실목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/자료실목록.html" target="_blank">자료실목록.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">자료실상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/자료실상세.html" target="_blank">자료실상세.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 시스템 메뉴얼 -->
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">시스템메뉴얼</td><!-- 2depth -->
+					<td class="tleft">시스템메뉴얼 목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템메뉴얼목록.html" target="_blank">시스템메뉴얼목록.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">시스템메뉴얼 상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템메뉴얼상세.html" target="_blank">시스템메뉴얼상세.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">문의하기</td><!-- 2depth -->
+					<td class="tleft">문의하기 목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/문의하기목록.html" target="_blank">문의하기목록.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">문의등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/문의등록.html" target="_blank">문의등록.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">시스템 문의 목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템문의.html" target="_blank">시스템문의.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 변경 추가</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">시스템 문의 상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템문의상세.html" target="_blank">시스템문의상세.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 변경 추가</td>
+				</tr>		
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">시스템 문의 등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템문의등록.html" target="_blank">시스템문의등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 변경 추가</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">자주하는질문</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/자주하는질문.html" target="_blank">자주하는질문.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+
+				<!-- 시스템관리자 -->
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft">시스템관리자</td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">회원관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">회원관리목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_회원관리_리스트.html" target="_blank">시스템관리자_회원관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">회원관리상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_회원관리_상세보기.html" target="_blank">시스템관리자_회원관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						241010 : 개인정보 보기 btn 추가<br>
+						241010 : title 수정
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">공지관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">공지목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_공지관리_리스트.html" target="_blank">시스템관리자_공지관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">공지상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_공지관리_상세보기.html" target="_blank">시스템관리자_공지관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						<b>테이블 pc/mo 같은 소스 사용</b>/2014-11-17 적용
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">공지등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_공지관리_등록.html" target="_blank">시스템관리자_공지관리_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						<b>테이블 pc/mo 같은 소스 사용</b>/2014-11-17 적용
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">자료실관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">권한관리</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class="finish"></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">권한관리</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_권한관리_권한관리_리스트.html" target="_blank">시스템관리자_권한관리_권한관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">상세보기</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_권한관리_권한관리_상세보기.html" target="_blank">시스템관리자_권한관리_권한관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">권한정보관리</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_권한관리_권한정보관리_리스트.html" target="_blank">시스템관리자_권한관리_권한정보관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">목록 버튼 추가 * 2024-11-08</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">권한등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_권한관리_권한관리_권한등록.html" target="_blank">시스템관리자_권한관리_권한관리_권한등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>				
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">부가페이지관리 리스트</td><!-- 4depth -->
+					<td class="tleft">리스트</td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_권한관리_부가페이지관리_리스트.html" target="_blank">시스템관리자_권한관리_부가페이지관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">상세보기</td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_권한관리_부가페이지관리_상세보기.html" target="_blank">시스템관리자_권한관리_부가페이지관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">등록</td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_권한관리_부가페이지관리_등록.html" target="_blank">시스템관리자_권한관리_부가페이지관리_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">시스템관리자_권한관리_기능관리_리스트</td><!-- 4depth -->
+					<td class="tleft">리스트</td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_권한관리_기능관리_리스트.html" target="_blank">시스템관리자_권한관리_기능관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">상세보기</td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_권한관리_기능관리_상세보기.html" target="_blank">시스템관리자_권한관리_기능관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft">등록</td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_권한관리_기능관리_등록.html" target="_blank">시스템관리자_권한관리_기능관리_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">자료실관리목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_자료실관리_리스트.html" target="_blank">시스템관리자_자료실관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						241010 : table 상위 bg 클래스 추가<br>
+						241010 : table 분류 항목 삭제
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">자료실관리상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_자료실관리_상세보기.html" target="_blank">시스템관리자_자료실관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						<b>테이블 pc/mo 같은 소스 사용</b>
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">자료실관리등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_자료실관리_등록하기.html" target="_blank">시스템관리자_자료실관리_등록하기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						<b>테이블 pc/mo 같은 소스 사용</b>
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">통계관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">접속통계목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_통계관리_접속통계_리스트.html" target="_blank">시스템관리자_통계관리_접속통계_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">접속통계상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">사용자통계목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_통계관리_사용자통계_리스트.html" target="_blank">시스템관리자_통계관리_사용자통계_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">사용자통계상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">메뉴이용통계목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_통계관리_메뉴이용통계_리스트.html" target="_blank">시스템관리자_통계관리_메뉴이용통계_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">메뉴이용통계상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">게시판이용통계</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_통계관리_게시판이용통계_리스트.html" target="_blank">시스템관리자_통계관리_게시판이용통계_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">게시판이용통계상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">팝업배너통계</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_통계관리_팝업배너이용통계_리스트.html" target="_blank">시스템관리자_통계관리_팝업배너이용통계_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">팝업배너통계상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/파일명.html" target="_blank">파일명.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">배너관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">배너관리 목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_배너관리_리스트.html" target="_blank">시스템관리자_배너관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">배너관리상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_배너관리_상세보기.html" target="_blank">시스템관리자_배너관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						<b>테이블 pc/mo 같은 소스 사용</b>2024-11-16반영
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">배너관리등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_배너관리_등록.html" target="_blank">시스템관리자_배너관리_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						<b>테이블 pc/mo 같은 소스 사용</b>2024-11-16반영
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">팝업관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">팝업관리 목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_팝업관리_리스트.html" target="_blank">시스템관리자_팝업관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">팝업관리상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_팝업관리_상세보기.html" target="_blank">시스템관리자_팝업관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						파일 추가 삭제 기능되어있음<br>
+						<b>테이블 pc/mo 같은 소스 사용</b>2024-11-16수정
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">팝업관리등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_팝업관리_등록.html" target="_blank">시스템관리자_팝업관리_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						<b>테이블 pc/mo 같은 소스 사용</b>2024-11-16수정
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">조직관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">부처관리목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_조직관리_부처관리_리스트.html" target="_blank">시스템관리자_조직관리_부처관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">부처관리상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_조직관리_부처관리_상세보기.html" target="_blank">시스템관리자_조직관리_부처관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">부처관리수정</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_조직관리_부처관리_수정.html" target="_blank">시스템관리자_조직관리_부처관리_수정.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">부처관리등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_조직관리_부처관리_등록.html" target="_blank">시스템관리자_조직관리_부처관리_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">부서관리목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_조직관리_부서관리_리스트.html" target="_blank">시스템관리자_조직관리_부서관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">부서관리상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_조직관리_부서관리_상세보기.html" target="_blank">시스템관리자_조직관리_부서관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">부서관리수정</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_조직관리_부서관리_수정.html" target="_blank">시스템관리자_조직관리_부서관리_수정.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">부서관리등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_조직관리_부서관리_등록.html" target="_blank">시스템관리자_조직관리_부서관리_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">코드관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">분류코드관리목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_코드관리_공통분류코드_리스트.html" target="_blank">시스템관리자_코드관리_공통분류코드_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">분류코드관리상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_코드관리_공통분류코드_상세보기.html" target="_blank">시스템관리자_코드관리_공통분류코드_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">분류코드관리수정</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_코드관리_공통분류코드_수정.html" target="_blank">시스템관리자_코드관리_공통분류코드_수정.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">분류코드관리등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_코드관리_공통분류코드_등록.html" target="_blank">시스템관리자_코드관리_공통분류코드_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">공통상세코드관리목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_코드관리_공통상세코드_리스트.html" target="_blank">시스템관리자_코드관리_공통상세코드_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">공통상세코드관리상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_코드관리_공통상세코드_상세보기.html" target="_blank">시스템관리자_코드관리_공통상세코드_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">공통상세코드관리수정</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_코드관리_공통상세코드_수정.html" target="_blank">시스템관리자_코드관리_공통상세코드_수정.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">공통상세코드관리등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_코드관리_공통상세코드_등록.html" target="_blank">시스템관리자_코드관리_공통상세코드_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">공통코드관리목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_코드관리_공통코드_리스트.html" target="_blank">시스템관리자_코드관리_공통코드_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">공통코드관리상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_코드관리_공통코드관리등록_상세보기.html" target="_blank">시스템관리자_코드관리_공통코드관리등록_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">공통코드관리수정</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_코드관리_공통코드관리등록_수정.html" target="_blank">시스템관리자_코드관리_공통코드관리등록_수정.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">공통코드관리등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_코드관리_공통코드관리등록_등록.html" target="_blank">시스템관리자_코드관리_공통코드관리등록_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">로그관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">작업로그 목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_로그관리_작업로그_리스트.html" target="_blank">시스템관리자_로그관리_작업로그_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">작업로그상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_로그관리_작업로그_상세.html" target="_blank">시스템관리자_로그관리_작업로그_상세.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">사용자로그</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_로그관리_사용자로그_리스트.html" target="_blank">시스템관리자_로그관리_사용자로그_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">사용자로그상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_로그관리_사용자로그_상세.html" target="_blank">시스템관리자_로그관리_사용자로그_상세.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">웹로그</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_로그관리_웹로그_리스트.html" target="_blank">시스템관리자_로그관리_웹로그_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">웹로그상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_로그관리_웹로그_상세.html" target="_blank">시스템관리자_로그관리_웹로그_상세.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">접속로그</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_로그관리_접속로그_리스트.html" target="_blank">시스템관리자_로그관리_접속로그_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">접속로그상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_로그관리_접속로그_상세.html" target="_blank">시스템관리자_로그관리_접속로그_상세.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">개인정보조회로그</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_로그관리_개인정보조회로그_리스트.html" target="_blank">시스템관리자_로그관리_개인정보조회로그_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">개인정보조회로그 상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_로그관리_개인정보조회로그_상세.html" target="_blank">시스템관리자_로그관리_개인정보조회로그_상세.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">내부시스템관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">금칙어 관리 목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_내부시스템관리_금칙어관리_리스트.html" target="_blank">시스템관리자_내부시스템관리_금칙어관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>			
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">메뉴 목록 관리</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_내부시스템관리_메뉴관리_메뉴목록관리.html" target="_blank">시스템관리자_내부시스템관리_메뉴관리_메뉴목록관리.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>		
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">정책관리</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_내부시스템관리_정책관리_리스트.html" target="_blank">시스템관리자_내부시스템관리_정책관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>		
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">정책관리 레이어팝업 모음</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_내부시스템관리_정책관리_레이어팝업모음.html" target="_blank">시스템관리자_내부시스템관리_정책관리_레이어팝업모음.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>							
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">웹사이트관리</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_내부시스템관리_웹사이트관리.html" target="_blank">시스템관리자_내부시스템관리_웹사이트관리.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>		
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">접속IP관리</td><!-- 3depth -->
+					<td class="tleft">목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_내부시스템관리_접속IP관리_리스트.html" target="_blank">시스템관리자_내부시스템관리_접속IP관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_내부시스템관리_접속IP관리_상세보기.html" target="_blank">시스템관리자_내부시스템관리_접속IP관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>			
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_내부시스템관리_접속IP관리_등록.html" target="_blank">시스템관리자_내부시스템관리_접속IP관리_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>															
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">API관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">API관리 목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_내부시스템관리_API관리_리스트.html" target="_blank">시스템관리자_내부시스템관리_API관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">API관리상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_내부시스템관리_API관리_상세.html" target="_blank">시스템관리자_내부시스템관리_API관리_상세.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">API등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_내부시스템관리_API관리_등록.html" target="_blank">시스템관리자_내부시스템관리_API관리_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>				
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">문의관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">문의관리 목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_문의건의관리_리스트.html" target="_blank">시스템관리자_문의건의관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">문의관리상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_문의관리_상세보기.html" target="_blank">시스템관리자_문의관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr><tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">게시판관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">게시판관리목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_게시판관리_리스트.html" target="_blank">시스템관리자_게시판관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">게시판관리상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_게시판관리_상세보기.html" target="_blank">시스템관리자_게시판관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">게시판등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_게시판관리_등록.html" target="_blank">시스템관리자_게시판관리_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						241010 : th 카테고리 명칭 수정
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">관련기관관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">관련기관관리 목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_관련기관링크_리스트.html" target="_blank">시스템관리자_관련기관링크_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">관련기관관리 상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_관련기관링크_상세보기.html" target="_blank">시스템관리자_관련기관링크_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">관련기관등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_관련기관링크_등록.html" target="_blank">시스템관리자_관련기관링크_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">기타페이지관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">기타페이지관리목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_기타페이지관리_리스트.html" target="_blank">시스템관리자_기타페이지관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">기타페이지관리상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_기타페이지관리_상세보기.html" target="_blank">시스템관리자_기타페이지관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						241204 : 테에블 원소스로 수정
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">기타페이지관리등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_기타페이지관리_등록.html" target="_blank">시스템관리자_기타페이지관리_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						241204 : 테에블 원소스로 수정
+					</td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">자주하는질문관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>				
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">자주하는질문관리목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_자주하는질문관리_리스트.html" target="_blank">시스템관리자_자주하는질문관리_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">자주하는질문관리상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_자주하는질문_관리_상세보기.html" target="_blank">시스템관리자_자주하는질문_관리_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">자주하는질문관리등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_자주하는질문_관리_등록.html" target="_blank">시스템관리자_자주하는질문_관리_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">시스템메뉴얼관리</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class=""></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>				
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">시스템메뉴얼목록</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_시스템메뉴얼_리스트.html" target="_blank">시스템관리자_시스템메뉴얼_리스트.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">시스템메뉴얼상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_시스템메뉴얼_상세보기.html" target="_blank">시스템관리자_시스템메뉴얼_상세보기.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">시스템메뉴얼등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/시스템관리자_시스템메뉴얼_등록.html" target="_blank">시스템관리자_시스템메뉴얼_등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft">이메일 폼</td><!-- 1depth -->
+					<td class="tleft">회원가입 GPKI인증</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/공통메일양식1.html" target="_blank">공통메일양식1.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">회원가입 GPKI 미인증</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/공통메일양식2.html" target="_blank">공통메일양식2.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">1년 미접속</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/공통메일양식3.html" target="_blank">공통메일양식3.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">회원탈퇴</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/공통메일양식4.html" target="_blank">공통메일양식4.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">개인정보열람</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/공통메일양식5.html" target="_blank">공통메일양식5.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">문의답변</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/공통메일양식6.html" target="_blank">공통메일양식6.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">임시비밀번호발송</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/공통메일양식7.html" target="_blank">공통메일양식7.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>					
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">비밀번호변경 인증코드</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/공통메일양식8.html" target="_blank">공통메일양식8.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">공통메일양식</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/공통메일양식9.html" target="_blank">공통메일양식9.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 추가</td>
+				</tr>			
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">공통메일양식</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/공통메일양식10.html" target="_blank">공통메일양식10.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">2024-11-09 추가</td>
+				</tr>				
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">개인정보처리방침,이용약관(같은 레이아웃)</td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/회원_개인정보처리방침.html" target="_blank">회원_개인정보처리방침.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">개인정보처리방침,이용약관(같은 레이아웃)<strong class="point">(L)</strong></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/개인정보처리방침팝업.html" target="_blank">개인정보처리방침팝업.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"></td><!-- 파일링크 -->
+					<td></td>
+					<td><span class="finish"></span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">이양사무 템플릿</td><!-- 2depth -->
+					<td class="tleft">이양사무 정보 및 근거 법령_등록_화면</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무 정보 및 근거 법령_등록_화면.html" target="_blank">이양사무 정보 및 근거 법령_등록_화면.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						250116 : 수정
+					</td>
+				</tr>	
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">이양사무 템플릿</td><!-- 2depth -->
+					<td class="tleft">이양사무 정보 및 근거 법령_등록_화면</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/이양사무 정보 및 근거 법령_등록완료_화면.html" target="_blank">이양사무 정보 및 근거 법령_등록완료_화면.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						250116 : 수정
+					</td>
+				</tr>	
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">이양사무통합</td><!-- 2depth -->
+					<td class="tleft">과제이력관리목록</td><!-- 3depth -->
+					<td class="tleft">_popup_사무정보</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_1이양사무통합_1과제이력관리목록_popup_1사무정보.html" target="_blank">PC_5이양사무_1이양사무통합_1과제이력관리목록_popup_1사무정보.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">이양사무</td><!-- 2depth -->
+					<td class="tleft">과제이력관리</td><!-- 3depth -->
+					<td class="tleft">목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_1이양사무통합_1과제이력관리목록.html" target="_blank">PC_5이양사무_1이양사무통합_1과제이력관리목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">이양건의</td><!-- 3depth -->
+					<td class="tleft">목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_2이양건의_1목록.html" target="_blank">PC_5이양사무_2이양건의_1목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_2이양건의_2상세.html" target="_blank">PC_5이양사무_2이양건의_2상세.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">등록완료</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_2이양건의_3등록완료_승인자정보_제안자공무원.html" target="_blank">PC_5이양사무_2이양건의_3등록완료_승인자정보_제안자공무원.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 기획요청 삭제 -->
+				<tr class="sqnc" style="display:none;">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">등록완료</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_2이양건의_3등록완료_승인자정보_제안자대국민.html" target="_blank">PC_5이양사무_2이양건의_3등록완료_승인자정보_제안자대국민.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>			
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">법령추가</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_2이양건의_3법령추가.html" target="_blank">PC_5이양사무_2이양건의_3법령추가.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">등록완료</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_2이양건의_4등록완료.html" target="_blank">PC_5이양사무_2이양건의_4등록완료.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">수정</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_2이양건의_5이양사무정보수정.html" target="_blank">PC_5이양사무_2이양건의_5이양사무정보수정.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">의견수렴</td><!-- 3depth -->
+					<td class="tleft">목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_3의견수렴_1목록.html" target="_blank">PC_5이양사무_3의견수렴_1목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">의견수렴시작</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_2이양건의_6의견수렴시작.html" target="_blank">PC_5이양사무_2이양건의_6의견수렴시작.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>		
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">의견등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_3의견수렴_2의견등록_GF-S-001.html" target="_blank">PC_5이양사무_3의견수렴_2의견등록_GF-S-001.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>		
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">의견등록목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_3의견수렴_3의견등록목록_GF-S-003.html" target="_blank">PC_5이양사무_3의견수렴_3의견등록목록_GF-S-003.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>		
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">의견수렴수정</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_3의견수렴_4의견수렴수정.html" target="_blank">PC_5이양사무_3의견수렴_4의견수렴수정.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>		
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">심의의결</td><!-- 3depth -->
+					<td class="tleft">목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_5심의의결_1목록.html" target="_blank">PC_5이양사무_5심의의결_1목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>			
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">전문위심의결과등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_5심의의결_2전문위심의결과등록.html" target="_blank">PC_5이양사무_5심의의결_2전문위심의결과등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>		
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">전문위심의보고서목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_5심의의결_3전문위심의보고서목록.html" target="_blank">PC_5이양사무_5심의의결_3전문위심의보고서목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">심의완료</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_5심의의결_4심의완료,승인자정보.html" target="_blank">PC_5이양사무_5심의의결_4심의완료,승인자정보.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>		
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">심의의결</td><!-- 3depth -->
+					<td class="tleft">등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_5심의의결_6분과위심의등록.html" target="_blank">PC_5이양사무_5심의의결_6분과위심의등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_5심의의결_7분과위심의상세.html" target="_blank">PC_5이양사무_5심의의결_7분과위심의상세.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">등록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_5심의의결_8본회의의결등록.html" target="_blank">PC_5이양사무_5심의의결_8본회의의결등록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_5심의의결_8본회의의결상세.html" target="_blank">PC_5이양사무_5심의의결_8본회의의결상세.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">이양확정</td><!-- 3depth -->
+					<td class="tleft">목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_6이양확정_1목록.html" target="_blank">PC_5이양사무_6이양확정_1목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">이양확정</td><!-- 3depth -->
+					<td class="tleft">상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_6이양확정_2상세.html" target="_blank">PC_5이양사무_6이양확정_2상세.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>	
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">이양완료</td><!-- 3depth -->
+					<td class="tleft">목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_8이양완료_1목록.html" target="_blank">PC_5이양사무_8이양완료_1목록.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">2023이전 목록</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_8이양완료_1목록2023.html" target="_blank">PC_5이양사무_8이양완료_1목록2023.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">2023이전 상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_8이양완료_2상세2023.html" target="_blank">PC_5이양사무_8이양완료_2상세2023.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft">
+						250115 : 테이블 내용 수정
+					</td>
+				</tr>	
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">상세</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/PC_5이양사무_8이양완료_2상세.html" target="_blank">PC_5이양사무_8이양완료_2상세.html</a></td><!-- 파일링크 -->
+					<td>홍성호</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">출력화면</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/출력화면.html" target="_blank">출력화면.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft"></td><!-- 3depth -->
+					<td class="tleft">출력화면_결과</td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/출력화면_결과.html" target="_blank">출력화면_결과.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td><span class="finish">완료</span></td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<!-- 통계 -->
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft">통계</td><!-- 1depth -->
+					<td class="tleft">사무배분통계</td><!-- 2depth -->
+					<td class="tleft">전체_사무_통계</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/전체_사무_통계.html" target="_blank">전체_사무_통계.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td>
+						<span class="finish">완료</span>
+						<!-- <span class="wait">대기</span>
+						<span class="ing">진행</span> -->
+					</td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft">이양완료통계</td><!-- 2depth -->
+					<td class="tleft">전체_이양완료_통계</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/전체_이양완료_통계.html" target="_blank">전체_이양완료_통계.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td>
+						<span class="finish">완료</span>
+						<!-- <span class="wait">대기</span>
+						<span class="ing">진행</span> -->
+					</td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">전체_사무배분통계_2022</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/전체_사무배분통계_2022.html" target="_blank">전체_사무배분통계_2022.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td>
+						<span class="finish">완료</span>
+						<!-- <span class="wait">대기</span>
+						<span class="ing">진행</span> -->
+					</td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">전체_사무배분통계_2023</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/전체_사무배분통계_2023.html" target="_blank">전체_사무배분통계_2023.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td>
+						<span class="finish">완료</span>
+						<!-- <span class="wait">대기</span>
+						<span class="ing">진행</span> -->
+					</td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">전체_사무배분통계_2024</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/전체_사무배분통계_2024.html" target="_blank">전체_사무배분통계_2024.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td>
+						<span class="finish">완료</span>
+						<!-- <span class="wait">대기</span>
+						<span class="ing">진행</span> -->
+					</td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">소관부처별_통계</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/소관부처별_통계.html" target="_blank">소관부처별_통계.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td>
+						<span class="finish">완료</span>
+						<!-- <span class="wait">대기</span>
+						<span class="ing">진행</span> -->
+					</td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">법령별_통계</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/법령별_통계.html" target="_blank">법령별_통계.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td>
+						<span class="finish">완료</span>
+						<!-- <span class="wait">대기</span>
+						<span class="ing">진행</span> -->
+					</td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+				<tr class="sqnc">
+					<td class="no num"></td><!-- no -->
+					<td class="tleft"></td><!-- 1depth -->
+					<td class="tleft"></td><!-- 2depth -->
+					<td class="tleft">분야별_통계</td><!-- 3depth -->
+					<td class="tleft"></td><!-- 4depth -->
+					<td class="tleft"></td><!-- 5depth -->
+					<td class="tleft"><a href="html/분야별_통계.html" target="_blank">분야별_통계.html</a></td><!-- 파일링크 -->
+					<td>박성광</td>
+					<td>
+						<span class="finish">완료</span>
+						<!-- <span class="wait">대기</span>
+						<span class="ing">진행</span> -->
+					</td>
+					<td><span style="color:tomato"></span></td>
+					<td class="tleft"></td>
+				</tr>
+			</tbody>
+        </table>
+	</div>  
+ </body>
+</html>
