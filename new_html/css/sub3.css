@@ -1,0 +1,29 @@
+
+/* 이양완료 목록 테이블 중점관리 대상 항목 */
+.point-badge {
+  display: inline-block;
+  padding: 7px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #706DF0;
+  border: 1px solid #706DF0;
+  background-color: rgba(112, 109, 240, 0.1);
+  border-radius: 16px;
+}
+
+/* 이양완료 상세 테이블 버튼 */
+.btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-icon img {
+  display: block;
+}
