@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지방이양자동화 시스템 구축 프로젝트</title>
+  <link rel="stylesheet" href="css/common.css">
+  <!-- mCustomScrollbar css -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <!-- REQUIRED SCRIPTS -->
+  <script src="js/jquery-3.2.1.js"></script>
+  <!-- mCustomScrollbar JS -->
+  <script src="js/jquery.mCustomScrollbar.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <!-- common.js -->
+  <script src="js/common.js"></script>
+  <script src="js/common_02.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+    $(function() {
+        fn_default_datepicker();
+        syncSideNestingHeight();
+    });
+            
+    function fn_default_datepicker()
+    {
+        var start = $( "#datepicker_start" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+            
+        var end = $( "#datepicker_end" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+               ,defaultDate: "+1w"
+          });
+          var start = $( "#datepicker_start2" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+            
+        var end = $( "#datepicker_end2" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+               ,defaultDate: "+1w"
+          });        
+        //초기값을 오늘 날짜로 설정
+        $('#datepicker_start').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_start2').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end2').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+    }
+     
+    function getDate( element ) {
+        var date;
+        var dateFormat = "yy-mm-dd";
+        try {
+          date = $.datepicker.parseDate( dateFormat, element.value );
+        } catch( error ) {
+          date = null;
+        }
+        return date;
+     }
+
+     function syncSideNestingHeight() {
+        var modalBody = document.querySelector('.modal_n_body');
+        var sideNesting = document.querySelector('.side-nesting-wrap');
+        if (modalBody && sideNesting) {
+            sideNesting.style.height = modalBody.offsetHeight + 'px';
+        }
+    }
+    window.addEventListener('load', syncSideNestingHeight);
+    window.addEventListener('resize', syncSideNestingHeight);
+</script> 
+</head>
+
+<body>
+  <!-- 팝업 -->
+  <section class="popup_new  roll-type type-window modal_on" ><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap type-window-scroll">
+      <div class="modal-header">
+        <div class="tit">모니터링 관리</div>
+      </div>
+      <div class="modal-flex-box">
+        <div class="side-nesting-wrap">
+          <div class="nesting-tab">
+            <div class="active">사무</div>
+            <div>지방자치단체</div>
+          </div>
+          <div class="nesting-list-wrap">
+            <div class="search_box">
+              <span class="input_cont">
+                <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+                <button class="btn_search"><span class="hidden">검색</span></button>
+              </span>
+            </div>
+            <ul class="nesting-list mt-16" role="tree">
+              <li role="treeitem">
+                <div class="row">
+                    <button class="btn toggle-btn">-</button>
+                    <span class="list-label">이력관리 지표</span>
+                </div>
+                <ul role="group">
+                  <li role="treeitem">
+                    <div class="row">
+                      <button class="btn toggle-btn">-</button>
+                      <span class="list-label">미등록</span>
+                    </div>
+                    <ul class="list-group" role="group">
+                      <li role="treeitem">
+                        <div class="row">
+                          <a>지역불균형 발전관련</a>
+                        </div>
+                      </li>
+                      <li role="treeitem">
+                        <div class="row">
+                          <a>어선의 승인 및 허가</a>
+                        </div>
+                      </li>
+                      <li role="treeitem">
+                        <div class="row">
+                          <a>교부금의 발행 및 추가</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li> 
+                  <li role="treeitem">
+                    <div class="row">
+                      <button class="btn toggle-btn">-</button>
+                      <span class="list-label active">등록</span>
+                    </div>
+                    <ul class="list-group" role="group">
+                      <li role="treeitem">
+                        <div class="row">
+                          <a class="active">과태료 부과 징수에 관한 권한</a>
+                        </div>
+                      </li>
+                      <li role="treeitem">
+                        <div class="row">
+                          <a>유치원보육교사의</a>
+                        </div>
+                      </li>
+                      <li role="treeitem">
+                        <div class="row">
+                          <a>경찰청</a>
+                        </div>
+                      </li>
+                      <li role="treeitem">
+                        <div class="row">
+                          <a>관세청청</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- // END side nesting wrapper -->
+        <div class="modal_n_body">
+          <div class="top_info_box pc">
+            <div class="flex-row justify-between">
+              <div class="">
+                <h3 class="document-title">과태료 부과 징수에 관한 권한</h3>
+              </div>
+              <a class="btn ico_print">
+                <span>프린트</span>
+              </a>
+            </div>
+            <div class="flex-row justify-between" style="margin-top: 20px;">
+              <span class="point-badge">중점</span>
+            </div>
+          </div>                    
+            <div class="table_cont pc">
+              <table class="table-body-only">
+                <colgroup>
+                  <col width="160px" />
+                  <col width="" />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>입력이력</th>
+                    <td>
+                      <div class="flex-row" style="gap: 8px;">
+                        <!-- 콤보박스 -->
+                        <div class="select_box" style="min-width:200px;">
+                          <span class="select">선택</span>
+                          <div class="option" style="display: none;">
+                            <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
+                            <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                              <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                <ul>
+                                  <li>선택</li>
+                                  <li>선택함2</li>
+                                  <li>선택함3</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          </div>  
+                        </div>
+                        <!-- //콤보박스 -->
+                          <!-- 콤보박스 -->
+                        <div class="select_box" style="min-width:200px;">
+                          <span class="select">선택</span>
+                          <div class="option" style="display: none;">
+                            <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
+                            <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                              <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                <ul>
+                                  <li>선택</li>
+                                  <li>선택함2</li>
+                                  <li>선택함3</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          </div>  
+                        </div>
+                        <!-- //콤보박스 -->
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">사업명</th>
+                      <td>
+                        <div class="form-element__wrap">                                
+                          <span class="form-element__inner input-type" style="width: 408px;">
+                              <input type="text" value="" class="input-type1-font14" placeholder="사업명을 입력해 주세요." title="사업명을 입력해 주세요." >
+                          </span>
+                        </div>                          
+                      </td>                 
+                  </tr>
+                  <tr>
+                    <th scope="row">제공지표선택</th>
+                    <td>
+                      <div class="flex-row" style="gap: 8px;">
+                        <!-- 콤보박스 -->
+                        <div class="select_box" style="min-width:200px;">
+                          <span class="select">선택</span>
+                          <div class="option" style="display: none;">
+                            <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
+                            <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                              <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                <ul>
+                                  <li>선택</li>
+                                  <li>선택함2</li>
+                                  <li>선택함3</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          </div>  
+                        </div>
+                        <!-- //콤보박스 -->
+                        <!-- 콤보박스 -->
+                        <div class="select_box" style="min-width:200px;">
+                          <span class="select">선택</span>
+                          <div class="option" style="display: none;">
+                            <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
+                            <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                              <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                <ul>
+                                  <li>선택</li>
+                                  <li>선택함2</li>
+                                  <li>선택함3</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          </div>  
+                        </div>
+                        <!-- //콤보박스 -->
+                        <button type="button" class="btn-dark-light" onclick="modalControl('o','#main_layer_pop');return false">
+                          지표전체보기
+                        </button>
+                      </div>                   
+                    </td>                 
+                  </tr>
+                  <tr>
+                    <th scope="row">추가지표입력</th>
+                    <td>
+                      <div class="flex-row" style="gap: 8px; justify-content: flex-start;">
+                        <div class="form-element__wrap" style="width: 200px; flex: none;">                                
+                          <span class="form-element__inner input-type" >
+                            <input type="text" value="" class="input-type1-font14" placeholder="지표명을 입력해 주세요." title="지표명을 입력해 주세요." >
+                          </span>
+                        </div>
+                        <div class="form-element__wrap" style="width: 200px; flex: none;">
+                          <span class="form-element__inner input-type">
+                            <input type="text" value="" class="input-type1-font14" placeholder="산식을 입력해 주세요." title="산식을 입력해 주세요." >
+                          </span>
+                        </div>
+                        <button type="button" class="btn-dark-light btn-add">
+                          <i class="ico-plus"></i> 추가
+                        </button>
+                      </div>
+                    </td>                 
+                  </tr>                                                                                               
+                </tbody>
+              </table>
+
+              <div class="table_cont mt-16">
+                <table class="table-body-only">
+                  <colgroup>                    
+                    <col width="160px">
+                    <col width="">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th colspan="2">
+                        공통
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th colspan="2">
+                        산출지표
+                      </th>
+                    </tr>
+                    <tr>
+                      <th>
+                        부과건수
+                      </th>
+                      <td>
+                        <div class="flex-row" style="gap: 8px; justify-content: flex-start;">
+                          <div class="form-element__wrap" style="width: 408px; flex: none;">
+                            <span class="form-element__inner input-type">
+                              <input type="text" value="" class="input-type1-font14" placeholder="내용을 입력해 주세요." title="내용을 입력해 주세요.">
+                            </span>
+                          </div>
+                          <button type="button" class="btn-dark-light btn-add">
+                            <i class="ico-minus"></i> 삭제
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        징수금액
+                      </th>
+                      <td>
+                        <div class="flex-row" style="gap: 8px; justify-content: flex-start;">
+                          <div class="form-element__wrap" style="width: 408px; flex: none;">
+                            <span class="form-element__inner input-type">
+                              <input type="text" value="" class="input-type1-font14" placeholder="내용을 입력해 주세요." title="내용을 입력해 주세요.">
+                            </span>
+                          </div>
+                          <button type="button" class="btn-dark-light btn-add">
+                            <i class="ico-minus"></i> 삭제
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        체납건수
+                      </th>
+                      <td>
+                        <div class="flex-row" style="gap: 8px; justify-content: flex-start;">
+                          <div class="form-element__wrap" style="width: 408px; flex: none;">
+                            <span class="form-element__inner input-type">
+                              <input type="text" value="" class="input-type1-font14" placeholder="내용을 입력해 주세요." title="내용을 입력해 주세요.">
+                            </span>
+                          </div>
+                          <button type="button" class="btn-dark-light btn-add">
+                            <i class="ico-minus"></i> 삭제
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th colspan="2">결과지표</th>
+                    </tr>
+                    <tr>
+                      <th>
+                        징수액증가율
+                      </th>
+                      <td>
+                        <div class="flex-row" style="gap: 8px; justify-content: flex-start;">
+                          <div class="form-element__wrap" style="width: 408px; flex: none;">
+                            <span class="form-element__inner input-type">
+                              <input type="text" value="" class="input-type1-font14" placeholder="내용을 입력해 주세요." title="내용을 입력해 주세요.">
+                            </span>
+                          </div>
+                          <button type="button" class="btn-dark-light btn-add">
+                            <i class="ico-minus"></i> 삭제
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="table_cont mt-16">
+                <table class="table-body-only">
+                  <colgroup>                    
+                    <col width="160px">
+                    <col width="">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th colspan="2">
+                        개별
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th colspan="2">
+                        산출지표
+                      </th>
+                    </tr>
+                    <tr>
+                      <th>
+                        부과건수
+                      </th>
+                      <td>
+                        <div class="flex-row" style="gap: 8px; justify-content: flex-start;">
+                          <div class="form-element__wrap" style="width: 408px; flex: none;">
+                            <span class="form-element__inner input-type">
+                              <input type="text" value="" class="input-type1-font14" placeholder="내용을 입력해 주세요." title="내용을 입력해 주세요.">
+                            </span>
+                          </div>
+                          <button type="button" class="btn-dark-light btn-add">
+                            <i class="ico-minus"></i> 삭제
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        징수금액
+                      </th>
+                      <td>
+                        <div class="flex-row" style="gap: 8px; justify-content: flex-start;">
+                          <div class="form-element__wrap" style="width: 408px; flex: none;">
+                            <span class="form-element__inner input-type">
+                              <input type="text" value="" class="input-type1-font14" placeholder="내용을 입력해 주세요." title="내용을 입력해 주세요.">
+                            </span>
+                          </div>
+                          <button type="button" class="btn-dark-light btn-add">
+                            <i class="ico-minus"></i> 삭제
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        체납건수
+                      </th>
+                      <td>
+                        <div class="flex-row" style="gap: 8px; justify-content: flex-start;">
+                          <div class="form-element__wrap" style="width: 408px; flex: none;">
+                            <span class="form-element__inner input-type">
+                              <input type="text" value="" class="input-type1-font14" placeholder="내용을 입력해 주세요." title="내용을 입력해 주세요.">
+                            </span>
+                          </div>
+                          <button type="button" class="btn-dark-light btn-add">
+                            <i class="ico-minus"></i> 삭제
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th colspan="2">결과지표</th>
+                    </tr>
+                    <tr>
+                      <th>
+                        징수액증가율
+                      </th>
+                      <td>
+                        <div class="flex-row" style="gap: 8px; justify-content: flex-start;">
+                          <div class="form-element__wrap" style="width: 408px; flex: none;">
+                            <span class="form-element__inner input-type">
+                              <input type="text" value="" class="input-type1-font14" placeholder="내용을 입력해 주세요." title="내용을 입력해 주세요.">
+                            </span>
+                          </div>
+                          <button type="button" class="btn-dark-light btn-add">
+                            <i class="ico-minus"></i> 삭제
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="button__wrap flex-end mt-32">
+              <button type="button" class="btn-primary-default"  onclick="" >
+                <i></i>등록
+              </button>
+              <button type="button" class="btn-gray-default"  onclick="window.close()" >
+                <i class="ico-remove"></i> 취소
+              </button>
+            </div>                    
+        </div> 
+      </div>
+      <!-- // END wrapper -->
+      <button type="button" onclick="window.close()" class="btn_close"><span class="hidden">닫기</span></button>          
+    </div>
+  </section>
+  <!-- //팝업 -->  
+  <!-- 이력확인 -->
+  <!-- 모달 -->
+  <section class="modal_new modal_overlay roll-type" id="main_layer_pop"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal">
+      <div class="modal-header">
+        <div class="tit">전체 지표 보기</div>
+      </div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+          <div class="tab-button">
+            <div class="active">
+              제공지표
+            </div>
+            <div>
+              추가지표
+            </div>
+          </div>
+          <div class="table_cont scroll-type table-type3 mt-16">
+            <table>
+              <colgroup>
+                <col width="64px">
+                <col width="120px">
+                <col width="300px">
+                <col width="130px">
+                <col width="130px">
+                <col width="130px">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th rowspan="2">구분</th>
+                  <th rowspan="2">카테고리</th>
+                  <th rowspan="2">단위 사무명</th>
+                  <th colspan="3">산술지표</th>
+                </tr>
+                <tr>
+                  <th>산술지표1</th>
+                  <th>산술지표2</th>
+                  <th>산술지표3</th>
+                </tr>
+                <tr>
+                  <td rowspan="8">공통</td>
+                </tr>
+                <tr>
+                  <td>계획수립</td>
+                  <td>-</td>
+                  <td>계획 수립 건수</td>
+                  <td>-</td>
+                  <td>교육 이수자 만족도</td>
+                </tr>
+                <tr>
+                  <td>교육</td>
+                  <td>-</td>
+                  <td>교육 프로그램 수</td>
+                  <td>교육 이수자 수</td>
+                  <td>금지행위 발생 건수</td>
+                </tr>
+                <tr>
+                  <td>보호지원</td>
+                  <td>하수처리 시설 허가</td>
+                  <td>보호 지정 건수</td>
+                  <td>보호 지정 면적</td>
+                  <td>체납 건수</td>
+                </tr>
+                <tr>
+                  <td>부과징수</td>
+                  <td>-</td>
+                  <td>부과 건수</td>
+                  <td>징수 금액</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>인허가, 승인 등</td>
+                  <td>-</td>
+                  <td>허가/승인 건수</td>
+                  <td>평균 처리시간</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>지도·감독·관리</td>
+                  <td>-</td>
+                  <td>점검 건수</td>
+                  <td>대응시간 감소율</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>지정·변경 등</td>
+                  <td>-</td>
+                  <td>지정 건수</td>
+                  <td>기준 준수율</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td rowspan="11">개별</td>
+                </tr>
+                <tr>
+                  <td>기획·재정·금융</td>
+                  <td>시·군·구가 설립한 공사의 일정기준 이하의 사채발행 승인</td>
+                  <td>사채발행 승인 건수</td>
+                  <td>-</td>
+                  <td>교육 이수자 만족도</td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>정관변경 인가</td>
+                  <td>정관 변경 인가 건수</td>
+                  <td>-</td>
+                  <td>금지행위 발생 건수</td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>합병인가</td>
+                  <td>합병 인가 건수</td>
+                  <td>-</td>
+                  <td>체납 건수</td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>가격표시의무자의 지정</td>
+                  <td>지정 건수</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                 <tr>
+                  <td>-</td>
+                  <td>융자업무 취급기관의 지정</td>
+                  <td>지정 기관 수</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                </tr>
+                 <tr>
+                  <td>-</td>
+                  <td>매점매석 행위의 금지</td>
+                  <td>금지 조치 건수</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>은닉재산 등의 신고</td>
+                  <td>신고 접수 건수</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>금고에 대한 경영지도</td>
+                  <td>점검·지적 건수</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>일반행정 지원</td>
+                  <td>국제도시 간 자매결연 승인</td>
+                  <td>자매결연 승인 건수</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>지방공무원의 국내위탁훈련 계획 수립 시행</td>
+                  <td>훈련계획 수립 건수</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="button__wrap flex-end mt-32">
+            <button type="button" class="btn-primary-default wd-108">
+              <i></i> 확인
+            </button>  
+          </div> 
+        </div>
+    
+        <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>
+      </div>
+    </div>
+  </section>         
+</body>
+
+</html>

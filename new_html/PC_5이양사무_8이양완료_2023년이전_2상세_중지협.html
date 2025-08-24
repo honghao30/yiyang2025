@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지방이양자동화 시스템 구축 프로젝트</title>
+  <link rel="stylesheet" href="css/common.css">
+  <!-- mCustomScrollbar css -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <!-- REQUIRED SCRIPTS -->
+  <script src="js/jquery-3.2.1.js"></script>
+  <!-- mCustomScrollbar JS -->
+  <script src="js/jquery.mCustomScrollbar.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <!-- common.js -->
+  <script src="js/common.js"></script>
+  <script src="js/common_02.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+    $(function() {
+            fn_default_datepicker();
+    });
+            
+    function fn_default_datepicker()
+    {
+        var start = $( "#datepicker_start" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+            
+        var end = $( "#datepicker_end" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+               ,defaultDate: "+1w"
+          });
+          var start = $( "#datepicker_start2" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+            
+        var end = $( "#datepicker_end2" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+               ,defaultDate: "+1w"
+          });        
+        //초기값을 오늘 날짜로 설정
+        $('#datepicker_start').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_start2').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end2').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+    }
+     
+    function getDate( element ) {
+        var date;
+        var dateFormat = "yy-mm-dd";
+        try {
+          date = $.datepicker.parseDate( dateFormat, element.value );
+        } catch( error ) {
+          date = null;
+        }
+        return date;
+     }
+     
+</script> 
+</head>
+
+<body>
+  <div class="wrap sample">
+    <!-- searchlayer 모바일 상세검색 -->
+    <div class="searchlayer mo">
+      <div class="search_cont">
+        <span class="search_box">
+          <span class="input_cont">
+            <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+            <button class="btn_search"><span class="hidden">검색</span></button>
+          </span>
+          <button class="btn_layer_close" onclick="searchClose();"><span class="hidden">닫기</span></button>
+        </span>
+      </div>
+      <div class="content_wrap">
+        <!-- select_box -->
+        <div class="select_box full">
+          <span class="select">설정</span>
+          <div class="option">
+            <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+              <ul>
+                <li>선택함1</li>
+                <li>선택함2</li>
+                <li>선택함3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- select_box -->
+        <div class="select_box full">
+          <span class="select">대상</span>
+          <div class="option">
+            <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+              <ul>
+                <li>선택함1</li>
+                <li>선택함2</li>
+                <li>선택함3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- select_box -->
+        <div class="select_box full">
+          <span class="select">노출</span>
+          <div class="option">
+            <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+              <ul>
+                <li>선택함1</li>
+                <li>선택함2</li>
+                <li>선택함3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- header_wrap -->
+    <div class="header_wrap">
+      <div class="header">
+      <div class="inner">
+          <div class="header_cont">
+          <div class="header_top_cont">
+              <h1 class="logo">
+              <div class="pc"><a href="#none"><img src="img/pc/logo.png" alt="로고">지방이양사무관리시스템</a></div>
+              <div class="mo"><a href="#none"><img src="img/mo/logo.png" alt="로고">지방이양사무관리시스템</a></div>
+              </h1>
+              <div class="right_cont mo">
+              <button class="btn_search" onclick="searchLayer(this);"><span class="hidden">검색</span></button>
+              <button class="btn_login"><span class="hidden">로그인</span></button>
+              <!-- <button class="btn_logout"><span class="hidden">로그아웃</span></button> -->
+              <button class="btn_menu" onclick="mypagelayer(this);"><span class="hidden">메뉴</span></button>
+              </div>
+          </div>
+          <!-- 로그인/회원가입 버튼 -->
+          <div class="info_cont" style="display: none;">
+              <span class="bar"><a href="#none" class="ico_login"><span>로그인</span></a></span>
+              <span><a href="#none" class="ico_join"><span>회원가입</span></a></span>
+          </div>
+
+          <!-- 마이페이지/사용자/로그아웃 -->
+          <div class="info_cont pc">
+              <!-- 로그인 전 -->
+              <!-- <ul class="info_menu default">
+              <li><a href="#" class="ico_login"><span>로그인</span></a></li>
+              <li><a href="#none" class="ico_join"><span>회원가입</span></a></li>
+              </ul>  -->
+              <!-- 로그인 후 -->
+              <ul class="info_menu">
+              <li class="bar"><a href="#none">마이페이지</a></li>
+              </ul>
+              <span class="user"><strong>홍길동</strong>님 <span class="rank"><strong>7</strong>등급</span></span>
+              <button class="btn_log">
+              <span class="txt">로그아웃</span>
+              <span class="time">09:55</span>
+              </button>
+          </div>
+          </div>
+      </div>
+      </div>
+    </div>
+    <!-- gnb -->
+    <div class="global-navy_wrap">
+        <div class="top_menu_cont">
+        <div class="pc">
+            <ul class="menu">
+            <li><a href="#none" class="menu_layer">법령</a></li>
+            <li><a href="#none" class="menu_layer">사무</a></li>
+            <li><a href="#none" class="menu_layer on">사무이양관리</a></li>
+            <li><a href="#none" class="menu_layer">통계</a></li>
+            <li><a href="#none" class="menu_layer">정보자료</a></li>
+            <li><a href="#none" class="menu_layer">사무총조사</a></li>
+            <li><a href="#none" class="menu_layer">시스템 관리</a>
+                <div class="layer_gnb">
+                <div class="location">
+                    <ul>
+                    <li><a href="#none">시스템관리77</a></li>
+                    <li><a href="#none">내부시스템관리77</a></li>
+                    <li><a href="#none">코드관리77</a></li>
+                    </ul>
+                </div>
+                <div class="list_box">
+                    <ul class="on_depth01">
+                    <li class="depth01"><a href="#none">공지관리</a>
+                        <!-- depth02 -->
+                        <ul>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a>
+                            <!-- depth03 -->
+                            <ul>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth01"><a href="#none">회원관리</a>
+                        <!-- depth02 -->
+                        <ul>
+                        <li class="depth02"><a href="#none">회원관리 2뎁스</a>
+                            <!-- depth03 -->
+                            <ul>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth02"><a href="#none">2뎁스</a></li>
+                        <li class="depth02"><a href="#none">2뎁스</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth01"><a href="#none">문의/건의관리</a></li>
+                    <li class="depth01"><a href="#none">자주하는질문관리</a></li>
+                    <li class="depth01"><a href="#none">자료실관리</a></li>
+                    <li class="depth01"><a href="#none">권한관리</a></li>
+                    <li class="depth01"><a href="#none">배너/팝업관리</a></li>
+                    <li class="depth01"><a href="#none">내부시스템관리</a></li>
+                    <li class="depth01"><a href="#none">조직관리</a></li>
+                    </ul>
+                </div>
+                <div class="link_cont">
+                    <a href="#none" class="btn ico_propose"><span>이양 건의 바로가기</span></a>
+                </div>
+                <a href="#none" class="btn_layer_close"><strong>닫기</strong></a>
+                </div>
+            </li>          
+            <li><a href="#none" class="menu_layer">대국민 관리</a>
+                <div class="layer_gnb">
+                <div class="location">
+                    <ul>
+                    <li><a href="#none">대국민 포털관리</a></li>
+                    <li><a href="#none">공지관리</a></li>
+                    <li><a href="#none">공지관리 2뎁스</a></li>
+                    <li><a href="#none">공지관리 3뎁스</a></li>
+                    </ul>
+                </div>
+                <div class="list_box">
+                    <ul class="on_depth01">
+                    <li class="depth01"><a href="#none">공지관리</a>
+                        <!-- depth02 -->
+                        <ul>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a>
+                            <!-- depth03 -->
+                            <ul>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">공지관리 3뎁스</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        <li class="depth02"><a href="#none">공지관리 2뎁스</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth01"><a href="#none">회원관리</a>
+                        <!-- depth02 -->
+                        <ul>
+                        <li class="depth02"><a href="#none">회원관리 2뎁스</a>
+                            <!-- depth03 -->
+                            <ul>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            <li class="depth03"><a href="#none">회원관리 3뎁스</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth02"><a href="#none">2뎁스</a></li>
+                        <li class="depth02"><a href="#none">2뎁스</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth01"><a href="#none">문의/건의관리</a></li>
+                    <li class="depth01"><a href="#none">자주하는질문관리</a></li>
+                    <li class="depth01"><a href="#none">자료실관리</a></li>
+                    <li class="depth01"><a href="#none">권한관리</a></li>
+                    <li class="depth01"><a href="#none">배너/팝업관리</a></li>
+                    <li class="depth01"><a href="#none">내부시스템관리</a></li>
+                    <li class="depth01"><a href="#none">조직관리</a></li>
+                    </ul>
+                </div>
+                <div class="link_cont">
+                    <a href="#none" class="btn ico_propose"><span>이양 건의 바로가기</span></a>
+                </div>
+                <a href="#none" class="btn_layer_close"><strong>닫기</strong></a>
+                </div>
+            </li>
+            </ul>
+        </div>
+        <div class="mo-flex">
+            <ul class="menu">
+            <li><a href="#none"  onclick="gnbLayer01(this);" class="on">법령</a></li>
+            <li><a href="#none">사무</a></li>
+            <li><a href="#none">사무이양관리</a></li>
+            <li><a href="#none">통계</a></li>
+            <li><a href="#none">정보자료</a></li>
+            <li><a href="#none"  onclick="gnbLayer02(this);">사무총조사</a></li>          
+            <li><a href="#none">시스템 관리</a></li>
+            <li><a href="#none">대국민 관리</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <!-- //gnb -->
+
+    <!-- container -->
+    <div class="container">
+      <!-- 검색영역 -->
+      <div class="sc bg_top">
+        <div class="inner">
+          <div class="location">
+            <ul>
+              <li><a href="#none">홈</a></li>
+              <li><a href="#none">이양사무</a></li>
+            </ul>
+          </div>
+
+          <h2 class="title">이양완료</h2>          
+        </div>
+      </div>
+
+      <div class="content_wrap">
+        <div class="inner">
+          <div class="flex-row justify-end">
+            <button type="button" class="btn-dark-light">                                        
+                중점관리대상 설정
+            </button>
+            <button type="button" class="btn-dark-light">                                        
+                정보 보기
+            </button>
+          </div>
+          <div class="table_cont mt-16">
+            <table class="table-body-only">
+              <colgroup>                    
+                <col width="160">
+                <col>                 
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    과제명
+                  </th>     
+                  <td>
+                    도시재생사업 경미한 사항 변경 권한
+                  </td>
+                </tr>                                                                                                                                                                                                  
+              </tbody>
+            </table>
+          </div>
+          <div class="table_cont mt-32">
+            <table class="table-body-only">
+              <colgroup>                    
+                <col style="width:160px;">
+                <col>
+                <col style="width:160px;">
+                <col>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th colspan="4">
+                    <div class="flex-row justify-between">
+                      <div>과제 개요</div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>     
+                  <th>원처리권자</th>                   
+                  <td>
+                    행정자치부장관
+                  </td>
+                  <th>분야</th>                   
+                  <td>
+                      도시재생
+                  </td>    
+                </tr>
+                <tr>     
+                  <th>소관부처</th>                   
+                  <td>
+                    행정자치부
+                    <span class="bar"></span>
+                    사무
+                    <span class="bar"></span>
+                    3, 4, 5, 6, 7, 8
+                  </td>
+                  <th>이양방향</th>                   
+                  <td>
+                    국가 → 시도
+                    <span class="bar"></span>
+                    사무
+                    <span class="bar"></span>
+                    1, 2, 6
+                  </td>    
+                </tr>
+                <tr>     
+                  <th>확정연도</th>                   
+                  <td>
+                    2003
+                  </td>
+                  <th>완료연도</th>                   
+                  <td>
+                    문재인정부
+                  </td>    
+                </tr>
+                <tr>     
+                  <th>확정연도</th>                   
+                  <td colspan="3">
+                    1차일괄이양, 행정분권
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- ///과제명 && 과제개요 -->
+          <!-- 근거법령 -->
+          <div class="table_cont mt-32">
+            <table class="table-body-only">
+              <colgroup>                    
+                  <col width="" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    사무 및 근거법령 <span class="dv-bar"></span>
+                    <span class="total">총 <strong>2</strong>개</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>                        
+                  <td class="inner-table" style="border-bottom: none;">
+                    <div class="table_cont mt-16">
+                      <table class="table-body-only">
+                        <colgroup>                    
+                          <col width="160">
+                          <col>                 
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">
+                              단위사무 1
+                            </th>     
+                            <td>
+                              <div class="flex-row align-center">
+                                새마을금고의 설립인가
+                                <button type="button" class="btn-dark-light btn-sm ml-8">                                        
+                                  재심의 정보
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              법령구분 1
+                            </th>     
+                            <td>
+                              법률
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              근거법령 1
+                            </th>     
+                            <td>
+                              새마을금고법 6조 1항
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              현행법령 1
+                            </th>     
+                            <td>
+                              <div class="flex-row align-center">
+                                새마을금고법 제7조의2
+                                <button type="button" class="btn-dark-light btn-sm ml-8">                                        
+                                  법령개정 정보
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">현행법령조문</th>
+                            <td>
+                              ② 창립총회의 의사(議事)는 발기인에게 금고 설립 동의서를 개의(開議) 전까지 제출한 자 과반수의 출석과 출석자 3분의 2 이상의 찬성으로 의결한다.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="table_cont mt-16">
+                      <table class="table-body-only">
+                        <colgroup>                    
+                          <col width="160">
+                          <col>                 
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">
+                              단위사무 2
+                            </th>     
+                            <td>
+                              정관변경 인가
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              법령구분 1
+                            </th>     
+                            <td>
+                              법률
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              근거법령 1
+                            </th>     
+                            <td>
+                              새마을금고법 11조 6항(→12조5항)
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              현행법령 1
+                            </th>     
+                            <td>
+                              새마을금고법 제12조 4항 1호
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">현행법령조문</th>
+                            <td>
+                              ④ 다음 각 호의 사항은 총회의 의결이 있어야 한다. <개정 2017. 12. 26.><br/>
+                              1. 정관의 변경
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              위임처리권자
+                            </th>     
+                            <td>
+                              시도지사
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              위임조항
+                            </th>     
+                            <td>
+                              시행령 제49조 제1항
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </td>                        
+                </tr>                                                                                                                                                                                
+              </tbody>
+            </table>
+          </div>
+          <!-- ///근거법령 -->
+          <!-- 중앙부처 의견 -->
+          <div class="table_cont mt-32">
+            <table class="table-body-only">
+              <colgroup>                    
+                <col width="" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    중앙부처 의견
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>                        
+                  <td class="inner-table" style="border-bottom: none;">
+                    <div class="inner-table-cont mt-16">
+                      <table>
+                        <colgroup> 
+                          <col width="15%">
+                          <col>
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <td class="tit">종합의견</td>
+                            <td>세부의견</td>
+                          </tr>
+                          <tr>     
+                            <td>동의</td>
+                            <td class="text-l">
+                              <strong>동의</strong>
+                              <p class="mt-16" style="line-height: 1.8;">
+                                1. 새마을금고는 금융업으로서 전국 통일적 기준에 의해 설립 ·운영될 필요가 있음<br/>
+○ 새마을금고는 기본적으로 회원을 대상으로 영업을 한다는 점에서 주민 인보협동조직체이기는 하나 업무내용이 은행업이며 전체 금고의 총 자산이 39조 5,900억원(금고 수 1,730, 금고당 평균자산 228억원)에 달하는 등 사실상 금융기관에 해당함.<br/>
+※ 새마을금고는 예 · 적금의 수납, 자금의 대출, 내국환 및 외국환거래법에 의한 환전업무, 국가 ·공공단체의 업무대리 등을 수행하고 있으며, 금융실명거래및비밀보장에관한법률제 2조에서 "새마을금고와 연합회를 금융기관"으로 규정하고 있음.<br/>
+○ 따라서 새마을금고는 다른 금융기관과 같이 전국적인 통일적 기준에 의해 설립 · 운영, 관리될 필요가 있음.<br/>
+※ 농협의 경우 지역농협(읍면단위의 단위조합 포함)의 설립인가나 취소 · 감독권을 하부기관에 위임없이 농림부장관이 직접 행하고 있으며, 신용협동조합의 경우 설립인가나 취소는 금융감독위원회에서, 감독은 금융감독원에서 직접 행함.2. 새마을금고의 금융부분 감독권한은 지방이양 대상이 아님<br/>
+○ 새마을금고에 대한 감독체계는 금고 설립인가 및 취소 등 금고설립 관리에 관한 일반 행정적인 감독업무와 금융기관으로서의 감독기능으로 이원화되어 있는 바- 금고 설립운영 등과 관련한 일반 행정적인 업무에 대한 감독권한은 행정기관에 있으나 일반 행정적인 감독권한은 이미 시군구에 위임되어 있어 지방이양의 실익이 없음<br/>
+○ 금고에 대한 권한과 책임을 일치시켜야 한다는 이유로 지방이양을 찬성하는 일부 시군구에서는 권한의 지방이양을 통해서 금융부분에 대한 실질적인 감독권한의 이양을 기대하는 것이나- 금융부분에 대한 감독은 원칙적으로 국가나 지방자치단체에서 행하는 것이 바람직하지 아니므로 현행 새마을금고법에서도 별도의 자체 감독기관으로서 새마을금고연합회를 두어 그 권한을 부여하고 있어 법령을 개정하여 권한이양이 되더라도 금융부분에 대한 감독권은 현재와 달라 질 것이 없음을 인식한 각 자치단체에서는 새마을금고관련 업무의 지방이양을 반대하고 있는 실정임
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>동의</td>
+                            <td class="text-l">
+                              <strong>동의</strong>
+                              <p class="mt-16" style="line-height: 1.8;">
+                                교육인적자원부가 지방의 부전공 연수기관을 지도 • 감독하는 것은 바람직하지 않을 뿐만 아니라 시도별 실정에 맞는 교과과정 운영 및 지방교육자치 활성화를 위해 시도교육감에 이양함이 타당함
+                              </p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>                            
+                  </td>                        
+                </tr>                                                                                                                                                                                
+              </tbody>
+            </table>
+          </div>
+          <!-- ///중앙부처 의견 -->
+          <!-- 지자체의견 -->
+          <div class="table_cont mt-32">
+            <table class="table-body-only">
+              <colgroup>                    
+                <col width="" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    지자체 의견
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>                        
+                  <td class="inner-table" style="border-bottom: none;">
+                    <div class="inner-table-cont mt-16">
+                      <table>
+                        <colgroup> 
+                          <col width="15%">
+                          <col>
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <td class="tit">종합의견</td>
+                            <td>세부의견</td>
+                          </tr>
+                          <tr>     
+                            <td>동의 26<br/>부동의 21</td>
+                            <td class="text-l">
+                              <div>
+                                <strong>동의</strong>
+                                <p class="mt-16" style="line-height: 1.8;">
+  ○ 본 사무는 국가사무이나 현재 시군구청장에게 재위임되어 모든 행정처분이 시군구에서 이루어지고 있으므로' 권한과 책임을 일치시키기 위하여는 시군구로 이양하는 것이 바람직함.<br/>
+  ○ 다만, 새마을금고에 대한 지도감독 체계가 행정기관에 의한 감독과 금고내부의 자율감독으로 이원화 되어 있으나, 행정기관에는 효율적인 감독수단이 없고 전문성이 떨어져 금고연합회 및 금고내부의 자율감독에 전적으로 의존하고 있는 실정임.<br/>
+  ○ 최근 자산규모 40조원, 회원수 1,200만명의 거대 금융기관으로 성장하였으나 특수법인이라는 사유로 일반은행과 같이 은행법에 의한 금융감독원의 감독을 받지 않고 있어 금융정책상의 부실방지 지도 · 감독 체계가 마련되어야 할 것으로 판단됨.
+                                </p>
+                              </div>
+                              <div class="mt-24">
+                                <strong>부동의</strong>
+                                <p class="mt-16" style="line-height: 1.8;">
+                                  ○ IMF금융지원 이후 많은 금융기관이 통 · 페합되고 해외자금이 유입되는 등 국내 금융환경의 급격한 변화가 있었으며,앞으로 새마을금고가 대형화, 전문화되어 가는 현 시점에서 새마을금고를 담당하는 공무원은 지도 · 감독업무를 수행할 전문지식을 가진 공무원이 아닌 일반공무원으로서 새마을금고업무의 행정지도 · 감독에 한계가 있음.<br/>
+○ 장기적으로 새마을금고를 제2의 금융기관으로 육성해 나가기 위해서는 금융에 대한 전문성을 갖고 있는 재정경제부 또는 금융업무를 총괄하는 금융감독원 등 전문기관에 새마을금고업무를 이관하여 체계적인 지도와 감독이 이뤄져야 할 것임.
+                                </p>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>                            
+                  </td>                        
+                </tr>                                                                                                                                                                                
+              </tbody>
+            </table>
+          </div>
+          <!-- ///지자체 의견 -->
+          <!-- 실무위원회 심의결과 -->
+           <div class="table_cont mt-32">
+            <table class="table-body-only">
+              <colgroup>                    
+                <col width="" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    실무위원회 심의결과
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>                        
+                  <td class="inner-table" style="border-bottom: none;">
+                    <div class="inner-table-cont mt-16">
+                      <table>
+                        <colgroup> 
+                          <col width="5%">
+                          <col width="10%">
+                          <col width="9%">
+                          <col width="10%">
+                          <col>
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <td>회차</td>
+                            <td>심의결과 일자</td>
+                            <td>최종결정</td>
+                            <td>이양방향</td>
+                            <td>세부의견</td>
+                          </tr>
+                          <tr>
+                            <td>21차</td>
+                            <td>2003.4.30</td>
+                            <td>이양결정</td>
+                            <td>국가-시군구</td>
+                            <td>국가에서 시군구로 이양○ 현재 시군구에 위임되어 있으므로 권한과 책임을 일치시키기 위하여 이양함이 바람직함.</td>
+                          </tr>
+                          <tr>
+                            <td>21차</td>
+                            <td>2003.4.30</td>
+                            <td>이양결정</td>
+                            <td>국가-시군구</td>
+                            <td>국가에서 시군구로 이양○ 현재 시군구에 위임되어 있으므로 권한과 책임을 일치시키기 위하여 이양함이 바람직함.</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>                            
+                  </td>                        
+                </tr>                                                                                                                                                                                
+              </tbody>
+            </table>
+          </div>
+          <!-- ///실무위원회 심의결과 -->
+          <div class="button__wrap flex-end mt-64">
+            <a href="PC_5이양사무_8이양완료_1목록2023.html" class="btn-gray-default">
+              <i class="ico-list"></i> 목록
+            </a>
+          </div>
+        </div>
+        <!-- //PC -->
+         
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="inner">
+        <div class="top_info float_box">
+          <div class="left_cont">
+            <a href="#none" class="bar">이용약관</a>
+            <a href="#none" class="point">개인정보처리방침</a>
+          </div>
+          <div class="right_cont pc">
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">소속기관 누리집 바로가기</span>
+              <div class="option">
+
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">신하기관 누리집 바로가기</span>
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="info_box">
+          <address>
+            <span class="bar">본관 : (30112) 세종특별자치시 도움6로 42(어진동)</span>
+            <span>별관 : (30116) 세존특별자치시 가름로 143(어진동)</span>
+          </address>
+          <div class="info_num_box pc">
+            <p>
+              <span class="tit bar">정부민원안내콜센터</span>
+              <strong class="txt">국번없이 110</strong>
+              <span class="s_txt">(무료)</span>
+            </p>
+            <p>
+              <span class="tit bar">행정안전부 콜센터</span>
+              <strong class="txt">02-2100-3399</strong>
+              <span class="s_txt bar">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+              <span class="tit">팩스</span>
+              <strong class="txt">044-204-8911</strong>
+            </p>
+            <p>
+            </p>
+            <p>
+              <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+            </p>
+          </div>
+          <div class="info_num_box mo">
+            <p>
+              <span class="tit bar">정부민원안내콜센터</span>
+              <strong class="txt">국번없이 110</strong>
+              <span class="s_txt">(무료)</span>
+            </p>
+            <p>
+              <span class="tit bar">행정안전부 콜센터</span>
+              <strong class="txt">02-2100-3399</strong>
+            </p>
+            <p style="margin-top:8px;">
+              <span class="s_txt">(월~금 9:00~18:00, 공휴일 제외, 유료)</span>
+            </p>
+            <p>
+              <span class="tit">팩스</span>
+              <strong class="txt">044-204-8911</strong>
+            </p>
+            <p>
+              <span class="s_txt">(근무시간 외) 당직실 : 044-205-1600</span>
+            </p>
+          </div>
+          <div class="select_cont mo">
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">소속기관 누리집 바로가기</span>
+              <div class="option_wrap">
+                <div class="option">
+                  <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                    <ul>
+                      <li>선택함1</li>
+                      <li>선택함2</li>
+                      <li>선택함3</li>
+                      <li>선택함3</li>
+                      <li>선택함3</li>
+                      <li>선택함3</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- select_box -->
+            <div class="select_box type02" style="min-width:240px;">
+              <span class="select">신하기관 누리집 바로가기</span>
+              <div class="option">
+                <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                  <ul>
+                    <li>선택함1</li>
+                    <li>선택함2</li>
+                    <li>선택함3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="copy">ⓒ Ministry of the Interior and Safety. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer mo foot_btn_wrap">
+      <div class="foot_btn_area">        
+        <a href="#none" class="btn btn_approval"><span>등록</span></a>
+        <a href="#none" class="btn btn_list"><span>목록</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

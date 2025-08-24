@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지방이양자동화 시스템 구축 프로젝트</title>
+  <link rel="stylesheet" href="css/common.css">
+  <!-- mCustomScrollbar css -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <!-- REQUIRED SCRIPTS -->
+  <script src="js/jquery-3.2.1.js"></script>
+  <!-- mCustomScrollbar JS -->
+  <script src="js/jquery.mCustomScrollbar.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <!-- common.js -->
+  <script src="js/common.js"></script>
+  <script src="js/common_02.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+    $(function() {
+        fn_default_datepicker();
+        syncSideNestingHeight();
+    });
+            
+    function fn_default_datepicker()
+    {
+        var start = $( "#datepicker_start" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+            
+        var end = $( "#datepicker_end" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+               ,defaultDate: "+1w"
+          });
+          var start = $( "#datepicker_start2" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+            
+        var end = $( "#datepicker_end2" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+               ,defaultDate: "+1w"
+          });        
+        //초기값을 오늘 날짜로 설정
+        $('#datepicker_start').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_start2').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end2').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+    }
+     
+    function getDate( element ) {
+        var date;
+        var dateFormat = "yy-mm-dd";
+        try {
+          date = $.datepicker.parseDate( dateFormat, element.value );
+        } catch( error ) {
+          date = null;
+        }
+        return date;
+     }
+
+     function syncSideNestingHeight() {
+        var modalBody = document.querySelector('.modal_n_body');
+        var sideNesting = document.querySelector('.side-nesting-wrap');
+        if (modalBody && sideNesting) {
+            sideNesting.style.height = modalBody.offsetHeight + 'px';
+        }
+    }
+    window.addEventListener('load', syncSideNestingHeight);
+    window.addEventListener('resize', syncSideNestingHeight);
+</script> 
+</head>
+
+<body>
+    <!-- 팝업 -->
+    <section class="popup_new  roll-type type-window modal_on" ><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+      <div class="modal_n_wrap type-window-scroll">
+        <div class="modal-header">
+          <div class="tit">이력관리</div>
+        </div>
+        <div class="modal-flex-box">
+          <div class="side-nesting-wrap">
+            <div class="nesting-tab">
+              <div class="active">사무</div>
+              <div>지방자치단체</div>
+            </div>
+            <div class="nesting-list-wrap">
+              <div class="search_box">
+                <span class="input_cont">
+                  <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+                  <button class="btn_search"><span class="hidden">검색</span></button>
+                </span>
+              </div>
+              <ul class="nesting-list mt-16" role="tree">
+                <li>
+                  <div class="row">
+                    <button class="btn toggle-btn">+</button>
+                    <span class="list-label">서울특별시</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <button class="btn toggle-btn">+</button>
+                    <span class="list-label">부산광역시</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <button class="btn toggle-btn">+</button>
+                    <span class="list-label">대구광역시</span>
+                  </div>
+                </li>
+                <li role="treeitem">
+                  <div class="row">
+                    <button class="btn toggle-btn">-</button>
+                    <span class="list-label">충청북도</span>
+                  </div>
+                  <ul role="group">
+                    <li role="treeitem">
+                      <div class="row">
+                        <button class="btn toggle-btn">-</button>
+                        <span class="list-label">청주시</span>
+                      </div>
+                      <ul>
+                        <li>
+                          <div class="row">
+                            <button class="btn toggle-btn">-</button>
+                            <span class="list-label active">이력관리 지표 미등록</span>
+                          </div>
+                          <ul class="list-group" role="group">
+                            <li role="treeitem">
+                              <div class="row">
+                                  <a>지역불균형 발전관련</a>
+                              </div>
+                            </li>
+                            <li role="treeitem">
+                              <div class="row">
+                                  <a>어선의 승인 및 허가</a>
+                              </div>
+                            </li>
+                            <li role="treeitem">
+                              <div class="row">
+                                  <a>교부금의 발행 및 추가</a>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li role="treeitem">
+                      <div class="row">
+                        <button class="btn toggle-btn">+</button>
+                        <span class="list-label">충주시</span>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="row">
+                    <button class="btn toggle-btn">+</button>
+                    <span class="list-label">경상북도</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <button class="btn toggle-btn">+</button>
+                    <span class="list-label">전라남도</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- // END side nesting wrapper -->
+          <div class="modal_n_body">
+            <div class="top_info_box pc">
+              <div class="flex-row justify-between">
+                <div class="">
+                  <h3 class="document-title">하수처리시설에 관한 인허가 권한</h3>
+                </div>
+                <div>
+                  <a href="#none" class="btn ico_download">
+                    <span>엑셀 다운로드</span>
+                  </a>
+                  <a class="btn ico_print">
+                    <span>프린트</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row justify-between align-center mb-16" >
+              <div class="flex-row align-center" style="display: inline-flex;">
+                <div class="form-element__wrap picker-input168 mo-fixed-width">
+                  <div class="input-multi">
+                    <span class="form-element__inner input-type">
+                      <input type="text" value="" class="input-type1-font14 hasDatepicker" maxlength="50" placeholder="" id="datepicker_start" title="">
+                      <img class="ui-datepicker-trigger" src="./img/pc/ico/icon_calendar.png" alt="선택" title="선택">
+                    </span>
+                  </div>
+                </div>
+                <div>~</div>
+                <div class="form-element__wrap picker-input168 mo-fixed-width">
+                  <div class="input-multi">
+                    <span class="form-element__inner input-type">
+                      <input type="text" value="" class="input-type1-font14 hasDatepicker" maxlength="50" placeholder="" id="datepicker_start" title="">
+                      <img class="ui-datepicker-trigger" src="./img/pc/ico/icon_calendar.png" alt="선택" title="선택">
+                    </span>
+                  </div>
+                </div>
+                <div>|</div>
+                <div class="search_box">
+                  <span class="input_cont" style="padding: 0;">
+                    <input type="text" class="ico_search" placeholder="지역 검색" style="width: 168px;">
+                    <button class="btn_search" style="top: 0; right: 0;"><span class="hidden">검색</span></button>
+                  </span>
+                </div>
+                <button class="btn btn-gray-default wd-108" style="height: 48px;">선택보기</button>
+              </div>
+              <button class="btn btn-primary-default" style="width: 135px; height: 48px; font-size: 16px;">
+                <img src="img/pc/ico/pc_ic_h24_write_purple.png" style="width: 21px; height: 21px;"/>
+                입력하기
+              </button>
+            </div>
+            <div class="table_cont pc mt-16">
+              <div class="inner-table-cont mt-16 law-list2">
+                <table>
+                  <colgroup>                                      
+                    <col width="5%">
+                    <col width="16%">
+                    <col>
+                    <col width="14%">
+                    <col width="14%">   
+                    <col width="10%">   
+                    <col width="15%">   
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td class="tit"></td>                                            
+                      <td class="tit">
+                        행정구역별
+                        <div class="table-btn-group mt-8">
+                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
+                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
+                          <button><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
+                        </div>
+                      </td>
+                      <td class="tit">
+                        사업명
+                        <div class="table-btn-group mt-8">
+                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
+                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
+                          <button><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
+                        </div>
+                      </td>
+                      <td class="tit">
+                        예산
+                        <div class="table-btn-group mt-8">
+                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
+                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
+                          <button><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
+                        </div>
+                      </td>
+                      <td class="tit">
+                        부서명
+                        <div class="table-btn-group mt-8">
+                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
+                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
+                          <button><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
+                        </div>
+                      </td>
+                      <td class="tit">
+                        담당자명
+                        <div class="table-btn-group mt-8">
+                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
+                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
+                          <button><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
+                        </div>
+                      </td>
+                      <td class="tit">
+                        연락처
+                        <div class="table-btn-group mt-8">
+                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
+                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
+                          <button><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="input_type check check=item">
+                          <input type="checkbox" name="">
+                          <span class="txt"></span>
+                        </label>                                          
+                      </td>                                            
+                      <td>전체</td>
+                      <td>-</td>
+                      <td>
+                        5,500,000
+                      </td>         
+                      <td>도시활성화과</td>
+                      <td>김00</td>
+                      <td>02-0000-0000</td>
+                    </tr>
+                    <tr class="active">
+                      <td>
+                        <label class="input_type check check=item">
+                          <input type="checkbox" name="">
+                          <span class="txt"></span>
+                        </label>                                          
+                      </td>                                            
+                      <td>
+                        <div class="flex-row align-center justify-between">
+                          시도
+                          <div class="table-btn-group">
+                            <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
+                          </div>
+                        </div>
+                      </td>
+                      <td>-</td>
+                      <td>
+                        5,500,000
+                      </td>         
+                      <td>도시활성화과</td>
+                      <td>김00</td>
+                      <td>02-0000-0000</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="input_type check check=item">
+                          <input type="checkbox" name="">
+                          <span class="txt"></span>
+                        </label>                                          
+                      </td>                                            
+                      <td>
+                        <div class="flex-row align-center justify-between">
+                          서울특별시
+                          <div class="table-btn-group">
+                            <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
+                          </div>
+                        </div>
+                      </td>
+                      <td>하수처리 시설 허가</td>
+                      <td>
+                        5,500,000
+                      </td>         
+                      <td>도시활성화과</td>
+                      <td>김00</td>
+                      <td>02-0000-0000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="button__wrap flex-end mt-32">
+              <button type="button" class="btn-primary-default"  onclick="" >
+                <i></i>저장
+              </button>
+              <button type="button" class="btn-gray-default"  onclick="window.close()" >
+                <i class="ico-remove"></i> 취소
+              </button>
+            </div>                    
+          </div> 
+        </div>
+        <!-- // END wrapper -->
+        
+        
+        <button type="button" onclick="window.close()" class="btn_close"><span class="hidden">닫기</span></button>          
+      </div>
+    </section>
+    <!-- //팝업 -->      
+</body>
+
+</html>
