@@ -161,6 +161,8 @@
 .modal-flex-box table td {
   padding: 8px 12px;
   color: #717B8A;
+  min-height: 41px;
+  line-height: 24px;
 }
 .modal-flex-box table td label {
   margin: 0;
@@ -225,7 +227,7 @@
 .table-link-list {
   border: 1px solid #D8DDE9;
   border-radius: 8px;
-  padding: 12px 16px;
+  padding: 16px;
 }
 .table-link-list ul {
   display: flex;
@@ -250,6 +252,13 @@
   border-radius: 50%;
   margin-top: 6px;
 }
+.table-link-list ul li a {
+  color: #000;
+}
+.table-link-list ul li .text-gray {
+  color: #717B8A;  
+  margin-top: 6px;
+}
 .table-type4 {
   border: 1px solid #D8DDE9;
 }
@@ -262,4 +271,10 @@
 }
 .table-type4 th:last-child {
   border-right: none;
+}
+
+/* 시스템관리자 */
+.link-text {
+  color: #FF8B4A;
+  text-decoration: underline;
 }
