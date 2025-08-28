@@ -21,8 +21,28 @@
   <script src="js/jquery-ui.js"></script>
   <script>
     $(function() {
-        fn_default_datepicker();
-        syncSideNestingHeight();
+      fn_default_datepicker();
+      syncSideNestingHeight();
+
+        // 트리 리스트 내 a 태그 active 토글
+      $('.nesting-list .list-group a').on('click', function(e) {
+        e.preventDefault();
+        $('.nesting-list .list-group a.active').removeClass('active');
+        $(this).addClass('active');
+      });
+
+      $('.nesting-list .list-group a').on('click', function(e) {
+        // 모든 a와 상위 list-label 초기화
+        $('.nesting-list .list-group a').removeClass('active');
+        $('.nesting-list .list-label').css('color', '');
+
+        // 클릭한 a에 active 추가
+        $(this).addClass('active');
+
+        // 상위 .list-label 찾기
+        var $label = $(this).closest('ul.list-group').prev('.row').find('.list-label');
+        $label.css('color', '#7C3AED'); // 원하는 색상으로 변경
+      });
     });
             
     function fn_default_datepicker()
@@ -121,6 +141,7 @@
         return date;
      }
 
+
      function syncSideNestingHeight() {
         var modalBody = document.querySelector('.modal_n_body');
         var sideNesting = document.querySelector('.side-nesting-wrap');
@@ -128,6 +149,7 @@
             sideNesting.style.height = modalBody.offsetHeight + 'px';
         }
     }
+
     window.addEventListener('load', syncSideNestingHeight);
     window.addEventListener('resize', syncSideNestingHeight);
 </script> 
@@ -186,12 +208,12 @@
                     <li role="treeitem">
                       <div class="row">
                         <button class="btn toggle-btn">-</button>
-                        <span class="list-label active">등록</span>
+                        <span class="list-label">등록</span>
                       </div>
                       <ul class="list-group" role="group" style="display: none;">
                         <li role="treeitem">
                           <div class="row">
-                            <a class="active">과태료 부과 징수에 관한 권한</a>
+                            <a href="#" class="toggle-active">과태료 부과 징수에 관한 권한</a>
                           </div>
                         </li>
                         <li role="treeitem">
@@ -260,7 +282,7 @@
                       <ul class="list-group" role="group" style="display: none;">
                         <li role="treeitem">
                           <div class="row">
-                            <a class="active">과태료 부과 징수에 관한 권한</a>
+                            <a>과태료 부과 징수에 관한 권한</a>
                           </div>
                         </li>
                         <li role="treeitem">
@@ -322,6 +344,7 @@
                       e.stopPropagation();
                       
                       btn.classList.toggle('active');
+                      btn.textContent = btn.classList.contains('active') ? '+' : '-';
                       const treeItems = btn.parentElement.nextElementSibling;
                       if (treeItems) {
                         treeItems.style.display = btn.classList.contains('active') ? 'block' : 'none';

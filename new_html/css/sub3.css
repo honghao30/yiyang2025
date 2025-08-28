@@ -103,9 +103,9 @@
 .nesting-list .list-label {
   color: #000;
 }
-.nesting-list .list-label.active {
+/* .nesting-list .active + .list-label {
   color: #706DF0;
-}
+} */
 .nesting-list .row a,
 .nesting-list .row span {
   cursor: pointer;
@@ -277,4 +277,8 @@
 .link-text {
   color: #FF8B4A;
   text-decoration: underline;
+}
+
+.gray-text {
+  color: #717B8A;
 }
