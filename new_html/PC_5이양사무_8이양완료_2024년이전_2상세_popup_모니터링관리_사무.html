@@ -143,10 +143,10 @@
         <div class="modal-flex-box">
           <div class="side-nesting-wrap">
             <div class="nesting-tab">
-              <div class="active">사무</div>
-              <div>지방자치단체</div>
+              <div class="active" data-tab="tab1">사무</div>
+              <div data-tab="tab2">지방자치단체</div>
             </div>
-            <div class="nesting-list-wrap">
+            <div class="nesting-list-wrap" id="tab1" style="display: block;">
               <div class="search_box">
                 <span class="input_cont">
                   <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
@@ -156,16 +156,16 @@
               <ul class="nesting-list mt-16" role="tree">
                 <li role="treeitem">
                   <div class="row">
-                    <button class="btn toggle-btn">-</button>
+                    <button class="btn toggle-btn toggle-all">-</button>
                     <span class="list-label">이력관리 지표</span>
                   </div>
-                  <ul role="group">
+                  <ul role="group" class="list-group-all" style="display: none;">
                     <li role="treeitem">
                       <div class="row">
                         <button class="btn toggle-btn">-</button>
                         <span class="list-label">미등록</span>
                       </div>
-                      <ul class="list-group" role="group">
+                      <ul class="list-group" role="group" style="display: none;">
                         <li role="treeitem">
                           <div class="row">
                               <a>지역불균형 발전관련</a>
@@ -188,7 +188,76 @@
                         <button class="btn toggle-btn">-</button>
                         <span class="list-label active">등록</span>
                       </div>
-                      <ul class="list-group" role="group">
+                      <ul class="list-group" role="group" style="display: none;">
+                        <li role="treeitem">
+                          <div class="row">
+                            <a class="active">과태료 부과 징수에 관한 권한</a>
+                          </div>
+                        </li>
+                        <li role="treeitem">
+                          <div class="row">
+                            <a>유치원보육교사의</a>
+                          </div>
+                        </li>
+                        <li role="treeitem">
+                          <div class="row">
+                            <a>경찰청</a>
+                          </div>
+                        </li>
+                        <li role="treeitem">
+                          <div class="row">
+                            <a>관세청청</a>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="nesting-list-wrap" id="tab2" style="display: none;">
+              <div class="search_box">
+                <span class="input_cont">
+                  <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+                  <button class="btn_search"><span class="hidden">검색</span></button>
+                </span>
+              </div>
+              <ul class="nesting-list mt-16" role="tree">
+                <li role="treeitem">
+                  <div class="row">
+                    <button class="btn toggle-btn toggle-all">-</button>
+                    <span class="list-label">이력관리 지표</span>
+                  </div>
+                  <ul role="group" class="list-group-all" style="display: none;">
+                    <li role="treeitem">
+                      <div class="row">
+                        <button class="btn toggle-btn">-</button>
+                        <span class="list-label">미등록</span>
+                      </div>
+                      <ul class="list-group" role="group" style="display: none;">
+                        <li role="treeitem">
+                          <div class="row">
+                              <a>지역불균형 발전관련</a>
+                          </div>
+                        </li>
+                        <li role="treeitem">
+                          <div class="row">
+                              <a>어선의 승인 및 허가</a>
+                          </div>
+                        </li>
+                        <li role="treeitem">
+                          <div class="row">
+                              <a>교부금의 발행 및 추가</a>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+                    <li role="treeitem">
+                      <div class="row">
+                        <button class="btn toggle-btn">-</button>
+                        <span class="list-label active">등록</span>
+                      </div>
+                      <ul class="list-group" role="group" style="display: none;">
                         <li role="treeitem">
                           <div class="row">
                             <a class="active">과태료 부과 징수에 관한 권한</a>
@@ -216,6 +285,141 @@
               </ul>
             </div>
           </div>
+
+          <script>
+              // DOM이 완전히 로드된 후 실행
+              document.addEventListener('DOMContentLoaded', function() {
+                  // 탭 메뉴 기능
+                  const tabMenus = document.querySelectorAll('.side-nesting-wrap > .nesting-tab > div');
+                  tabMenus.forEach(el => {
+                    el.addEventListener('click', () => {
+                      tabMenus.forEach(tab => {
+                        tab.classList.remove('active');
+                        const targetId = tab.getAttribute('data-tab');
+                        if (targetId) {
+                          const targetElement = document.querySelector(`#${targetId}`);
+                          if (targetElement) {
+                            targetElement.style.display = 'none';
+                          }
+                        }
+                      });
+                      el.classList.add('active');
+                      const targetId = el.getAttribute('data-tab');
+                      if (targetId) {
+                        const targetElement = document.querySelector(`#${targetId}`);
+                        if (targetElement) {
+                          targetElement.style.display = 'block';
+                        }
+                      }
+                    });
+                  });
+
+                  // 트리 메뉴 토글 기능
+                  const treeMenus = document.querySelectorAll('.nesting-list .toggle-btn');
+                  treeMenus.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      
+                      btn.classList.toggle('active');
+                      const treeItems = btn.parentElement.nextElementSibling;
+                      if (treeItems) {
+                        treeItems.style.display = btn.classList.contains('active') ? 'block' : 'none';
+                      }
+                    });
+                  });
+
+                  // 테이블 정렬 및 삭제 기능
+                  initTableFunctions();
+              });
+
+              // 테이블 기능 초기화
+              function initTableFunctions() {
+                  const table = document.querySelector('.inner-table-cont table');
+                  if (!table) return;
+
+                  // 정렬 버튼 기능
+                  const sortButtons = document.querySelectorAll('.btn-sort-up, .btn-sort-down');
+                  sortButtons.forEach(btn => {
+                      btn.addEventListener('click', function() {
+                          const columnIndex = this.closest('td').cellIndex;
+                          const isAscending = this.classList.contains('btn-sort-up');
+                          sortTable(table, columnIndex, isAscending);
+                      });
+                  });
+
+                  // 삭제 버튼 기능
+                  const deleteButtons = document.querySelectorAll('.btn-sort-minus');
+                  deleteButtons.forEach(btn => {
+                      btn.addEventListener('click', function() {
+                          const columnIndex = this.closest('td').cellIndex;
+                          deleteSelectedRows(table, columnIndex);
+                      });
+                  });
+
+                  // 체크박스 전체 선택/해제 기능
+                  const headerCheckbox = table.querySelector('thead input[type="checkbox"]') || 
+                                       table.querySelector('tr:first-child input[type="checkbox"]');
+                  if (headerCheckbox) {
+                      headerCheckbox.addEventListener('change', function() {
+                          const checkboxes = table.querySelectorAll('tbody input[type="checkbox"]');
+                          checkboxes.forEach(cb => {
+                              cb.checked = this.checked;
+                          });
+                      });
+                  }
+              }
+
+              // 테이블 정렬 함수
+              function sortTable(table, columnIndex, ascending) {
+                  const tbody = table.querySelector('tbody');
+                  const rows = Array.from(tbody.querySelectorAll('tr:not(.active)'));
+                  
+                  rows.sort((a, b) => {
+                      const aValue = a.cells[columnIndex]?.textContent.trim() || '';
+                      const bValue = b.cells[columnIndex]?.textContent.trim() || '';
+                      
+                      // 숫자 정렬 (예산 컬럼)
+                      if (columnIndex === 3) { // 예산 컬럼
+                          const aNum = parseFloat(aValue.replace(/[^\d.-]/g, '')) || 0;
+                          const bNum = parseFloat(bValue.replace(/[^\d.-]/g, '')) || 0;
+                          return ascending ? aNum - bNum : bNum - aNum;
+                      }
+                      
+                      // 문자열 정렬
+                      if (ascending) {
+                          return aValue.localeCompare(bValue, 'ko');
+                      } else {
+                          return bValue.localeCompare(aValue, 'ko');
+                      }
+                  });
+                  
+                  // 정렬된 행들을 다시 삽입
+                  rows.forEach(row => {
+                      tbody.appendChild(row);
+                  });
+              }
+
+              // 선택된 행 삭제 함수
+              function deleteSelectedRows(table, columnIndex) {
+                  const tbody = table.querySelector('tbody');
+                  const selectedRows = tbody.querySelectorAll('input[type="checkbox"]:checked');
+                  
+                  if (selectedRows.length === 0) {
+                      alert('삭제할 행을 선택해주세요.');
+                      return;
+                  }
+                  
+                  if (confirm(`선택된 ${selectedRows.length}개 행을 삭제하시겠습니까?`)) {
+                      selectedRows.forEach(checkbox => {
+                          const row = checkbox.closest('tr');
+                          if (row) {
+                              row.remove();
+                          }
+                      });
+                  }
+              }
+          </script>
           <!-- // END side nesting wrapper -->
           <div class="modal_n_body">
             <div class="top_info_box pc">
@@ -278,62 +482,70 @@
                     <col width="10%">   
                     <col width="15%">   
                   </colgroup>
-                  <tbody>
+                  <thead>
                     <tr>
-                      <td class="tit"></td>                                            
+                      <td class="tit">
+                        <label class="input_type check check=item">
+                          <input type="checkbox" name="selectAll">
+                          <span class="txt"></span>
+                        </label>
+                      </td>                                            
                       <td class="tit">
                         행정구역별
                         <div class="table-btn-group mt-8">
-                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
-                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
-                          <button><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
+                          <button class="btn-sort-up"><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
+                          <button class="btn-sort-down"><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
+                          <button class="btn-sort-minus"><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
                         </div>
                       </td>
                       <td class="tit">
                         사업명
                         <div class="table-btn-group mt-8">
-                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
-                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
-                          <button><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
+                          <button class="btn-sort-up"><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
+                          <button class="btn-sort-down"><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
+                          <button class="btn-sort-minus"><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
                         </div>
                       </td>
                       <td class="tit">
                         예산
                         <div class="table-btn-group mt-8">
-                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
-                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
-                          <button><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
+                          <button class="btn-sort-up"><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
+                          <button class="btn-sort-down"><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
+                          <button class="btn-sort-minus"><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
                         </div>
                       </td>
                       <td class="tit">
                         부서명
                         <div class="table-btn-group mt-8">
-                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
-                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
-                          <button><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
+                          <button class="btn-sort-up"><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
+                          <button class="btn-sort-down"><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
+                          <button class="btn-sort-minus"><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
                         </div>
                       </td>
                       <td class="tit">
                         담당자명
                         <div class="table-btn-group mt-8">
-                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
-                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
-                          <button><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
+                          <button class="btn-sort-up"><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
+                          <button class="btn-sort-down"><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
+                          <button class="btn-sort-minus"><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
                         </div>
                       </td>
                       <td class="tit">
                         연락처
                         <div class="table-btn-group mt-8">
-                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
-                          <button><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
-                          <button><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
+                          <button class="btn-sort-up"><img src="img/pc/ico/pc_ic_h16_arrow1_black_up.png"/></button>
+                          <button class="btn-sort-down"><img src="img/pc/ico/pc_ic_h16_arrow1_black_down.png"/></button>
+                          <button class="btn-sort-minus"><img src="img/pc/ico/pc_ic_h16_black_minus.png"/></button>
                         </div>
                       </td>
                     </tr>
+                  </thead>  
+                  <tbody>
+
                     <tr>
                       <td>
                         <label class="input_type check check=item">
-                          <input type="checkbox" name="">
+                          <input type="checkbox" name="rowSelect">
                           <span class="txt"></span>
                         </label>                                          
                       </td>                                            
@@ -349,7 +561,7 @@
                     <tr class="active">
                       <td>
                         <label class="input_type check check=item">
-                          <input type="checkbox" name="">
+                          <input type="checkbox" name="rowSelect">
                           <span class="txt"></span>
                         </label>                                          
                       </td>                                            
@@ -372,7 +584,7 @@
                     <tr>
                       <td>
                         <label class="input_type check check=item">
-                          <input type="checkbox" name="">
+                          <input type="checkbox" name="rowSelect">
                           <span class="txt"></span>
                         </label>                                          
                       </td>                                            
