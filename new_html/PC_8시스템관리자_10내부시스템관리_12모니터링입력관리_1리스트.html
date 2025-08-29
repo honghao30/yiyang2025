@@ -21,105 +21,105 @@
   <script src="js/jquery-ui.js"></script>
   <script>
     $(function() {
-            fn_default_datepicker();
+      fn_default_datepicker();
     });
             
     function fn_default_datepicker()
     {
-        var start = $( "#datepicker_start" ).datepicker({
-            dateFormat: 'yy-mm-dd' //Input Display Format 변경
-            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
-            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
-            ,changeYear: true //콤보박스에서 년 선택 가능
-            ,changeMonth: true //콤보박스에서 월 선택 가능                
-            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
-            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
-            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
-            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
-            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
-            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
-            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
-            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
-            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
-            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
-            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
-        });
-            
-        var end = $( "#datepicker_end" ).datepicker({
-            dateFormat: 'yy-mm-dd' //Input Display Format 변경
-            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
-            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
-            ,changeYear: true //콤보박스에서 년 선택 가능
-            ,changeMonth: true //콤보박스에서 월 선택 가능                
-            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
-            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
-            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
-            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
-            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
-            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
-            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
-            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
-            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
-            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
-            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
-               ,defaultDate: "+1w"
-          });
-          var start = $( "#datepicker_start2" ).datepicker({
-            dateFormat: 'yy-mm-dd' //Input Display Format 변경
-            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
-            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
-            ,changeYear: true //콤보박스에서 년 선택 가능
-            ,changeMonth: true //콤보박스에서 월 선택 가능                
-            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
-            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
-            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
-            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
-            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
-            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
-            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
-            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
-            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
-            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
-            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
-        });
-            
-        var end = $( "#datepicker_end2" ).datepicker({
-            dateFormat: 'yy-mm-dd' //Input Display Format 변경
-            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
-            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
-            ,changeYear: true //콤보박스에서 년 선택 가능
-            ,changeMonth: true //콤보박스에서 월 선택 가능                
-            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
-            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
-            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
-            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
-            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
-            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
-            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
-            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
-            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
-            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
-            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
-               ,defaultDate: "+1w"
-          });        
-        //초기값을 오늘 날짜로 설정
-        $('#datepicker_start').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
-        $('#datepicker_end').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
-        $('#datepicker_start2').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
-        $('#datepicker_end2').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+      var start = $( "#datepicker_start" ).datepicker({
+        dateFormat: 'yy-mm-dd' //Input Display Format 변경
+        ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+        ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+        ,changeYear: true //콤보박스에서 년 선택 가능
+        ,changeMonth: true //콤보박스에서 월 선택 가능                
+        ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+        ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+        ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+        ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+        ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+        ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+        ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+        ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+        ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+        ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+        ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+      });
+          
+      var end = $( "#datepicker_end" ).datepicker({
+        dateFormat: 'yy-mm-dd' //Input Display Format 변경
+        ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+        ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+        ,changeYear: true //콤보박스에서 년 선택 가능
+        ,changeMonth: true //콤보박스에서 월 선택 가능                
+        ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+        ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+        ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+        ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+        ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+        ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+        ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+        ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+        ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+        ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+        ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+        ,defaultDate: "+1w"
+      });
+      var start = $( "#datepicker_start2" ).datepicker({
+        dateFormat: 'yy-mm-dd' //Input Display Format 변경
+        ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+        ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+        ,changeYear: true //콤보박스에서 년 선택 가능
+        ,changeMonth: true //콤보박스에서 월 선택 가능                
+        ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+        ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+        ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+        ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+        ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+        ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+        ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+        ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+        ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+        ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+        ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+      });
+          
+      var end = $( "#datepicker_end2" ).datepicker({
+        dateFormat: 'yy-mm-dd' //Input Display Format 변경
+        ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+        ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+        ,changeYear: true //콤보박스에서 년 선택 가능
+        ,changeMonth: true //콤보박스에서 월 선택 가능                
+        ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+        ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+        ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+        ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+        ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+        ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+        ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+        ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+        ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+        ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+        ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+        ,defaultDate: "+1w"
+      });        
+      //초기값을 오늘 날짜로 설정
+      $('#datepicker_start').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+      $('#datepicker_end').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+      $('#datepicker_start2').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+      $('#datepicker_end2').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
     }
      
     function getDate( element ) {
-        var date;
-        var dateFormat = "yy-mm-dd";
-        try {
-          date = $.datepicker.parseDate( dateFormat, element.value );
-        } catch( error ) {
-          date = null;
-        }
-        return date;
-     }
-</script> 
+      var date;
+      var dateFormat = "yy-mm-dd";
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+      return date;
+    }
+  </script> 
 </head>
 <body>
 <div class="wrap sample">
@@ -176,52 +176,52 @@
       </div>
     </div>
   </div>
-<!-- header_wrap -->
-    <div class="header_wrap">
-      <div class="header">
-      <div class="inner">
-          <div class="header_cont">
-          <div class="header_top_cont">
-              <h1 class="logo">
-              <div class="pc"><a href="#none"><img src="img/pc/logo.png" alt="로고">지방이양사무관리시스템</a></div>
-              <div class="mo"><a href="#none"><img src="img/mo/logo.png" alt="로고">지방이양사무관리시스템</a></div>
-              </h1>
-              <div class="right_cont mo">
-              <button class="btn_search" onclick="searchLayer(this);"><span class="hidden">검색</span></button>
-              <button class="btn_login"><span class="hidden">로그인</span></button>
-              <!-- <button class="btn_logout"><span class="hidden">로그아웃</span></button> -->
-              <button class="btn_menu" onclick="mypagelayer(this);"><span class="hidden">메뉴</span></button>
-              </div>
-          </div>
-          <!-- 로그인/회원가입 버튼 -->
-          <div class="info_cont" style="display: none;">
-              <span class="bar"><a href="#none" class="ico_login"><span>로그인</span></a></span>
-              <span><a href="#none" class="ico_join"><span>회원가입</span></a></span>
-          </div>
+  <!-- header_wrap -->
+  <div class="header_wrap">
+    <div class="header">
+    <div class="inner">
+        <div class="header_cont">
+        <div class="header_top_cont">
+            <h1 class="logo">
+            <div class="pc"><a href="#none"><img src="img/pc/logo.png" alt="로고">지방이양사무관리시스템</a></div>
+            <div class="mo"><a href="#none"><img src="img/mo/logo.png" alt="로고">지방이양사무관리시스템</a></div>
+            </h1>
+            <div class="right_cont mo">
+            <button class="btn_search" onclick="searchLayer(this);"><span class="hidden">검색</span></button>
+            <button class="btn_login"><span class="hidden">로그인</span></button>
+            <!-- <button class="btn_logout"><span class="hidden">로그아웃</span></button> -->
+            <button class="btn_menu" onclick="mypagelayer(this);"><span class="hidden">메뉴</span></button>
+            </div>
+        </div>
+        <!-- 로그인/회원가입 버튼 -->
+        <div class="info_cont" style="display: none;">
+            <span class="bar"><a href="#none" class="ico_login"><span>로그인</span></a></span>
+            <span><a href="#none" class="ico_join"><span>회원가입</span></a></span>
+        </div>
 
-          <!-- 마이페이지/사용자/로그아웃 -->
-          <div class="info_cont pc">
-              <!-- 로그인 전 -->
-              <!-- <ul class="info_menu default">
-              <li><a href="#" class="ico_login"><span>로그인</span></a></li>
-              <li><a href="#none" class="ico_join"><span>회원가입</span></a></li>
-              </ul>  -->
-              <!-- 로그인 후 -->
-              <ul class="info_menu">
-              <li class="bar"><a href="#none">마이페이지</a></li>
-              </ul>
-              <span class="user"><strong>홍길동</strong>님 <span class="rank"><strong>7</strong>등급</span></span>
-              <button class="btn_log">
-              <span class="txt">로그아웃</span>
-              <span class="time">09:55</span>
-              </button>
-          </div>
-          </div>
-      </div>
-      </div>
+        <!-- 마이페이지/사용자/로그아웃 -->
+        <div class="info_cont pc">
+            <!-- 로그인 전 -->
+            <!-- <ul class="info_menu default">
+            <li><a href="#" class="ico_login"><span>로그인</span></a></li>
+            <li><a href="#none" class="ico_join"><span>회원가입</span></a></li>
+            </ul>  -->
+            <!-- 로그인 후 -->
+            <ul class="info_menu">
+            <li class="bar"><a href="#none">마이페이지</a></li>
+            </ul>
+            <span class="user"><strong>홍길동</strong>님 <span class="rank"><strong>7</strong>등급</span></span>
+            <button class="btn_log">
+            <span class="txt">로그아웃</span>
+            <span class="time">09:55</span>
+            </button>
+        </div>
+        </div>
     </div>
-    <!-- gnb -->
-    <div class="global-navy_wrap">
+    </div>
+  </div>
+  <!-- gnb -->
+  <div class="global-navy_wrap">
       <div class="top_menu_cont">
       <div class="pc">
           <ul class="menu">
@@ -438,30 +438,14 @@
         </div>
 
         <div class="search_cont mo">
-          <span class="search_box">
-            <div class="form-element-rows">
-              <div class="form-element__wrap">                                  
-                  <div class="input-multi">
-                    <span class="form-element__inner input-type picker-input">
-                        <input type="text" value="" class="input-type1-font14"  placeholder="" id="datepicker_start2" title="">
-                    </span>
-                  </div>
-              </div>      
-              <div class="dash">~</div>  
-            </div>
-            <div class="form-element-rows">
-              <div class="form-element__wrap">                                  
-                <div class="input-multi">
-                  <span class="form-element__inner input-type picker-input">
-                      <input type="text" value="" class="input-type1-font14" placeholder=""  id="datepicker_end2"  title="">
-                  </span>
-                </div>
-              </div> 
-              <div class="button-area">
-                  <button class="btn_purple_search"><span class="hidden">검색</span></button> 
-              </div>
-            </div>
-          </span>
+          <div>
+            <span class="search_box">
+              <span class="input_cont">
+                <input type="text" class="ico_search" placeholder="검색어를 입력">
+                <button class="btn_search"><span class="hidden">검색</span></button>
+              </span>
+            </span>
+          </div>
           <div class="search-detail-button">
             <button type="button" class="btn-detail-mo-toggle">
               상세조회 열기
@@ -470,11 +454,12 @@
         </div>        
         <!-- 상세조회  -->
         <div class="mo-search-detail-content">    
-            <div class="form-element-rows">
-              <div class="tit">접속방식</div>
+          <div class="form-element-rows">
+            <div class="tit">대상</div>
+            <div style="flex-grow: 1;">
               <!-- 콤보박스 -->
-              <div class="select_box" >
-                  <span class="select">처리구분</span>
+              <div class="select_box display-block">
+                <span class="select">전체</span>
                 <div class="option">
                   <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
                     <ul>
@@ -485,12 +470,9 @@
                   </div>
                 </div>
               </div>
-            </div>                  
-            <div class="form-element-rows">
-              <div class="tit">등급</div>
               <!-- 콤보박스 -->
-              <div class="select_box" >
-                  <span class="select">10등급</span>
+              <div class="select_box mt-16 display-block">
+                <span class="select">전체</span>
                 <div class="option">
                   <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
                     <ul>
@@ -501,19 +483,34 @@
                   </div>
                 </div>
               </div>
-            </div>  
-            <div class="form-element-rows">
-              <div class="tit">사용자</div>
-              <!-- 콤보박스 -->
-              <div class="input-multi">
-                <span class="form-element__inner input-type picker-input">
-                    <input type="text" value="" class="input-type1-font14" placeholder="사용자를 입력하세요"  title="">
-                </span>
+            </div>
+          </div>                  
+          <div class="form-element-rows">
+            <div class="tit">기간</div>
+            <div class="form-element-rows no-padding">
+              <div class="form-element__wrap">
+                  <div class="input-multi">
+                    <span class="form-element__inner input-type picker-input">
+                        <input type="text" value="" class="input-type1-font14"  placeholder="" id="datepicker_start2" title="">
+                    </span>
+                  </div>
               </div>
-            </div>              
+            </div>
+          </div>
+          <div class="form-element-rows no-padding">
+            <div class="tit">~</div>
+            <div class="form-element-rows no-padding">
+              <div class="form-element__wrap">                                  
+                  <div class="input-multi">
+                    <span class="form-element__inner input-type picker-input">
+                        <input type="text" value="" class="input-type1-font14"  placeholder="" id="datepicker_end2" title="">
+                    </span>
+                  </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- //상세검색 -->          
-
+        <!-- //상세검색 -->
       </div>
     </div>
     <script>
@@ -563,12 +560,68 @@
           <span class="total"><strong>10 / 10</strong>건</span>
         </div>
         <!-- table -->
-        <div class="table_cont scroll-type">
+        <div class="table_cont scroll-type table-fixed pc">
           <table class="table-list">
             <colgroup>              
               <col style="width:96px;">
               <col >
               <col style="width:448px">
+              <col style="width:96px;">
+              <col style="width:96px;">
+            </colgroup>
+            <thead>
+              <tr>                
+                <th>번호</th>
+                <th>기간</th>
+                <th>대상</th>
+                <th>등록일</th>
+                <th>등록자</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>10</td>
+                <td>
+                  <a class="link-text" href="#" onclick="modalControl('o','#main_layer_pop');return false">
+                    2025.03.01 ~ 2025.03.31
+                  </a>
+                </td>
+                <td>전체</td>
+                <td>2024.10.10</td>
+                <td>관리자</td>      
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>
+                  <a class="link-text" href="#" onclick="modalControl('o','#main_layer_pop');return false">
+                    2025.03.01 ~ 2025.03.31
+                  </a>
+                </td>
+                <td>서울특별시 > 강남구</td>
+                <td>2024.10.10</td>
+                <td>관리자</td>      
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>
+                  <a class="link-text" href="#" onclick="modalControl('o','#main_layer_pop');return false">
+                    2025.03.01 ~ 2025.03.31
+                  </a>
+                </td>
+                <td>전체</td>
+                <td>2024.10.10</td>
+                <td>관리자</td>      
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table_cont scroll-type table-fixed mo-table-fixed">
+          <table class="table-list">
+            <colgroup>              
+              <col style="width:96px;">
+              <col >
+              <col style="width:208px">
               <col style="width:96px;">
               <col style="width:96px;">
             </colgroup>
@@ -637,69 +690,69 @@
       </div>
     </div>
   </div>
-        <!-- 모달 -->
-        <section class="modal_new modal_overlay roll-type" id="main_layer_pop"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
-          <div class="modal_n_wrap roll-modal">
-              <div class="modal-header">
-                  <div class="tit">상세보기</div>
-              </div>
-              <div class="modal_n_body">
-                  <div class="table_cont form-table">
-                    <table class="table-body-only table-fixed">
-                      <colgroup>
-                        <col style="width:30%;">
-                        <col>
-                      </colgroup>
-                      <tbody>
-                        <tr>
-                          <th scope="row">로그ID</th>
-                          <td>SYSLOG_0000000000065</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">발생일자</th>
-                          <td>
-                            2024-07-26 19:24:34
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row">접속방식</th>
-                          <td>
-                            GPKI
-                          </td>
-                        </tr>                        
-                        <tr>
-                          <th scope="row">사용자명</th>
-                          <td>
-                            홍길동(ID)
-                          </td>                    
-                       </tr>    
-                        <tr>
-                          <th scope="row">등급</th>
-                          <td>
-                              33
-                          </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">요청자IP</th>
-                            <td>
-                              192.138.0.100
-                            </td>                                               
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  
-                  <div class="button__wrap flex-end mt-32">
-                      <button type="button" class="btn-line-return wd-108 "  onclick="modalControl('c')" >
-                        <i class="ico-x"></i> 확인
-                      </button>  
-                  </div>  
-              </div>
-              
-              <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>            
-          </div>
-        </section>
-        <!-- //모달 -->
+  <!-- 모달 -->
+  <section class="modal_new modal_overlay roll-type" id="main_layer_pop"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal">
+      <div class="modal-header">
+        <div class="tit">상세보기</div>
+      </div>
+      <div class="modal_n_body">
+        <div class="table_cont form-table">
+          <table class="table-body-only table-fixed">
+            <colgroup>
+              <col style="width:30%;">
+              <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">로그ID</th>
+                <td>SYSLOG_0000000000065</td>
+              </tr>
+              <tr>
+                <th scope="row">발생일자</th>
+                <td>
+                  2024-07-26 19:24:34
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">접속방식</th>
+                <td>
+                  GPKI
+                </td>
+              </tr>                        
+              <tr>
+                <th scope="row">사용자명</th>
+                <td>
+                  홍길동(ID)
+                </td>                    
+              </tr>    
+              <tr>
+                <th scope="row">등급</th>
+                <td>
+                    33
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">요청자IP</th>
+                <td>
+                  192.138.0.100
+                </td>                                               
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="button__wrap flex-end mt-32">
+          <button type="button" class="btn-line-return wd-108 "  onclick="modalControl('c')" >
+            <i class="ico-x"></i> 확인
+          </button>  
+        </div>  
+      </div>
+        
+      <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>            
+    </div>
+  </section>
+  <!-- //모달 -->
   <!-- footer -->
   <div class="footer">
     <div class="inner">
@@ -818,6 +871,12 @@
         </div>
         <p class="copy">ⓒ Ministry of the Interior and Safety. All rights reserved.</p>
       </div>
+    </div>
+  </div>
+  <!-- footer mo -->
+  <div class="footer mo foot_btn_wrap">
+    <div class="foot_btn_area">        
+      <a href="#none" class="btn btn_approval"><span>등록</span></a>
     </div>
   </div>
 </div>

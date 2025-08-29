@@ -572,162 +572,232 @@
             </colgroup>
             <tbody>
               <tr>
-                  <th scope="row">공개여부</th>
-                  <td>
-                      <div class="radio-box">
-                          <label id="r0a3">
-                              <input type="radio" name="type8" value="type0a20" checked id="ra03">
-                              <span>공개</span>
-                          </label>
-                          <label id="rb04">
-                              <input type="radio" name="type8" value="type0a21" id="rb04">
-                              <span>비공개</span>
-                          </label>
-                      </div> 
-                  </td>
-              </tr>
-              <tr>
-                  <th scope="row">대상</th>
-                  <td>
-                        <!-- 콤보박스 -->
-                        <div class="select_box" style="width: 100%;">
-                          <span class="select">전체</span>
-                          <div class="option">
-                            <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
-                              <ul>
-                                <li>선택함1</li>
-                                <li>선택함2</li>
-                                <li>선택함3</li>
-                              </ul>
-                            </div>
-                          </div>
+                <td colspan="2">
+                  <div>
+                    기간 선택
+                    <span class="red-color">*</span>
+                  </div>
+                  <div class="form-element__wrap mo-fixed-width mt-16" style="width: 100%">
+                    <div class="input-multi">
+                      <span class="form-element__inner input-type">
+                        <input type="text" value="" class="input-type1-font14" maxlength="50" placeholder="" id="datepicker_start2" title="">
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex-row mt-16">
+                    <!-- 콤보박스 -->
+                    <div class="select_box" style="width: 120px;">
+                      <span class="select">00</span>
+                      <div class="option">
+                        <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                          <ul>
+                            <li>선택함1</li>
+                            <li>선택함2</li>
+                            <li>선택함3</li>
+                          </ul>
                         </div>
-                        <!-- //콤보박스 -->  
-                  </td>  
-              </tr>
-              <tr>
-                  <th scope="row">등록일</th>
-                  <td>
-                      2024.10.10 10:10
-                  </td>
-              </tr>
-              <tr>
-                  <th scope="row">등록자</th>
-                  <td>
-                      홍길동 (ID 출력)
-                  </td>  
-              </tr>
-              <tr>
-                  <th scope="row">제목</th>
-                  <td>
-                    <div class="form-element__wrap">                                  
-                        <div class="input-multi">
-                          <span class="form-element__inner input-type">
-                              <input type="text" value="농지법" class="input-type1-font14" maxlength="50" placeholder="제목" disabled  title="제목">
-                          </span>
+                      </div>
+                    </div>
+                    시
+                    <!-- 콤보박스 -->
+                    <div class="select_box" style="width: 120px;">
+                      <span class="select">00</span>
+                      <div class="option">
+                        <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                          <ul>
+                            <li>선택함1</li>
+                            <li>선택함2</li>
+                            <li>선택함3</li>
+                          </ul>
                         </div>
-                    </div>                                                                                      
-                  </td>
-              </tr>
-              <tr>                    
-                  <td scope="row" colspan="2" class="full-width">
-                      상세내용
-                      <div class="edit-wrap">
-                        에디터 영역
                       </div>
-                  </td>
-              </tr>
-              <tr>                    
-                  <td scope="row" colspan="2" class="full-width">
-                      답변내용
-                      <div class="edit-wrap">
-                        에디터 영역
+                    </div>
+                    분 ~
+                  </div>
+                  <div class="form-element__wrap mo-fixed-width mt-16" style="width: 100%">
+                    <div class="input-multi">
+                      <span class="form-element__inner input-type">
+                        <input type="text" value="" class="input-type1-font14" maxlength="50" placeholder="" id="datepicker_end2" title="">
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex-row mt-16">
+                    <!-- 콤보박스 -->
+                    <div class="select_box" style="width: 120px;">
+                      <span class="select">00</span>
+                      <div class="option">
+                        <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                          <ul>
+                            <li>선택함1</li>
+                            <li>선택함2</li>
+                            <li>선택함3</li>
+                          </ul>
+                        </div>
                       </div>
-                  </td>
+                    </div>
+                    시
+                    <!-- 콤보박스 -->
+                    <div class="select_box" style="width: 120px;">
+                      <span class="select">00</span>
+                      <div class="option">
+                        <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                          <ul>
+                            <li>선택함1</li>
+                            <li>선택함2</li>
+                            <li>선택함3</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    분
+                  </div>
+                </td>
               </tr>
               <tr>
-                  <th scope="row">답변일</th>
-                  <td>
-                      
-                  </td>  
+                <th scope="row">
+                  입력 대상
+                  <span class="red-color">*</span>
+                </th>
+                <td>
+                  <div class="radio-box">
+                    <label id="r0a3">
+                      <input type="radio" name="type8" value="type0a20" checked id="ra03">
+                      <span>전체</span>
+                    </label>
+                    <label id="rb04">
+                      <input type="radio" name="type8" value="type0a21" id="rb04">
+                      <span>지정</span>
+                    </label>
+                  </div> 
+                  <!-- 콤보박스 -->
+                  <div class="select_box mt-16" style="width: 100%;">
+                    <span class="select">선택</span>
+                    <div class="option">
+                      <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                        <ul>
+                          <li>선택함1</li>
+                          <li>선택함2</li>
+                          <li>선택함3</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //콤보박스 -->  
+                   <!-- 콤보박스 -->
+                  <div class="select_box" style="width: 100%;">
+                    <span class="select">선택</span>
+                    <div class="option">
+                      <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+                        <ul>
+                          <li>선택함1</li>
+                          <li>선택함2</li>
+                          <li>선택함3</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //콤보박스 -->  
+                </td>
               </tr>
               <tr>
-                  <th scope="row">답변자</th>
-                  <td>
-                      홍길동
-                  </td>  
-              </tr>                    
+                <th scope="row">
+                  사용 여부
+                  <span class="red-color">*</span>
+                </th>
+                <td>
+                  <div class="radio-box">
+                    <label id="r0a3">
+                      <input type="radio" name="type8" value="type0a20" checked id="ra03">
+                      <span>전체</span>
+                    </label>
+                    <label id="rb04">
+                      <input type="radio" name="type8" value="type0a21" id="rb04">
+                      <span>지정</span>
+                    </label>
+                  </div> 
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <div>
+                    메모
+                  </div>
+                  <div class="form-element__wrap mt-16">                                
+                    <span class="form-element__inner text-area">
+                      <textarea class="input-type1-font14" placeholder="내용을 입력해주세요" title="게시판 소개"></textarea>
+                    </span>
+                  </div>
+                </td>
+              </tr>
             </tbody>
           </table>
-          </div>
-
-
+        </div>
       </div>
     </div>
   </div>
-        <!-- 모달 -->
-        <section class="modal_new modal_overlay roll-type" id="main_layer_pop"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
-          <div class="modal_n_wrap roll-modal">
-              <div class="modal-header">
-                  <div class="tit">상세보기</div>
-              </div>
-              <div class="modal_n_body">
-                  <div class="table_cont form-table">
-                    <table class="table-body-only table-fixed">
-                      <colgroup>
-                        <col style="width:30%;">
-                        <col>
-                      </colgroup>
-                      <tbody>
-                        <tr>
-                          <th scope="row">로그ID</th>
-                          <td>SYSLOG_0000000000065</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">발생일자</th>
-                          <td>
-                            2024-07-26 19:24:34
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row">접속방식</th>
-                          <td>
-                            GPKI
-                          </td>
-                        </tr>                        
-                        <tr>
-                          <th scope="row">사용자명</th>
-                          <td>
-                            홍길동(ID)
-                          </td>                    
-                       </tr>    
-                        <tr>
-                          <th scope="row">등급</th>
-                          <td>
-                              33
-                          </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">요청자IP</th>
-                            <td>
-                              192.138.0.100
-                            </td>                                               
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  
-                  <div class="button__wrap flex-end mt-32">
-                      <button type="button" class="btn-line-return wd-108 "  onclick="modalControl('c')" >
-                        <i class="ico-x"></i> 확인
-                      </button>  
-                  </div>  
-              </div>
-              
-              <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>            
-          </div>
-        </section>
-        <!-- //모달 -->
+  <!-- 모달 -->
+  <section class="modal_new modal_overlay roll-type" id="main_layer_pop"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal">
+        <div class="modal-header">
+            <div class="tit">상세보기</div>
+        </div>
+        <div class="modal_n_body">
+            <div class="table_cont form-table">
+              <table class="table-body-only table-fixed">
+                <colgroup>
+                  <col style="width:30%;">
+                  <col>
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">로그ID</th>
+                    <td>SYSLOG_0000000000065</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">발생일자</th>
+                    <td>
+                      2024-07-26 19:24:34
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">접속방식</th>
+                    <td>
+                      GPKI
+                    </td>
+                  </tr>                        
+                  <tr>
+                    <th scope="row">사용자명</th>
+                    <td>
+                      홍길동(ID)
+                    </td>                    
+                  </tr>    
+                  <tr>
+                    <th scope="row">등급</th>
+                    <td>
+                        33
+                    </td>
+                  </tr>
+                  <tr>
+                      <th scope="row">요청자IP</th>
+                      <td>
+                        192.138.0.100
+                      </td>                                               
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="button__wrap flex-end mt-32">
+                <button type="button" class="btn-line-return wd-108 "  onclick="modalControl('c')" >
+                  <i class="ico-x"></i> 확인
+                </button>  
+            </div>  
+        </div>
+        
+        <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>            
+    </div>
+  </section>
+  <!-- //모달 -->
   <!-- footer -->
   <div class="footer">
     <div class="inner">
@@ -846,6 +916,13 @@
         </div>
         <p class="copy">ⓒ Ministry of the Interior and Safety. All rights reserved.</p>
       </div>
+    </div>
+  </div>
+  <!-- footer mo -->
+   <div class="footer mo foot_btn_wrap">
+    <div class="foot_btn_area">
+      <a href="#none" class="btn btn-primary-default btn_check"><span>등록</span></a>
+      <a href="#none" class="btn btn_list"><span>목록</span></a>
     </div>
   </div>
 </div>
