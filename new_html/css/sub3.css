@@ -293,7 +293,175 @@
   padding: 0;
 }
 
+.w-108 {
+  width: 108px;
+}
 
+.table-size-small tbody th {
+  font-size: 15px !important;
+  text-align: center !important;
+}
+.table-size-small tbody td {
+  font-size: 14px !important;
+  color: #717B8A !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+}
+
+/* 상단 프로세스 영역 */
+.process-step-list-type2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.process-step-list-type2 li.total-board {
+  width: 144px;
+  border-radius: 16px;
+  border: 1px solid #fff;
+  box-shadow: 0px 4px 8px 0px #0D23971A;
+  overflow: hidden;
+}
+.process-step-list-type2 li.total-board dl {
+  display: flex;
+  flex-direction: column;
+}
+.process-step-list-type2 li.total-board dt,
+.process-step-list-type2 li.total-board dd {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.02em;
+  background-color: #fff;
+}
+.process-step-list-type2 li.total-board dt {
+  width: 100%;
+  color:#494E56;
+  font-size: 18px;
+  font-weight: 700;
+  border-bottom: 1px solid #E7EAFA;
+}
+.process-step-list-type2 li.total-board dd {
+  font-size: 16px;
+  font-weight: 400;
+  color:#222;
+}
+.process-step-list-type2 li.total-board dd strong {
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+.process-step-list-type2 .detail-board {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.process-step-list-type2 .detail-board .icon img {
+  width: 24px;
+  height: 24px;
+}
+.process-step-list-type2 .detail-board dl {
+  width: 144px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid #fff;
+  box-shadow: 0px 4px 8px 0px #0D23971A;
+}
+.process-step-list-type2 .detail-board dt,
+.process-step-list-type2 .detail-board dd {
+  letter-spacing: -0.02em;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.process-step-list-type2 .detail-board dt {
+  width: 100%;
+  height: 40px;
+  color:#494E56;
+  font-size: 18px;
+  font-weight: 700;
+  border-bottom: 1px solid #E7EAFA;
+}
+.process-step-list-type2 .detail-board dd {
+  font-size: 16px;
+  font-weight: 400;
+  color:#222;  
+  padding: 12px 0; 
+}
+.process-step-list-type2 li.detail-board dd strong {
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+
+/* 이양상황관리 라벨 컬러 */
+.lable {
+  width: auto;
+  display: inline-block;
+}
+.lable.type10 {
+  /* 소관위 */
+  background-color: #FF8B4A;
+}
+.lable.type11 {
+  /* 폐기/철회 */
+  background-color: #717B8A;
+}
+
+
+/* 데이터 없음 */
+.no-data {
+  padding: 80px 0;
+  border-bottom: 1px solid #E5E5E5;
+  flex-direction: column;
+}
+
+/* 파일첨부 탭 */
+.file-tab {
+  width: 100%;
+  height: 56px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background-color: #F9F9FB;
+  display: flex;
+  overflow: hidden;
+}
+.file-tab li {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
+}
+.file-tab li.active {
+  background-color: #706DF0;
+  font-weight: 700;
+  color: #fff;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.modal_n_wrap.roll-modal.modal-size-small {
+  width: 540px;
+}
+.modal-form-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #222;
+}
+.modal_n_wrap.roll-modal.modal-size-small input {
+  color: #222;
+}
+
+/* 모바일 테이블 */
 @media (max-width: 768px) {
   .mo-table-fixed {
     width: 100%;

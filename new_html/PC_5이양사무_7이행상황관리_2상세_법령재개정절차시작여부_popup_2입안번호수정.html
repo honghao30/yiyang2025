@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지방이양자동화 시스템 구축 프로젝트</title>
+  <link rel="stylesheet" href="css/common.css">
+  <!-- mCustomScrollbar css -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <!-- REQUIRED SCRIPTS -->
+  <script src="js/jquery-3.2.1.js"></script>
+  <!-- mCustomScrollbar JS -->
+  <script src="js/jquery.mCustomScrollbar.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <!-- common.js -->
+  <script src="js/common.js"></script>
+  <script src="js/common_02.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+    $(function() {
+        fn_default_datepicker();
+    });
+            
+    function fn_default_datepicker()
+    {
+        var start = $( "#datepicker_start" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+            
+        var end = $( "#datepicker_end" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+               ,defaultDate: "+1w"
+          });
+          var start = $( "#datepicker_start2" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+            
+        var end = $( "#datepicker_end2" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+               ,defaultDate: "+1w"
+          });        
+        //초기값을 오늘 날짜로 설정
+        $('#datepicker_start').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_start2').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end2').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+    }
+     
+</script> 
+</head>
+
+<body>
+  <section class="popup_new modal_overlay roll-type" id="main_layer_pop"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal modal-size-small">
+      <div class="modal-header">
+        <div class="tit">입안 번호 입력</div>
+      </div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+          <div class="modal-form-title">
+            입안 번호
+            <span class="red-color">*</span>
+          </div>
+          <div class="form-element__wrap mt-16">
+            <div class="input-multi">
+              <span class="form-element__inner input-type input_del on">
+                <input type="text" value="가- 542768" class="input-type1-font14" maxlength="50" placeholder="제목 또는 요약 내용을 입력하여 주세요." title="제목 또는 요약 내용을 입력하여 주세요.">
+                <button class="del"></button>
+              </span>
+            </div>
+          </div>
+          <div class="button__wrap flex-end mt-32">
+            <button type="button" class="btn-gray-default w-108" onclick="window.close()">
+              <i class="ico-remove"></i> 취소
+            </button>
+            <button type="button" class="btn-primary-default w-108" onclick="">
+              <i></i>저장
+            </button>
+          </div>
+        </div>
+    
+        <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
