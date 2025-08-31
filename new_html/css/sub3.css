@@ -461,6 +461,61 @@
   color: #222;
 }
 
+/* 통계 */
+.example-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example-img img {
+  width: 100%;
+}
+.stat-tabs { 
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  overflow: hidden;
+}
+.tab-list { 
+  display: flex; 
+  background-color: #f8f9fa; 
+}
+.tab-menu { 
+  height: 48px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  color: #494E56;
+  border-bottom: 1px solid #D8DDE9;
+}
+.tab-menu.active { 
+  background: #fff; 
+  font-weight: bold; 
+  border: 1px solid #D8DDE9;
+  border-bottom: none;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.tab-content { 
+  display: none; 
+  padding: 24px 0; 
+  overflow-y: auto;
+}
+.tab-content.active { 
+  display: block; 
+}
+
+.table-list-type2 th {
+  height: 56px;
+}
+.table-list-type2 td {
+  height: 32px;
+}
+
+
 /* 모바일 테이블 */
 @media (max-width: 768px) {
   .mo-table-fixed {
@@ -471,3 +526,4 @@
     width: 700px;
   }
 }
+
