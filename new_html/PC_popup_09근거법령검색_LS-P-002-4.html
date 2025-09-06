@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지방이양자동화 시스템 구축 프로젝트</title>
+  <link rel="stylesheet" href="css/common.css">
+  <!-- mCustomScrollbar css -->
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">  
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.sw.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <!-- REQUIRED SCRIPTS -->
+  <script src="js/jquery-3.2.1.js"></script>
+  <!-- mCustomScrollbar JS -->
+  <script src="js/jquery.mCustomScrollbar.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <!-- common.js -->
+  <script src="js/common.js"></script>
+  <script src="js/common_02.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+    $(function() {
+        fn_default_datepicker();
+        syncSideNestingHeight();
+    });
+            
+    function fn_default_datepicker()
+    {
+        var start = $( "#datepicker_start" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+            
+        var end = $( "#datepicker_end" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+               ,defaultDate: "+1w"
+          });
+          var start = $( "#datepicker_start2" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+        });
+            
+        var end = $( "#datepicker_end2" ).datepicker({
+            dateFormat: 'yy-mm-dd' //Input Display Format 변경
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+            ,changeYear: true //콤보박스에서 년 선택 가능
+            ,changeMonth: true //콤보박스에서 월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "./img/pc/ico/icon_calendar.png" //버튼 이미지 경로
+            ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+            ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+            ,minDate: "-6M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "0M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+               ,defaultDate: "+1w"
+          });        
+        //초기값을 오늘 날짜로 설정
+        $('#datepicker_start').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_start2').datepicker('setDate', '-7D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+        $('#datepicker_end2').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+    }
+     
+    function getDate( element ) {
+        var date;
+        var dateFormat = "yy-mm-dd";
+        try {
+          date = $.datepicker.parseDate( dateFormat, element.value );
+        } catch( error ) {
+          date = null;
+        }
+        return date;
+     }
+
+     function syncSideNestingHeight() {
+        var modalBody = document.querySelector('.modal_n_body');
+        var sideNesting = document.querySelector('.side-nesting-wrap');
+        if (modalBody && sideNesting) {
+            sideNesting.style.height = modalBody.offsetHeight + 'px';
+        }
+    }
+    window.addEventListener('load', syncSideNestingHeight);
+    window.addEventListener('resize', syncSideNestingHeight);
+</script> 
+</head>
+
+<body>
+  <section class="modal_new modal_overlay roll-type modal_on" id="layer_pop_05"><!-- 클래스에 modal_overlay를 넣으면 오버레이 클릭 시 닫힙니다 -->
+    <div class="modal_n_wrap roll-modal wd1280 mt-24">
+        <div class="modal-header">
+            <div class="tit">근거법령 검색</div>        
+        </div>
+      <div class="modal_n_body">
+        <div class="pop_cont">
+            <div class="modal-msg">  
+                <div class="search_cont no-bg-type">
+                    <span class="search_box">
+                        <!-- 콤보박스 -->
+                        <div class="select_box" style="width: 200px">
+                            <span class="select">선택</span>
+                            <div class="option" style="display: none;">
+                                <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="position: relative; overflow: visible;"><div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" tabindex="0" style="max-height: 0px;"><div id="mCSB_5_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                <ul>
+                                    <li>선택함1</li>
+                                    <li>선택함2</li>
+                                    <li>선택함3</li>
+                                </ul>
+                                </div></div><div id="mCSB_5_scrollbar_vertical" class="mCSB_scrollTools mCSB_5_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_5_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
+                            </div>
+                        </div>                    
+                        <!-- 콤보박스 -->
+                        <span class="input_cont">
+                            <input type="text" class="ico_search" placeholder="검색어를 입력해 주세요.">
+                            <button class="btn_search"><span class="hidden">검색</span></button>
+                        </span>
+                        <button class="btn btn_size_s btn_search_detail bg-purple"><span>상세검색</span></button>
+                    </span>
+                </div>
+                <!-- 검색 -->
+        <!-- class on 이 붙으면 열림 -->
+        <div class="search_cont_detail iyangsamu-search type02 mt-24 on">
+            <div class="search-table">
+                <table class="table-body-only">
+                    <colgroup>
+                        <col style="width:102px">
+                        <col>
+                        <col style="width:102px">
+                        <col>                      
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">소관부처</th>
+                            <td class="text-l">                            
+                                <!-- select_box -->
+                                <select name="" id="" class="selectbox" title="소관부처 선택">
+                                  <option value="선택함1">전체</option>
+                                  <option value="선택함2">선택함2</option>
+                                  <option value="선택함3">선택함3</option>
+                                </select>
+                                <!-- select_box -->  
+                            </td>
+                            <th scope="row">법령구분 </th>
+                            <td class="text-l">                            
+                                <!-- select_box -->
+                                <select name="" id="" class="selectbox" title="법령구분 선택">
+                                  <option value="선택함1">전체</option>
+                                  <option value="선택함2">선택함2</option>
+                                  <option value="선택함3">선택함3</option>
+                                </select>
+                                <!-- select_box -->                            
+                            </td>                        
+                        </tr>
+                        <tr>
+                          <th scope="row">법령명 <span class="red-color">*</span></th>
+                          <td colspan="3">
+                            <div class="flex-box">
+                              <div class="form-element__wrap">                                
+                                  <span class="form-element__inner input-type input_del">
+                                      <input type="text" class="input-type1-font14" value="도시재생 활성화 및 지원에 관한 법률" placeholder="법령명을 입력해 주세요." title="법령명을 입력해 주세요">
+                                      <button class="del"></button>
+                                  </span>
+                              </div>
+                              <button class="btn_reset_only-icon"></button>
+                            </div>
+                          </td>
+                        </tr>   
+                    </tbody>
+                </table>
+                <table class="table-body-only mt-24">
+                    <colgroup>
+                        <col style="width:102px">
+                        <col>
+                        <col style="width:102px">
+                        <col>                      
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                          <th scope="row">법령명<br>선택</th>
+                          <td colspan="3">
+                            <!-- select_box -->
+                            <select name="" id="" class="selectbox" title="\법령명 선택" style="width: 100%;">
+                              <option value="선택함1">전체</option>
+                              <option value="선택함2">선택함2</option>
+                              <option value="선택함3">선택함3</option>
+                            </select>
+                            <!-- select_box -->
+                          </td>          
+                        </tr>                        
+                        <tr>
+                            <th scope="row">조문</th>
+                            <td>
+                              <div class="form-element__wrap">                                  
+                                <div class="input-multi">
+                                  <span class="form-element__inner input-type">
+                                      <input type="text" value="" class="input-type1-font14" maxlength="10" placeholder="조문" title="조문 입력하세요">
+                                  </span>
+                                  <span>조</span>              
+                                </div>
+                              </div>
+                            </td>
+                            <th scope="row">조문상세</th>
+                            <td class="text-l flex-box">
+                              <span class="form-element__inner input-type">
+                                <input type="text" value="" class="input-type1-font14" maxlength="10" placeholder="조문을 입력해 주세요." title="조문을 입력해 주세요.">
+                              </span>
+                              <button class="btn_reset_only-icon"></button>
+                            </td>                       
+                        </tr>     
+                    </tbody>
+                </table>
+            </div>          
+              <button class="btn_close x-icon-purple"></button>
+              <button class="btn_search_only-icon"></button>
+          </div>
+        <!-- //상세검색 -->
+                <div class="top_info_box pc-flex mt-64">
+                    <div class="left_cont">
+                        <span class="total">총 <strong>11,994</strong>건 중 <strong>201-220</strong> </span>
+                    </div>
+                    <div class="right_cont">
+                        <button type="button" class="btn-purple-add" disabled="">
+                            + 선택 추가
+                        </button>
+                    </div>
+                </div>
+                <div class="table_cont scroll-type tb_cursor">
+                    <table class="table-body-only">
+                        <colgroup>              
+                            <col>                                
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="inner-table">
+                                    <div class="scrolling-content">
+                                        <div class="inner-table-cont law-list">
+                                            <table>
+                                                <colgroup>                                      
+                                                    <col width="5%">
+                                                    <col>
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="input_type check check-item">
+                                                                <input type="checkbox" name="">
+                                                                <span class="txt"></span>
+                                                            </label>                                          
+                                                        </td>                                            
+                                                        <td class="text-l"><strong>제1조(목적)</strong>&nbsp;이 법은 도시의 경제적ㆍ사회적ㆍ문화적 활력 회복을 위하여 공공의 역할과 지원을 강화함으로써 도시의 자생적 성장기반을 확충하고 도시의 경쟁력을 제고하며 지역 공동체를 회복하는 등 국민의 삶의 질 향상에 이바지함을 목적으로 한다.</td>                                                        
+                                                    </tr>   
+                                                    <tr>
+                                                        <td>
+                                                            <label class="input_type check check-item">
+                                                                <input type="checkbox" name="">
+                                                                <span class="txt"></span>
+                                                            </label>                                          
+                                                        </td>                                            
+                                                        <td class="text-l">해양수산부장관은 안전관리규정에 따라 수중레저사업장 내 수중레저기구, 수중레저장비 및 수중레저시설물 등(이하 “수중레저기구등”이라 한다)에 대한 안전점검을 실시하여야 한다.</td>                                                        
+                                                    </tr>   
+                                                    <tr>
+                                                        <td>
+                                                            <label class="input_type check check-item">
+                                                                <input type="checkbox" name="">
+                                                                <span class="txt"></span>
+                                                            </label>                                          
+                                                        </td>                                            
+                                                        <td class="text-l">해양수산부장관은 안전관리규정에 따라 수중레저사업장 내 수중레저기구, 수중레저장비 및 수중레저시설물 등(이하 “수중레저기구등”이라 한다)에 대한 안전점검을 실시하여야 한다.</td>                                                        
+                                                    </tr>
+                                                    <tr>
+                                                      <td>
+                                                          <label class="input_type check check-item">
+                                                              <input type="checkbox" name="">
+                                                              <span class="txt"></span>
+                                                          </label>                                          
+                                                      </td>                                            
+                                                      <td class="text-l">해양수산부장관은 안전관리규정에 따라 수중레저사업장 내 수중레저기구, 수중레저장비 및 수중레저시설물 등(이하 “수중레저기구등”이라 한다)에 대한 안전점검을 실시하여야 한다.</td>                                                        
+                                                  </tr>   
+                                                  <tr>
+                                                      <td>
+                                                          <label class="input_type check check-item">
+                                                              <input type="checkbox" name="">
+                                                              <span class="txt"></span>
+                                                          </label>                                          
+                                                      </td>                                            
+                                                      <td class="text-l">해양수산부장관은 안전관리규정에 따라 수중레저사업장 내 수중레저기구, 수중레저장비 및 수중레저시설물 등(이하 “수중레저기구등”이라 한다)에 대한 안전점검을 실시하여야 한다.</td>                                                        
+                                                  </tr>   
+                                                  <tr>
+                                                      <td>
+                                                          <label class="input_type check check-item">
+                                                              <input type="checkbox" name="">
+                                                              <span class="txt"></span>
+                                                          </label>                                          
+                                                      </td>                                            
+                                                      <td class="text-l">해양수산부장관은 안전관리규정에 따라 수중레저사업장 내 수중레저기구, 수중레저장비 및 수중레저시설물 등(이하 “수중레저기구등”이라 한다)에 대한 안전점검을 실시하여야 한다.</td>                                                        
+                                                  </tr>                                                     
+                                                </tbody>
+                                            </table>
+                                            <script>
+                                                  const laoLists = document.querySelectorAll('.law-list .check-item input[type=checkbox]');
+                                                  laoLists.forEach((item) => {
+                                                    item.addEventListener('change', () => {
+                                                      const checkItems = document.querySelectorAll('.law-list .check-item input[type=checkbox]:checked');
+                                                      if (checkItems.length > 0) {  // Check if there is at least one checked item
+                                                        document.querySelector('.btn-purple-add').removeAttribute('disabled');
+                                                      } else {
+                                                        document.querySelector('.btn-purple-add').setAttribute('disabled', true);
+                                                      }
+                                                    });
+                                                  });
+                                            </script>
+                                        </div>                                        
+                                    </div>
+                                </td>                                    
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="button__wrap flex-end mt-32">
+                <button type="button" class="btn-gray-default" onclick="modalControl('c')">
+                    <i class="ico-remove"></i> 닫기
+                </button>               
+            </div>
+        </div>    
+        <button type="button" onclick="modalControl('c')" class="btn_close"><span class="hidden">닫기</span></button>   
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
