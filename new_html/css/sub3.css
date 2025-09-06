@@ -531,6 +531,9 @@
   height: 32px;
 }
 
+.mo-table {
+  display: none;
+} 
 
 /* 모바일 테이블 */
 @media (max-width: 768px) {
@@ -541,8 +544,37 @@
   .mo-table-fixed .table-list {
     width: 700px;
   }
-}
+  
+  .mo-table {
+    display: block;
+  }
 
+  .table_cont .mo-table tbody th {
+    line-height: 50px;
+    height: 50px !important;
+    text-align: center !important;
+  }
+
+  .non-bg-table {
+    border-top: 1px solid #222;
+    table-layout: fixed;
+  }
+  .non-bg-table tbody {
+    display: block;
+  }
+  .non-bg-table tr {
+    border-bottom: 1px solid #D8DDE9;
+    display: table;
+    width: 100%;
+  }
+  .non-bg-table tr th {
+    width: 30%;
+  }
+  .non-bg-table tr td {
+    border-left: none;
+    text-align: left;
+  }
+}
 
 .btn-area-collapse {
   width: 24px;
@@ -573,3 +605,12 @@
 .modal-flex-box table tbody tr.is-show {
   display: table-row;
 }
+
+.iyangsamu-table tr.best{
+  background-color: #FFF4ED
+}
+.iyangsamu-table tr.best td:nth-child(1),
+.iyangsamu-table tr.best td:nth-child(2) {
+  color: #FF5858
+}
+
