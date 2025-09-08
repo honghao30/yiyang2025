@@ -614,3 +614,40 @@
   color: #FF5858
 }
 
+.law-list-wrap {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.law-list-wrap .text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;  
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  color: #717B8A;
+}
+.law-list-wrap .button__wrap {
+  width: fit-content;
+}
+.law-list-wrap .btn-refresh {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.law-list-wrap .btn-refresh .ico-refresh {
+  width: 24px;
+  height: 24px;
+  background: url(../img/pc/ico/ico_check_09.png) no-repeat center center;
+  background-size: auto;
+}
