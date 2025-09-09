@@ -625,6 +625,8 @@
   display: flex;
   align-items: center;
   gap: 8px;  
+}
+.law-list-wrap .text p {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -650,4 +652,12 @@
   height: 24px;
   background: url(../img/pc/ico/ico_check_09.png) no-repeat center center;
   background-size: auto;
+}
+
+.table_cont .table-body-only tbody td select {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  color: #000;
 }
