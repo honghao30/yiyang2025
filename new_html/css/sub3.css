@@ -661,3 +661,12 @@
   letter-spacing: -0.02em;
   color: #000;
 }
+
+.is-scroll-box {
+  overflow: auto;
+  max-height: 200px;
+  width: 100%;
+}
+.is-scroll-box table {
+  table-layout: fixed;
+}
