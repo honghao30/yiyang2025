@@ -559,7 +559,7 @@
                       <td>김00</td>
                       <td>02-0000-0000</td>
                     </tr>
-                    <tr  class="tr-depth seoul-sub is-hide" data-type="seoul">
+                    <tr  class="seoul-sub is-hide" data-type="seoul-sub">
                       <td>
                         <label class="input_type check check=item">
                           <input type="checkbox" name="rowSelect">
@@ -579,7 +579,7 @@
                       <td>김00</td>
                       <td>02-0000-0000</td>
                     </tr>
-                    <tr  class="tr-depth seoul-sub is-hide" data-type="seoul">
+                    <tr  class="seoul-sub is-hide" data-type="seoul-sub">
                       <td>
                         <label class="input_type check check=item">
                           <input type="checkbox" name="rowSelect">
@@ -599,7 +599,7 @@
                       <td>김00</td>
                       <td>02-0000-0000</td>
                     </tr>
-                    <tr class="tr-depth seoul-sub is-hide" data-type="seoul">
+                    <tr class="seoul-sub is-hide" data-type="seoul-sub">
                       <td>
                         <label class="input_type check check=item">
                           <input type="checkbox" name="rowSelect">
@@ -642,6 +642,46 @@
                       <td>김00</td>
                       <td>02-0000-0000</td>
                     </tr>
+                    <tr data-type="gyeonggi-sub" class="gyeonggi-sub is-hide">
+                      <td>
+                        <label class="input_type check check=item">
+                          <input type="checkbox" name="rowSelect">
+                          <span class="txt"></span>
+                        </label>                                          
+                      </td>                                            
+                      <td>
+                        <div class="flex-row align-center justify-between">
+                          수원시
+                        </div>
+                      </td>
+                      <td>하수처리 시설 허가</td>
+                      <td>
+                        5,500,000
+                      </td>         
+                      <td>도시활성화과</td>
+                      <td>김00</td>
+                      <td>02-0000-0000</td>
+                    </tr>
+                    <tr data-type="gyeonggi-sub" class="gyeonggi-sub is-hide">
+                      <td>
+                        <label class="input_type check check=item">
+                          <input type="checkbox" name="rowSelect">
+                          <span class="txt"></span>
+                        </label>                                          
+                      </td>                                            
+                      <td>
+                        <div class="flex-row align-center justify-between">
+                          의정부시
+                        </div>
+                      </td>
+                      <td>하수처리 시설 허가</td>
+                      <td>
+                        5,500,000
+                      </td>         
+                      <td>도시활성화과</td>
+                      <td>김00</td>
+                      <td>02-0000-0000</td>
+                    </tr>
                     <tr data-type="busan" class="is-show">
                       <td>
                         <label class="input_type check check=item">
@@ -655,6 +695,46 @@
                           <button type="button" class="btn-area-collapse" data-target="busan-sub">
                             <span class="hidden">펼치기/닫기</span>
                           </button>
+                        </div>
+                      </td>
+                      <td>하수처리 시설 허가</td>
+                      <td>
+                        5,500,000
+                      </td>         
+                      <td>도시활성화과</td>
+                      <td>김00</td>
+                      <td>02-0000-0000</td>
+                    </tr>
+                    <tr data-type="busan-sub" class="busan-sub is-hide">
+                      <td>
+                        <label class="input_type check check=item">
+                          <input type="checkbox" name="rowSelect">
+                          <span class="txt"></span>
+                        </label>                                          
+                      </td>                                            
+                      <td>
+                        <div class="flex-row align-center justify-between">
+                          연제구
+                        </div>
+                      </td>
+                      <td>하수처리 시설 허가</td>
+                      <td>
+                        5,500,000
+                      </td>         
+                      <td>도시활성화과</td>
+                      <td>김00</td>
+                      <td>02-0000-0000</td>
+                    </tr>
+                    <tr data-type="busan-sub" class="busan-sub is-hide">
+                      <td>
+                        <label class="input_type check check=item">
+                          <input type="checkbox" name="rowSelect">
+                          <span class="txt"></span>
+                        </label>                                          
+                      </td>                                            
+                      <td>
+                        <div class="flex-row align-center justify-between">
+                          금정구
                         </div>
                       </td>
                       <td>하수처리 시설 허가</td>
@@ -769,15 +849,41 @@
               }
           }
 
-          // 테이블 정렬 함수
+          // 테이블 정렬 함수 (그룹 단위로 정렬)
           function sortTable(table, columnIndex, ascending) {
               const tbody = table.querySelector('tbody');
-              const rows = Array.from(tbody.querySelectorAll('tr:not(.active):not(.fixed):not(.tr-depth)'));
-              // const rows = Array.from(tbody.querySelectorAll('tr:not(.active):not(.fixed):not(.tr-depth)'));
+              const allRows = Array.from(tbody.querySelectorAll('tr'));
               
-              rows.sort((a, b) => {
-                  const aValue = a.cells[columnIndex]?.textContent.trim() || '';
-                  const bValue = b.cells[columnIndex]?.textContent.trim() || '';
+              // fixed 행들은 제외하고 그룹별로 분류
+              const fixedRows = allRows.filter(row => row.classList.contains('fixed'));
+              const dataRows = allRows.filter(row => !row.classList.contains('fixed'));
+              
+              // 그룹별로 행들을 분류
+              const groups = [];
+              let currentGroup = null;
+              
+              dataRows.forEach(row => {
+                  const dataType = row.getAttribute('data-type');
+                  
+                  // 부모 행인 경우 (seoul, gyeonggi, busan)
+                  if (dataType && !dataType.includes('-sub')) {
+                      currentGroup = {
+                          parent: row,
+                          children: [],
+                          dataType: dataType
+                      };
+                      groups.push(currentGroup);
+                  }
+                  // 하위 행인 경우 (seoul-sub, gyeonggi-sub, busan-sub)
+                  else if (dataType && dataType.includes('-sub') && currentGroup) {
+                      currentGroup.children.push(row);
+                  }
+              });
+              
+              // 그룹별로 정렬 (부모 행의 값을 기준으로)
+              groups.sort((a, b) => {
+                  const aValue = a.parent.cells[columnIndex]?.textContent.trim() || '';
+                  const bValue = b.parent.cells[columnIndex]?.textContent.trim() || '';
                   
                   // 숫자 정렬 (예산 컬럼)
                   if (columnIndex === 3) { // 예산 컬럼
@@ -794,36 +900,60 @@
                   }
               });
               
-              // 정렬된 행들을 다시 삽입
-              rows.forEach(row => {
+              // tbody 초기화
+              tbody.innerHTML = '';
+              
+              // fixed 행들을 먼저 추가
+              fixedRows.forEach(row => {
                   tbody.appendChild(row);
+              });
+              
+              // 정렬된 그룹들을 순서대로 추가
+              groups.forEach(group => {
+                  tbody.appendChild(group.parent);
+                  group.children.forEach(child => {
+                      tbody.appendChild(child);
+                  });
               });
           }
 
-          // 테이블 정렬 초기화 함수
+          // 테이블 정렬 초기화 함수 (그룹 단위로 초기화)
           function resetTableSort(table) {
               const tbody = table.querySelector('tbody');
               if (!tbody) return;
               
-              const rows = Array.from(tbody.querySelectorAll('tr'));
+              const allRows = Array.from(tbody.querySelectorAll('tr'));
               
-              // data-index가 없는 경우 다시 설정
-              rows.forEach((row, index) => {
-                  if (!row.getAttribute('data-index')) {
-                      row.setAttribute('data-index', index.toString());
-                  }
-              });
+              // fixed 행들과 데이터 행들을 분리
+              const fixedRows = allRows.filter(row => row.classList.contains('fixed'));
+              const dataRows = allRows.filter(row => !row.classList.contains('fixed'));
               
-              // 원래 순서로 정렬 (data-index 속성 기준)
-              rows.sort((a, b) => {
-                  const aIndex = parseInt(a.getAttribute('data-index')) || 0;
-                  const bIndex = parseInt(b.getAttribute('data-index')) || 0;
-                  return aIndex - bIndex;
-              });
+              // 원래 순서로 그룹 재구성
+              const originalOrder = [
+                  { type: 'seoul', name: '서울특별시' },
+                  { type: 'gyeonggi', name: '경기도' },
+                  { type: 'busan', name: '부산광역시' }
+              ];
               
-              // 정렬된 행들을 다시 삽입
-              rows.forEach(row => {
+              // tbody 초기화
+              tbody.innerHTML = '';
+              
+              // fixed 행들을 먼저 추가
+              fixedRows.forEach(row => {
                   tbody.appendChild(row);
+              });
+              
+              // 원래 순서대로 그룹 추가
+              originalOrder.forEach(order => {
+                  const parentRow = dataRows.find(row => row.getAttribute('data-type') === order.type);
+                  const childRows = dataRows.filter(row => row.getAttribute('data-type') === `${order.type}-sub`);
+                  
+                  if (parentRow) {
+                      tbody.appendChild(parentRow);
+                      childRows.forEach(child => {
+                          tbody.appendChild(child);
+                      });
+                  }
               });
               
               console.log('정렬 초기화 완료');
@@ -852,6 +982,12 @@
               sortingAreaBtns.forEach(btn => {
                   btn.classList.remove('active');
               });
+              
+              // 정렬도 원래 상태로 복원
+              const table = document.querySelector('.inner-table-cont table');
+              if (table) {
+                  resetTableSort(table);
+              }
           }
 
           function toggleSubItem() {            
