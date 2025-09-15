@@ -559,7 +559,7 @@
                       <td>김00</td>
                       <td>02-0000-0000</td>
                     </tr>
-                    <tr  class="seoul-sub is-hide" data-type="seoul">
+                    <tr  class="tr-depth seoul-sub is-hide" data-type="seoul">
                       <td>
                         <label class="input_type check check=item">
                           <input type="checkbox" name="rowSelect">
@@ -579,7 +579,7 @@
                       <td>김00</td>
                       <td>02-0000-0000</td>
                     </tr>
-                    <tr  class="seoul-sub is-hide" data-type="seoul">
+                    <tr  class="tr-depth seoul-sub is-hide" data-type="seoul">
                       <td>
                         <label class="input_type check check=item">
                           <input type="checkbox" name="rowSelect">
@@ -599,7 +599,7 @@
                       <td>김00</td>
                       <td>02-0000-0000</td>
                     </tr>
-                    <tr class="seoul-sub is-hide" data-type="seoul">
+                    <tr class="tr-depth seoul-sub is-hide" data-type="seoul">
                       <td>
                         <label class="input_type check check=item">
                           <input type="checkbox" name="rowSelect">
@@ -772,7 +772,8 @@
           // 테이블 정렬 함수
           function sortTable(table, columnIndex, ascending) {
               const tbody = table.querySelector('tbody');
-              const rows = Array.from(tbody.querySelectorAll('tr:not(.active):not(.fixed)'));
+              const rows = Array.from(tbody.querySelectorAll('tr:not(.active):not(.fixed):not(.tr-depth)'));
+              // const rows = Array.from(tbody.querySelectorAll('tr:not(.active):not(.fixed):not(.tr-depth)'));
               
               rows.sort((a, b) => {
                   const aValue = a.cells[columnIndex]?.textContent.trim() || '';
