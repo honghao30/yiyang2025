@@ -232,82 +232,33 @@
                         </div>     
                     </div>                    
                     <div class="table_cont pc">
-                        <table class="table-body-only">
+                        <table class="table-body-only" style="table-layout: fixed;">
                             <colgroup>
                                 <col width="160px" />
-                                <col width="" />
-                                <col width="160px" />
-                                <col width="" />
+                                <col width="200px" />
+                                <col width="200px" />
+                                <col width="372px" />
                             </colgroup>
-                            <tbody>
+                            <tbody class="characteristic-list-body">
                                 <tr>
                                     <th scope="row">지방자치단체</th>
                                     <td colspan="3">
                                         <!-- 콤보박스 -->
-                                        <div class="select_box" style="min-width:200px;">
-                                            <span class="select">선택</span>
-                                            <div class="option" style="display: none;">
-                                                <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
-                                                <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
-                                                    <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
-                                                        <ul>
-                                                            <li>선택</li>
-                                                            <li>선택함2</li>
-                                                            <li>선택함3</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>  
+                                        <div class="flex-row" style="gap: 8px;">
+                                            <select class="select-box"  style="width:200px;">
+                                                <option value="">선택</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                            <select class="select-box"  style="width:200px;">
+                                                <option value="">선택</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
                                         </div>
-                                        <!-- //콤보박스 -->
-                                        <!-- 콤보박스 -->
-                                        <div class="select_box" style="min-width:200px;">
-                                            <span class="select">선택</span>
-                                            <div class="option" style="display: none;">
-                                                <div class="mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="overflow: visible; height: 100px; position: relative;">
-                                                <div id="mCSB_5" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
-                                                    <div class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
-                                                        <ul>
-                                                            <li>선택</li>
-                                                            <li>선택함2</li>
-                                                            <li>선택함3</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>  
-                                        </div>
-                                        <!-- //콤보박스 -->
                                     </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">부서명</th>
-                                    <td colspan="3">
-                                        <div class="form-element__wrap">                                
-                                            <span class="form-element__inner input-type" style="width: 408px;">
-                                                <input type="text" value="" class="input-type1-font14" placeholder="부서명을 입력해 주세요." title="부서명을 입력해 주세요.">
-                                            </span>
-                                        </div>                          
-                                    </td>                 
-                                </tr>
-                                <tr>
-                                    <th scope="row">담당자명</th>
-                                    <td>
-                                        <div class="form-element__wrap">                                
-                                            <span class="form-element__inner input-type" style="width: 268px;">
-                                                <input type="text" value="" class="input-type1-font14" placeholder="담당자명을 입력해 주세요." title="담당자명을 입력해 주세요.">
-                                            </span>
-                                        </div>                          
-                                    </td>       
-                                    <th scope="row">연락처</th>
-                                    <td>
-                                        <div class="form-element__wrap">                                
-                                            <span class="form-element__inner input-type" style="width: 268px;">
-                                                <input type="text" value="" class="input-type1-font14" placeholder="연락처를 입력해 주세요." title="연락처 입력해 주세요.">
-                                            </span>
-                                        </div>                          
-                                    </td>            
                                 </tr>
                                 <tr>
                                     <th scope="row">사업명</th>
@@ -320,25 +271,53 @@
                                     </td>                 
                                 </tr>
                                 <tr>
-                                    <th scope="row">예산(원)</th>
+                                    <th scope="row">제공지표선택</th>
                                     <td colspan="3">
-                                        <div class="form-element__wrap">                                
-                                            <span class="form-element__inner input-type" style="width: 268px;">
-                                                <input type="text" value="" class="input-type1-font14" placeholder="예산을 입력해 주세요." title="예산을 입력해 주세요.">
-                                            </span>
-                                        </div>                          
+                                        <div class="flex-row" style="gap: 8px;">
+                                            <select class="select-box view-option"  style="width:200px;">
+                                                <option value="">선택</option>
+                                                <option value="공통">공통</option>
+                                                <option value="개별">개별</option>                                            
+                                            </select>
+                                            <select class="select-box view-option1" disabled style="width:200px;">
+                                                <option value="">선택</option>
+                                                <option value="계획수립">계획수립</option>
+                                                <option value="교육">교육</option>
+                                                <option value="보호지원">보호지원</option>
+                                            </select>
+                                            <select class="select-box view-option2" disabled style="width:200px; display: none;">
+                                                <option value="">선택</option>
+                                                <option value="기획·재정·금융">기획·재정·금융</option>
+                                                <option value="일반행정 지원">일반행정 지원</option>                                            
+                                            </select>
+                                            <button type="button" class="btn-dark-light"  onclick="" >
+                                                지표전체보기
+                                            </button>
+                                        </div>
+                                        
                                     </td>                 
                                 </tr>
                                 <tr>
-                                    <th scope="row">관련자치법규</th>
+                                    <th scope="row">추가지표입력</th>
                                     <td colspan="3">
-                                        <div class="form-element__wrap" >
-                                            <span class="form-element__inner input-type" style="height: 80px;">
-                                                <input type="text" value="" class="input-type1-font14" placeholder="내용을 입력해 주세요." title="내용을 입력해 주세요.">
-                                            </span>
-                                        </div>                          
-                                    </td>
-                                </tr>                                                                                                   
+                                        <div class="flex-row" style="gap: 8px;">
+                                            <div class="form-element__wrap"   style="width:200px;">                                
+                                                <span class="form-element__inner input-type" style="width: 100%;">
+                                                    <input type="text" name="add_indicator1" value="" class="input-type1-font14" placeholder="지표명을 입력하세요." title="사업명을 입력해 주세요.">
+                                                </span>
+                                            </div>    
+                                            <div class="form-element__wrap"   style="width:200px;">                                
+                                                <span class="form-element__inner input-type" style="width: 100%;">                                             
+                                                    <input type="text" name="add_indicator2"  value="" class="input-type1-font14" placeholder="산식을 입력해 주세요." title="산식을 입력해 주세요.">
+                                                </span>
+                                            </div> 
+                                            <button type="button" class="btn-dark-light"  onclick="addCharacteristic()" >
+                                                추가
+                                            </button>  
+                                        </div>                      
+                                    </td>                 
+                                </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -360,6 +339,210 @@
         </div>
     </section>
     <!-- //팝업 -->  
+
+    <script>
+        // DOM이 로드된 후 실행
+        document.addEventListener('DOMContentLoaded', function() {
+            initViewOptions();
+        });
+
+        // view-option 선택에 따른 select box 표시/숨김 기능
+        function initViewOptions() {
+            const viewOption = document.querySelector('.view-option');
+            const viewOption1 = document.querySelector('.view-option1');
+            const viewOption2 = document.querySelector('.view-option2');
+            
+            // 초기 상태 설정 - 모든 옵션 숨김 및 비활성화
+            viewOption1.style.display = '';
+            viewOption1.disabled = true;
+            viewOption2.style.display = 'none';
+            viewOption2.disabled = true;
+            
+            // view-option 변경 이벤트 핸들러
+            viewOption.addEventListener('change', function() {
+                const selectedValue = this.value;
+                
+                // 모든 옵션 숨김 및 비활성화
+                viewOption1.style.display = 'none';
+                viewOption1.disabled = true;
+                viewOption2.style.display = 'none';
+                viewOption2.disabled = true;
+                
+                // 선택된 값에 따라 해당 옵션 표시 및 활성화
+                if (selectedValue === '공통') {
+                    // 공통 선택 시 view-option1 표시 및 활성화
+                    viewOption1.style.display = 'block';
+                    viewOption1.disabled = false;
+                } else if (selectedValue === '개별') {
+                    // 개별 선택 시 view-option1 숨김, view-option2 표시 및 활성화
+                    viewOption1.style.display = 'none';
+                    viewOption1.disabled = true;
+                    viewOption2.style.display = 'inline-flex';
+                    viewOption2.disabled = false;
+                }
+            });
+        }
+        // 전역 함수로 정의
+        window.addCharacteristic = function() {
+            const addCharacteristicCate1 = document.querySelector('.view-option');
+            const addCharacteristicCate2 = document.querySelector('.view-option1');
+            const addCharacteristicCate3 = document.querySelector('.view-option2');
+            
+            const addCharacteristicCate1Value = addCharacteristicCate1 ? addCharacteristicCate1.value : '';
+            const addCharacteristicCate2Value = addCharacteristicCate2 ? addCharacteristicCate2.value : '';
+            const addCharacteristicCate3Value = addCharacteristicCate3 ? addCharacteristicCate3.value : '';
+            
+            const addIndicator1Element = document.querySelector('input[name="add_indicator1"]');
+            const addIndicator2Element = document.querySelector('input[name="add_indicator2"]');
+            const addIndicator1 = addIndicator1Element ? addIndicator1Element.value.trim() : '';
+            const addIndicator2 = addIndicator2Element ? addIndicator2Element.value.trim() : '';
+            
+            // 유효성 검사
+            if (!addCharacteristicCate1Value) {
+                alert('제공지표선택1을 선택해주세요.');
+                return;
+            }
+            
+            if (!addCharacteristicCate2Value && !addCharacteristicCate3Value) {
+                alert('제공지표선택2 선택해주세요.');
+                return;
+            }
+            
+            if (!addIndicator1) {
+                alert('지표명을 입력해주세요.');
+                return;
+            }
+            
+            if (!addIndicator2) {
+                alert('산식을 입력해주세요.');
+                return;
+            }
+
+            const tbody = document.querySelector('.characteristic-list-body');
+            const existingRows = tbody.querySelectorAll('tr');
+            
+            // 같은 addCharacteristicCate1Value를 가진 행들을 찾기 (공통/개별 모두 지원)
+            const sameCategoryRows = Array.from(existingRows).filter(row => {
+                const firstTh = row.querySelector('th');
+                return firstTh && firstTh.textContent === addCharacteristicCate1Value;
+            });
+            
+            console.log(`현재 카테고리: ${addCharacteristicCate1Value}, 같은 카테고리 행 수: ${sameCategoryRows.length}`);
+            
+            const trRow = document.createElement('tr');
+            
+            if (sameCategoryRows.length === 0) {
+                // 첫 번째 행인 경우 - th에 rowspan 없이 생성 (공통/개별 모두)
+                trRow.innerHTML = `
+                    <th>${addCharacteristicCate1Value}</th>
+                    <td>${addCharacteristicCate2Value} ${addCharacteristicCate3Value}</td>
+                    <td>${addIndicator1}</td>
+                    <td>
+                        <div class="flex-row" style="gap: 8px;">
+                            <div class="form-element__wrap"   style="width:150px;">                                
+                                <span class="form-element__inner input-type" style="width: 100%;">                                             
+                                    <input type="text" name="add_indicator2"  value="${addIndicator2}" class="input-type1-font14" placeholder="산식을 입력해 주세요." title="산식을 입력해 주세요.">
+                                </span>
+                            </div>                         
+                            <button type="button" class="btn-dark-light" onclick="deleteCharacteristic(this)">삭제</button>
+                        </div>
+                    </td>
+                `;
+            } else {
+                // 같은 카테고리가 이미 있는 경우 - th 없이 생성 (공통/개별 모두)
+                trRow.innerHTML = `
+                    <td>${addCharacteristicCate2Value} ${addCharacteristicCate3Value}</td>
+                    <td>${addIndicator1}</td>
+                    <td>
+                        <div class="flex-row" style="gap: 8px;">
+                            <div class="form-element__wrap"   style="width:150px;">                                
+                                <span class="form-element__inner input-type" style="width: 100%;">                                             
+                                    <input type="text" name="add_indicator2"  value="${addIndicator2}" class="input-type1-font14" placeholder="산식을 입력해 주세요." title="산식을 입력해 주세요.">
+                                </span>
+                            </div>                         
+                            <button type="button" class="btn-dark-light" onclick="deleteCharacteristic(this)">삭제</button>
+                        </div>
+                    </td>
+                `;
+                
+                // 첫 번째 행의 th에 rowspan 업데이트 (공통/개별 모두)
+                const firstRow = sameCategoryRows[0];
+                const firstTh = firstRow.querySelector('th');
+                if (firstTh) {
+                    const currentRowspan = parseInt(firstTh.getAttribute('rowspan')) || 1;
+                    firstTh.setAttribute('rowspan', currentRowspan + 1);
+                    console.log(`${addCharacteristicCate1Value} 카테고리 rowspan 업데이트: ${currentRowspan} → ${currentRowspan + 1}`);
+                }
+            }
+            
+            tbody.appendChild(trRow); 
+             // 입력 필드 초기화
+            if (addIndicator1Element) addIndicator1Element.value = '';
+            if (addIndicator2Element) addIndicator2Element.value = '';
+        }
+
+        // 삭제 기능
+        window.deleteCharacteristic = function(button) {
+            const row = button.closest('tr');
+            if (!row) return;
+            
+            const tbody = document.querySelector('.characteristic-list-body');
+            const allRows = Array.from(tbody.querySelectorAll('tr'));
+            const rowIndex = allRows.indexOf(row);
+            
+            // 삭제할 행이 th를 가지고 있는지 확인
+            const hasTh = row.querySelector('th');
+            
+            if (hasTh) {
+                // th를 가진 행을 삭제하는 경우
+                const rowspan = parseInt(hasTh.getAttribute('rowspan')) || 1;
+                const categoryValue = hasTh.textContent;
+                
+                console.log(`삭제할 행: ${categoryValue}, rowspan: ${rowspan}`);
+                
+                if (rowspan > 1) {
+                    // rowspan이 1보다 크면 다음 행에 th를 추가하고 rowspan을 감소
+                    const nextRow = allRows[rowIndex + 1];
+                    if (nextRow) {
+                        const newTh = document.createElement('th');
+                        newTh.textContent = categoryValue;
+                        newTh.setAttribute('rowspan', rowspan - 1);
+                        nextRow.insertBefore(newTh, nextRow.firstChild);
+                        console.log(`다음 행에 th 추가: ${categoryValue}, rowspan: ${rowspan - 1}`);
+                    }
+                }
+            } else {
+                // th가 없는 행을 삭제하는 경우
+                // 이 행이 속한 카테고리를 찾기 위해 위쪽 행들을 확인
+                let categoryValue = null;
+                let firstRowWithTh = null;
+                
+                // 위쪽으로 올라가면서 같은 카테고리의 첫 번째 행 찾기
+                for (let i = rowIndex - 1; i >= 0; i--) {
+                    const checkRow = allRows[i];
+                    const th = checkRow.querySelector('th');
+                    if (th) {
+                        categoryValue = th.textContent;
+                        firstRowWithTh = checkRow;
+                        break;
+                    }
+                }
+                
+                console.log(`th 없는 행 삭제, 카테고리: ${categoryValue}`);
+                
+                if (firstRowWithTh && categoryValue) {
+                    const th = firstRowWithTh.querySelector('th');
+                    const currentRowspan = parseInt(th.getAttribute('rowspan')) || 1;
+                    if (currentRowspan > 1) {
+                        th.setAttribute('rowspan', currentRowspan - 1);
+                        console.log(`${categoryValue} 카테고리 rowspan 감소: ${currentRowspan} → ${currentRowspan - 1}`);
+                    }
+                }
+            }
+            
+            row.remove();
+        }
+    </script>
 </body>
 
 </html>
