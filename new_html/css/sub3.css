@@ -670,3 +670,10 @@
 .is-scroll-box table {
   table-layout: fixed;
 }
+
+.file-list.file-list2 {
+  max-height: fit-content;
+}
+.file-list.file-list2 li .file {
+  width: 381px !important;
+}

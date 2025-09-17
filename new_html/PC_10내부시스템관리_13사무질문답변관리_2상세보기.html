@@ -415,19 +415,18 @@
                 <th scope="row">대상</th>
                 <td colspan="3">
                       <!-- 콤보박스 -->
-                      <div class="select_box" style="width: 208px;">
-                        <span class="select">선택</span>
-                        <div class="option" style="display: none;">
-                          <div class="mCustomScrollbar _mCS_4 mCS-autoHide mCS_no_scrollbar" data-mcs-theme="minimal-dark" style="position: relative; overflow: visible;"><div id="mCSB_4" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" tabindex="0" style="max-height: 0px;"><div id="mCSB_4_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                      <div class="select_box" style="width: 208px">
+                        <span class="select">전체</span>
+                        <div class="option">
+                        <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
                             <ul>
-                              <li>선택함1</li>
-                              <li>선택함2</li>
-                              <li>선택함3</li>
+                            <li>선택함1</li>
+                            <li>선택함2</li>
+                            <li>선택함3</li>
                             </ul>
-                          </div></div><div id="mCSB_4_scrollbar_vertical" class="mCSB_scrollTools mCSB_4_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_4_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
                         </div>
-                      </div>
-                      <!-- //콤보박스 -->  
+                        </div>
+                    </div>                       
                 </td>                       
               </tr>
               <tr>
@@ -453,13 +452,13 @@
               <tr>
                 <th scope="row">첨부파일</th>
                 <td colspan="3">
-                  <ul class="file-list file-list-multi" style="max-width: 100%;">
+                  <ul class="file-list file-list-multi file-list2" style="max-width: 100%;">
                     <li>
                       <div class="input-wrap">
                         <input type="file" name="" class="file">
                         <div class="form-element__wrap">
                           <div class="input-multi file-up">
-                            <span class="form-element__inner input-type" style="width: 252px; flex: none;">
+                            <span class="form-element__inner input-type" style="width: 269px; flex: none;">
                               <input type="text" placeholder="파일을 선택해 주세요." title="파일첨부">
                             </span>
                             <button type="button" class="btn-border-gray">
@@ -599,18 +598,10 @@
                       </label>
                     </div>
                     <!-- 콤보박스 -->
-                    <div class="select_box" style="width: 168px">
-                        <span class="select">10등급</span>
-                        <div class="option">
-                        <div class="mCustomScrollbar" data-mcs-theme="minimal-dark">
-                            <ul>
-                            <li>선택함1</li>
-                            <li>선택함2</li>
-                            <li>선택함3</li>
-                            </ul>
-                        </div>
-                        </div>
-                    </div>
+                    <select name="" id="" class="selectbox"  style="width: 168px">
+                      <option value="전체">전체</option>
+                      <option value="지정">지정</option>
+                    </select>
                     <!-- //콤보박스 -->  
                   </div>
                 </td>     
