@@ -679,3 +679,65 @@
 .wid-100p {
   width: 100%;
 }
+
+.pc-table-col {
+  display: table-column-group;
+}
+.mo-table-col {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mo-table-col {
+    display: block;
+  }
+  .pc-table-col {
+    display: none;
+  }
+  .flex-row.mo-type-col {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .table-body-only.table-fixed.mo-responesive {
+    width: 100%;
+  }
+  .table-body-only.table-fixed.mo-responesive tbody tr {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .table-body-only.table-fixed.mo-responesive tbody th {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .table-body-only.table-fixed.mo-responesive tbody td {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding: 12px 6px;
+  }
+  .mo-full,
+  .form-element__wrap.mo-full,
+  .selectbox.mo-full {
+    width: 100% !important;
+  }
+  .file-list.file-list-multi.file-list2 .form-element__inner.input-type {
+    width: 50% !important;
+  }
+  .file-list.file-list-multi.file-list2 .btn-dark-light.btn-delete,
+  .file-list.file-list-multi.file-list2 .btn-dark-light.btn-add,
+  .file-list.file-list-multi.file-list2 .btn-border-gray {
+    font-size: 0;
+    min-width: auto;
+    padding: 8px;
+  }
+  .file-list.file-list-multi.file-list2 li .file {
+    width: 60% !important;
+  }
+  .file-list.file-list-multi.file-list2 li  .form-element__wrap.flex-row {
+    display: none;
+  }
+}

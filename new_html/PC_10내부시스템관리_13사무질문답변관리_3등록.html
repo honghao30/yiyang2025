@@ -636,17 +636,19 @@
         <div class="content_wrap">
           <div class="inner">
             <div class="table_cont form-table">
-              <table class="table-body-only table-fixed">
-                <colgroup>
+              <table class="table-body-only table-fixed mo-responesive">
+                <colgroup class="pc-table-col">
                   <col style="width: 160px" />
                   <col />
-                  <col style="width: 160px" />
-                  <col />
+                </colgroup>
+                <colgroup class="mo-table-col">
+                  <col style="width: 100%" />
+                  <col style="width: 100%" />
                 </colgroup>
                 <tbody>
                   <tr>
                     <th scope="row">제목<span class="red-color">*</span></th>
-                    <td colspan="3">
+                    <td>
                       <div class="form-element__wrap">
                         <div class="input-multi mo-flex-col">
                           <span class="form-element__inner input-type">
@@ -669,7 +671,7 @@
                   </tr>
                   <tr>
                     <th scope="row">대상</th>
-                    <td colspan="3">
+                    <td>
                       <!-- 콤보박스 -->
                       <div class="select_box" style="width: 208px">
                         <span class="select">선택</span>
@@ -729,27 +731,27 @@
                   </tr>
                   <tr>
                     <th scope="row">질문입력</th>
-                    <td colspan="3">
+                    <td>
                       <div class="edit-wrap">에디터 영역</div>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">답변입력</th>
-                    <td colspan="3">
+                    <td>
                       <div class="edit-wrap">에디터 영역</div>
                     </td>
                   </tr>
                   <tr>
                     <th>근거법령선택</th>
-                    <td colspan="3">
+                    <td>
                       <button class="btn btn-dark-light">법령선택</button>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">첨부파일</th>
-                    <td colspan="3">
+                    <td>
                       <ul
-                        class="file-list file-list-multi"
+                        class="file-list file-list-multi file-list2"
                         style="max-width: 100%"
                       >
                         <li>
@@ -759,7 +761,7 @@
                               <div class="input-multi file-up">
                                 <span
                                   class="form-element__inner input-type"
-                                  style="width: 252px; flex: none"
+                                  style="width: 269px; flex: none"
                                 >
                                   <input
                                     type="text"
@@ -794,9 +796,9 @@
                   </tr>
                   <tr>
                     <th scope="row">노출기간</th>
-                    <td colspan="3">
-                      <div class="flex-row">
-                        <div class="form-element__wrap" style="width: 168px">
+                    <td>
+                      <div class="flex-row mo-type-col mo-full">
+                        <div class="form-element__wrap mo-full" style="width: 168px">
                           <div class="input-multi">
                             <span
                               class="form-element__inner input-type picker-input"
@@ -818,44 +820,46 @@
                             </span>
                           </div>
                         </div>
-                        <!-- 콤보박스 -->
-                        <div class="select_box" style="width: 120px">
-                          <span class="select">전체</span>
-                          <div class="option">
-                            <div
-                              class="mCustomScrollbar"
-                              data-mcs-theme="minimal-dark"
-                            >
-                              <ul>
-                                <li>선택함1</li>
-                                <li>선택함2</li>
-                                <li>선택함3</li>
-                              </ul>
+                        <span class="flex-row">
+                          <!-- 콤보박스 -->
+                          <div class="select_box" style="width: 120px">
+                            <span class="select">전체</span>
+                            <div class="option">
+                              <div
+                                class="mCustomScrollbar"
+                                data-mcs-theme="minimal-dark"
+                              >
+                                <ul>
+                                  <li>선택함1</li>
+                                  <li>선택함2</li>
+                                  <li>선택함3</li>
+                                </ul>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        시
-                        <!-- //콤보박스 -->
-                        <!-- 콤보박스 -->
-                        <div class="select_box" style="width: 120px">
-                          <span class="select">전체</span>
-                          <div class="option">
-                            <div
-                              class="mCustomScrollbar"
-                              data-mcs-theme="minimal-dark"
-                            >
-                              <ul>
-                                <li>선택함1</li>
-                                <li>선택함2</li>
-                                <li>선택함3</li>
-                              </ul>
+                          시
+                          <!-- //콤보박스 -->
+                          <!-- 콤보박스 -->
+                          <div class="select_box" style="width: 120px">
+                            <span class="select">전체</span>
+                            <div class="option">
+                              <div
+                                class="mCustomScrollbar"
+                                data-mcs-theme="minimal-dark"
+                              >
+                                <ul>
+                                  <li>선택함1</li>
+                                  <li>선택함2</li>
+                                  <li>선택함3</li>
+                                </ul>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <!-- //콤보박스 -->
-                        분
-                        <div>~</div>
-                        <div class="form-element__wrap" style="width: 168px">
+                          <!-- //콤보박스 -->
+                          분
+                          <div>~</div>
+                        </span>
+                        <div class="form-element__wrap  mo-full" style="width: 168px">
                           <div class="input-multi">
                             <span
                               class="form-element__inner input-type picker-input"
@@ -877,48 +881,50 @@
                             </span>
                           </div>
                         </div>
-                        <!-- 콤보박스 -->
-                        <div class="select_box" style="width: 120px">
-                          <span class="select">전체</span>
-                          <div class="option">
-                            <div
-                              class="mCustomScrollbar"
-                              data-mcs-theme="minimal-dark"
-                            >
-                              <ul>
-                                <li>선택함1</li>
-                                <li>선택함2</li>
-                                <li>선택함3</li>
-                              </ul>
+                        <span  class="flex-row">
+                          <!-- 콤보박스 -->
+                          <div class="select_box" style="width: 120px">
+                            <span class="select">전체</span>
+                            <div class="option">
+                              <div
+                                class="mCustomScrollbar"
+                                data-mcs-theme="minimal-dark"
+                              >
+                                <ul>
+                                  <li>선택함1</li>
+                                  <li>선택함2</li>
+                                  <li>선택함3</li>
+                                </ul>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        시
-                        <!-- //콤보박스 -->
-                        <!-- 콤보박스 -->
-                        <div class="select_box" style="width: 120px">
-                          <span class="select">전체</span>
-                          <div class="option">
-                            <div
-                              class="mCustomScrollbar"
-                              data-mcs-theme="minimal-dark"
-                            >
-                              <ul>
-                                <li>선택함1</li>
-                                <li>선택함2</li>
-                                <li>선택함3</li>
-                              </ul>
+                          시
+                          <!-- //콤보박스 -->
+                          <!-- 콤보박스 -->
+                          <div class="select_box" style="width: 120px">
+                            <span class="select">전체</span>
+                            <div class="option">
+                              <div
+                                class="mCustomScrollbar"
+                                data-mcs-theme="minimal-dark"
+                              >
+                                <ul>
+                                  <li>선택함1</li>
+                                  <li>선택함2</li>
+                                  <li>선택함3</li>
+                                </ul>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <!-- //콤보박스 -->
-                        분
+                          <!-- //콤보박스 -->
+                          분
+                        </span>
                       </div>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">상단설정</th>
-                    <td colspan="3">
+                    <td>
                       <div class="radio-box">
                         <label id="r0a1">
                           <input
@@ -986,6 +992,8 @@
                         <!-- //콤보박스 -->
                       </div>
                     </td>
+                  </tr>
+                  <tr>
                     <th scope="row">노출여부</th>
                     <td>
                       <div class="flex-row">
